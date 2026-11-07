@@ -1,0 +1,29 @@
+{
+ "validation": [
+  {
+   "len": 48,
+   "max_abs": 4.9591064453125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 7.62939453125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 1024,
+  "stride_proj": 8,
+  "tail": 256,
+  "stride_ro": 1,
+  "chunk": 24
+ },
+ "runtime_s": 338.85808801651,
+ "run_id": "orbit-20261104-193804",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

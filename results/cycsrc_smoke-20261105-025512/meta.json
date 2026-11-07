@@ -1,0 +1,40 @@
+{
+ "validation": [
+  {
+   "len": 48,
+   "max_abs": 4.9591064453125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 48,
+   "max_abs": 4.9591064453125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 48,
+   "max_abs": 4.9591064453125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 24,
+  "T_f": 6,
+  "thr": 0.0001,
+  "n_damp": 8,
+  "beta": 0.5,
+  "m": 4,
+  "eps": 0.25,
+  "eps_small": 0.05,
+  "n_undamped": 4,
+  "push_rel": 0.001,
+  "chunk": 64,
+  "budget_s": 600,
+  "spec_control_uids": [
+   52
+  ]
+ },
+ "runtime_s": 49.740617990493774,
+ "run_id": "cycsrc_smoke-20261105-025512",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

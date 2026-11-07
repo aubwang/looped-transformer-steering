@@ -1,0 +1,68 @@
+{
+ "validation": [
+  {
+   "depth": 4,
+   "len": 45,
+   "max_abs": 0.1328125,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 4,
+   "len": 49,
+   "max_abs": 0.125,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 4,
+   "len": 52,
+   "max_abs": 0.140625,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 45,
+   "max_abs": 0.25,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 49,
+   "max_abs": 0.25,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 52,
+   "max_abs": 0.16015625,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "seeds": [
+   0,
+   1
+  ],
+  "K": 128,
+  "chunk_prompts": 21,
+  "max_lag": 24,
+  "shift_max": 16,
+  "proj_dim": 64,
+  "greedy_depths": [],
+  "greedy_chunk": 64,
+  "dtype": "bfloat16"
+ },
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "runtime_s": 48.86539316177368,
+ "peak_mem_gib": 7.923583507537842,
+ "windows": {
+  "mid": [
+   64,
+   96
+  ],
+  "late": [
+   96,
+   128
+  ]
+ },
+ "run_id": "prec_bf16-20261104-050452"
+}

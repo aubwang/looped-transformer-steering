@@ -1,0 +1,34 @@
+{
+ "validation": [
+  {
+   "len": 49,
+   "max_abs": 6.580352783203125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 5.91278076171875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 5.91278076171875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 16,
+  "r_mults": [
+   0.98,
+   1.02
+  ],
+  "T": 40,
+  "chunk": 4,
+  "budget_s": 600,
+  "code_sha256": "e1f057cde880db31"
+ },
+ "runtime_s": 24.982937241000002,
+ "run_id": "rsweep_smoke-20261105-203333",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

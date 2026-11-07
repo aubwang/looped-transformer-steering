@@ -1,0 +1,43 @@
+{
+ "validation": [
+  {
+   "len": 46,
+   "max_abs": 9.441375732421875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 8.20159912109375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 7.2479248046875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 16,
+  "n_damp": 10,
+  "fp_tol": 1e-05,
+  "start_seeds": [
+   4,
+   5
+  ],
+  "m": 6,
+  "save_at": [
+   4
+  ],
+  "eps": 0.1,
+  "n_top": 2,
+  "n_neg": 1,
+  "chunk": 80,
+  "budget_s": 600,
+  "reserve_val_s": 60,
+  "code_sha256": "25f6d4ea4e201205"
+ },
+ "runtime_s": 22.32624843,
+ "run_id": "ownspec_smoke-20261105-182211",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

@@ -1,0 +1,26 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.76837158203125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 48,
+   "max_abs": 4.482269287109375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 4.4345855712890625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 16,
+  "chunk": 8
+ },
+ "runtime_s": 24.812212705612183,
+ "run_id": "carry_smoke-20261104-192953",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

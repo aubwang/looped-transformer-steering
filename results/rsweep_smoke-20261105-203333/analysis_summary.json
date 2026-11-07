@@ -1,0 +1,116 @@
+{
+ "summary": {
+  "skipped": [],
+  "n": 2,
+  "n_incomplete": 0,
+  "primary_resolved": {
+   "n": 1,
+   "all_six_on_predicted_side": 0
+  },
+  "unresolved": [
+   [
+    20041,
+    false,
+    {
+     "0.98": "DECAY",
+     "1.02": "DECAY"
+    }
+   ]
+  ],
+  "by_r": {
+   "0.98": {
+    "ok": 1,
+    "outcomes": {
+     "DECAY": 1,
+     "PERSIST": 0,
+     "UNCLEAR": 0
+    }
+   },
+   "1.02": {
+    "ok": 0,
+    "outcomes": {
+     "DECAY": 1,
+     "PERSIST": 0,
+     "UNCLEAR": 0
+    }
+   }
+  },
+  "r_below": null,
+  "slope_below": null,
+  "r_above": null,
+  "failures": [
+   [
+    20009,
+    {
+     "1.02": [
+      "DECAY",
+      0.0,
+      "2.1e-02"
+     ]
+    }
+   ]
+  ]
+ },
+ "rows": [
+  {
+   "uid": 20009,
+   "relax_all_ok": true,
+   "lam": -1.03495496594633,
+   "alpha_star": 0.9828227324283442,
+   "all_ok": false,
+   "conds": {
+    "0.98": {
+     "outcome": "DECAY",
+     "predicted": "DECAY",
+     "ok": true,
+     "rho_late": 0.0,
+     "D_late": 0.007507575210183859,
+     "rho_32_160": 0.9560830700755643,
+     "lag2": 1.0142203569412231
+    },
+    "1.02": {
+     "outcome": "DECAY",
+     "predicted": "PERSIST",
+     "ok": false,
+     "rho_late": 0.0,
+     "D_late": 0.021294109523296356,
+     "rho_32_160": 1.02685430932967,
+     "lag2": 0.2398107945919037
+    }
+   },
+   "r_below": null,
+   "slope_below": null,
+   "r_above": null
+  },
+  {
+   "uid": 20041,
+   "relax_all_ok": false,
+   "lam": -1.166978663966718,
+   "alpha_star": 0.92294402028811,
+   "all_ok": false,
+   "conds": {
+    "0.98": {
+     "outcome": "DECAY",
+     "predicted": "DECAY",
+     "ok": true,
+     "rho_late": 0.0,
+     "D_late": 0.010769922286272049,
+     "rho_32_160": 0.9428831320125796,
+     "lag2": 1.556881308555603
+    },
+    "1.02": {
+     "outcome": "DECAY",
+     "predicted": "PERSIST",
+     "ok": false,
+     "rho_late": 0.0,
+     "D_late": 0.04032652825117111,
+     "rho_32_160": 1.0021003485874689,
+     "lag2": 0.3313394784927368
+    }
+   },
+   "r_below": null,
+   "slope_below": null,
+   "r_above": null
+  }
+ ]
+}

@@ -1,0 +1,76 @@
+{
+ "validation": [
+  {
+   "depth": 4,
+   "len": 45,
+   "max_abs": 0.1328125,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 4,
+   "len": 49,
+   "max_abs": 0.140625,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 4,
+   "len": 52,
+   "max_abs": 0.1640625,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 45,
+   "max_abs": 0.25,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 49,
+   "max_abs": 0.171875,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 52,
+   "max_abs": 0.1875,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "seeds": [
+   0,
+   1,
+   2,
+   3
+  ],
+  "K": 256,
+  "chunk_prompts": 24,
+  "max_lag": 48,
+  "shift_max": 32,
+  "proj_dim": 64,
+  "greedy_depths": [
+   4,
+   8,
+   16,
+   32,
+   64,
+   128
+  ],
+  "greedy_chunk": 64
+ },
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "runtime_s": 776.0816829204559,
+ "peak_mem_gib": 11.725867748260498,
+ "windows": {
+  "mid": [
+   128,
+   192
+  ],
+  "late": [
+   192,
+   256
+  ]
+ },
+ "run_id": "pilot-20261104-044648"
+}

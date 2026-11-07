@@ -1,0 +1,42 @@
+{
+ "validation": [
+  {
+   "len": 61,
+   "max_abs": 3.24249267578125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 63,
+   "max_abs": 4.57763671875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 64,
+   "max_abs": 5.340576171875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 64,
+  "checkpoints": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   32,
+   64
+  ],
+  "chunk": 120,
+  "total_s": 440,
+  "code_sha256": "182e69a4736df434"
+ },
+ "runtime_s": 415.843090319,
+ "run_id": "truth-20261106-035631",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "n_done": [
+  240,
+  240
+ ]
+}

@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+results/**/raw/
+
+# Raw run arrays (~1.4 GB): kept on the local disk and the Modal volume `huginn-results`, not in git.
+results/**/*.npz
+results/**/*.parquet
+# Keep the small top-level push / direction files that define interventions (hashes are recorded in their manifests)...
+!results/*.npz
+# ...except these large per-item files, which their builder scripts regenerate (make_dstar_pushes.py,
+# make_tlever_pushes.py, and the truth-steering direction builder).
+results/dstar_pushes.npz
+results/tlever_pushes_*.npz
+results/truthsteer_dirs*.npz

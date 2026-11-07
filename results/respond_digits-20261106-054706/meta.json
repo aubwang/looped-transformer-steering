@@ -1,0 +1,35 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "task": "digits",
+  "K0": 96,
+  "N": 64,
+  "T": 48,
+  "doses": [
+   0.1,
+   1.0
+  ],
+  "eps": 0.1,
+  "total_s": 360,
+  "code_sha256": "01e5bfb79a20129e"
+ },
+ "runtime_s": 172.254984916,
+ "run_id": "respond_digits-20261106-054706",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

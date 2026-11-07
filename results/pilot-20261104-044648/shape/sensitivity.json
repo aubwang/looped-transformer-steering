@@ -1,0 +1,32 @@
+{
+ "base_FW": {
+  "rows": 678,
+  "problems": 126,
+  "nuisance_cols": 32,
+  "categorical_gain_R2": 0.05682436227519799,
+  "line_share_of_categorical": 0.34060530342210826,
+  "circle_share_of_categorical": 1.0670333134779297,
+  "circle_vs_scrambled_p": 0.009900990099009901,
+  "circle_gain_over_best_scrambled": 1.7539876335986766
+ },
+ "strong": {
+  "rows": 678,
+  "problems": 126,
+  "nuisance_cols": 153,
+  "categorical_gain_R2": 0.061484995327165205,
+  "line_share_of_categorical": 0.38169112875188055,
+  "circle_share_of_categorical": 1.1284885697932712,
+  "circle_vs_scrambled_p": 0.009900990099009901,
+  "circle_gain_over_best_scrambled": 1.2695326916787337
+ },
+ "strong_no9prev": {
+  "rows": 542,
+  "problems": 108,
+  "nuisance_cols": 138,
+  "categorical_gain_R2": 0.07562519373070695,
+  "line_share_of_categorical": 0.3917256943229097,
+  "circle_share_of_categorical": 1.0639771242388283,
+  "circle_vs_scrambled_p": 0.009900990099009901,
+  "circle_gain_over_best_scrambled": 1.8637297360538503
+ }
+}

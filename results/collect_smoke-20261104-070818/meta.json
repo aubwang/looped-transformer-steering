@@ -1,0 +1,18 @@
+{
+ "validation": {
+  "max_abs": 2.956390380859375e-05,
+  "argmax_agree": 1.0
+ },
+ "cfg": {
+  "K": 24,
+  "W0": 17,
+  "seeds": [
+   0,
+   1
+  ],
+  "chunk": 8
+ },
+ "runtime_s": 27.175417184829712,
+ "run_id": "collect_smoke-20261104-070818",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

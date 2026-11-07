@@ -1,0 +1,47 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 5.435943603515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 6.866455078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 7.2479248046875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 256,
+  "n_damp": 300,
+  "fp_tol": 1e-05,
+  "amps": [
+   0.001,
+   0.0001
+  ],
+  "T": 8,
+  "windows": [
+   [
+    1,
+    4
+   ],
+   [
+    4,
+    8
+   ]
+  ],
+  "m": 24,
+  "eps": 0.1,
+  "budget_s": 480,
+  "code_sha256": "3616bcca59ea7faf"
+ },
+ "runtime_s": 154.716720531,
+ "run_id": "ownblock_random-20261105-165736",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

@@ -1,0 +1,64 @@
+{
+ "cos_pop": {
+  "L_W": 0.39750437352160856,
+  "B_L": 0.6993561266611668,
+  "B_W": 0.5772361497339786,
+  "B_G": 0.1792193124256587,
+  "G_L": 0.09580319504286317,
+  "G_W": 0.3197265720282103
+ },
+ "item_vs_pop_median": {
+  "L": 0.9531171633956221,
+  "B": 0.9711777283752101
+ },
+ "sources": {
+  "dstar_vjp": "results/dstar_vjp-20261106-061708",
+  "truthcov": "results/truthcov-20261106-234613"
+ },
+ "results/tlever_pushes_1.npz": {
+  "sha256": "4b12c666eb5b9bd94f337cced9f52fca152e21b77f4099dc1535f69e86404004",
+  "names": [
+   "sham",
+   "L_pop@1.5625",
+   "L_pop@3.125",
+   "L_pop@12.5",
+   "B_pop@1.5625",
+   "B_pop@3.125",
+   "B_pop@12.5",
+   "W_pop@1.5625",
+   "W_pop@3.125",
+   "W_pop@12.5"
+  ]
+ },
+ "results/tlever_pushes_2.npz": {
+  "sha256": "bf07f73f6a1a4d1d13e8ca08c436d5454e3fbd64ba3a8742eb5485329d1bf331",
+  "names": [
+   "sham",
+   "G_pop@1.5625",
+   "G_pop@3.125",
+   "G_pop@12.5",
+   "L_item@1.5625",
+   "L_item@3.125",
+   "L_item@12.5",
+   "B_item@1.5625",
+   "B_item@3.125",
+   "B_item@12.5",
+   "rand@12.5"
+  ]
+ },
+ "results/tlever_pushes_3.npz": {
+  "sha256": "5b19c221da7101b62e0409b345de1271f830213d05a979a5fc86f52a92a45c92",
+  "names": [
+   "sham",
+   "L_pop@1.5625+own",
+   "L_pop@3.125+own",
+   "L_pop@12.5+own",
+   "B_pop@1.5625+own",
+   "B_pop@3.125+own",
+   "B_pop@12.5+own",
+   "W_pop@1.5625+own",
+   "W_pop@3.125+own",
+   "W_pop@12.5+own"
+  ]
+ }
+}

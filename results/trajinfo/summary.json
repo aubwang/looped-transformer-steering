@@ -1,0 +1,221 @@
+{
+ "T1_truth_states": {
+  "cities/stA": {
+   "E40": 0.9975,
+   "E20+S20(loop 4)": 0.9977777777777778,
+   "diff_ci_loop4": [
+    -0.0036111111111111205,
+    0.0033333333333332993
+   ],
+   "E20+S20(loop 8)": 0.9994444444444445,
+   "diff_ci_loop8": [
+    0.0,
+    0.006111111111111067
+   ],
+   "E20+S20(loop 16)": 1.0,
+   "diff_ci_loop16": [
+    0.0,
+    0.007777777777777772
+   ],
+   "INCREMENTAL_primary_loop8": false
+  },
+  "cities/stBa": {
+   "E40": 0.9963888888888889,
+   "E20+S20(loop 4)": 0.9969444444444444,
+   "diff_ci_loop4": [
+    -0.002777777777777768,
+    0.004444444444444473
+   ],
+   "E20+S20(loop 8)": 0.9986111111111111,
+   "diff_ci_loop8": [
+    -0.001388888888888884,
+    0.008333333333333304
+   ],
+   "E20+S20(loop 16)": 0.9947222222222222,
+   "diff_ci_loop16": [
+    -0.007499999999999951,
+    0.0016666666666667052
+   ],
+   "INCREMENTAL_primary_loop8": false
+  },
+  "compare/stA": {
+   "E40": 1.0,
+   "E20+S20(loop 4)": 0.9961111111111111,
+   "diff_ci_loop4": [
+    -0.011666666666666714,
+    0.0
+   ],
+   "E20+S20(loop 8)": 0.9969444444444444,
+   "diff_ci_loop8": [
+    -0.00889583333333328,
+    0.0
+   ],
+   "E20+S20(loop 16)": 0.9980555555555556,
+   "diff_ci_loop16": [
+    -0.006111111111111067,
+    0.0
+   ],
+   "INCREMENTAL_primary_loop8": false
+  },
+  "compare/stBa": {
+   "E40": 1.0,
+   "E20+S20(loop 4)": 0.9975,
+   "diff_ci_loop4": [
+    -0.008333333333333304,
+    0.0
+   ],
+   "E20+S20(loop 8)": 0.9983333333333333,
+   "diff_ci_loop8": [
+    -0.005555555555555536,
+    0.0
+   ],
+   "E20+S20(loop 16)": 1.0,
+   "diff_ci_loop16": [
+    0.0,
+    0.0
+   ],
+   "INCREMENTAL_primary_loop8": false
+  }
+ },
+ "T2_carry_chain": {
+  "n": 150,
+  "n_units": 150,
+  "n_positive": 63,
+  "base_rate": 0.42,
+  "auroc": {
+   "E": 0.6002554278416348,
+   "E+T": 0.5185185185185185,
+   "E+T_unord": 0.5582922824302134,
+   "E+T_shuf": 0.517971173143587
+  },
+  "shuffle_auroc_10_seeds": {
+   "min": 0.42711184090494436,
+   "median": 0.5247217661010765,
+   "max": 0.5871191388432768
+  },
+  "ET_minus_E_ci": [
+   -0.17001380918220946,
+   0.004569075642292125
+  ],
+  "ET_minus_shuf_ci": [
+   -0.11063817743065507,
+   0.11859472458302509
+  ],
+  "unord_minus_E_ci": [
+   -0.09954194327662243,
+   0.015833483186477173
+  ],
+  "verdict": "NO INCREMENT DETECTED",
+  "fold_positive_counts": [
+   6,
+   6,
+   7,
+   7,
+   6,
+   6,
+   6,
+   6,
+   6,
+   7
+  ],
+  "split_seed1_auroc": {
+   "E": 0.5909505564677978,
+   "E+T": 0.5232621784345922
+  },
+  "note": "CIs are conditional descriptive intervals (fixed out-of-fold predictions)"
+ },
+ "T2_census": {
+  "n": 200,
+  "n_units": 100,
+  "n_positive": 148,
+  "base_rate": 0.74,
+  "auroc": {
+   "E": 0.742983367983368,
+   "E+T": 0.7622141372141372,
+   "E+T_unord": 0.7321985446985447,
+   "E+T_shuf": 0.6834719334719335
+  },
+  "shuffle_auroc_10_seeds": {
+   "min": 0.6834719334719335,
+   "median": 0.7171907484407485,
+   "max": 0.7481808731808732
+  },
+  "ET_minus_E_ci": [
+   -0.045220046824746576,
+   0.08205943691345151
+  ],
+  "ET_minus_shuf_ci": [
+   0.005843944906444862,
+   0.14775926891670238
+  ],
+  "unord_minus_E_ci": [
+   -0.04074727058448791,
+   0.01946257512400832
+  ],
+  "verdict": "NO INCREMENT DETECTED",
+  "fold_positive_counts": [
+   15,
+   15,
+   15,
+   15,
+   14,
+   15,
+   17,
+   15,
+   13,
+   14
+  ],
+  "split_seed1_auroc": {
+   "E": 0.7587058212058212,
+   "E+T": 0.7723492723492723
+  },
+  "note": "CIs are conditional descriptive intervals (fixed out-of-fold predictions)"
+ },
+ "T2_settle": {
+  "n": 217,
+  "n_units": 60,
+  "n_positive": 196,
+  "base_rate": 0.9032258064516129,
+  "auroc": {
+   "E": 0.7776967930029155,
+   "E+T": 0.7648202137998056,
+   "E+T_unord": 0.8364917395529641,
+   "E+T_shuf": 0.8634596695821186
+  },
+  "shuffle_auroc_10_seeds": {
+   "min": 0.7300777453838678,
+   "median": 0.7751457725947521,
+   "max": 0.8634596695821186
+  },
+  "ET_minus_E_ci": [
+   -0.12739207398257912,
+   0.10228973389947817
+  ],
+  "ET_minus_shuf_ci": [
+   -0.1857544793169793,
+   -0.009134858976524354
+  ],
+  "unord_minus_E_ci": [
+   -0.027056987512353796,
+   0.14320226216072188
+  ],
+  "verdict": "NO INCREMENT DETECTED",
+  "fold_positive_counts": [
+   21,
+   18,
+   19,
+   20,
+   19,
+   21,
+   20,
+   19,
+   21,
+   18
+  ],
+  "split_seed1_auroc": {
+   "E": 0.7580174927113703,
+   "E+T": 0.7254616132167152
+  },
+  "note": "CIs are conditional descriptive intervals (fixed out-of-fold predictions)"
+ }
+}

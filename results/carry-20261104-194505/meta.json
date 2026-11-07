@@ -1,0 +1,26 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.76837158203125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 5.14984130859375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 5.054473876953125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 64,
+  "chunk": 56
+ },
+ "runtime_s": 170.85865783691406,
+ "run_id": "carry-20261104-194505",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

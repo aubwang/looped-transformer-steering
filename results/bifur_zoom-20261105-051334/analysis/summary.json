@@ -1,0 +1,442 @@
+{
+ "family": "E_a = (1-a) E(uid 99) + a E(uid 98), whole aligned prelude-output tensor; source/q = '=' (position 46)",
+ "endpoint_lambda": {
+  "a=0 (stationary)": -0.9172756238520969,
+  "a=1 (cycling)": -1.0529920371548893
+ },
+ "coarse": [
+  {
+   "alpha": 0.0,
+   "lam": -0.9173,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.0667,
+   "lam": -0.9078,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.1333,
+   "lam": -0.899,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.2,
+   "lam": -0.8891,
+   "eligible": false,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.2667,
+   "lam": -0.8823,
+   "eligible": false,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.3333,
+   "lam": -0.886,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.00315
+  },
+  {
+   "alpha": 0.4,
+   "lam": -0.9012,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.00551
+  },
+  {
+   "alpha": 0.4667,
+   "lam": -0.9067,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.00729
+  },
+  {
+   "alpha": 0.5333,
+   "lam": -0.9211,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.00889
+  },
+  {
+   "alpha": 0.6,
+   "lam": -0.9703,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.00816
+  },
+  {
+   "alpha": 0.6667,
+   "lam": -0.9793,
+   "eligible": false,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.7333,
+   "lam": -1.01,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.01102
+  },
+  {
+   "alpha": 0.8,
+   "lam": -1.0299,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.0195
+  },
+  {
+   "alpha": 0.8667,
+   "lam": -1.042,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.02309
+  },
+  {
+   "alpha": 0.9333,
+   "lam": -1.0487,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.02499
+  },
+  {
+   "alpha": 1.0,
+   "lam": -1.053,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.026
+  }
+ ],
+ "zoom": [
+  {
+   "alpha": 0.64,
+   "lam": -0.971,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.67,
+   "lam": -0.9814,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.69,
+   "lam": -0.9895,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.7,
+   "lam": -0.9945,
+   "eligible": true,
+   "label": 2,
+   "first_moving": 46,
+   "amp_rel_q": 5e-05,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.705,
+   "lam": -0.9978,
+   "eligible": true,
+   "label": 2,
+   "first_moving": 46,
+   "amp_rel_q": 0.00012,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.71,
+   "lam": -1.0001,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.00158,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.715,
+   "lam": -1.0023,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.00535,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.72,
+   "lam": -1.0048,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.00721,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.73,
+   "lam": -1.0086,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.01022,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.75,
+   "lam": -1.0161,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.0141,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.78,
+   "lam": -1.0249,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 46,
+   "amp_rel_q": 0.01778,
+   "readout_same_both_phases": true
+  }
+ ],
+ "alpha_star_zoom": 0.7098017240045599,
+ "scaling_points": [
+  [
+   "zoom",
+   0.715,
+   0.0023270470216214534,
+   0.005346756428480148
+  ],
+  [
+   "zoom",
+   0.72,
+   0.004794255649354762,
+   0.007214605342596769
+  ],
+  [
+   "zoom",
+   0.73,
+   0.008593318525001337,
+   0.01021573320031166
+  ],
+  [
+   "zoom",
+   0.75,
+   0.016132200682282383,
+   0.01409613061696291
+  ],
+  [
+   "zoom",
+   0.78,
+   0.024902788769258777,
+   0.01778002455830574
+  ]
+ ],
+ "A2_over_mu_slope_through_origin": 0.012507975185772437,
+ "A2_vs_mu_linear_fit": [
+  0.012843003450337209,
+  -5.801146862414502e-06
+ ],
+ "A2_over_mu_each": [
+  0.0123,
+  0.0109,
+  0.0121,
+  0.0123,
+  0.0127
+ ],
+ "two_step": {
+  "alpha": [
+   0.71,
+   0.715,
+   0.72,
+   0.73
+  ],
+  "mult": [
+   0.9975,
+   0.9899,
+   0.9832,
+   0.966
+  ],
+  "pred_1_minus_4mu": [
+   0.9996,
+   0.9907,
+   0.9808,
+   0.9656
+  ],
+  "fd_resid_eps0.1": [
+   0.0015,
+   0.0017,
+   0.0015,
+   0.0015
+  ],
+  "axis_overlap": [
+   1.0,
+   0.9998,
+   0.9997,
+   0.9993
+  ]
+ },
+ "pushes": [
+  {
+   "alpha": 0.7,
+   "lam": -0.9945443106847467,
+   "mag": 0.001,
+   "abs_rate": 0.9944,
+   "alternates": true,
+   "control_max": 3.3703884128044592e-06
+  },
+  {
+   "alpha": 0.7,
+   "lam": -0.9945443106847467,
+   "mag": 0.0001,
+   "abs_rate": 0.9964,
+   "alternates": true,
+   "control_max": 3.3703884128044592e-06
+  },
+  {
+   "alpha": 0.705,
+   "lam": -0.9978011683673613,
+   "mag": 0.001,
+   "abs_rate": 0.9973,
+   "alternates": true,
+   "control_max": 4.840725068788743e-06
+  },
+  {
+   "alpha": 0.705,
+   "lam": -0.9978011683673613,
+   "mag": 0.0001,
+   "abs_rate": 0.9987,
+   "alternates": true,
+   "control_max": 4.840725068788743e-06
+  },
+  {
+   "alpha": 0.71,
+   "lam": -1.0000907956247282,
+   "mag": 0.001,
+   "abs_rate": 0.9995,
+   "alternates": true,
+   "control_max": 1.4577136425941717e-05
+  },
+  {
+   "alpha": 0.71,
+   "lam": -1.0000907956247282,
+   "mag": 0.0001,
+   "abs_rate": 0.9993,
+   "alternates": true,
+   "control_max": 1.4577136425941717e-05
+  },
+  {
+   "alpha": 0.715,
+   "lam": -1.0023270470216215,
+   "mag": 0.001,
+   "abs_rate": 1.0019,
+   "alternates": true,
+   "control_max": 3.445484480835148e-06
+  },
+  {
+   "alpha": 0.715,
+   "lam": -1.0023270470216215,
+   "mag": 0.0001,
+   "abs_rate": 0.9993,
+   "alternates": true,
+   "control_max": 3.445484480835148e-06
+  }
+ ],
+ "endpoint_start": {
+  "alpha": [
+   0.64,
+   0.67,
+   0.69,
+   0.7,
+   0.705,
+   0.71,
+   0.715,
+   0.72,
+   0.73,
+   0.75,
+   0.78
+  ],
+  "label": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   2,
+   1,
+   1,
+   1
+  ],
+  "amp_rel_q_after_256": [
+   2.9999999242136255e-05,
+   0.0001900000061141327,
+   0.0011399999493733048,
+   0.002570000011473894,
+   0.0036700000055134296,
+   0.004939999897032976,
+   0.0063299997709691525,
+   0.0077599999494850636,
+   0.01030999980866909,
+   0.014100000262260437,
+   0.0177800003439188
+  ],
+  "common_init_amp_rel_q": [
+   0.0,
+   0.0,
+   0.0,
+   4.999999873689376e-05,
+   0.00011999999696854502,
+   0.0015800000401213765,
+   0.005350000225007534,
+   0.007209999952465296,
+   0.010219999589025974,
+   0.014100000262260437,
+   0.0177800003439188
+  ]
+ },
+ "token1_offmanifold_cycles_coarse_alpha": [
+  0.333,
+  0.4,
+  0.467,
+  0.533,
+  0.6
+ ]
+}

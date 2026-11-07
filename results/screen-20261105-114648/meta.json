@@ -1,0 +1,31 @@
+{
+ "validation": [
+  {
+   "len": 48,
+   "max_abs": 7.43865966796875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 5.9604644775390625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.29425048828125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 512,
+  "stride_proj": 64,
+  "tail": 64,
+  "stride_ro": 1,
+  "ro_tail_only": true,
+  "chunk": 30,
+  "code_sha256": "9808b69833fbbaf7"
+ },
+ "runtime_s": 319.5589826107025,
+ "run_id": "screen-20261105-114648",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

@@ -1,0 +1,6 @@
+/home/owner/work/.t3/projects/analysis/huginn_addition/analyze_weekday.py:293: RuntimeWarning: Mean of empty slice
+  ip_start = np.nanmean(hit(start), 0); ip_ans = np.nanmean(hit(ans), 0)
+/home/owner/work/.t3/projects/analysis/huginn_addition/analyze_weekday.py:294: RuntimeWarning: All-NaN slice encountered
+  med_rad = np.nanmedian(radius, 0)
+/home/owner/work/.t3/projects/analysis/huginn_addition/analyze_weekday.py:303: RuntimeWarning: All-NaN slice encountered
+  median_radius=round(float(np.nanmedian(radius[:, i])), 3),

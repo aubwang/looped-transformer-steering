@@ -1,0 +1,93 @@
+{
+ "validation": [
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "uid0": 99,
+  "uid1": 98,
+  "K": 512,
+  "beta": 0.5,
+  "n_damp": 100,
+  "n_damp_cont": 100,
+  "fp_tol": 1e-05,
+  "m": 8,
+  "m_two_step": 8,
+  "eps": 0.1,
+  "eps_check": [
+   0.25,
+   0.1,
+   0.05
+  ],
+  "stat_thr": 2e-05,
+  "floor_thr": 1e-05,
+  "amp_tol": 0.02,
+  "closure_tol": 0.01,
+  "axis_min_amp": 0.001,
+  "eig_res_tol": 0.01,
+  "track_ov_min": 0.9,
+  "max_extend_coarse": 0,
+  "max_extend_fine": 0,
+  "K_extend": 0,
+  "n_coarse": 0,
+  "n_refine": 0,
+  "refine_halfwidth": 0,
+  "push_rel": [
+   0.001,
+   0.0001
+  ],
+  "K_push": 8,
+  "n_twostep": 0,
+  "K_hyst": 64,
+  "budget_s": 400,
+  "reserve_s": 25,
+  "alpha_cross_prior": 0.71,
+  "fixed_alphas": [
+   0.7575,
+   0.7576,
+   0.7577,
+   0.7578,
+   0.7579,
+   0.758,
+   0.7581,
+   0.7582,
+   0.7583,
+   0.7584,
+   0.7585,
+   0.7586,
+   0.7587,
+   0.7588,
+   0.7589,
+   0.759,
+   0.7591,
+   0.7592,
+   0.7593,
+   0.7594,
+   0.7595,
+   0.7596,
+   0.7597,
+   0.7598,
+   0.7599,
+   0.76
+  ],
+  "code_sha256": "9808b69833fbbaf7"
+ },
+ "runtime_s": 202.883993987,
+ "run_id": "bifur49_flicker2-20261105-115251",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "row_steps": 17981
+}

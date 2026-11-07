@@ -1,0 +1,216 @@
+{
+ "rows": 168,
+ "eligible_rows": 147,
+ "grad_problems_overlapping_fit_pairs": 0,
+ "centroid_counts_collect": [
+  70,
+  76,
+  98,
+  60,
+  52,
+  46,
+  46,
+  42,
+  52,
+  136
+ ],
+ "centroid_angle_deg": [
+  348.0,
+  34.3,
+  87.3,
+  122.2,
+  153.0,
+  195.6,
+  213.6,
+  237.7,
+  254.9,
+  324.8
+ ],
+ "centroid_angle_minus_uniform_deg": [
+  -12.0,
+  -1.7,
+  15.3,
+  14.2,
+  9.0,
+  15.6,
+  -2.4,
+  -14.3,
+  -33.1,
+  0.8
+ ],
+ "centroid_radius": [
+  0.959,
+  0.783,
+  0.798,
+  0.76,
+  1.034,
+  1.003,
+  0.9,
+  0.883,
+  0.955,
+  0.589
+ ],
+ "centroid_step_deg": [
+  46.2,
+  53.0,
+  34.9,
+  30.8,
+  42.5,
+  18.1,
+  24.1,
+  17.2,
+  69.9,
+  23.3
+ ],
+ "per_offset": [
+  {
+   "j": 1,
+   "medabs_uniform_chord": 22.0,
+   "medabs_centroid_chord": 17.0,
+   "medabs_away_from_d": 68.0,
+   "centroid_minus_uniform_abs_err": [
+    -2.9025974025974026,
+    -7.409090909090909,
+    1.208441558441555
+   ],
+   "median_source_share": 0.279,
+   "median_T_over_S": 1.542,
+   "T_medabs_err_uniform": 39.0,
+   "T_medabs_err_centroid": 41.75
+  },
+  {
+   "j": 2,
+   "medabs_uniform_chord": 24.5,
+   "medabs_centroid_chord": 18.5,
+   "medabs_away_from_d": 36.5,
+   "centroid_minus_uniform_abs_err": [
+    -4.058441558441562,
+    -6.123376623376625,
+    -2.045454545454548
+   ],
+   "median_source_share": 0.38,
+   "median_T_over_S": 1.368,
+   "T_medabs_err_uniform": 43.25,
+   "T_medabs_err_centroid": 44.75
+  },
+  {
+   "j": 3,
+   "medabs_uniform_chord": 52.75,
+   "medabs_centroid_chord": 51.25,
+   "medabs_away_from_d": 49.25,
+   "centroid_minus_uniform_abs_err": [
+    -0.9740259740259732,
+    -2.5719155844155845,
+    0.5652597402597391
+   ],
+   "median_source_share": 0.749,
+   "median_T_over_S": 0.541,
+   "T_medabs_err_uniform": 91.25,
+   "T_medabs_err_centroid": 88.25
+  },
+  {
+   "j": 4,
+   "medabs_uniform_chord": 39.5,
+   "medabs_centroid_chord": 39.0,
+   "medabs_away_from_d": 38.75,
+   "centroid_minus_uniform_abs_err": [
+    0.24025974025974137,
+    -1.3962662337662326,
+    1.7727272727272734
+   ],
+   "median_source_share": 0.778,
+   "median_T_over_S": 0.437,
+   "T_medabs_err_uniform": 50.75,
+   "T_medabs_err_centroid": 54.0
+  },
+  {
+   "j": 5,
+   "medabs_uniform_chord": 53.5,
+   "medabs_centroid_chord": 52.25,
+   "medabs_away_from_d": 53.5,
+   "centroid_minus_uniform_abs_err": [
+    0.8441558441558432,
+    -0.37012987012987014,
+    2.0584415584415576
+   ],
+   "median_source_share": 0.887,
+   "median_T_over_S": 0.455,
+   "T_medabs_err_uniform": 135.0,
+   "T_medabs_err_centroid": 135.25
+  },
+  {
+   "j": 6,
+   "medabs_uniform_chord": 48.5,
+   "medabs_centroid_chord": 50.5,
+   "medabs_away_from_d": 47.0,
+   "centroid_minus_uniform_abs_err": [
+    2.428571428571427,
+    0.48701298701298684,
+    4.32467532467532
+   ],
+   "median_source_share": 0.858,
+   "median_T_over_S": 0.409,
+   "T_medabs_err_uniform": 90.5,
+   "T_medabs_err_centroid": 86.25
+  },
+  {
+   "j": 7,
+   "medabs_uniform_chord": 58.25,
+   "medabs_centroid_chord": 59.0,
+   "medabs_away_from_d": 51.25,
+   "centroid_minus_uniform_abs_err": [
+    2.0649350649350633,
+    0.3829545454545447,
+    3.6883116883116855
+   ],
+   "median_source_share": 0.73,
+   "median_T_over_S": 0.555,
+   "T_medabs_err_uniform": 93.75,
+   "T_medabs_err_centroid": 95.0
+  },
+  {
+   "j": 8,
+   "medabs_uniform_chord": 21.0,
+   "medabs_centroid_chord": 28.25,
+   "medabs_away_from_d": 46.5,
+   "centroid_minus_uniform_abs_err": [
+    2.006493506493507,
+    -0.36412337662337624,
+    4.344318181818181
+   ],
+   "median_source_share": 0.415,
+   "median_T_over_S": 1.249,
+   "T_medabs_err_uniform": 33.75,
+   "T_medabs_err_centroid": 30.25
+  },
+  {
+   "j": 9,
+   "medabs_uniform_chord": 19.0,
+   "medabs_centroid_chord": 23.25,
+   "medabs_away_from_d": 75.0,
+   "centroid_minus_uniform_abs_err": [
+    5.181818181818182,
+    0.9673701298701316,
+    9.915746753246752
+   ],
+   "median_source_share": 0.185,
+   "median_T_over_S": 1.591,
+   "T_medabs_err_uniform": 38.75,
+   "T_medabs_err_centroid": 34.5
+  }
+ ],
+ "all_offsets_median_abs_err": {
+  "uniform_chord": 35.25,
+  "centroid_chord": 37.25,
+  "away_from_d": 51.0,
+  "centroid_minus_uniform_abs_err_all_j": [
+   0.5367965367965363,
+   -0.6334776334776335,
+   1.657305194805194
+  ]
+ },
+ "source_term_angle_rel_theta_d": {
+  "circ_mean": 178.1743994990868,
+  "R": 0.6095132293980156
+ }
+}

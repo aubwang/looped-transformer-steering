@@ -1,0 +1,35 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 8,
+  "scales": [
+   1.0
+  ],
+  "ro_t": [
+   1,
+   4
+  ],
+  "chunk": 20,
+  "total_s": 400,
+  "code_sha256": "bb31d90c4b049ff7"
+ },
+ "runtime_s": 16.676106206,
+ "run_id": "steer_smoke-20261106-032533",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

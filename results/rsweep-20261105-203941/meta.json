@@ -1,0 +1,38 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 6.580352783203125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 6.008148193359375e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 320,
+  "r_mults": [
+   0.96,
+   0.98,
+   0.99,
+   1.01,
+   1.02,
+   1.04
+  ],
+  "T": 192,
+  "chunk": 78,
+  "budget_s": 480,
+  "code_sha256": "31219aab4740019f"
+ },
+ "runtime_s": 567.5307651879999,
+ "run_id": "rsweep-20261105-203941",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

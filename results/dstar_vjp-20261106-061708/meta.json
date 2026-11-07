@@ -1,0 +1,29 @@
+{
+ "validation": [
+  {
+   "len": 61,
+   "max_abs": 3.7670135498046875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 63,
+   "max_abs": 4.57763671875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 64,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 64,
+  "T": 48,
+  "chunk": 40,
+  "total_s": 400,
+  "code_sha256": "1f46c4835a594e57"
+ },
+ "runtime_s": 252.72897863699998,
+ "run_id": "dstar_vjp-20261106-061708",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

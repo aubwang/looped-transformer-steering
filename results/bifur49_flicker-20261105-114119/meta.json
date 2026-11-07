@@ -1,0 +1,92 @@
+{
+ "validation": [
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "uid0": 99,
+  "uid1": 98,
+  "K": 512,
+  "beta": 0.5,
+  "n_damp": 300,
+  "n_damp_cont": 300,
+  "fp_tol": 1e-05,
+  "m": 16,
+  "m_two_step": 8,
+  "eps": 0.1,
+  "eps_check": [
+   0.25,
+   0.1,
+   0.05
+  ],
+  "stat_thr": 2e-05,
+  "floor_thr": 1e-05,
+  "amp_tol": 0.02,
+  "closure_tol": 0.01,
+  "axis_min_amp": 0.001,
+  "eig_res_tol": 0.01,
+  "track_ov_min": 0.9,
+  "max_extend_coarse": 0,
+  "max_extend_fine": 0,
+  "K_extend": 0,
+  "n_coarse": 0,
+  "n_refine": 0,
+  "refine_halfwidth": 0,
+  "push_rel": [
+   0.001,
+   0.0001
+  ],
+  "K_push": 16,
+  "n_twostep": 0,
+  "K_hyst": 64,
+  "budget_s": 400,
+  "reserve_s": 25,
+  "alpha_cross_prior": 0.71,
+  "fixed_alphas": [
+   0.74,
+   0.7425,
+   0.745,
+   0.7475,
+   0.75,
+   0.7525,
+   0.755,
+   0.7575,
+   0.76,
+   0.7625,
+   0.765,
+   0.7675,
+   0.77,
+   0.7725,
+   0.775,
+   0.7775,
+   0.78,
+   0.7825,
+   0.785,
+   0.7875,
+   0.79,
+   0.7925,
+   0.795,
+   0.7975,
+   0.8
+  ],
+  "code_sha256": "9b0566aaad408f3e"
+ },
+ "runtime_s": 220.517080618,
+ "run_id": "bifur49_flicker-20261105-114119",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "row_steps": 18929
+}

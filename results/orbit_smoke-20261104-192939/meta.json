@@ -1,0 +1,29 @@
+{
+ "validation": [
+  {
+   "len": 48,
+   "max_abs": 4.9591064453125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 48,
+   "max_abs": 4.9591064453125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 48,
+   "max_abs": 4.9591064453125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 64,
+  "stride_proj": 8,
+  "tail": 32,
+  "stride_ro": 16,
+  "chunk": 8
+ },
+ "runtime_s": 25.90897846221924,
+ "run_id": "orbit_smoke-20261104-192939",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

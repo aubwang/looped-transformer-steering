@@ -1,0 +1,2938 @@
+[
+ {
+  "pid": 5000,
+  "uid": 50000,
+  "family": "settle",
+  "demo": "S",
+  "a": 3296,
+  "b": 4178,
+  "c": 7474,
+  "n_digits": 4,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "64 + 23 = 87\n583 + 395 = 978\n1330 + 7565 = 8895\n3296 + 4178 =",
+  "answer": " 7474",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5001,
+  "uid": 50001,
+  "family": "settle",
+  "demo": "S",
+  "a": 144,
+  "b": 184,
+  "c": 328,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "86 + 13 = 99\n314 + 166 = 480\n6095 + 1222 = 7317\n144 + 184 =",
+  "answer": " 328",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 3
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5002,
+  "uid": 50002,
+  "family": "settle",
+  "demo": "S",
+  "a": 589,
+  "b": 619,
+  "c": 1208,
+  "n_digits": 3,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "45 + 54 = 99\n453 + 395 = 848\n4135 + 2584 = 6719\n589 + 619 =",
+  "answer": " 1208",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5003,
+  "uid": 50003,
+  "family": "settle",
+  "demo": "S",
+  "a": 74,
+  "b": 88,
+  "c": 162,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "42 + 46 = 88\n469 + 129 = 598\n7091 + 2678 = 9769\n74 + 88 =",
+  "answer": " 162",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 6
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 2
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5004,
+  "uid": 50004,
+  "family": "settle",
+  "demo": "S",
+  "a": 7035,
+  "b": 4906,
+  "c": 11941,
+  "n_digits": 4,
+  "n_carries": 2,
+  "max_chain": 1,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "56 + 19 = 75\n133 + 759 = 892\n4870 + 4331 = 9201\n7035 + 4906 =",
+  "answer": " 11941",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5005,
+  "uid": 50005,
+  "family": "settle",
+  "demo": "S",
+  "a": 719,
+  "b": 678,
+  "c": 1397,
+  "n_digits": 3,
+  "n_carries": 2,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "31 + 50 = 81\n476 + 192 = 668\n5145 + 4653 = 9798\n719 + 678 =",
+  "answer": " 1397",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 7
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5006,
+  "uid": 50006,
+  "family": "settle",
+  "demo": "S",
+  "a": 4735,
+  "b": 1181,
+  "c": 5916,
+  "n_digits": 4,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "31 + 25 = 56\n771 + 117 = 888\n2369 + 7056 = 9425\n4735 + 1181 =",
+  "answer": " 5916",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 6
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5007,
+  "uid": 50007,
+  "family": "settle",
+  "demo": "S",
+  "a": 801,
+  "b": 480,
+  "c": 1281,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "48 + 47 = 95\n368 + 151 = 519\n4487 + 3892 = 8379\n801 + 480 =",
+  "answer": " 1281",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5008,
+  "uid": 50008,
+  "family": "settle",
+  "demo": "S",
+  "a": 523,
+  "b": 573,
+  "c": 1096,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "23 + 53 = 76\n234 + 476 = 710\n1976 + 6127 = 8103\n523 + 573 =",
+  "answer": " 1096",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 6
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5009,
+  "uid": 50009,
+  "family": "settle",
+  "demo": "S",
+  "a": 6117,
+  "b": 6904,
+  "c": 13021,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "51 + 46 = 97\n634 + 355 = 989\n3451 + 4083 = 7534\n6117 + 6904 =",
+  "answer": " 13021",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5010,
+  "uid": 50010,
+  "family": "settle",
+  "demo": "S",
+  "a": 20,
+  "b": 72,
+  "c": 92,
+  "n_digits": 2,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 2,
+  "prompt": "48 + 29 = 77\n753 + 203 = 956\n5810 + 2138 = 7948\n20 + 72 =",
+  "answer": " 92",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 2
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5011,
+  "uid": 50011,
+  "family": "settle",
+  "demo": "S",
+  "a": 110,
+  "b": 393,
+  "c": 503,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "20 + 56 = 76\n495 + 443 = 938\n3793 + 3274 = 7067\n110 + 393 =",
+  "answer": " 503",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 3
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5012,
+  "uid": 50012,
+  "family": "settle",
+  "demo": "S",
+  "a": 153,
+  "b": 722,
+  "c": 875,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "66 + 23 = 89\n220 + 333 = 553\n4886 + 3729 = 8615\n153 + 722 =",
+  "answer": " 875",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5013,
+  "uid": 50013,
+  "family": "settle",
+  "demo": "S",
+  "a": 715,
+  "b": 838,
+  "c": 1553,
+  "n_digits": 3,
+  "n_carries": 2,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "39 + 60 = 99\n252 + 513 = 765\n3547 + 4228 = 7775\n715 + 838 =",
+  "answer": " 1553",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 5
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 3
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5014,
+  "uid": 50014,
+  "family": "settle",
+  "demo": "S",
+  "a": 64,
+  "b": 44,
+  "c": 108,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "69 + 23 = 92\n481 + 230 = 711\n1455 + 7479 = 8934\n64 + 44 =",
+  "answer": " 108",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5015,
+  "uid": 50015,
+  "family": "settle",
+  "demo": "S",
+  "a": 49,
+  "b": 81,
+  "c": 130,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "85 + 10 = 95\n498 + 202 = 700\n2467 + 1528 = 3995\n49 + 81 =",
+  "answer": " 130",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 0
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5016,
+  "uid": 50016,
+  "family": "settle",
+  "demo": "S",
+  "a": 9985,
+  "b": 7087,
+  "c": 17072,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "22 + 55 = 77\n438 + 251 = 689\n1546 + 7748 = 9294\n9985 + 7087 =",
+  "answer": " 17072",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 2
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5017,
+  "uid": 50017,
+  "family": "settle",
+  "demo": "S",
+  "a": 5370,
+  "b": 2594,
+  "c": 7964,
+  "n_digits": 4,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "62 + 34 = 96\n183 + 278 = 461\n3581 + 2430 = 6011\n5370 + 2594 =",
+  "answer": " 7964",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 6
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5018,
+  "uid": 50018,
+  "family": "settle",
+  "demo": "S",
+  "a": 8734,
+  "b": 1288,
+  "c": 10022,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 3,
+  "overflow": 1,
+  "overflow_dep": 3,
+  "prompt": "47 + 49 = 96\n657 + 139 = 796\n1447 + 5349 = 6796\n8734 + 1288 =",
+  "answer": " 10022",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 3,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 2
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5019,
+  "uid": 50019,
+  "family": "settle",
+  "demo": "S",
+  "a": 642,
+  "b": 788,
+  "c": 1430,
+  "n_digits": 3,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "40 + 38 = 78\n405 + 448 = 853\n2155 + 3589 = 5744\n642 + 788 =",
+  "answer": " 1430",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 0
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5020,
+  "uid": 50020,
+  "family": "settle",
+  "demo": "S",
+  "a": 334,
+  "b": 444,
+  "c": 778,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "13 + 51 = 64\n138 + 831 = 969\n2477 + 3007 = 5484\n334 + 444 =",
+  "answer": " 778",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5021,
+  "uid": 50021,
+  "family": "settle",
+  "demo": "S",
+  "a": 3789,
+  "b": 8680,
+  "c": 12469,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "18 + 24 = 42\n283 + 416 = 699\n1476 + 3593 = 5069\n3789 + 8680 =",
+  "answer": " 12469",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 6
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5022,
+  "uid": 50022,
+  "family": "settle",
+  "demo": "S",
+  "a": 2480,
+  "b": 9646,
+  "c": 12126,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "80 + 10 = 90\n343 + 440 = 783\n1456 + 1169 = 2625\n2480 + 9646 =",
+  "answer": " 12126",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 6
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5023,
+  "uid": 50023,
+  "family": "settle",
+  "demo": "S",
+  "a": 222,
+  "b": 526,
+  "c": 748,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "35 + 22 = 57\n102 + 863 = 965\n1063 + 4847 = 5910\n222 + 526 =",
+  "answer": " 748",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5024,
+  "uid": 50024,
+  "family": "settle",
+  "demo": "S",
+  "a": 75,
+  "b": 94,
+  "c": 169,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "42 + 23 = 65\n382 + 463 = 845\n6104 + 2949 = 9053\n75 + 94 =",
+  "answer": " 169",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 6
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5025,
+  "uid": 50025,
+  "family": "settle",
+  "demo": "S",
+  "a": 86,
+  "b": 38,
+  "c": 124,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "27 + 29 = 56\n597 + 170 = 767\n2186 + 5379 = 7565\n86 + 38 =",
+  "answer": " 124",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5026,
+  "uid": 50026,
+  "family": "settle",
+  "demo": "S",
+  "a": 25,
+  "b": 59,
+  "c": 84,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "12 + 52 = 64\n363 + 169 = 532\n2515 + 3885 = 6400\n25 + 59 =",
+  "answer": " 84",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5027,
+  "uid": 50027,
+  "family": "settle",
+  "demo": "S",
+  "a": 807,
+  "b": 502,
+  "c": 1309,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "22 + 24 = 46\n460 + 372 = 832\n5138 + 3529 = 8667\n807 + 502 =",
+  "answer": " 1309",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5028,
+  "uid": 50028,
+  "family": "settle",
+  "demo": "S",
+  "a": 6360,
+  "b": 2316,
+  "c": 8676,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "58 + 28 = 86\n288 + 638 = 926\n1473 + 7092 = 8565\n6360 + 2316 =",
+  "answer": " 8676",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 6
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5029,
+  "uid": 50029,
+  "family": "settle",
+  "demo": "S",
+  "a": 55,
+  "b": 84,
+  "c": 139,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "16 + 83 = 99\n264 + 209 = 473\n2625 + 2630 = 5255\n55 + 84 =",
+  "answer": " 139",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5030,
+  "uid": 50030,
+  "family": "settle",
+  "demo": "S",
+  "a": 6469,
+  "b": 6938,
+  "c": 13407,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "32 + 49 = 81\n251 + 656 = 907\n6445 + 1309 = 7754\n6469 + 6938 =",
+  "answer": " 13407",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 7
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5031,
+  "uid": 50031,
+  "family": "settle",
+  "demo": "S",
+  "a": 461,
+  "b": 325,
+  "c": 786,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "72 + 15 = 87\n485 + 267 = 752\n4222 + 5221 = 9443\n461 + 325 =",
+  "answer": " 786",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 6
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5032,
+  "uid": 50032,
+  "family": "settle",
+  "demo": "S",
+  "a": 13,
+  "b": 88,
+  "c": 101,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 2,
+  "prompt": "19 + 32 = 51\n158 + 145 = 303\n1029 + 7088 = 8117\n13 + 88 =",
+  "answer": " 101",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5033,
+  "uid": 50033,
+  "family": "settle",
+  "demo": "S",
+  "a": 187,
+  "b": 884,
+  "c": 1071,
+  "n_digits": 3,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 2,
+  "prompt": "21 + 23 = 44\n395 + 176 = 571\n2965 + 3230 = 6195\n187 + 884 =",
+  "answer": " 1071",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 2,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5034,
+  "uid": 50034,
+  "family": "settle",
+  "demo": "S",
+  "a": 454,
+  "b": 384,
+  "c": 838,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "14 + 64 = 78\n198 + 468 = 666\n4370 + 1097 = 5467\n454 + 384 =",
+  "answer": " 838",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5035,
+  "uid": 50035,
+  "family": "settle",
+  "demo": "S",
+  "a": 8890,
+  "b": 3081,
+  "c": 11971,
+  "n_digits": 4,
+  "n_carries": 2,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "21 + 75 = 96\n215 + 483 = 698\n3076 + 6774 = 9850\n8890 + 3081 =",
+  "answer": " 11971",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5036,
+  "uid": 50036,
+  "family": "settle",
+  "demo": "S",
+  "a": 6565,
+  "b": 4972,
+  "c": 11537,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "11 + 81 = 92\n311 + 133 = 444\n4549 + 4138 = 8687\n6565 + 4972 =",
+  "answer": " 11537",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 5
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5037,
+  "uid": 50037,
+  "family": "settle",
+  "demo": "S",
+  "a": 593,
+  "b": 258,
+  "c": 851,
+  "n_digits": 3,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "15 + 78 = 93\n225 + 774 = 999\n3310 + 1825 = 5135\n593 + 258 =",
+  "answer": " 851",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5038,
+  "uid": 50038,
+  "family": "settle",
+  "demo": "S",
+  "a": 1717,
+  "b": 3182,
+  "c": 4899,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "53 + 40 = 93\n714 + 100 = 814\n3248 + 4368 = 7616\n1717 + 3182 =",
+  "answer": " 4899",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5039,
+  "uid": 50039,
+  "family": "settle",
+  "demo": "S",
+  "a": 835,
+  "b": 125,
+  "c": 960,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 2,
+  "prompt": "19 + 50 = 69\n270 + 525 = 795\n6309 + 2434 = 8743\n835 + 125 =",
+  "answer": " 960",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 0
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5040,
+  "uid": 50040,
+  "family": "settle",
+  "demo": "S",
+  "a": 26,
+  "b": 82,
+  "c": 108,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "19 + 62 = 81\n423 + 336 = 759\n1301 + 6410 = 7711\n26 + 82 =",
+  "answer": " 108",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5041,
+  "uid": 50041,
+  "family": "settle",
+  "demo": "S",
+  "a": 74,
+  "b": 10,
+  "c": 84,
+  "n_digits": 2,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "20 + 75 = 95\n240 + 320 = 560\n2479 + 2711 = 5190\n74 + 10 =",
+  "answer": " 84",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5042,
+  "uid": 50042,
+  "family": "settle",
+  "demo": "S",
+  "a": 7854,
+  "b": 9193,
+  "c": 17047,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "69 + 11 = 80\n362 + 535 = 897\n2466 + 6905 = 9371\n7854 + 9193 =",
+  "answer": " 17047",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5043,
+  "uid": 50043,
+  "family": "settle",
+  "demo": "S",
+  "a": 7415,
+  "b": 5720,
+  "c": 13135,
+  "n_digits": 4,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "32 + 13 = 45\n236 + 506 = 742\n1809 + 4374 = 6183\n7415 + 5720 =",
+  "answer": " 13135",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5044,
+  "uid": 50044,
+  "family": "settle",
+  "demo": "S",
+  "a": 42,
+  "b": 66,
+  "c": 108,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "68 + 15 = 83\n656 + 325 = 981\n3462 + 5933 = 9395\n42 + 66 =",
+  "answer": " 108",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5045,
+  "uid": 50045,
+  "family": "settle",
+  "demo": "S",
+  "a": 89,
+  "b": 13,
+  "c": 102,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 2,
+  "prompt": "18 + 40 = 58\n108 + 477 = 585\n1545 + 3351 = 4896\n89 + 13 =",
+  "answer": " 102",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 2
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5046,
+  "uid": 50046,
+  "family": "settle",
+  "demo": "S",
+  "a": 59,
+  "b": 37,
+  "c": 96,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "39 + 42 = 81\n549 + 109 = 658\n5262 + 4486 = 9748\n59 + 37 =",
+  "answer": " 96",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 6
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5047,
+  "uid": 50047,
+  "family": "settle",
+  "demo": "S",
+  "a": 9877,
+  "b": 4957,
+  "c": 14834,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "34 + 18 = 52\n147 + 780 = 927\n6893 + 2211 = 9104\n9877 + 4957 =",
+  "answer": " 14834",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 8
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5048,
+  "uid": 50048,
+  "family": "settle",
+  "demo": "S",
+  "a": 7241,
+  "b": 5768,
+  "c": 13009,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "20 + 57 = 77\n442 + 391 = 833\n4242 + 1127 = 5369\n7241 + 5768 =",
+  "answer": " 13009",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5049,
+  "uid": 50049,
+  "family": "settle",
+  "demo": "S",
+  "a": 4842,
+  "b": 3142,
+  "c": 7984,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "18 + 57 = 75\n114 + 447 = 561\n3045 + 1721 = 4766\n4842 + 3142 =",
+  "answer": " 7984",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5050,
+  "uid": 50050,
+  "family": "settle",
+  "demo": "S",
+  "a": 96,
+  "b": 84,
+  "c": 180,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "28 + 17 = 45\n611 + 158 = 769\n4078 + 4118 = 8196\n96 + 84 =",
+  "answer": " 180",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 0
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5051,
+  "uid": 50051,
+  "family": "settle",
+  "demo": "S",
+  "a": 352,
+  "b": 874,
+  "c": 1226,
+  "n_digits": 3,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "56 + 23 = 79\n557 + 392 = 949\n2402 + 7533 = 9935\n352 + 874 =",
+  "answer": " 1226",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 6
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5052,
+  "uid": 50052,
+  "family": "settle",
+  "demo": "S",
+  "a": 885,
+  "b": 240,
+  "c": 1125,
+  "n_digits": 3,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "29 + 42 = 71\n362 + 632 = 994\n2280 + 1024 = 3304\n885 + 240 =",
+  "answer": " 1125",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5053,
+  "uid": 50053,
+  "family": "settle",
+  "demo": "S",
+  "a": 284,
+  "b": 161,
+  "c": 445,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "20 + 63 = 83\n686 + 307 = 993\n3599 + 5202 = 8801\n284 + 161 =",
+  "answer": " 445",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5054,
+  "uid": 50054,
+  "family": "settle",
+  "demo": "S",
+  "a": 53,
+  "b": 70,
+  "c": 123,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "18 + 73 = 91\n287 + 392 = 679\n3339 + 3382 = 6721\n53 + 70 =",
+  "answer": " 123",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 3
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5055,
+  "uid": 50055,
+  "family": "settle",
+  "demo": "S",
+  "a": 94,
+  "b": 85,
+  "c": 179,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "11 + 25 = 36\n403 + 218 = 621\n1960 + 1394 = 3354\n94 + 85 =",
+  "answer": " 179",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5056,
+  "uid": 50056,
+  "family": "settle",
+  "demo": "S",
+  "a": 42,
+  "b": 49,
+  "c": 91,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "55 + 16 = 71\n543 + 392 = 935\n6749 + 2719 = 9468\n42 + 49 =",
+  "answer": " 91",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5057,
+  "uid": 50057,
+  "family": "settle",
+  "demo": "S",
+  "a": 69,
+  "b": 61,
+  "c": 130,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "25 + 10 = 35\n386 + 593 = 979\n5557 + 3566 = 9123\n69 + 61 =",
+  "answer": " 130",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 0
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5058,
+  "uid": 50058,
+  "family": "settle",
+  "demo": "S",
+  "a": 19,
+  "b": 62,
+  "c": 81,
+  "n_digits": 2,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "33 + 50 = 83\n710 + 144 = 854\n4256 + 1543 = 5799\n19 + 62 =",
+  "answer": " 81",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1
+ },
+ {
+  "pid": 5059,
+  "uid": 50059,
+  "family": "settle",
+  "demo": "S",
+  "a": 2239,
+  "b": 1175,
+  "c": 3414,
+  "n_digits": 4,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "18 + 79 = 97\n314 + 324 = 638\n7313 + 1096 = 8409\n2239 + 1175 =",
+  "answer": " 3414",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 3
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 4
+   }
+  ],
+  "ipos": 1
+ }
+]

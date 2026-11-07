@@ -1,0 +1,27 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 96,
+  "eps": 0.1,
+  "code_sha256": "c27868f352e97a29"
+ },
+ "runtime_s": 45.128952471000005,
+ "run_id": "rtransfer-20261106-205118",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

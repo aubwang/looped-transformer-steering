@@ -1,0 +1,38 @@
+{
+ "validation": [
+  {
+   "len": 49,
+   "max_abs": 6.580352783203125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 5.91278076171875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 5.91278076171875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 16,
+  "beta": 0.5,
+  "n_damp": 10,
+  "fp_tol": 1e-05,
+  "m": 6,
+  "eps": 0.1,
+  "val_tol": 0.02,
+  "mu_min": 0.02,
+  "T": 36,
+  "chunk": 4,
+  "budget_s": 600,
+  "smoke_force_eligible": true,
+  "code_sha256": "6186acf56a05afbd"
+ },
+ "runtime_s": 26.153358064,
+ "run_id": "relax_smoke-20261105-194936",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

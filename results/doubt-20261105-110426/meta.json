@@ -1,0 +1,51 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 5.626678466796875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 5.7220458984375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 6.29425048828125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "n_seeds": 8,
+  "K": 96,
+  "K_extend": 128,
+  "checkpoints": [
+   8,
+   16,
+   32,
+   64,
+   96
+  ],
+  "dense_until": 32,
+  "stat_thr": 2e-05,
+  "chunk": 64,
+  "n_damp": 200,
+  "beta": 0.5,
+  "fp_tol": 1e-05,
+  "m": 32,
+  "eps": 0.1,
+  "eps_small": 0.05,
+  "push_rel": 0.001,
+  "K_push": 64,
+  "gap_every": 2,
+  "budget_s": 480,
+  "reserve_s": 25,
+  "code_sha256": "ae4e7897abb2b195"
+ },
+ "runtime_s": 388.855718103,
+ "run_id": "doubt-20261105-110426",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "row_steps": 32181
+}

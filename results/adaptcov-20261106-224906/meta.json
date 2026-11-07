@@ -1,0 +1,26 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 96,
+  "code_sha256": "4d1bcee8e679d428"
+ },
+ "runtime_s": 60.456644583999996,
+ "run_id": "adaptcov-20261106-224906",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

@@ -1,0 +1,33 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 4,
+  "eps": 0.1,
+  "total_s": 200,
+  "code_sha256": "bb42f54c246fcc8f"
+ },
+ "runtime_s": 20.84239143,
+ "run_id": "blockdecomp_smoke-20261106-220005",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "replica_rel_err": 0.0,
+ "attn_mix_rel_err": 0.0,
+ "step_vs_core_rel_err": 0.0,
+ "n_done_push": 32,
+ "nonfinite_source_terms": 0
+}

@@ -1,0 +1,57 @@
+{
+ "rows": 678,
+ "problems": 126,
+ "dim": 5280,
+ "readout_accuracy_pos_ge1": 0.8849557522123894,
+ "state_norm_mean": 76.37824844928652,
+ "full_space_encoding": {
+  "nuisance_R2": 0.33698401472633943,
+  "categorical_gain_R2": 0.06078279653032489,
+  "line_share": 0.293760657139005,
+  "circle_share": 1.0788643553014254,
+  "circle_vs_scrambled_p_50": 0.0196078431372549
+ },
+ "residual_feature_eigs": [
+  0.38261403557840024,
+  0.4157823150909505
+ ],
+ "plane_vs_strong_nuisance_principal_cosines": [
+  0.99409122544543,
+  0.9768807875538877
+ ],
+ "plane_vs_strong_nuisance_norm_ratio": 1.0251932360505571,
+ "circle_plane": {
+  "norm_u_cos": 17.277369228293242,
+  "norm_u_sin": 15.541087994229192,
+  "cos_angle_u_cos_u_sin": 0.01729216023804369,
+  "one_notch_norm_mean": 10.148370242823232,
+  "one_notch_rel_to_state_norm": 0.13286990012034025,
+  "neighbor_class_mean_dist_mean": 14.570940589292992
+ },
+ "controls_in_circle_plane_frac": {
+  "random": [
+   0.0002934651542872094,
+   0.00010319321970083447,
+   0.00017930884918349095
+  ],
+  "pca": [
+   0.07442382433909915,
+   0.00421678600239398,
+   0.01908630080355853
+  ],
+  "scr_plane_principal_cosines_with_true": [
+   [
+    0.8944295842200511,
+    0.6650845458941373
+   ],
+   [
+    0.9793581915772577,
+    0.7623426340899274
+   ],
+   [
+    0.8856416959612383,
+    0.6620454214841902
+   ]
+  ]
+ }
+}

@@ -1,0 +1,36 @@
+{
+ "validation": [
+  {
+   "len": 29,
+   "max_abs": 4.100799560546875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 68,
+   "max_abs": 3.2901763916015625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 120,
+   "max_abs": 3.337860107421875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 256,
+  "alpha": 1.0,
+  "dense": 64,
+  "sparse": 4,
+  "tail": 64,
+  "chunk": 50,
+  "total_s": 540,
+  "code_sha256": "fafe422fdb124de0"
+ },
+ "runtime_s": 510.51162924100004,
+ "run_id": "mcq_base-20261106-014652",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [
+  "chunk 50 aborted at loop 92"
+ ],
+ "n_done": 50
+}

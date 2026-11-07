@@ -1,0 +1,38 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 5.626678466796875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 5.412101745605469e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 6.4849853515625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 96,
+  "T": 32,
+  "m": 60,
+  "eps": 0.5,
+  "eps_small": 0.05,
+  "alphas": [
+   0.1,
+   1.0
+  ],
+  "chunk": 56,
+  "block_checkpoints": [
+   8,
+   32
+  ]
+ },
+ "runtime_s": 751.4082946777344,
+ "run_id": "jac-20261104-164552",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

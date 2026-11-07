@@ -1,0 +1,111 @@
+{
+ "validation": [
+  {
+   "len": 61,
+   "max_abs": 3.24249267578125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 63,
+   "max_abs": 4.57763671875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 64,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 64,
+  "Tr": 24,
+  "Trec": 24,
+  "ro": [
+   0,
+   1,
+   2,
+   4,
+   8,
+   16,
+   24,
+   25,
+   26,
+   28,
+   32,
+   40,
+   48
+  ],
+  "conds": [
+   [
+    "sham",
+    "sham",
+    "-",
+    0,
+    0.0
+   ],
+   [
+    "oneshot+",
+    "oneshot",
+    "B",
+    1,
+    1.0
+   ],
+   [
+    "oneshot-",
+    "oneshot",
+    "B",
+    -1,
+    1.0
+   ],
+   [
+    "context+",
+    "context",
+    "B",
+    1,
+    1.0
+   ],
+   [
+    "context-",
+    "context",
+    "B",
+    -1,
+    1.0
+   ],
+   [
+    "context+half",
+    "context",
+    "B",
+    1,
+    0.5
+   ],
+   [
+    "context-half",
+    "context",
+    "B",
+    -1,
+    0.5
+   ],
+   [
+    "oneshot_rand",
+    "oneshot",
+    "R",
+    1,
+    1.0
+   ],
+   [
+    "context_rand",
+    "context",
+    "R",
+    1,
+    1.0
+   ]
+  ],
+  "chunk": 180,
+  "total_s": 440,
+  "site": "ans",
+  "code_sha256": "40cff9a0f5a07d7a"
+ },
+ "runtime_s": 432.84483844100004,
+ "run_id": "tsteer_ans-20261106-042907",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

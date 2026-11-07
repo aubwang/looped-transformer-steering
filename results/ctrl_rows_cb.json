@@ -1,0 +1,482 @@
+[
+ {
+  "uid": 100092,
+  "unit": "city46",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Addis Ababa is in Ethiopia.\nIs this statement false?"
+ },
+ {
+  "uid": 100092,
+  "unit": "city46",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Addis Ababa is in Ethiopia.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100093,
+  "unit": "city46",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Addis Ababa is in Morocco.\nIs this statement false?"
+ },
+ {
+  "uid": 100093,
+  "unit": "city46",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Addis Ababa is in Morocco.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100030,
+  "unit": "city15",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Santiago is in Chile.\nIs this statement false?"
+ },
+ {
+  "uid": 100030,
+  "unit": "city15",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Santiago is in Chile.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100031,
+  "unit": "city15",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Santiago is in the United States.\nIs this statement false?"
+ },
+ {
+  "uid": 100031,
+  "unit": "city15",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Santiago is in the United States.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100086,
+  "unit": "city43",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Cape Town is in South Africa.\nIs this statement false?"
+ },
+ {
+  "uid": 100086,
+  "unit": "city43",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Cape Town is in South Africa.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100087,
+  "unit": "city43",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Cape Town is in Iran.\nIs this statement false?"
+ },
+ {
+  "uid": 100087,
+  "unit": "city43",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Cape Town is in Iran.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100050,
+  "unit": "city25",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Bangkok is in Thailand.\nIs this statement false?"
+ },
+ {
+  "uid": 100050,
+  "unit": "city25",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Bangkok is in Thailand.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100051,
+  "unit": "city25",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Bangkok is in Japan.\nIs this statement false?"
+ },
+ {
+  "uid": 100051,
+  "unit": "city25",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Bangkok is in Japan.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100076,
+  "unit": "city38",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Amsterdam is in the Netherlands.\nIs this statement false?"
+ },
+ {
+  "uid": 100076,
+  "unit": "city38",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Amsterdam is in the Netherlands.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100077,
+  "unit": "city38",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Amsterdam is in Argentina.\nIs this statement false?"
+ },
+ {
+  "uid": 100077,
+  "unit": "city38",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Amsterdam is in Argentina.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100084,
+  "unit": "city42",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Rio de Janeiro is in Brazil.\nIs this statement false?"
+ },
+ {
+  "uid": 100084,
+  "unit": "city42",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Rio de Janeiro is in Brazil.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100085,
+  "unit": "city42",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Rio de Janeiro is in China.\nIs this statement false?"
+ },
+ {
+  "uid": 100085,
+  "unit": "city42",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Rio de Janeiro is in China.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100078,
+  "unit": "city39",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Brussels is in Belgium.\nIs this statement false?"
+ },
+ {
+  "uid": 100078,
+  "unit": "city39",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Brussels is in Belgium.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100079,
+  "unit": "city39",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Brussels is in Ukraine.\nIs this statement false?"
+ },
+ {
+  "uid": 100079,
+  "unit": "city39",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Brussels is in Ukraine.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100070,
+  "unit": "city35",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Prague is in the Czech Republic.\nIs this statement false?"
+ },
+ {
+  "uid": 100070,
+  "unit": "city35",
+  "dataset": "cities",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Prague is in the Czech Republic.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100071,
+  "unit": "city35",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: The city of Prague is in Ethiopia.\nIs this statement false?"
+ },
+ {
+  "uid": 100071,
+  "unit": "city35",
+  "dataset": "cities",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: The city of Prague is in Ethiopia.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100186,
+  "unit": "pair33",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 56 is larger than 48.\nIs this statement false?"
+ },
+ {
+  "uid": 100186,
+  "unit": "pair33",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 56 is larger than 48.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100187,
+  "unit": "pair33",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 48 is larger than 56.\nIs this statement false?"
+ },
+ {
+  "uid": 100187,
+  "unit": "pair33",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 48 is larger than 56.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100148,
+  "unit": "pair14",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 42 is larger than 23.\nIs this statement false?"
+ },
+ {
+  "uid": 100148,
+  "unit": "pair14",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 42 is larger than 23.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100149,
+  "unit": "pair14",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 23 is larger than 42.\nIs this statement false?"
+ },
+ {
+  "uid": 100149,
+  "unit": "pair14",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 23 is larger than 42.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100152,
+  "unit": "pair16",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 62 is larger than 25.\nIs this statement false?"
+ },
+ {
+  "uid": 100152,
+  "unit": "pair16",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 62 is larger than 25.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100153,
+  "unit": "pair16",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 25 is larger than 62.\nIs this statement false?"
+ },
+ {
+  "uid": 100153,
+  "unit": "pair16",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 25 is larger than 62.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100228,
+  "unit": "pair54",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 93 is larger than 69.\nIs this statement false?"
+ },
+ {
+  "uid": 100228,
+  "unit": "pair54",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 93 is larger than 69.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100229,
+  "unit": "pair54",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 69 is larger than 93.\nIs this statement false?"
+ },
+ {
+  "uid": 100229,
+  "unit": "pair54",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 69 is larger than 93.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100224,
+  "unit": "pair52",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 77 is larger than 69.\nIs this statement false?"
+ },
+ {
+  "uid": 100224,
+  "unit": "pair52",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 77 is larger than 69.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100225,
+  "unit": "pair52",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 69 is larger than 77.\nIs this statement false?"
+ },
+ {
+  "uid": 100225,
+  "unit": "pair52",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 69 is larger than 77.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100196,
+  "unit": "pair38",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 58 is larger than 54.\nIs this statement false?"
+ },
+ {
+  "uid": 100196,
+  "unit": "pair38",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 58 is larger than 54.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100197,
+  "unit": "pair38",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 54 is larger than 58.\nIs this statement false?"
+ },
+ {
+  "uid": 100197,
+  "unit": "pair38",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 54 is larger than 58.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100234,
+  "unit": "pair57",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 88 is larger than 83.\nIs this statement false?"
+ },
+ {
+  "uid": 100234,
+  "unit": "pair57",
+  "dataset": "compare",
+  "truth": 1,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 88 is larger than 83.\nA) false B) true\nAnswer:"
+ },
+ {
+  "uid": 100235,
+  "unit": "pair57",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "fq",
+  "prompt": "Statement: The Pacific is an ocean.\nIs this statement false? No\nStatement: Spiders have six legs.\nIs this statement false? Yes\nStatement: Ice is frozen water.\nIs this statement false? No\nStatement: 83 is larger than 88.\nIs this statement false?"
+ },
+ {
+  "uid": 100235,
+  "unit": "pair57",
+  "dataset": "compare",
+  "truth": 0,
+  "fmt": "ba",
+  "prompt": "Statement: The Pacific is an ocean.\nA) false B) true\nAnswer: B\nStatement: Spiders have six legs.\nA) false B) true\nAnswer: A\nStatement: Ice is frozen water.\nA) false B) true\nAnswer: B\nStatement: 83 is larger than 88.\nA) false B) true\nAnswer:"
+ }
+]

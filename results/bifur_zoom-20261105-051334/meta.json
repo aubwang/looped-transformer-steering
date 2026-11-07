@@ -1,0 +1,78 @@
+{
+ "validation": [
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "uid0": 99,
+  "uid1": 98,
+  "K": 512,
+  "beta": 0.5,
+  "n_damp": 300,
+  "n_damp_cont": 300,
+  "fp_tol": 1e-05,
+  "m": 40,
+  "m_two_step": 24,
+  "eps": 0.1,
+  "eps_check": [
+   0.25,
+   0.1,
+   0.05
+  ],
+  "stat_thr": 2e-05,
+  "floor_thr": 1e-05,
+  "amp_tol": 0.02,
+  "closure_tol": 0.01,
+  "axis_min_amp": 0.001,
+  "eig_res_tol": 0.01,
+  "track_ov_min": 0.9,
+  "max_extend_coarse": 0,
+  "max_extend_fine": 6,
+  "K_extend": 1024,
+  "n_coarse": 0,
+  "n_refine": 0,
+  "refine_halfwidth": 0,
+  "push_rel": [
+   0.001,
+   0.0001
+  ],
+  "K_push": 128,
+  "n_twostep": 4,
+  "K_hyst": 256,
+  "budget_s": 420,
+  "reserve_s": 25,
+  "alpha_cross_prior": 0.712,
+  "fixed_alphas": [
+   0.64,
+   0.67,
+   0.69,
+   0.7,
+   0.705,
+   0.71,
+   0.715,
+   0.72,
+   0.73,
+   0.75,
+   0.78
+  ],
+  "code_sha256": "a073bfa7ba0c0b7d"
+ },
+ "runtime_s": 248.81010045899998,
+ "run_id": "bifur_zoom-20261105-051334",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "row_steps": 18762
+}

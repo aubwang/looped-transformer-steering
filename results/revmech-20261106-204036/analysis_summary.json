@@ -1,0 +1,94 @@
+{
+ "gates": {
+  "G1_median": 0.0006906183950172126,
+  "G1_q90": 0.004506395059718293,
+  "G2_S_q90": 4.791104637494263e-14,
+  "G2_c0_q90": 3.923108720499056e-14,
+  "G3_orth_median": 4.3298697960381105e-15,
+  "G3_fd_eps_median": 0.0021792007425372574,
+  "condW_median": 74.94135356725484,
+  "condW_q90": 216.43547879416133,
+  "cancellation_S_median": 19.491798113980472,
+  "cancellation_c0_median": 35.900481901966934,
+  "pass": true
+ },
+ "PRIMARY": {
+  "median_corr_c0_S": -0.5911356933756807,
+  "ci_c0_S": [
+   -0.6548648385349141,
+   -0.5253662302478493
+  ],
+  "median_corr_c0_S_noflip": -0.07979137814921346,
+  "ci_c0_noflip": [
+   -0.2645227685533645,
+   0.04748784594181314
+  ],
+  "median_corr_S_observed": 0.9779445323621963,
+  "krylov40": {
+   "c0_S": -0.5911354151433337,
+   "c0_noflip": -0.16779489236236322,
+   "verdict": "REWEIGHTING"
+  },
+  "verdict": "REWEIGHTING",
+  "verdict_before_gates": "REWEIGHTING"
+ },
+ "SECONDARY": {
+  "L": {
+   "target_reversal_fraction": 0.785,
+   "median_c1_over_c0": -3.998304744243103,
+   "first_sign_change": {
+    "1": 155,
+    "2": 2,
+    "3": 1,
+    "4": 1,
+    "5": 15,
+    "6": 3,
+    "7": 4,
+    "8": 6,
+    "9": 3,
+    "10": 2,
+    "11": 3,
+    "13": 1,
+    "17": 1,
+    "21": 1,
+    "28": 1,
+    "None": 1
+   },
+   "target_median_contrib": {
+    "forward": 1.5743396712921376,
+    "overshoot": 0.013492783592010876,
+    "rotating": 0.2334838781992335
+   },
+   "fullmatrix_median_contrib": {
+    "forward": -0.02054225559599383,
+    "overshoot": 0.0,
+    "rotating": 0.014023181847443554
+   },
+   "readout_weighted_amplitude_share_reversing": 0.48474591422760516
+  },
+  "G": {
+   "target_reversal_fraction": 0.655,
+   "median_c1_over_c0": 0.004942233153934096,
+   "first_sign_change": {
+    "1": 91,
+    "2": 83,
+    "3": 15,
+    "4": 8,
+    "5": 2,
+    "6": 1
+   },
+   "target_median_contrib": {
+    "forward": 0.1464811045841115,
+    "overshoot": -0.017426133410094295,
+    "rotating": -0.16187614494483513
+   },
+   "fullmatrix_median_contrib": {
+    "forward": 0.0012279536366155142,
+    "overshoot": 0.0,
+    "rotating": -0.009089233326254637
+   },
+   "readout_weighted_amplitude_share_reversing": 0.6723136155500512
+  },
+  "R0_median_abs_S": 0.047394062515205594
+ }
+}

@@ -1,0 +1,35 @@
+{
+ "validation": [
+  {
+   "len": 48,
+   "max_abs": 4.482269287109375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 5.435943603515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.103515625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 12,
+  "beta": 0.5,
+  "n_damp": 10,
+  "fp_tol": 1e-05,
+  "m": 6,
+  "eps": 0.1,
+  "chunk": 128,
+  "reserve_arnoldi_s": 60,
+  "budget_s": 600,
+  "code_sha256": "31219aab4740019f"
+ },
+ "runtime_s": 28.484928166000003,
+ "run_id": "settle_smoke-20261105-203527",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

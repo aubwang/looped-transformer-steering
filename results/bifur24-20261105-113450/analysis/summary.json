@@ -1,0 +1,365 @@
+{
+ "family": "E_a = (1-a) E(uid 48) + a E(uid 49), whole aligned prelude-output tensor; source/q = '=' (position 44)",
+ "endpoint_lambda": {
+  "a=0 (stationary)": -0.9455017210880599,
+  "a=1 (cycling)": -1.0091401096235502
+ },
+ "coarse": [
+  {
+   "alpha": 0.0,
+   "lam": -0.9455,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.0667,
+   "lam": -0.9391,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.1333,
+   "lam": -0.929,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.2,
+   "lam": -0.9149,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.2667,
+   "lam": -0.8928,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.3333,
+   "lam": -0.8736,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.4,
+   "lam": -0.8703,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.0029
+  },
+  {
+   "alpha": 0.4667,
+   "lam": -0.8801,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.00546
+  },
+  {
+   "alpha": 0.5333,
+   "lam": -0.9076,
+   "eligible": false,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.0065
+  },
+  {
+   "alpha": 0.6,
+   "lam": -0.935,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.01032
+  },
+  {
+   "alpha": 0.6667,
+   "lam": -0.9558,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 1,
+   "amp_rel_q": 0.00993
+  },
+  {
+   "alpha": 0.7333,
+   "lam": -0.9743,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.8,
+   "lam": -0.9875,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0
+  },
+  {
+   "alpha": 0.8667,
+   "lam": -0.9947,
+   "eligible": true,
+   "label": 2,
+   "first_moving": -1,
+   "amp_rel_q": 4e-05
+  },
+  {
+   "alpha": 0.9333,
+   "lam": -1.003,
+   "eligible": true,
+   "label": 2,
+   "first_moving": 44,
+   "amp_rel_q": 0.00379
+  },
+  {
+   "alpha": 1.0,
+   "lam": -1.0091,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 44,
+   "amp_rel_q": 0.01953
+  }
+ ],
+ "zoom": [
+  {
+   "alpha": 0.8093,
+   "lam": -0.9881,
+   "eligible": true,
+   "label": 0,
+   "first_moving": -1,
+   "amp_rel_q": 0.0,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.8411,
+   "lam": -0.9916,
+   "eligible": true,
+   "label": 2,
+   "first_moving": -1,
+   "amp_rel_q": 2e-05,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.8729,
+   "lam": -0.9952,
+   "eligible": true,
+   "label": 2,
+   "first_moving": -1,
+   "amp_rel_q": 4e-05,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.9047,
+   "lam": -0.9991,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 44,
+   "amp_rel_q": 0.00028,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.9093,
+   "lam": -1.0002,
+   "eligible": true,
+   "label": 1,
+   "first_moving": 44,
+   "amp_rel_q": 0.0003,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.9364,
+   "lam": -1.0031,
+   "eligible": true,
+   "label": 2,
+   "first_moving": 44,
+   "amp_rel_q": 0.00511,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 0.9682,
+   "lam": -1.0072,
+   "eligible": true,
+   "label": 2,
+   "first_moving": 44,
+   "amp_rel_q": 0.00715,
+   "readout_same_both_phases": true
+  },
+  {
+   "alpha": 1.0,
+   "lam": -1.009,
+   "eligible": true,
+   "label": 2,
+   "first_moving": 44,
+   "amp_rel_q": 0.01573,
+   "readout_same_both_phases": true
+  }
+ ],
+ "alpha_star_zoom": 0.9086208934517483,
+ "scaling_points": [
+  [
+   "coarse",
+   1.0,
+   0.009140109623550163,
+   0.019530609250068665
+  ]
+ ],
+ "A2_over_mu_slope_through_origin": 0.041733055005822625,
+ "A2_vs_mu_linear_fit": [
+  0.020866527502911302,
+  0.00019072234883943381
+ ],
+ "A2_over_mu_each": [
+  0.0417
+ ],
+ "two_step": {
+  "alpha": [
+   0.9046747409328937,
+   0.9093494818657873
+  ],
+  "mult": [
+   0.9985,
+   1.0
+  ],
+  "pred_1_minus_4mu": [
+   1.0037,
+   0.9993
+  ],
+  "fd_resid_eps0.1": [
+   0.0016,
+   0.0016
+  ],
+  "axis_overlap": [
+   1.0,
+   1.0
+  ]
+ },
+ "pushes": [
+  {
+   "alpha": 0.8728996545771915,
+   "lam": -0.9951828114876735,
+   "mag": 0.001,
+   "abs_rate": 0.995,
+   "alternates": true,
+   "control_max": 1.3013699572184123e-05
+  },
+  {
+   "alpha": 0.8728996545771915,
+   "lam": -0.9951828114876735,
+   "mag": 0.0001,
+   "abs_rate": 0.9936,
+   "alternates": true,
+   "control_max": 1.3013699572184123e-05
+  },
+  {
+   "alpha": 0.9046747409328937,
+   "lam": -0.9990796080572093,
+   "mag": 0.001,
+   "abs_rate": 0.9996,
+   "alternates": true,
+   "control_max": 1.3725453754886985e-05
+  },
+  {
+   "alpha": 0.9046747409328937,
+   "lam": -0.9990796080572093,
+   "mag": 0.0001,
+   "abs_rate": 0.999,
+   "alternates": true,
+   "control_max": 1.3725453754886985e-05
+  },
+  {
+   "alpha": 0.9093494818657873,
+   "lam": -1.0001699343607953,
+   "mag": 0.001,
+   "abs_rate": 0.9996,
+   "alternates": true,
+   "control_max": 1.4696879588882439e-05
+  },
+  {
+   "alpha": 0.9093494818657873,
+   "lam": -1.0001699343607953,
+   "mag": 0.0001,
+   "abs_rate": 1.0012,
+   "alternates": true,
+   "control_max": 1.4696879588882439e-05
+  },
+  {
+   "alpha": 0.9364498272885958,
+   "lam": -1.0031076501921816,
+   "mag": 0.001,
+   "abs_rate": 1.0031,
+   "alternates": true,
+   "control_max": 3.952869155909866e-05
+  },
+  {
+   "alpha": 0.9364498272885958,
+   "lam": -1.0031076501921816,
+   "mag": 0.0001,
+   "abs_rate": 1.0044,
+   "alternates": true,
+   "control_max": 3.952869155909866e-05
+  }
+ ],
+ "endpoint_start": {
+  "alpha": [
+   0.8093494818657874,
+   0.8411245682214895,
+   0.8728996545771915,
+   0.9046747409328937,
+   0.9093494818657873,
+   0.9364498272885958,
+   0.968224913644298,
+   1.0
+  ],
+  "label": [
+   2,
+   2,
+   2,
+   2,
+   2,
+   1,
+   1,
+   1
+  ],
+  "amp_rel_q_after_256": [
+   0.0006099999882280827,
+   0.0014199999859556556,
+   0.0031500000040978193,
+   0.006610000040382147,
+   0.007290000095963478,
+   0.011699999682605267,
+   0.016620000824332237,
+   0.01948999986052513
+  ],
+  "common_init_amp_rel_q": [
+   0.0,
+   1.9999999494757503e-05,
+   3.9999998989515007e-05,
+   0.0002800000074785203,
+   0.0003000000142492354,
+   0.005109999794512987,
+   0.007149999961256981,
+   0.0157299991697073
+  ]
+ },
+ "token1_offmanifold_cycles_coarse_alpha": [
+  0.4,
+  0.467,
+  0.533,
+  0.6,
+  0.667
+ ]
+}

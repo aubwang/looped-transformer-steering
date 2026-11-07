@@ -1,0 +1,1582 @@
+[
+ {
+  "pid": 38,
+  "uid": 77,
+  "family": "dep",
+  "demo": "B",
+  "a": 583,
+  "b": 857,
+  "c": 1440,
+  "n_digits": 3,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n583 + 857 =",
+  "answer": " 1440",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 0
+   }
+  ],
+  "ipos": 2,
+  "cell": "confident_wrong",
+  "sel_margin": 0.9070550799369812,
+  "sel_margin_perstep": 0.907055139541626,
+  "sel_mass": 0.9990516901016235,
+  "sel_top": 3,
+  "sel_second": 2,
+  "truth": 4,
+  "multi": true
+ },
+ {
+  "pid": 23,
+  "uid": 46,
+  "family": "carries",
+  "demo": "A",
+  "a": 120,
+  "b": 710,
+  "c": 830,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n120 + 710 =",
+  "answer": " 830",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 0
+   }
+  ],
+  "ipos": 1,
+  "cell": "confident_wrong",
+  "sel_margin": 0.9099299311637878,
+  "sel_margin_perstep": 0.9097062349319458,
+  "sel_mass": 0.9988409876823425,
+  "sel_top": 1,
+  "sel_second": 3,
+  "truth": 3,
+  "multi": true
+ },
+ {
+  "pid": 74,
+  "uid": 148,
+  "family": "dep",
+  "demo": "A",
+  "a": 4148,
+  "b": 6879,
+  "c": 11027,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n4148 + 6879 =",
+  "answer": " 11027",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 7
+   }
+  ],
+  "ipos": 1,
+  "cell": "confident_wrong",
+  "sel_margin": 0.9721134305000305,
+  "sel_margin_perstep": 0.9721131324768066,
+  "sel_mass": 0.99847012758255,
+  "sel_top": 0,
+  "sel_second": 1,
+  "truth": 1,
+  "multi": true
+ },
+ {
+  "pid": 53,
+  "uid": 107,
+  "family": "carries",
+  "demo": "B",
+  "a": 8231,
+  "b": 4718,
+  "c": 12949,
+  "n_digits": 4,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n8231 + 4718 =",
+  "answer": " 12949",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_correct",
+  "sel_margin": 0.10956284403800964,
+  "sel_margin_perstep": 0.10956179350614548,
+  "sel_mass": 0.990612804889679,
+  "sel_top": 2,
+  "sel_second": 3,
+  "truth": 2,
+  "multi": true
+ },
+ {
+  "pid": 56,
+  "uid": 112,
+  "family": "carries",
+  "demo": "A",
+  "a": 2387,
+  "b": 5035,
+  "c": 7422,
+  "n_digits": 4,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n2387 + 5035 =",
+  "answer": " 7422",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 2
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_correct",
+  "sel_margin": 0.29185330867767334,
+  "sel_margin_perstep": 0.291853129863739,
+  "sel_mass": 0.999365508556366,
+  "sel_top": 4,
+  "sel_second": 3,
+  "truth": 4,
+  "multi": true
+ },
+ {
+  "pid": 57,
+  "uid": 115,
+  "family": "carries",
+  "demo": "B",
+  "a": 5541,
+  "b": 9066,
+  "c": 14607,
+  "n_digits": 4,
+  "n_carries": 2,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n5541 + 9066 =",
+  "answer": " 14607",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ],
+  "ipos": 2,
+  "cell": "unsure_correct",
+  "sel_margin": 0.29650378227233887,
+  "sel_margin_perstep": 0.2965036928653717,
+  "sel_mass": 0.9990675449371338,
+  "sel_top": 6,
+  "sel_second": 5,
+  "truth": 6,
+  "multi": true
+ },
+ {
+  "pid": 66,
+  "uid": 133,
+  "family": "carries",
+  "demo": "B",
+  "a": 6369,
+  "b": 6736,
+  "c": 13105,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n6369 + 6736 =",
+  "answer": " 13105",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 5
+   }
+  ],
+  "ipos": 2,
+  "cell": "unsure_correct",
+  "sel_margin": 0.09326788783073425,
+  "sel_margin_perstep": 0.0946250781416893,
+  "sel_mass": 0.9641549587249756,
+  "sel_top": 1,
+  "sel_second": 0,
+  "truth": 1,
+  "multi": true
+ },
+ {
+  "pid": 30,
+  "uid": 60,
+  "family": "carries",
+  "demo": "A",
+  "a": 178,
+  "b": 483,
+  "c": 661,
+  "n_digits": 3,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n178 + 483 =",
+  "answer": " 661",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 6
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_correct",
+  "sel_margin": 0.34582507610321045,
+  "sel_margin_perstep": 0.34582504630088806,
+  "sel_mass": 0.9996651411056519,
+  "sel_top": 6,
+  "sel_second": 5,
+  "truth": 6,
+  "multi": false
+ },
+ {
+  "pid": 24,
+  "uid": 49,
+  "family": "carries",
+  "demo": "B",
+  "a": 919,
+  "b": 850,
+  "c": 1769,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n919 + 850 =",
+  "answer": " 1769",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 2,
+  "cell": "unsure_correct",
+  "sel_margin": 0.2140738070011139,
+  "sel_margin_perstep": 0.21405000984668732,
+  "sel_mass": 0.9902873635292053,
+  "sel_top": 6,
+  "sel_second": 7,
+  "truth": 6,
+  "multi": false
+ },
+ {
+  "pid": 55,
+  "uid": 110,
+  "family": "carries",
+  "demo": "A",
+  "a": 6186,
+  "b": 3552,
+  "c": 9738,
+  "n_digits": 4,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 2,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n6186 + 3552 =",
+  "answer": " 9738",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 2,
+  "cell": "unsure_correct",
+  "sel_margin": 0.0727347731590271,
+  "sel_margin_perstep": 0.07273536175489426,
+  "sel_mass": 0.9975664019584656,
+  "sel_top": 3,
+  "sel_second": 2,
+  "truth": 3,
+  "multi": false
+ },
+ {
+  "pid": 67,
+  "uid": 134,
+  "family": "carries",
+  "demo": "A",
+  "a": 6884,
+  "b": 3796,
+  "c": 10680,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 2,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n6884 + 3796 =",
+  "answer": " 10680",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 2,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 0
+   }
+  ],
+  "ipos": 2,
+  "cell": "unsure_correct",
+  "sel_margin": 0.1898024082183838,
+  "sel_margin_perstep": 0.18980157375335693,
+  "sel_mass": 0.9912963509559631,
+  "sel_top": 6,
+  "sel_second": 5,
+  "truth": 6,
+  "multi": false
+ },
+ {
+  "pid": 25,
+  "uid": 50,
+  "family": "carries",
+  "demo": "A",
+  "a": 681,
+  "b": 410,
+  "c": 1091,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n681 + 410 =",
+  "answer": " 1091",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.3534160852432251,
+  "sel_margin_perstep": 0.3534170091152191,
+  "sel_mass": 0.99146968126297,
+  "sel_top": 1,
+  "sel_second": 0,
+  "truth": 0,
+  "multi": true
+ },
+ {
+  "pid": 11,
+  "uid": 22,
+  "family": "carries",
+  "demo": "A",
+  "a": 55,
+  "b": 56,
+  "c": 111,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n55 + 56 =",
+  "answer": " 111",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.2752634286880493,
+  "sel_margin_perstep": 0.2752511501312256,
+  "sel_mass": 0.9716324806213379,
+  "sel_top": 0,
+  "sel_second": 1,
+  "truth": 1,
+  "multi": true
+ },
+ {
+  "pid": 46,
+  "uid": 93,
+  "family": "dep",
+  "demo": "B",
+  "a": 683,
+  "b": 316,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n683 + 316 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.19845664501190186,
+  "sel_margin_perstep": 0.19845645129680634,
+  "sel_mass": 0.992900013923645,
+  "sel_top": 0,
+  "sel_second": 9,
+  "truth": 9,
+  "multi": true
+ },
+ {
+  "pid": 63,
+  "uid": 127,
+  "family": "carries",
+  "demo": "B",
+  "a": 1736,
+  "b": 7789,
+  "c": 9525,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n1736 + 7789 =",
+  "answer": " 9525",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 5
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 5
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.044829368591308594,
+  "sel_margin_perstep": 0.044829294085502625,
+  "sel_mass": 0.9994800686836243,
+  "sel_top": 3,
+  "sel_second": 4,
+  "truth": 5,
+  "multi": true
+ },
+ {
+  "pid": 68,
+  "uid": 137,
+  "family": "dep",
+  "demo": "B",
+  "a": 2029,
+  "b": 5226,
+  "c": 7255,
+  "n_digits": 4,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n2029 + 5226 =",
+  "answer": " 7255",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 5
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.2814730405807495,
+  "sel_margin_perstep": 0.28147265315055847,
+  "sel_mass": 0.9990605711936951,
+  "sel_top": 4,
+  "sel_second": 2,
+  "truth": 2,
+  "multi": false
+ },
+ {
+  "pid": 10,
+  "uid": 21,
+  "family": "carries",
+  "demo": "B",
+  "a": 56,
+  "b": 85,
+  "c": 141,
+  "n_digits": 2,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n56 + 85 =",
+  "answer": " 141",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.02802938222885132,
+  "sel_margin_perstep": 0.028032205998897552,
+  "sel_mass": 0.9900014996528625,
+  "sel_top": 3,
+  "sel_second": 4,
+  "truth": 4,
+  "multi": false
+ },
+ {
+  "pid": 37,
+  "uid": 74,
+  "family": "dep",
+  "demo": "A",
+  "a": 474,
+  "b": 267,
+  "c": 741,
+  "n_digits": 3,
+  "n_carries": 2,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n474 + 267 =",
+  "answer": " 741",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 1
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.0605141818523407,
+  "sel_margin_perstep": 0.07735942304134369,
+  "sel_mass": 0.9957672953605652,
+  "sel_top": 3,
+  "sel_second": 4,
+  "truth": 4,
+  "multi": false
+ },
+ {
+  "pid": 65,
+  "uid": 131,
+  "family": "carries",
+  "demo": "B",
+  "a": 8958,
+  "b": 2355,
+  "c": 11313,
+  "n_digits": 4,
+  "n_carries": 4,
+  "max_chain": 4,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n8958 + 2355 =",
+  "answer": " 11313",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 4,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 3
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 3
+   }
+  ],
+  "ipos": 1,
+  "cell": "unsure_wrong",
+  "sel_margin": 0.2923983335494995,
+  "sel_margin_perstep": 0.2923876941204071,
+  "sel_mass": 0.964596152305603,
+  "sel_top": 2,
+  "sel_second": 1,
+  "truth": 1,
+  "multi": false
+ },
+ {
+  "pid": 75,
+  "uid": 151,
+  "family": "dep",
+  "demo": "B",
+  "a": 2362,
+  "b": 1037,
+  "c": 3399,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n2362 + 1037 =",
+  "answer": " 3399",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 3
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 3
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 3,
+  "cell": "confident_correct",
+  "sel_margin": 0.9986075758934021,
+  "sel_margin_perstep": 0.9986075162887573,
+  "sel_mass": 0.9995043277740479,
+  "sel_top": 9,
+  "sel_second": 7,
+  "truth": 9,
+  "multi": true
+ },
+ {
+  "pid": 70,
+  "uid": 141,
+  "family": "dep",
+  "demo": "B",
+  "a": 5487,
+  "b": 5226,
+  "c": 10713,
+  "n_digits": 4,
+  "n_carries": 3,
+  "max_chain": 2,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n5487 + 5226 =",
+  "answer": " 10713",
+  "digit_info": [
+   {
+    "col": 4,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 0
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 1
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 3
+   }
+  ],
+  "ipos": 4,
+  "cell": "confident_correct",
+  "sel_margin": 0.9430305361747742,
+  "sel_margin_perstep": 0.9430306553840637,
+  "sel_mass": 0.9990558624267578,
+  "sel_top": 3,
+  "sel_second": 5,
+  "truth": 3,
+  "multi": true
+ },
+ {
+  "pid": 42,
+  "uid": 84,
+  "family": "dep",
+  "demo": "A",
+  "a": 626,
+  "b": 673,
+  "c": 1299,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n626 + 673 =",
+  "answer": " 1299",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 3,
+  "cell": "confident_correct",
+  "sel_margin": 0.99774569272995,
+  "sel_margin_perstep": 0.9977456331253052,
+  "sel_mass": 0.9996119737625122,
+  "sel_top": 9,
+  "sel_second": 8,
+  "truth": 9,
+  "multi": true
+ },
+ {
+  "pid": 19,
+  "uid": 38,
+  "family": "dep",
+  "demo": "A",
+  "a": 24,
+  "b": 75,
+  "c": 99,
+  "n_digits": 2,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 2,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n24 + 75 =",
+  "answer": " 99",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ],
+  "ipos": 1,
+  "cell": "confident_correct",
+  "sel_margin": 0.9952099323272705,
+  "sel_margin_perstep": 0.9952099919319153,
+  "sel_mass": 0.9992284774780273,
+  "sel_top": 9,
+  "sel_second": 0,
+  "truth": 9,
+  "multi": true
+ },
+ {
+  "pid": 3,
+  "uid": 7,
+  "family": "carries",
+  "demo": "B",
+  "a": 14,
+  "b": 13,
+  "c": 27,
+  "n_digits": 2,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n14 + 13 =",
+  "answer": " 27",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ],
+  "ipos": 1,
+  "cell": "confident_correct",
+  "sel_margin": 0.9949358105659485,
+  "sel_margin_perstep": 0.9949358701705933,
+  "sel_mass": 0.9983276724815369,
+  "sel_top": 7,
+  "sel_second": 8,
+  "truth": 7,
+  "multi": false
+ },
+ {
+  "pid": 43,
+  "uid": 86,
+  "family": "dep",
+  "demo": "A",
+  "a": 857,
+  "b": 849,
+  "c": 1706,
+  "n_digits": 3,
+  "n_carries": 3,
+  "max_chain": 3,
+  "max_dep": 2,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n857 + 849 =",
+  "answer": " 1706",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 3,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 2,
+    "dep_len": 2,
+    "ctype": "G",
+    "digit": 7
+   },
+   {
+    "col": 1,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 0
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "G",
+    "digit": 6
+   }
+  ],
+  "ipos": 2,
+  "cell": "confident_correct",
+  "sel_margin": 0.9160603880882263,
+  "sel_margin_perstep": 0.916060209274292,
+  "sel_mass": 0.9955017566680908,
+  "sel_top": 0,
+  "sel_second": 1,
+  "truth": 0,
+  "multi": false
+ },
+ {
+  "pid": 50,
+  "uid": 100,
+  "family": "carries",
+  "demo": "A",
+  "a": 6824,
+  "b": 3014,
+  "c": 9838,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 2,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n6824 + 3014 =",
+  "answer": " 9838",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 3
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ],
+  "ipos": 3,
+  "cell": "confident_correct",
+  "sel_margin": 0.9800267219543457,
+  "sel_margin_perstep": 0.9800267219543457,
+  "sel_mass": 0.9987271428108215,
+  "sel_top": 8,
+  "sel_second": 0,
+  "truth": 8,
+  "multi": false
+ },
+ {
+  "pid": 2,
+  "uid": 5,
+  "family": "carries",
+  "demo": "B",
+  "a": 30,
+  "b": 65,
+  "c": 95,
+  "n_digits": 2,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 2,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n30 + 65 =",
+  "answer": " 95",
+  "digit_info": [
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ],
+  "ipos": 1,
+  "cell": "confident_correct",
+  "sel_margin": 0.9937902092933655,
+  "sel_margin_perstep": 0.9937902092933655,
+  "sel_mass": 0.999808669090271,
+  "sel_top": 5,
+  "sel_second": 0,
+  "truth": 5,
+  "multi": false
+ }
+]

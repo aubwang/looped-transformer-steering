@@ -1,0 +1,79 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 5.626678466796875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 48,
+   "max_abs": 4.291534423828125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 4.863739013671875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 24,
+  "T_MID": 8,
+  "T_FINAL_EXTRA": 4,
+  "chunk": 8,
+  "readout_kinds": [
+   "circle1",
+   "radial",
+   "random_0",
+   "scrT1_0"
+  ],
+  "readout_alphas": [
+   1.0
+  ],
+  "readout_normp": [
+   false,
+   true
+  ],
+  "mid_conds": [
+   [
+    "none",
+    0.0,
+    false
+   ],
+   [
+    "circle1",
+    1.0,
+    false
+   ]
+  ],
+  "mid_checkpoints": [
+   9,
+   16,
+   24
+  ],
+  "final_conds": [
+   [
+    "none",
+    0.0,
+    false
+   ],
+   [
+    "circle1",
+    1.0,
+    false
+   ],
+   [
+    "circle1",
+    1.0,
+    true
+   ]
+  ],
+  "final_checkpoints": [
+   25,
+   28
+  ]
+ },
+ "runtime_s": 42.01264405250549,
+ "run_id": "intervene_smoke-20261104-071321",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

@@ -1,0 +1,30 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "mode": "train",
+  "K0": 96,
+  "T": 48,
+  "chunk": 100,
+  "total_s": 420,
+  "code_sha256": "b1f5ab2be0242011"
+ },
+ "runtime_s": 190.242064149,
+ "run_id": "dglever_train-20261106-080920",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

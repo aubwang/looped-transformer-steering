@@ -1,0 +1,33 @@
+{
+ "validation": [
+  {
+   "len": 48,
+   "max_abs": 4.76837158203125e-06,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 7.152557373046875e-06,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 7.152557373046875e-06,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 1024,
+  "stride_proj": 8,
+  "tail": 256,
+  "stride_ro": 1,
+  "chunk": 6,
+  "dtype": "float64",
+  "init_fp32": true,
+  "perturb_eps": 0.001,
+  "val_tol": 0.001
+ },
+ "runtime_s": 138.40614676475525,
+ "run_id": "orbit64-20261104-195601",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

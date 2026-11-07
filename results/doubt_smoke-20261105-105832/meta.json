@@ -1,0 +1,49 @@
+{
+ "validation": [
+  {
+   "len": 48,
+   "max_abs": 4.1961669921875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 5.7220458984375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 5.7220458984375e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "n_seeds": 2,
+  "K": 16,
+  "K_extend": 8,
+  "checkpoints": [
+   4,
+   8,
+   16
+  ],
+  "stat_thr": 2e-05,
+  "chunk": 16,
+  "n_damp": 10,
+  "beta": 0.5,
+  "fp_tol": 1e-05,
+  "m": 4,
+  "eps": 0.1,
+  "eps_small": 0.05,
+  "push_rel": 0.001,
+  "K_push": 6,
+  "gap_every": 2,
+  "budget_s": 600,
+  "reserve_s": 15,
+  "max_prompts": 4,
+  "code_sha256": "169aa41f66a30ed9"
+ },
+ "runtime_s": 22.865113254,
+ "run_id": "doubt_smoke-20261105-105832",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "row_steps": 372
+}

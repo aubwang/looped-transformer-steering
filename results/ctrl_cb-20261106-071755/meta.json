@@ -1,0 +1,75 @@
+{
+ "validation": [
+  {
+   "len": 66,
+   "max_abs": 4.291534423828125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 82,
+   "max_abs": 4.76837158203125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 85,
+   "max_abs": 3.4809112548828125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "formats": [
+   "fq",
+   "ba"
+  ],
+  "conds": [
+   [
+    "sham",
+    "none",
+    0,
+    0.0,
+    "force"
+   ],
+   [
+    "dstar+",
+    "dstar",
+    1,
+    12.5,
+    "force"
+   ],
+   [
+    "dstar-",
+    "dstar",
+    -1,
+    12.5,
+    "force"
+   ],
+   [
+    "rand+",
+    "rand",
+    1,
+    12.5,
+    "force"
+   ]
+  ],
+  "K0": 64,
+  "Tr": 24,
+  "ro": [
+   0,
+   1,
+   2,
+   4,
+   8,
+   16,
+   24,
+   32,
+   48
+  ],
+  "chunk": 120,
+  "total_s": 440,
+  "code_sha256": "dd3ba6c3e893fcec"
+ },
+ "runtime_s": 268.58577864200004,
+ "run_id": "ctrl_cb-20261106-071755",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "complete": true
+}

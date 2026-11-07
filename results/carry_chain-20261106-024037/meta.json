@@ -1,0 +1,46 @@
+{
+ "validation": [
+  {
+   "len": 54,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 54,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 54,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 96,
+  "alpha": 1.0,
+  "dense": 96,
+  "sparse": 4,
+  "tail": 8,
+  "chunk": 50,
+  "total_s": 480,
+  "choices": [
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6",
+   "7",
+   "8",
+   "9"
+  ],
+  "code_sha256": "d3e5a216a9becf44"
+ },
+ "runtime_s": 228.30874654299998,
+ "run_id": "carry_chain-20261106-024037",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "n_done": 150
+}

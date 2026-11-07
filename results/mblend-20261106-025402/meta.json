@@ -1,0 +1,41 @@
+{
+ "validation": [
+  {
+   "len": 51,
+   "max_abs": 5.984306335449219e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 5.984306335449219e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 5.984306335449219e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 96,
+  "checkpoints": [
+   1,
+   2,
+   4,
+   8,
+   16,
+   32,
+   64,
+   96
+  ],
+  "chunk": 60,
+  "total_s": 540,
+  "code_sha256": "da79844d2c608620"
+ },
+ "runtime_s": 336.913172256,
+ "run_id": "mblend-20261106-025402",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "n_done": 240,
+ "n_rows": 240
+}

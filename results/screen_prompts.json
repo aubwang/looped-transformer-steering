@@ -1,0 +1,2822 @@
+[
+ {
+  "pid": 23,
+  "uid": 10000,
+  "family": "carries",
+  "demo": "A",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10001,
+  "family": "carries",
+  "demo": "B",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10002,
+  "family": "carries",
+  "demo": "V0",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "16 + 44 = 60\n517 + 372 = 889\n2764 + 1625 = 4389\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10003,
+  "family": "carries",
+  "demo": "V1",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "53 + 16 = 69\n263 + 238 = 501\n5016 + 3683 = 8699\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10004,
+  "family": "carries",
+  "demo": "V2",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "10 + 65 = 75\n486 + 171 = 657\n1108 + 6168 = 7276\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10005,
+  "family": "carries",
+  "demo": "V3",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "67 + 23 = 90\n144 + 194 = 338\n3329 + 3068 = 6397\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10006,
+  "family": "carries",
+  "demo": "V4",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "12 + 47 = 59\n588 + 371 = 959\n6165 + 1205 = 7370\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10007,
+  "family": "carries",
+  "demo": "V5",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "75 + 14 = 89\n184 + 598 = 782\n5290 + 3787 = 9077\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10008,
+  "family": "carries",
+  "demo": "V6",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "19 + 68 = 87\n116 + 293 = 409\n2444 + 6955 = 9399\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 23,
+  "uid": 10009,
+  "family": "carries",
+  "demo": "V7",
+  "a": 254,
+  "b": 234,
+  "c": 488,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "11 + 55 = 66\n334 + 515 = 849\n1978 + 5713 = 7691\n254 + 234 =",
+  "answer": " 488",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10010,
+  "family": "carries",
+  "demo": "A",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10011,
+  "family": "carries",
+  "demo": "B",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10012,
+  "family": "carries",
+  "demo": "V0",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "16 + 44 = 60\n517 + 372 = 889\n2764 + 1625 = 4389\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10013,
+  "family": "carries",
+  "demo": "V1",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "53 + 16 = 69\n263 + 238 = 501\n5016 + 3683 = 8699\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10014,
+  "family": "carries",
+  "demo": "V2",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "10 + 65 = 75\n486 + 171 = 657\n1108 + 6168 = 7276\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10015,
+  "family": "carries",
+  "demo": "V3",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "67 + 23 = 90\n144 + 194 = 338\n3329 + 3068 = 6397\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10016,
+  "family": "carries",
+  "demo": "V4",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "12 + 47 = 59\n588 + 371 = 959\n6165 + 1205 = 7370\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10017,
+  "family": "carries",
+  "demo": "V5",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "75 + 14 = 89\n184 + 598 = 782\n5290 + 3787 = 9077\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10018,
+  "family": "carries",
+  "demo": "V6",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "19 + 68 = 87\n116 + 293 = 409\n2444 + 6955 = 9399\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 24,
+  "uid": 10019,
+  "family": "carries",
+  "demo": "V7",
+  "a": 902,
+  "b": 553,
+  "c": 1455,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 1,
+  "overflow_dep": 1,
+  "prompt": "11 + 55 = 66\n334 + 515 = 849\n1978 + 5713 = 7691\n902 + 553 =",
+  "answer": " 1455",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "-",
+    "digit": 1
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 4
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 5
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10020,
+  "family": "carries",
+  "demo": "A",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10021,
+  "family": "carries",
+  "demo": "B",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10022,
+  "family": "carries",
+  "demo": "V0",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "16 + 44 = 60\n517 + 372 = 889\n2764 + 1625 = 4389\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10023,
+  "family": "carries",
+  "demo": "V1",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "53 + 16 = 69\n263 + 238 = 501\n5016 + 3683 = 8699\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10024,
+  "family": "carries",
+  "demo": "V2",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "10 + 65 = 75\n486 + 171 = 657\n1108 + 6168 = 7276\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10025,
+  "family": "carries",
+  "demo": "V3",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "67 + 23 = 90\n144 + 194 = 338\n3329 + 3068 = 6397\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10026,
+  "family": "carries",
+  "demo": "V4",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "12 + 47 = 59\n588 + 371 = 959\n6165 + 1205 = 7370\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10027,
+  "family": "carries",
+  "demo": "V5",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "75 + 14 = 89\n184 + 598 = 782\n5290 + 3787 = 9077\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10028,
+  "family": "carries",
+  "demo": "V6",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "19 + 68 = 87\n116 + 293 = 409\n2444 + 6955 = 9399\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 26,
+  "uid": 10029,
+  "family": "carries",
+  "demo": "V7",
+  "a": 480,
+  "b": 447,
+  "c": 927,
+  "n_digits": 3,
+  "n_carries": 1,
+  "max_chain": 1,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "11 + 55 = 66\n334 + 515 = 849\n1978 + 5713 = 7691\n480 + 447 =",
+  "answer": " 927",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 1,
+    "chain_in": 1,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "G",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 7
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10030,
+  "family": "dep",
+  "demo": "A",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10031,
+  "family": "dep",
+  "demo": "B",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10032,
+  "family": "dep",
+  "demo": "V0",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "16 + 44 = 60\n517 + 372 = 889\n2764 + 1625 = 4389\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10033,
+  "family": "dep",
+  "demo": "V1",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "53 + 16 = 69\n263 + 238 = 501\n5016 + 3683 = 8699\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10034,
+  "family": "dep",
+  "demo": "V2",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "10 + 65 = 75\n486 + 171 = 657\n1108 + 6168 = 7276\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10035,
+  "family": "dep",
+  "demo": "V3",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "67 + 23 = 90\n144 + 194 = 338\n3329 + 3068 = 6397\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10036,
+  "family": "dep",
+  "demo": "V4",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "12 + 47 = 59\n588 + 371 = 959\n6165 + 1205 = 7370\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10037,
+  "family": "dep",
+  "demo": "V5",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "75 + 14 = 89\n184 + 598 = 782\n5290 + 3787 = 9077\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10038,
+  "family": "dep",
+  "demo": "V6",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "19 + 68 = 87\n116 + 293 = 409\n2444 + 6955 = 9399\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 44,
+  "uid": 10039,
+  "family": "dep",
+  "demo": "V7",
+  "a": 533,
+  "b": 466,
+  "c": 999,
+  "n_digits": 3,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 3,
+  "overflow": 0,
+  "overflow_dep": 3,
+  "prompt": "11 + 55 = 66\n334 + 515 = 849\n1978 + 5713 = 7691\n533 + 466 =",
+  "answer": " 999",
+  "digit_info": [
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "P",
+    "digit": 9
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10040,
+  "family": "carries",
+  "demo": "A",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10041,
+  "family": "carries",
+  "demo": "B",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10042,
+  "family": "carries",
+  "demo": "V0",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "16 + 44 = 60\n517 + 372 = 889\n2764 + 1625 = 4389\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10043,
+  "family": "carries",
+  "demo": "V1",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "53 + 16 = 69\n263 + 238 = 501\n5016 + 3683 = 8699\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10044,
+  "family": "carries",
+  "demo": "V2",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "10 + 65 = 75\n486 + 171 = 657\n1108 + 6168 = 7276\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10045,
+  "family": "carries",
+  "demo": "V3",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "67 + 23 = 90\n144 + 194 = 338\n3329 + 3068 = 6397\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10046,
+  "family": "carries",
+  "demo": "V4",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "12 + 47 = 59\n588 + 371 = 959\n6165 + 1205 = 7370\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10047,
+  "family": "carries",
+  "demo": "V5",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "75 + 14 = 89\n184 + 598 = 782\n5290 + 3787 = 9077\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10048,
+  "family": "carries",
+  "demo": "V6",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "19 + 68 = 87\n116 + 293 = 409\n2444 + 6955 = 9399\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 49,
+  "uid": 10049,
+  "family": "carries",
+  "demo": "V7",
+  "a": 1618,
+  "b": 5310,
+  "c": 6928,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 2,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "11 + 55 = 66\n334 + 515 = 849\n1978 + 5713 = 7691\n1618 + 5310 =",
+  "answer": " 6928",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 2,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "P",
+    "digit": 9
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 2
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 8
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10050,
+  "family": "carries",
+  "demo": "A",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "17 + 25 = 42\n348 + 571 = 919\n6054 + 2389 = 8443\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10051,
+  "family": "carries",
+  "demo": "B",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "63 + 29 = 92\n705 + 186 = 891\n2471 + 3958 = 6429\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10052,
+  "family": "carries",
+  "demo": "V0",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "16 + 44 = 60\n517 + 372 = 889\n2764 + 1625 = 4389\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10053,
+  "family": "carries",
+  "demo": "V1",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "53 + 16 = 69\n263 + 238 = 501\n5016 + 3683 = 8699\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10054,
+  "family": "carries",
+  "demo": "V2",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "10 + 65 = 75\n486 + 171 = 657\n1108 + 6168 = 7276\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10055,
+  "family": "carries",
+  "demo": "V3",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "67 + 23 = 90\n144 + 194 = 338\n3329 + 3068 = 6397\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10056,
+  "family": "carries",
+  "demo": "V4",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "12 + 47 = 59\n588 + 371 = 959\n6165 + 1205 = 7370\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10057,
+  "family": "carries",
+  "demo": "V5",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "75 + 14 = 89\n184 + 598 = 782\n5290 + 3787 = 9077\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10058,
+  "family": "carries",
+  "demo": "V6",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "19 + 68 = 87\n116 + 293 = 409\n2444 + 6955 = 9399\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ },
+ {
+  "pid": 50,
+  "uid": 10059,
+  "family": "carries",
+  "demo": "V7",
+  "a": 1231,
+  "b": 4450,
+  "c": 5681,
+  "n_digits": 4,
+  "n_carries": 0,
+  "max_chain": 0,
+  "max_dep": 1,
+  "overflow": 0,
+  "overflow_dep": 1,
+  "prompt": "11 + 55 = 66\n334 + 515 = 849\n1978 + 5713 = 7691\n1231 + 4450 =",
+  "answer": " 5681",
+  "digit_info": [
+   {
+    "col": 3,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 5
+   },
+   {
+    "col": 2,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 6
+   },
+   {
+    "col": 1,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 1,
+    "ctype": "K",
+    "digit": 8
+   },
+   {
+    "col": 0,
+    "carry_in": 0,
+    "chain_in": 0,
+    "dep_len": 0,
+    "ctype": "K",
+    "digit": 1
+   }
+  ]
+ }
+]

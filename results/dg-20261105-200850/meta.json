@@ -1,0 +1,31 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K": 96,
+  "ro_every": 4,
+  "chunk": 100,
+  "budget_s": 480,
+  "code_sha256": "b97db9104139e653"
+ },
+ "runtime_s": 208.053794633,
+ "run_id": "dg-20261105-200850",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "n_done": 200
+}

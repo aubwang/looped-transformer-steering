@@ -1,0 +1,106 @@
+{
+ "primary_practical": {
+  "base": {
+   "mean_adj_tv_16_64": 0.003994178469292819,
+   "disagree_vs_256": {
+    "16": 26,
+    "32": 4,
+    "64": 0
+   },
+   "accuracy": {
+    "16": 0.27,
+    "32": 0.25,
+    "64": 0.26
+   },
+   "mean_parity_tv_tail": 0.00034062235257124483
+  },
+  "relax": {
+   "mean_adj_tv_16_64": 0.0026789909129729494,
+   "disagree_vs_256": {
+    "16": 33,
+    "32": 5,
+    "64": 0
+   },
+   "accuracy": {
+    "16": 0.3,
+    "32": 0.27,
+    "64": 0.26
+   },
+   "mean_parity_tv_tail": 4.24027738517907e-06
+  }
+ },
+ "baseline": {
+  "classes": {
+   "BLINKING": 12,
+   "STATIONARY": 76,
+   "UNRESOLVED": 12
+  },
+  "blinking_prevalence": {
+   "k": 12,
+   "n": 100,
+   "wilson95": [
+    0.07,
+    0.198
+   ]
+  },
+  "tail_flip": 0,
+  "S_gt_0p01": 0,
+  "S_gt_0p05": 0,
+  "median_tv_255_256": {
+   "BLINKING": 0.0009380057454109192,
+   "STATIONARY": 3.468245267868042e-06,
+   "UNRESOLVED": 5.645677447319031e-05
+  },
+  "max_S_blinking": 0.004888445138931274,
+  "prompts_with_changes_16_64": 45,
+  "accuracy": {
+   "16": 0.27,
+   "32": 0.25,
+   "64": 0.26,
+   "128": 0.26,
+   "256": 0.26
+  },
+  "median_letter_mass": 0.6385685205459595,
+  "letter_mass_q10_q90": [
+   0.511849170923233,
+   0.755505645275116
+  ]
+ },
+ "relaxation": {
+  "classes": {
+   "BLINKING": 0,
+   "STATIONARY": 98,
+   "UNRESOLVED": 2
+  },
+  "R1_no_blinking": true,
+  "R2_n_stationary_both": 76,
+  "R2_failures": [],
+  "R2_prompts_unresolved_in_either": 12,
+  "R3_n_baseline_blinking": 12,
+  "R3_failures": [],
+  "R4_answer_changes_at_256": [],
+  "R4_ok": true,
+  "tail_flip": 0,
+  "S_gt_0p01": 0,
+  "accuracy": {
+   "16": 0.3,
+   "32": 0.27,
+   "64": 0.26,
+   "128": 0.26,
+   "256": 0.26
+  },
+  "t_stab_confirmed_median": {
+   "base": 15.0,
+   "relax": 15.0
+  },
+  "t_stab_confirmed_q90": {
+   "base": 29.200000000000017,
+   "relax": 28.10000000000001
+  },
+  "t_stab_censored": {
+   "base": 0,
+   "relax": 0
+  },
+  "median_tv_base_relax_256_stationary": 3.930181264877319e-06
+ }
+}

@@ -1,0 +1,40 @@
+{
+ "validation": [
+  {
+   "len": 61,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 63,
+   "max_abs": 3.24249267578125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 64,
+   "max_abs": 5.340576171875e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 64,
+  "ro": [
+   0,
+   1,
+   2,
+   4,
+   8,
+   16,
+   24
+  ],
+  "chunk": 220,
+  "total_s": 470,
+  "offkl": true,
+  "code_sha256": "181e974dfa7399d7",
+  "push_sha256": "4b12c666eb5b9bd94f337cced9f52fca152e21b77f4099dc1535f69e86404004",
+  "push_file": "../results/tlever_pushes_1.npz"
+ },
+ "runtime_s": 257.98786357299997,
+ "run_id": "tlever_eval-20261106-235208",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

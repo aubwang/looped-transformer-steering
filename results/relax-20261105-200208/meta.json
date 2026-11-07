@@ -1,0 +1,43 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 49,
+   "max_abs": 6.580352783203125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 52,
+   "max_abs": 6.008148193359375e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "K0": 320,
+  "beta": 0.5,
+  "n_damp": 200,
+  "fp_tol": 1e-05,
+  "m": 40,
+  "start_seeds": [
+   4,
+   5
+  ],
+  "n_top": 4,
+  "start_tol": 0.01,
+  "eps": 0.1,
+  "val_tol": 0.02,
+  "mu_min": 0.02,
+  "T": 160,
+  "chunk": 64,
+  "budget_s": 480,
+  "code_sha256": "4ed8c7b91240ebb9"
+ },
+ "runtime_s": 369.895204102,
+ "run_id": "relax-20261105-200208",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": []
+}

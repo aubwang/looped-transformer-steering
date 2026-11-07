@@ -1,0 +1,2738 @@
+{
+ "summary": {
+  "runtime_s": 336.913172256,
+  "qualification": {
+   "successor_correct": {
+    "A": 12,
+    "B": 12
+   },
+   "qualified": true,
+   "stationary_pure": 0,
+   "stationary_blend": 0,
+   "n_blend": 216,
+   "median_month_mass_pure": 0.9960059523582458
+  },
+  "shape": {
+   "R2_canonical_circle": 0.21538734966704698,
+   "canonical_rank_among_5000": 1,
+   "R2_random_cyclic": {
+    "median": -0.3954474424259975,
+    "q99": -0.11959336829217625,
+    "max": 0.0713031025209715
+   },
+   "R2_line_canonical": 0.0007199998636095994,
+   "R2_line_best_of_2001": 0.08987319836196328,
+   "R2_random_rank2": {
+    "median": -0.4773164152495898,
+    "max": -0.008298926420223784
+   },
+   "note": "leave-one-month-out: categorical cannot predict an unseen level, so it is not reported"
+  },
+  "plane": {
+   "valid": false,
+   "canonical_cyclic": false,
+   "min_gap_deg": -323.113215537798,
+   "sv_ratio": 0.9665013058488275,
+   "top2_variance_share": 0.44147806829190456
+  },
+  "paths": {
+   "verdict": "INCONCLUSIVE",
+   "reference_stationary": false,
+   "eligible_resolved_opposite": 0,
+   "classes": {
+    "ARC-TRAVEL": 0,
+    "QUADRATURE-JUMP": 0,
+    "LINEAR-BLEND": 0,
+    "LOW-RADIUS-NONLINEAR": 0,
+    "INTERMEDIATE": 0
+   },
+   "not_opposite": 1,
+   "unresolved": 12,
+   "median_radius_a05_opposite": 0.374,
+   "median_linear_blend_radius_a05": 0.291,
+   "median_linear_blend_deviation": 0.375,
+   "median_off_plane_fraction_a05": 0.971,
+   "readout_a05": {
+    "median_mass_quadrature_successors": 0.059000000000000004,
+    "median_mass_endpoint_successors": 0.8465,
+    "uniform_baselines": {
+     "quadrature": 0.5,
+     "endpoint": 0.16666666666666666
+    },
+    "median_month_mass": 0.9390000000000001
+   },
+   "loop_role_a05": {
+    "1": {
+     "rel": 0.351,
+     "blend": 0.004,
+     "pure_median": 0.0125
+    },
+    "2": {
+     "rel": 0.389,
+     "blend": 0.005,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.286,
+     "blend": 0.0525,
+     "pure_median": 0.195
+    },
+    "8": {
+     "rel": 0.3705,
+     "blend": 0.3065,
+     "pure_median": 0.8065
+    },
+    "16": {
+     "rel": 0.39,
+     "blend": 0.40249999999999997,
+     "pure_median": 1.031
+    },
+    "32": {
+     "rel": 0.3805,
+     "blend": 0.388,
+     "pure_median": 1.019
+    },
+    "64": {
+     "rel": 0.376,
+     "blend": 0.37949999999999995,
+     "pure_median": 1.0085
+    },
+    "96": {
+     "rel": 0.37250000000000005,
+     "blend": 0.374,
+     "pure_median": 1.0030000000000001
+    }
+   }
+  }
+ },
+ "paths": [
+  {
+   "template": "A",
+   "kind": "opposite",
+   "m0": 0,
+   "m1": 6,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.56,
+   "linear_blend_deviation": 0.324,
+   "linear_blend_radius_a05": 0.371,
+   "off_plane_fraction_a05": 0.958,
+   "month_mass_a05": 0.97,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     0.02,
+     1.233,
+     false
+    ],
+    [
+     0.1,
+     0.03,
+     1.121,
+     false
+    ],
+    [
+     0.2,
+     0.04,
+     0.979,
+     false
+    ],
+    [
+     0.3,
+     0.07,
+     0.801,
+     false
+    ],
+    [
+     0.4,
+     2.15,
+     0.597,
+     false
+    ],
+    [
+     0.5,
+     2.67,
+     0.462,
+     false
+    ],
+    [
+     0.6,
+     3.89,
+     0.399,
+     false
+    ],
+    [
+     0.7,
+     4.95,
+     0.479,
+     false
+    ],
+    [
+     0.8,
+     6.09,
+     0.601,
+     false
+    ],
+    [
+     0.9,
+     6.32,
+     0.711,
+     false
+    ],
+    [
+     1.0,
+     6.45,
+     0.806,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 1,
+    "mass_endpoint_successors": 0.868,
+    "mass_quadrature_successors": 0.069
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.449,
+     "blend": 0.007,
+     "pure_median": 0.015
+    },
+    "2": {
+     "rel": 0.651,
+     "blend": 0.009,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.431,
+     "blend": 0.09,
+     "pure_median": 0.209
+    },
+    "8": {
+     "rel": 0.58,
+     "blend": 0.456,
+     "pure_median": 0.786
+    },
+    "16": {
+     "rel": 0.46,
+     "blend": 0.463,
+     "pure_median": 1.007
+    },
+    "32": {
+     "rel": 0.459,
+     "blend": 0.465,
+     "pure_median": 1.013
+    },
+    "64": {
+     "rel": 0.468,
+     "blend": 0.465,
+     "pure_median": 0.994
+    },
+    "96": {
+     "rel": 0.47,
+     "blend": 0.462,
+     "pure_median": 0.982
+    }
+   }
+  },
+  {
+   "template": "A",
+   "kind": "opposite",
+   "m0": 1,
+   "m1": 7,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.21,
+   "linear_blend_deviation": 0.254,
+   "linear_blend_radius_a05": 0.295,
+   "off_plane_fraction_a05": 0.975,
+   "month_mass_a05": 0.96,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     0.01,
+     1.185,
+     false
+    ],
+    [
+     0.1,
+     0.02,
+     1.076,
+     false
+    ],
+    [
+     0.2,
+     0.02,
+     0.935,
+     false
+    ],
+    [
+     0.3,
+     0.02,
+     0.759,
+     false
+    ],
+    [
+     0.4,
+     0.03,
+     0.555,
+     false
+    ],
+    [
+     0.5,
+     0.06,
+     0.336,
+     false
+    ],
+    [
+     0.6,
+     2.72,
+     0.171,
+     false
+    ],
+    [
+     0.7,
+     5.22,
+     0.265,
+     false
+    ],
+    [
+     0.8,
+     6.4,
+     0.451,
+     false
+    ],
+    [
+     0.9,
+     6.65,
+     0.622,
+     false
+    ],
+    [
+     1.0,
+     6.8,
+     0.767,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 2,
+    "mass_endpoint_successors": 0.817,
+    "mass_quadrature_successors": 0.145
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.371,
+     "blend": 0.006,
+     "pure_median": 0.015
+    },
+    "2": {
+     "rel": 0.516,
+     "blend": 0.007,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.286,
+     "blend": 0.06,
+     "pure_median": 0.209
+    },
+    "8": {
+     "rel": 0.319,
+     "blend": 0.251,
+     "pure_median": 0.786
+    },
+    "16": {
+     "rel": 0.388,
+     "blend": 0.391,
+     "pure_median": 1.007
+    },
+    "32": {
+     "rel": 0.357,
+     "blend": 0.362,
+     "pure_median": 1.013
+    },
+    "64": {
+     "rel": 0.349,
+     "blend": 0.347,
+     "pure_median": 0.994
+    },
+    "96": {
+     "rel": 0.342,
+     "blend": 0.336,
+     "pure_median": 0.982
+    }
+   }
+  },
+  {
+   "template": "A",
+   "kind": "opposite",
+   "m0": 2,
+   "m1": 8,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 0.0,
+   "endpoint_separation_months": 4.27,
+   "linear_blend_deviation": 0.411,
+   "linear_blend_radius_a05": 0.026,
+   "off_plane_fraction_a05": 0.961,
+   "month_mass_a05": 0.966,
+   "monotone_phase": false,
+   "path": [
+    [
+     0.0,
+     0.08,
+     0.958,
+     false
+    ],
+    [
+     0.1,
+     0.07,
+     0.844,
+     false
+    ],
+    [
+     0.2,
+     0.07,
+     0.71,
+     false
+    ],
+    [
+     0.3,
+     0.07,
+     0.543,
+     false
+    ],
+    [
+     0.4,
+     2.08,
+     0.262,
+     false
+    ],
+    [
+     0.5,
+     7.16,
+     0.263,
+     false
+    ],
+    [
+     0.6,
+     7.54,
+     0.455,
+     false
+    ],
+    [
+     0.7,
+     7.63,
+     0.631,
+     false
+    ],
+    [
+     0.8,
+     7.68,
+     0.786,
+     false
+    ],
+    [
+     0.9,
+     7.74,
+     0.91,
+     false
+    ],
+    [
+     1.0,
+     7.8,
+     1.006,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 9,
+    "mass_endpoint_successors": 0.786,
+    "mass_quadrature_successors": 0.085
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.244,
+     "blend": 0.004,
+     "pure_median": 0.015
+    },
+    "2": {
+     "rel": 0.375,
+     "blend": 0.005,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.094,
+     "blend": 0.02,
+     "pure_median": 0.209
+    },
+    "8": {
+     "rel": 0.176,
+     "blend": 0.139,
+     "pure_median": 0.786
+    },
+    "16": {
+     "rel": 0.242,
+     "blend": 0.243,
+     "pure_median": 1.007
+    },
+    "32": {
+     "rel": 0.266,
+     "blend": 0.27,
+     "pure_median": 1.013
+    },
+    "64": {
+     "rel": 0.267,
+     "blend": 0.265,
+     "pure_median": 0.994
+    },
+    "96": {
+     "rel": 0.268,
+     "blend": 0.263,
+     "pure_median": 0.982
+    }
+   }
+  },
+  {
+   "template": "A",
+   "kind": "opposite",
+   "m0": 3,
+   "m1": 9,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.92,
+   "linear_blend_deviation": 0.394,
+   "linear_blend_radius_a05": 0.369,
+   "off_plane_fraction_a05": 0.995,
+   "month_mass_a05": 0.973,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     3.03,
+     0.609,
+     false
+    ],
+    [
+     0.1,
+     3.33,
+     0.488,
+     false
+    ],
+    [
+     0.2,
+     3.9,
+     0.364,
+     false
+    ],
+    [
+     0.3,
+     4.82,
+     0.26,
+     false
+    ],
+    [
+     0.4,
+     7.07,
+     0.257,
+     false
+    ],
+    [
+     0.5,
+     7.64,
+     0.412,
+     false
+    ],
+    [
+     0.6,
+     7.93,
+     0.658,
+     false
+    ],
+    [
+     0.7,
+     8.6,
+     0.884,
+     false
+    ],
+    [
+     0.8,
+     8.92,
+     1.009,
+     false
+    ],
+    [
+     0.9,
+     9.05,
+     1.113,
+     false
+    ],
+    [
+     1.0,
+     9.11,
+     1.207,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 4,
+    "mass_endpoint_successors": 0.904,
+    "mass_quadrature_successors": 0.033
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.192,
+     "blend": 0.003,
+     "pure_median": 0.015
+    },
+    "2": {
+     "rel": 0.102,
+     "blend": 0.001,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.128,
+     "blend": 0.027,
+     "pure_median": 0.209
+    },
+    "8": {
+     "rel": 0.411,
+     "blend": 0.323,
+     "pure_median": 0.786
+    },
+    "16": {
+     "rel": 0.502,
+     "blend": 0.506,
+     "pure_median": 1.007
+    },
+    "32": {
+     "rel": 0.421,
+     "blend": 0.427,
+     "pure_median": 1.013
+    },
+    "64": {
+     "rel": 0.423,
+     "blend": 0.421,
+     "pure_median": 0.994
+    },
+    "96": {
+     "rel": 0.419,
+     "blend": 0.412,
+     "pure_median": 0.982
+    }
+   }
+  },
+  {
+   "template": "A",
+   "kind": "opposite",
+   "m0": 4,
+   "m1": 10,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.92,
+   "linear_blend_deviation": 0.365,
+   "linear_blend_radius_a05": 0.277,
+   "off_plane_fraction_a05": 0.929,
+   "month_mass_a05": 0.963,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     4.1,
+     1.157,
+     false
+    ],
+    [
+     0.1,
+     4.24,
+     1.061,
+     false
+    ],
+    [
+     0.2,
+     4.46,
+     0.935,
+     false
+    ],
+    [
+     0.3,
+     4.84,
+     0.776,
+     false
+    ],
+    [
+     0.4,
+     6.21,
+     0.591,
+     false
+    ],
+    [
+     0.5,
+     7.26,
+     0.431,
+     false
+    ],
+    [
+     0.6,
+     8.21,
+     0.468,
+     false
+    ],
+    [
+     0.7,
+     9.45,
+     0.583,
+     false
+    ],
+    [
+     0.8,
+     9.94,
+     0.685,
+     false
+    ],
+    [
+     0.9,
+     10.1,
+     0.763,
+     false
+    ],
+    [
+     1.0,
+     10.18,
+     0.825,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 11,
+    "mass_endpoint_successors": 0.755,
+    "mass_quadrature_successors": 0.148
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.209,
+     "blend": 0.003,
+     "pure_median": 0.015
+    },
+    "2": {
+     "rel": 0.239,
+     "blend": 0.003,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.243,
+     "blend": 0.051,
+     "pure_median": 0.209
+    },
+    "8": {
+     "rel": 0.423,
+     "blend": 0.333,
+     "pure_median": 0.786
+    },
+    "16": {
+     "rel": 0.487,
+     "blend": 0.49,
+     "pure_median": 1.007
+    },
+    "32": {
+     "rel": 0.432,
+     "blend": 0.438,
+     "pure_median": 1.013
+    },
+    "64": {
+     "rel": 0.436,
+     "blend": 0.433,
+     "pure_median": 0.994
+    },
+    "96": {
+     "rel": 0.438,
+     "blend": 0.431,
+     "pure_median": 0.982
+    }
+   }
+  },
+  {
+   "template": "A",
+   "kind": "opposite",
+   "m0": 5,
+   "m1": 11,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 4.76,
+   "linear_blend_deviation": 0.491,
+   "linear_blend_radius_a05": 0.403,
+   "off_plane_fraction_a05": 0.987,
+   "month_mass_a05": 0.935,
+   "monotone_phase": false,
+   "path": [
+    [
+     0.0,
+     6.29,
+     0.541,
+     false
+    ],
+    [
+     0.1,
+     6.57,
+     0.484,
+     false
+    ],
+    [
+     0.2,
+     6.93,
+     0.437,
+     false
+    ],
+    [
+     0.3,
+     6.08,
+     0.372,
+     false
+    ],
+    [
+     0.4,
+     7.01,
+     0.227,
+     false
+    ],
+    [
+     0.5,
+     10.17,
+     0.251,
+     false
+    ],
+    [
+     0.6,
+     10.78,
+     0.565,
+     false
+    ],
+    [
+     0.7,
+     10.92,
+     0.814,
+     false
+    ],
+    [
+     0.8,
+     10.99,
+     0.997,
+     false
+    ],
+    [
+     0.9,
+     11.02,
+     1.137,
+     false
+    ],
+    [
+     1.0,
+     11.04,
+     1.246,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 0,
+    "mass_endpoint_successors": 0.781,
+    "mass_quadrature_successors": 0.049
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.599,
+     "blend": 0.009,
+     "pure_median": 0.015
+    },
+    "2": {
+     "rel": 0.326,
+     "blend": 0.004,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.225,
+     "blend": 0.047,
+     "pure_median": 0.209
+    },
+    "8": {
+     "rel": 0.284,
+     "blend": 0.223,
+     "pure_median": 0.786
+    },
+    "16": {
+     "rel": 0.353,
+     "blend": 0.356,
+     "pure_median": 1.007
+    },
+    "32": {
+     "rel": 0.269,
+     "blend": 0.273,
+     "pure_median": 1.013
+    },
+    "64": {
+     "rel": 0.259,
+     "blend": 0.257,
+     "pure_median": 0.994
+    },
+    "96": {
+     "rel": 0.256,
+     "blend": 0.251,
+     "pure_median": 0.982
+    }
+   }
+  },
+  {
+   "template": "A",
+   "kind": "quarter",
+   "m0": 0,
+   "m1": 3,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 3.02,
+   "linear_blend_deviation": 0.296,
+   "linear_blend_radius_a05": 0.746,
+   "off_plane_fraction_a05": 0.963,
+   "month_mass_a05": 0.933,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     0.02,
+     1.233,
+     false
+    ],
+    [
+     0.1,
+     0.03,
+     1.194,
+     false
+    ],
+    [
+     0.2,
+     0.04,
+     1.144,
+     false
+    ],
+    [
+     0.3,
+     0.06,
+     1.082,
+     false
+    ],
+    [
+     0.4,
+     0.09,
+     0.991,
+     false
+    ],
+    [
+     0.5,
+     2.02,
+     0.838,
+     false
+    ],
+    [
+     0.6,
+     2.11,
+     0.711,
+     false
+    ],
+    [
+     0.7,
+     2.31,
+     0.637,
+     false
+    ],
+    [
+     0.8,
+     2.56,
+     0.597,
+     false
+    ],
+    [
+     0.9,
+     2.81,
+     0.591,
+     false
+    ],
+    [
+     1.0,
+     3.03,
+     0.609,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 4,
+    "mass_endpoint_successors": 0.771,
+    "mass_quadrature_successors": 0.559
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "A",
+   "kind": "quarter",
+   "m0": 2,
+   "m1": 5,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 5.79,
+   "linear_blend_deviation": 0.556,
+   "linear_blend_radius_a05": 0.421,
+   "off_plane_fraction_a05": 0.898,
+   "month_mass_a05": 0.989,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     0.08,
+     0.958,
+     false
+    ],
+    [
+     0.1,
+     0.09,
+     0.902,
+     false
+    ],
+    [
+     0.2,
+     2.04,
+     0.849,
+     false
+    ],
+    [
+     0.3,
+     2.23,
+     0.809,
+     false
+    ],
+    [
+     0.4,
+     2.53,
+     0.818,
+     false
+    ],
+    [
+     0.5,
+     3.06,
+     0.868,
+     false
+    ],
+    [
+     0.6,
+     4.25,
+     0.527,
+     false
+    ],
+    [
+     0.7,
+     4.95,
+     0.453,
+     false
+    ],
+    [
+     0.8,
+     5.87,
+     0.473,
+     false
+    ],
+    [
+     0.9,
+     6.15,
+     0.506,
+     false
+    ],
+    [
+     1.0,
+     6.29,
+     0.541,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 3,
+    "mass_endpoint_successors": 0.623,
+    "mass_quadrature_successors": 0.413
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "A",
+   "kind": "quarter",
+   "m0": 4,
+   "m1": 7,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 2.7,
+   "linear_blend_deviation": 0.393,
+   "linear_blend_radius_a05": 0.859,
+   "off_plane_fraction_a05": 0.936,
+   "month_mass_a05": 0.982,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     4.1,
+     1.157,
+     false
+    ],
+    [
+     0.1,
+     4.27,
+     1.138,
+     false
+    ],
+    [
+     0.2,
+     4.46,
+     1.114,
+     false
+    ],
+    [
+     0.3,
+     4.7,
+     1.085,
+     false
+    ],
+    [
+     0.4,
+     4.97,
+     1.046,
+     false
+    ],
+    [
+     0.5,
+     5.69,
+     0.997,
+     false
+    ],
+    [
+     0.6,
+     6.11,
+     0.948,
+     false
+    ],
+    [
+     0.7,
+     6.29,
+     0.904,
+     false
+    ],
+    [
+     0.8,
+     6.45,
+     0.862,
+     false
+    ],
+    [
+     0.9,
+     6.62,
+     0.816,
+     false
+    ],
+    [
+     1.0,
+     6.8,
+     0.767,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 8,
+    "mass_endpoint_successors": 0.846,
+    "mass_quadrature_successors": 0.917
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "A",
+   "kind": "quarter",
+   "m0": 6,
+   "m1": 9,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 2.66,
+   "linear_blend_deviation": 0.538,
+   "linear_blend_radius_a05": 0.764,
+   "off_plane_fraction_a05": 0.966,
+   "month_mass_a05": 0.98,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     6.45,
+     0.806,
+     false
+    ],
+    [
+     0.1,
+     6.66,
+     0.802,
+     false
+    ],
+    [
+     0.2,
+     6.88,
+     0.8,
+     false
+    ],
+    [
+     0.3,
+     7.06,
+     0.803,
+     false
+    ],
+    [
+     0.4,
+     7.19,
+     0.808,
+     false
+    ],
+    [
+     0.5,
+     7.31,
+     0.82,
+     false
+    ],
+    [
+     0.6,
+     7.52,
+     0.893,
+     false
+    ],
+    [
+     0.7,
+     7.83,
+     1.013,
+     false
+    ],
+    [
+     0.8,
+     8.39,
+     1.118,
+     false
+    ],
+    [
+     0.9,
+     8.85,
+     1.158,
+     false
+    ],
+    [
+     1.0,
+     9.11,
+     1.207,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 7,
+    "mass_endpoint_successors": 0.644,
+    "mass_quadrature_successors": 0.254
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "A",
+   "kind": "quarter",
+   "m0": 8,
+   "m1": 11,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 3.24,
+   "linear_blend_deviation": 0.24,
+   "linear_blend_radius_a05": 0.799,
+   "off_plane_fraction_a05": 0.902,
+   "month_mass_a05": 0.969,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     7.8,
+     1.006,
+     false
+    ],
+    [
+     0.1,
+     7.92,
+     0.991,
+     false
+    ],
+    [
+     0.2,
+     8.38,
+     0.968,
+     false
+    ],
+    [
+     0.3,
+     9.19,
+     0.95,
+     false
+    ],
+    [
+     0.4,
+     9.89,
+     0.948,
+     false
+    ],
+    [
+     0.5,
+     10.24,
+     0.972,
+     false
+    ],
+    [
+     0.6,
+     10.49,
+     1.021,
+     false
+    ],
+    [
+     0.7,
+     10.69,
+     1.08,
+     false
+    ],
+    [
+     0.8,
+     10.84,
+     1.14,
+     false
+    ],
+    [
+     0.9,
+     10.97,
+     1.196,
+     false
+    ],
+    [
+     1.0,
+     11.04,
+     1.246,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 0,
+    "mass_endpoint_successors": 0.92,
+    "mass_quadrature_successors": 0.87
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "A",
+   "kind": "quarter",
+   "m0": 10,
+   "m1": 1,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 1.83,
+   "linear_blend_deviation": 0.375,
+   "linear_blend_radius_a05": 0.619,
+   "off_plane_fraction_a05": 0.952,
+   "month_mass_a05": 0.977,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     10.18,
+     0.825,
+     false
+    ],
+    [
+     0.1,
+     10.32,
+     0.759,
+     false
+    ],
+    [
+     0.2,
+     10.49,
+     0.694,
+     false
+    ],
+    [
+     0.3,
+     10.7,
+     0.636,
+     false
+    ],
+    [
+     0.4,
+     10.94,
+     0.592,
+     false
+    ],
+    [
+     0.5,
+     11.17,
+     0.572,
+     false
+    ],
+    [
+     0.6,
+     11.47,
+     0.628,
+     false
+    ],
+    [
+     0.7,
+     11.75,
+     0.786,
+     false
+    ],
+    [
+     0.8,
+     11.92,
+     0.951,
+     false
+    ],
+    [
+     0.9,
+     0.0,
+     1.082,
+     false
+    ],
+    [
+     1.0,
+     0.01,
+     1.185,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 2,
+    "mass_endpoint_successors": 0.725,
+    "mass_quadrature_successors": 0.518
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "B",
+   "kind": "opposite",
+   "m0": 0,
+   "m1": 6,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.03,
+   "linear_blend_deviation": 0.385,
+   "linear_blend_radius_a05": 0.446,
+   "off_plane_fraction_a05": 0.967,
+   "month_mass_a05": 0.871,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     11.91,
+     1.233,
+     false
+    ],
+    [
+     0.1,
+     11.96,
+     1.111,
+     false
+    ],
+    [
+     0.2,
+     0.01,
+     0.997,
+     false
+    ],
+    [
+     0.3,
+     0.04,
+     0.9,
+     false
+    ],
+    [
+     0.4,
+     0.08,
+     0.74,
+     false
+    ],
+    [
+     0.5,
+     2.37,
+     0.635,
+     false
+    ],
+    [
+     0.6,
+     2.92,
+     0.635,
+     false
+    ],
+    [
+     0.7,
+     3.8,
+     0.699,
+     false
+    ],
+    [
+     0.8,
+     4.34,
+     0.784,
+     false
+    ],
+    [
+     0.9,
+     4.68,
+     0.871,
+     false
+    ],
+    [
+     1.0,
+     4.94,
+     0.951,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 1,
+    "mass_endpoint_successors": 0.751,
+    "mass_quadrature_successors": 0.106
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.492,
+     "blend": 0.005,
+     "pure_median": 0.01
+    },
+    "2": {
+     "rel": 0.411,
+     "blend": 0.005,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.286,
+     "blend": 0.052,
+     "pure_median": 0.181
+    },
+    "8": {
+     "rel": 0.628,
+     "blend": 0.52,
+     "pure_median": 0.827
+    },
+    "16": {
+     "rel": 0.596,
+     "blend": 0.629,
+     "pure_median": 1.055
+    },
+    "32": {
+     "rel": 0.621,
+     "blend": 0.636,
+     "pure_median": 1.025
+    },
+    "64": {
+     "rel": 0.621,
+     "blend": 0.635,
+     "pure_median": 1.023
+    },
+    "96": {
+     "rel": 0.62,
+     "blend": 0.635,
+     "pure_median": 1.024
+    }
+   }
+  },
+  {
+   "template": "B",
+   "kind": "opposite",
+   "m0": 1,
+   "m1": 7,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 4.76,
+   "linear_blend_deviation": 0.426,
+   "linear_blend_radius_a05": 0.235,
+   "off_plane_fraction_a05": 0.977,
+   "month_mass_a05": 0.943,
+   "monotone_phase": false,
+   "path": [
+    [
+     0.0,
+     11.87,
+     1.125,
+     false
+    ],
+    [
+     0.1,
+     11.85,
+     1.048,
+     false
+    ],
+    [
+     0.2,
+     11.84,
+     0.952,
+     false
+    ],
+    [
+     0.3,
+     11.82,
+     0.836,
+     false
+    ],
+    [
+     0.4,
+     11.85,
+     0.677,
+     false
+    ],
+    [
+     0.5,
+     11.92,
+     0.418,
+     false
+    ],
+    [
+     0.6,
+     11.92,
+     0.104,
+     false
+    ],
+    [
+     0.7,
+     6.9,
+     0.119,
+     false
+    ],
+    [
+     0.8,
+     7.04,
+     0.317,
+     false
+    ],
+    [
+     0.9,
+     7.08,
+     0.496,
+     false
+    ],
+    [
+     1.0,
+     7.11,
+     0.656,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 2,
+    "mass_endpoint_successors": 0.93,
+    "mass_quadrature_successors": 0.043
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.493,
+     "blend": 0.005,
+     "pure_median": 0.01
+    },
+    "2": {
+     "rel": 0.583,
+     "blend": 0.008,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.337,
+     "blend": 0.061,
+     "pure_median": 0.181
+    },
+    "8": {
+     "rel": 0.382,
+     "blend": 0.316,
+     "pure_median": 0.827
+    },
+    "16": {
+     "rel": 0.392,
+     "blend": 0.414,
+     "pure_median": 1.055
+    },
+    "32": {
+     "rel": 0.406,
+     "blend": 0.416,
+     "pure_median": 1.025
+    },
+    "64": {
+     "rel": 0.408,
+     "blend": 0.418,
+     "pure_median": 1.023
+    },
+    "96": {
+     "rel": 0.408,
+     "blend": 0.418,
+     "pure_median": 1.024
+    }
+   }
+  },
+  {
+   "template": "B",
+   "kind": "opposite",
+   "m0": 2,
+   "m1": 8,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.21,
+   "linear_blend_deviation": 0.316,
+   "linear_blend_radius_a05": 0.064,
+   "off_plane_fraction_a05": 0.965,
+   "month_mass_a05": 0.926,
+   "monotone_phase": false,
+   "path": [
+    [
+     0.0,
+     2.19,
+     0.92,
+     false
+    ],
+    [
+     0.1,
+     2.22,
+     0.79,
+     false
+    ],
+    [
+     0.2,
+     2.28,
+     0.632,
+     false
+    ],
+    [
+     0.3,
+     2.37,
+     0.432,
+     false
+    ],
+    [
+     0.4,
+     2.56,
+     0.163,
+     false
+    ],
+    [
+     0.5,
+     9.25,
+     0.115,
+     false
+    ],
+    [
+     0.6,
+     9.38,
+     0.337,
+     false
+    ],
+    [
+     0.7,
+     9.21,
+     0.5,
+     false
+    ],
+    [
+     0.8,
+     9.08,
+     0.636,
+     false
+    ],
+    [
+     0.9,
+     9.01,
+     0.754,
+     false
+    ],
+    [
+     1.0,
+     8.98,
+     0.855,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 3,
+    "mass_endpoint_successors": 0.92,
+    "mass_quadrature_successors": 0.026
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.331,
+     "blend": 0.003,
+     "pure_median": 0.01
+    },
+    "2": {
+     "rel": 0.473,
+     "blend": 0.006,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.054,
+     "blend": 0.01,
+     "pure_median": 0.181
+    },
+    "8": {
+     "rel": 0.029,
+     "blend": 0.024,
+     "pure_median": 0.827
+    },
+    "16": {
+     "rel": 0.132,
+     "blend": 0.14,
+     "pure_median": 1.055
+    },
+    "32": {
+     "rel": 0.113,
+     "blend": 0.116,
+     "pure_median": 1.025
+    },
+    "64": {
+     "rel": 0.114,
+     "blend": 0.116,
+     "pure_median": 1.023
+    },
+    "96": {
+     "rel": 0.112,
+     "blend": 0.115,
+     "pure_median": 1.024
+    }
+   }
+  },
+  {
+   "template": "B",
+   "kind": "opposite",
+   "m0": 3,
+   "m1": 9,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.83,
+   "linear_blend_deviation": 0.254,
+   "linear_blend_radius_a05": 0.287,
+   "off_plane_fraction_a05": 0.955,
+   "month_mass_a05": 0.92,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     2.99,
+     0.901,
+     false
+    ],
+    [
+     0.1,
+     3.27,
+     0.783,
+     false
+    ],
+    [
+     0.2,
+     3.73,
+     0.644,
+     false
+    ],
+    [
+     0.3,
+     4.39,
+     0.496,
+     false
+    ],
+    [
+     0.4,
+     6.19,
+     0.39,
+     false
+    ],
+    [
+     0.5,
+     7.31,
+     0.413,
+     false
+    ],
+    [
+     0.6,
+     7.75,
+     0.543,
+     false
+    ],
+    [
+     0.7,
+     7.96,
+     0.697,
+     false
+    ],
+    [
+     0.8,
+     8.27,
+     0.841,
+     false
+    ],
+    [
+     0.9,
+     8.56,
+     0.967,
+     false
+    ],
+    [
+     1.0,
+     8.82,
+     1.067,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 4,
+    "mass_endpoint_successors": 0.954,
+    "mass_quadrature_successors": 0.029
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.173,
+     "blend": 0.002,
+     "pure_median": 0.01
+    },
+    "2": {
+     "rel": 0.059,
+     "blend": 0.001,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.383,
+     "blend": 0.069,
+     "pure_median": 0.181
+    },
+    "8": {
+     "rel": 0.386,
+     "blend": 0.319,
+     "pure_median": 0.827
+    },
+    "16": {
+     "rel": 0.399,
+     "blend": 0.421,
+     "pure_median": 1.055
+    },
+    "32": {
+     "rel": 0.404,
+     "blend": 0.414,
+     "pure_median": 1.025
+    },
+    "64": {
+     "rel": 0.403,
+     "blend": 0.412,
+     "pure_median": 1.023
+    },
+    "96": {
+     "rel": 0.403,
+     "blend": 0.413,
+     "pure_median": 1.024
+    }
+   }
+  },
+  {
+   "template": "B",
+   "kind": "opposite",
+   "m0": 4,
+   "m1": 10,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.87,
+   "linear_blend_deviation": 0.503,
+   "linear_blend_radius_a05": 0.373,
+   "off_plane_fraction_a05": 0.992,
+   "month_mass_a05": 0.899,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     3.85,
+     1.122,
+     false
+    ],
+    [
+     0.1,
+     4.01,
+     1.003,
+     false
+    ],
+    [
+     0.2,
+     4.18,
+     0.838,
+     false
+    ],
+    [
+     0.3,
+     4.49,
+     0.629,
+     false
+    ],
+    [
+     0.4,
+     5.41,
+     0.411,
+     false
+    ],
+    [
+     0.5,
+     7.02,
+     0.276,
+     false
+    ],
+    [
+     0.6,
+     7.71,
+     0.277,
+     false
+    ],
+    [
+     0.7,
+     8.77,
+     0.408,
+     false
+    ],
+    [
+     0.8,
+     9.23,
+     1.121,
+     false
+    ],
+    [
+     0.9,
+     9.53,
+     1.249,
+     false
+    ],
+    [
+     1.0,
+     9.72,
+     1.332,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 5,
+    "mass_endpoint_successors": 0.825,
+    "mass_quadrature_successors": 0.111
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.142,
+     "blend": 0.001,
+     "pure_median": 0.01
+    },
+    "2": {
+     "rel": 0.098,
+     "blend": 0.001,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.348,
+     "blend": 0.063,
+     "pure_median": 0.181
+    },
+    "8": {
+     "rel": 0.359,
+     "blend": 0.297,
+     "pure_median": 0.827
+    },
+    "16": {
+     "rel": 0.342,
+     "blend": 0.361,
+     "pure_median": 1.055
+    },
+    "32": {
+     "rel": 0.281,
+     "blend": 0.287,
+     "pure_median": 1.025
+    },
+    "64": {
+     "rel": 0.271,
+     "blend": 0.277,
+     "pure_median": 1.023
+    },
+    "96": {
+     "rel": 0.27,
+     "blend": 0.276,
+     "pure_median": 1.024
+    }
+   }
+  },
+  {
+   "template": "B",
+   "kind": "opposite",
+   "m0": 5,
+   "m1": 11,
+   "cls": null,
+   "unresolved": true,
+   "eligible": 1.0,
+   "endpoint_separation_months": 5.74,
+   "linear_blend_deviation": 0.361,
+   "linear_blend_radius_a05": 0.263,
+   "off_plane_fraction_a05": 0.996,
+   "month_mass_a05": 0.874,
+   "monotone_phase": false,
+   "path": [
+    [
+     0.0,
+     4.68,
+     0.98,
+     false
+    ],
+    [
+     0.1,
+     4.77,
+     0.845,
+     false
+    ],
+    [
+     0.2,
+     4.9,
+     0.667,
+     false
+    ],
+    [
+     0.3,
+     5.48,
+     0.429,
+     false
+    ],
+    [
+     0.4,
+     7.01,
+     0.13,
+     false
+    ],
+    [
+     0.5,
+     10.84,
+     0.304,
+     false
+    ],
+    [
+     0.6,
+     11.0,
+     0.71,
+     false
+    ],
+    [
+     0.7,
+     10.83,
+     1.05,
+     false
+    ],
+    [
+     0.8,
+     10.87,
+     1.242,
+     false
+    ],
+    [
+     0.9,
+     10.91,
+     1.38,
+     false
+    ],
+    [
+     1.0,
+     10.95,
+     1.48,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 6,
+    "mass_endpoint_successors": 0.902,
+    "mass_quadrature_successors": 0.049
+   },
+   "radius_a05_by_loop_rel_pure": {
+    "1": {
+     "rel": 0.384,
+     "blend": 0.004,
+     "pure_median": 0.01
+    },
+    "2": {
+     "rel": 0.403,
+     "blend": 0.005,
+     "pure_median": 0.013
+    },
+    "4": {
+     "rel": 0.294,
+     "blend": 0.053,
+     "pure_median": 0.181
+    },
+    "8": {
+     "rel": 0.253,
+     "blend": 0.209,
+     "pure_median": 0.827
+    },
+    "16": {
+     "rel": 0.352,
+     "blend": 0.372,
+     "pure_median": 1.055
+    },
+    "32": {
+     "rel": 0.312,
+     "blend": 0.319,
+     "pure_median": 1.025
+    },
+    "64": {
+     "rel": 0.302,
+     "blend": 0.309,
+     "pure_median": 1.023
+    },
+    "96": {
+     "rel": 0.297,
+     "blend": 0.304,
+     "pure_median": 1.024
+    }
+   }
+  },
+  {
+   "template": "B",
+   "kind": "quarter",
+   "m0": 0,
+   "m1": 3,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 3.08,
+   "linear_blend_deviation": 0.384,
+   "linear_blend_radius_a05": 0.778,
+   "off_plane_fraction_a05": 0.968,
+   "month_mass_a05": 0.892,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     11.91,
+     1.233,
+     false
+    ],
+    [
+     0.1,
+     11.95,
+     1.158,
+     false
+    ],
+    [
+     0.2,
+     0.0,
+     1.094,
+     false
+    ],
+    [
+     0.3,
+     0.03,
+     1.086,
+     false
+    ],
+    [
+     0.4,
+     0.06,
+     1.044,
+     false
+    ],
+    [
+     0.5,
+     0.1,
+     0.961,
+     false
+    ],
+    [
+     0.6,
+     2.27,
+     0.915,
+     false
+    ],
+    [
+     0.7,
+     2.51,
+     0.901,
+     false
+    ],
+    [
+     0.8,
+     2.71,
+     0.899,
+     false
+    ],
+    [
+     0.9,
+     2.86,
+     0.9,
+     false
+    ],
+    [
+     1.0,
+     2.99,
+     0.901,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 4,
+    "mass_endpoint_successors": 0.574,
+    "mass_quadrature_successors": 0.558
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "B",
+   "kind": "quarter",
+   "m0": 2,
+   "m1": 5,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 2.49,
+   "linear_blend_deviation": 0.194,
+   "linear_blend_radius_a05": 0.745,
+   "off_plane_fraction_a05": 0.938,
+   "month_mass_a05": 0.976,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     2.19,
+     0.92,
+     false
+    ],
+    [
+     0.1,
+     2.34,
+     0.878,
+     false
+    ],
+    [
+     0.2,
+     2.51,
+     0.843,
+     false
+    ],
+    [
+     0.3,
+     2.7,
+     0.822,
+     false
+    ],
+    [
+     0.4,
+     2.91,
+     0.82,
+     false
+    ],
+    [
+     0.5,
+     3.27,
+     0.835,
+     false
+    ],
+    [
+     0.6,
+     3.71,
+     0.862,
+     false
+    ],
+    [
+     0.7,
+     4.07,
+     0.894,
+     false
+    ],
+    [
+     0.8,
+     4.31,
+     0.927,
+     false
+    ],
+    [
+     0.9,
+     4.51,
+     0.957,
+     false
+    ],
+    [
+     1.0,
+     4.68,
+     0.98,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 6,
+    "mass_endpoint_successors": 0.843,
+    "mass_quadrature_successors": 0.461
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "B",
+   "kind": "quarter",
+   "m0": 4,
+   "m1": 7,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 3.26,
+   "linear_blend_deviation": 0.261,
+   "linear_blend_radius_a05": 0.732,
+   "off_plane_fraction_a05": 0.943,
+   "month_mass_a05": 0.983,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     3.85,
+     1.122,
+     false
+    ],
+    [
+     0.1,
+     4.06,
+     1.103,
+     false
+    ],
+    [
+     0.2,
+     4.24,
+     1.077,
+     false
+    ],
+    [
+     0.3,
+     4.42,
+     1.039,
+     false
+    ],
+    [
+     0.4,
+     4.59,
+     0.983,
+     false
+    ],
+    [
+     0.5,
+     4.8,
+     0.888,
+     false
+    ],
+    [
+     0.6,
+     5.67,
+     0.756,
+     false
+    ],
+    [
+     0.7,
+     6.28,
+     0.692,
+     false
+    ],
+    [
+     0.8,
+     6.63,
+     0.666,
+     false
+    ],
+    [
+     0.9,
+     6.95,
+     0.657,
+     false
+    ],
+    [
+     1.0,
+     7.11,
+     0.656,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 5,
+    "mass_endpoint_successors": 0.869,
+    "mass_quadrature_successors": 0.414
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "B",
+   "kind": "quarter",
+   "m0": 6,
+   "m1": 9,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 3.88,
+   "linear_blend_deviation": 0.252,
+   "linear_blend_radius_a05": 0.642,
+   "off_plane_fraction_a05": 0.896,
+   "month_mass_a05": 0.945,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     4.94,
+     0.951,
+     false
+    ],
+    [
+     0.1,
+     5.62,
+     0.923,
+     false
+    ],
+    [
+     0.2,
+     6.2,
+     0.887,
+     false
+    ],
+    [
+     0.3,
+     6.59,
+     0.853,
+     false
+    ],
+    [
+     0.4,
+     7.02,
+     0.834,
+     false
+    ],
+    [
+     0.5,
+     7.27,
+     0.84,
+     false
+    ],
+    [
+     0.6,
+     7.52,
+     0.874,
+     false
+    ],
+    [
+     0.7,
+     7.74,
+     0.927,
+     false
+    ],
+    [
+     0.8,
+     7.92,
+     0.988,
+     false
+    ],
+    [
+     0.9,
+     8.29,
+     1.042,
+     false
+    ],
+    [
+     1.0,
+     8.82,
+     1.067,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 7,
+    "mass_endpoint_successors": 0.704,
+    "mass_quadrature_successors": 0.322
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "B",
+   "kind": "quarter",
+   "m0": 8,
+   "m1": 11,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 1.97,
+   "linear_blend_deviation": 0.292,
+   "linear_blend_radius_a05": 1.014,
+   "off_plane_fraction_a05": 0.863,
+   "month_mass_a05": 0.951,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     8.98,
+     0.855,
+     false
+    ],
+    [
+     0.1,
+     9.39,
+     0.913,
+     false
+    ],
+    [
+     0.2,
+     9.8,
+     0.989,
+     false
+    ],
+    [
+     0.3,
+     10.08,
+     1.082,
+     false
+    ],
+    [
+     0.4,
+     10.24,
+     1.18,
+     false
+    ],
+    [
+     0.5,
+     10.43,
+     1.262,
+     false
+    ],
+    [
+     0.6,
+     10.6,
+     1.324,
+     false
+    ],
+    [
+     0.7,
+     10.71,
+     1.376,
+     false
+    ],
+    [
+     0.8,
+     10.8,
+     1.419,
+     false
+    ],
+    [
+     0.9,
+     10.88,
+     1.453,
+     false
+    ],
+    [
+     1.0,
+     10.95,
+     1.48,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 0,
+    "mass_endpoint_successors": 0.951,
+    "mass_quadrature_successors": 0.846
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  },
+  {
+   "template": "B",
+   "kind": "quarter",
+   "m0": 10,
+   "m1": 1,
+   "cls": null,
+   "unresolved": true,
+   "eligible": true,
+   "endpoint_separation_months": 2.15,
+   "linear_blend_deviation": 0.566,
+   "linear_blend_radius_a05": 0.739,
+   "off_plane_fraction_a05": 0.958,
+   "month_mass_a05": 0.971,
+   "monotone_phase": true,
+   "path": [
+    [
+     0.0,
+     9.72,
+     1.332,
+     false
+    ],
+    [
+     0.1,
+     9.84,
+     1.245,
+     false
+    ],
+    [
+     0.2,
+     10.0,
+     1.145,
+     false
+    ],
+    [
+     0.3,
+     10.13,
+     1.027,
+     false
+    ],
+    [
+     0.4,
+     11.04,
+     0.796,
+     false
+    ],
+    [
+     0.5,
+     11.3,
+     0.86,
+     false
+    ],
+    [
+     0.6,
+     11.47,
+     0.935,
+     false
+    ],
+    [
+     0.7,
+     11.6,
+     0.981,
+     false
+    ],
+    [
+     0.8,
+     11.71,
+     1.026,
+     false
+    ],
+    [
+     0.9,
+     11.8,
+     1.076,
+     false
+    ],
+    [
+     1.0,
+     11.87,
+     1.125,
+     false
+    ]
+   ],
+   "readout_a05": {
+    "argmax": 2,
+    "mass_endpoint_successors": 0.876,
+    "mass_quadrature_successors": 0.875
+   },
+   "radius_a05_by_loop_rel_pure": {}
+  }
+ ]
+}

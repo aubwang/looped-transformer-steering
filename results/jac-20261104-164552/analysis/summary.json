@@ -1,0 +1,269 @@
+{
+ "rows": 168,
+ "eligible_rows": 147,
+ "problems": 84,
+ "dir_names": [
+  "circle+1",
+  "circle-1",
+  "random_0"
+ ],
+ "alphas": [
+  0.1,
+  1.0
+ ],
+ "stationarity": {
+  "drift_at_K_median": 6.758794825145742e-06,
+  "drift_at_K_p90": 1.1579949386941735e-05,
+  "prefix_drift_median": 1.0991102499247063e-05,
+  "ref_drift_median_by_step": [
+   6.36e-06,
+   4.74e-06,
+   4.04e-06
+  ],
+  "n_rows_drift_gt_1e-4_all": 8,
+  "n_problems_drift_gt_1e-4_all": 6,
+  "drift_at_K_max": 0.018439600244164467
+ },
+ "plane_block": {
+  "B_median": [
+   [
+    0.7253999710083008,
+    -0.006899999920278788
+   ],
+   [
+    -0.006099999882280827,
+    0.6938999891281128
+   ]
+  ],
+  "eig_modulus_median": [
+   0.7242084741592407,
+   0.6891558170318604
+  ],
+  "frac_complex_eigs": 0.5170068027210885,
+  "rotation_deg_per_step_median_abs": 0.4138459265232086,
+  "polar_rotation_deg_per_step_circle_coords": {
+   "median": 0.5897815385010244,
+   "p10": -4.511232980183652,
+   "p90": 5.651935723097022
+  },
+  "max_plane_gain_median": 0.8636310696601868,
+  "leak_frac_median": 0.5272139310836792,
+  "fd_check_max_abs_diff_eps_vs_small": 0.00026696640998125076,
+  "time_variation": {
+   "K+8": {
+    "eig_modulus_max_median": 0.7242043614387512,
+    "median_abs_diff_from_K": 1.3433396816253662e-05
+   },
+   "K+32": {
+    "eig_modulus_max_median": 0.7242002487182617,
+    "median_abs_diff_from_K": 1.3828277587890625e-05
+   }
+  }
+ },
+ "spectrum": {
+  "spectral_radius_median": 0.7816124296977329,
+  "spectral_radius_p10_p90": [
+   0.7546160518892004,
+   0.819379834645824
+  ],
+  "frac_leading_complex": 0.7142857142857143,
+  "leading_rotation_deg_median": 13.083076758258752,
+  "n_eigs_modulus_gt_half_median": 54.0,
+  "leading_mode_plane_overlap_median": 0.18244443094246765,
+  "top8_plane_overlap_max_median": 0.24352411208306007,
+  "random_2d_overlap_expectation": 0.019462473604038074,
+  "arnoldi_resid_top2_median": [
+   0.018,
+   0.0242
+  ],
+  "fresh_fd_resid_top2_median_eps_small": [
+   [
+    0.0181,
+    0.0242
+   ],
+   [
+    0.0184,
+    0.0245
+   ]
+  ],
+  "plane_quotient_exceeds_radius_frac": 0.047619047619047616
+ },
+ "propagation": {
+  "circle+1@0.1": {
+   "inplane_ratio_median_t1_t4_t8_tT": [
+    0.7262,
+    0.113,
+    0.0182,
+    0.0
+   ],
+   "outplane_ratio_median_t1_t4_t8_tT": [
+    0.4145,
+    0.3644,
+    0.1259,
+    0.0004
+   ],
+   "total_ratio_median_t1_t4_t8_tT": [
+    0.8429,
+    0.3887,
+    0.1319,
+    0.0004
+   ],
+   "inplane_geometric_rate_per_step_first8": 0.6059085915672549,
+   "inplane_rotation_deg_median_t1_t4_t8": [
+    -0.42,
+    -17.81,
+    -23.14
+   ]
+  },
+  "circle+1@1": {
+   "inplane_ratio_median_t1_t4_t8_tT": [
+    0.7336,
+    0.1122,
+    0.0185,
+    0.0
+   ],
+   "outplane_ratio_median_t1_t4_t8_tT": [
+    0.4077,
+    0.355,
+    0.1266,
+    0.0002
+   ],
+   "total_ratio_median_t1_t4_t8_tT": [
+    0.8421,
+    0.3848,
+    0.1301,
+    0.0002
+   ],
+   "inplane_geometric_rate_per_step_first8": 0.6071571181241698,
+   "inplane_rotation_deg_median_t1_t4_t8": [
+    -0.07,
+    -10.09,
+    -5.71
+   ]
+  },
+  "circle-1@0.1": {
+   "inplane_ratio_median_t1_t4_t8_tT": [
+    0.7305,
+    0.1165,
+    0.0189,
+    0.0
+   ],
+   "outplane_ratio_median_t1_t4_t8_tT": [
+    0.4176,
+    0.3673,
+    0.1291,
+    0.0004
+   ],
+   "total_ratio_median_t1_t4_t8_tT": [
+    0.8419,
+    0.3871,
+    0.1331,
+    0.0004
+   ],
+   "inplane_geometric_rate_per_step_first8": 0.6087758964093332,
+   "inplane_rotation_deg_median_t1_t4_t8": [
+    0.27,
+    -8.77,
+    9.37
+   ]
+  },
+  "circle-1@1": {
+   "inplane_ratio_median_t1_t4_t8_tT": [
+    0.7334,
+    0.1177,
+    0.0186,
+    0.0001
+   ],
+   "outplane_ratio_median_t1_t4_t8_tT": [
+    0.4098,
+    0.3631,
+    0.1283,
+    0.0003
+   ],
+   "total_ratio_median_t1_t4_t8_tT": [
+    0.8402,
+    0.3792,
+    0.1312,
+    0.0003
+   ],
+   "inplane_geometric_rate_per_step_first8": 0.6077275960945726,
+   "inplane_rotation_deg_median_t1_t4_t8": [
+    -0.37,
+    -16.06,
+    -12.17
+   ]
+  },
+  "random_0@0.1": {
+   "inplane_ratio_median_t1_t4_t8_tT": [
+    0.0168,
+    0.0186,
+    0.0079,
+    0.0
+   ],
+   "outplane_ratio_median_t1_t4_t8_tT": [
+    0.663,
+    0.2475,
+    0.0761,
+    0.0003
+   ],
+   "total_ratio_median_t1_t4_t8_tT": [
+    0.6631,
+    0.25,
+    0.078,
+    0.0003
+   ],
+   "inplane_geometric_rate_per_step_first8": 0.5459615948496344,
+   "inplane_rotation_deg_median_t1_t4_t8": [
+    -93.77,
+    -139.75,
+    -124.05
+   ]
+  },
+  "random_0@1": {
+   "inplane_ratio_median_t1_t4_t8_tT": [
+    0.0196,
+    0.0185,
+    0.0078,
+    0.0
+   ],
+   "outplane_ratio_median_t1_t4_t8_tT": [
+    0.6655,
+    0.2552,
+    0.0776,
+    0.0001
+   ],
+   "total_ratio_median_t1_t4_t8_tT": [
+    0.6658,
+    0.2557,
+    0.0787,
+    0.0001
+   ],
+   "inplane_geometric_rate_per_step_first8": 0.5454349045492912,
+   "inplane_rotation_deg_median_t1_t4_t8": [
+    -91.51,
+    -121.72,
+    -118.33
+   ]
+  }
+ },
+ "plane_only_linear_prediction_vs_observed_inplane_ratio_t1_t4_t8": {
+  "predicted": [
+   0.7257999777793884,
+   0.2825999855995178,
+   0.08219999819993973
+  ],
+  "observed": [
+   0.7262,
+   0.113,
+   0.0182
+  ]
+ },
+ "exploratory_carry_in_split": {
+  "n_carry": 23,
+  "n_nocarry": 124,
+  "plane_eig_modulus_carry": 0.7141335606575012,
+  "plane_eig_modulus_nocarry": 0.7269220352172852,
+  "spectral_radius_carry": 0.7954245604013446,
+  "spectral_radius_nocarry": 0.7775757150148195
+ }
+}

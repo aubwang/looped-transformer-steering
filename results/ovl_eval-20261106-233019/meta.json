@@ -1,0 +1,33 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.2438507080078125e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "mode": "eval",
+  "K0": 96,
+  "T": 48,
+  "chunk": 210,
+  "total_s": 480,
+  "n_push": 30,
+  "code_sha256": "40e9c0863ad3788f",
+  "push_sha256": "1bcd30d06d87314188c945c91f143a4b16bec8ccb4bd1a17607bcad51b050c0d",
+  "push_file": "../results/ovl_pushes_2.npz"
+ },
+ "runtime_s": 275.327927274,
+ "run_id": "ovl_eval-20261106-233019",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}

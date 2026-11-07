@@ -1,0 +1,51 @@
+{
+ "validation": [
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 51,
+   "max_abs": 6.771087646484375e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "uid0": 99,
+  "uid1": 98,
+  "src": "eq",
+  "K": 24,
+  "beta": 0.5,
+  "n_damp": 6,
+  "m": 4,
+  "eps": 0.25,
+  "eps_check": [
+   0.25,
+   0.1,
+   0.05
+  ],
+  "stat_thr": 2e-05,
+  "amp_tol": 0.02,
+  "max_extend": 2,
+  "K_extend": 8,
+  "n_coarse": 4,
+  "n_refine": 2,
+  "refine_halfwidth": 1.5,
+  "K_hyst": 8,
+  "n_push_alpha": 1,
+  "push_rel": 0.001,
+  "K_push": 6,
+  "budget_s": 600
+ },
+ "runtime_s": 40.223456144332886,
+ "run_id": "bifur_smoke-20261105-045553",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "skipped": [],
+ "row_steps": 436
+}

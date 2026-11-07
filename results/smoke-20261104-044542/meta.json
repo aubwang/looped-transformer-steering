@@ -1,0 +1,70 @@
+{
+ "validation": [
+  {
+   "depth": 4,
+   "len": 45,
+   "max_abs": 0.1328125,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 4,
+   "len": 48,
+   "max_abs": 0.1875,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 4,
+   "len": 49,
+   "max_abs": 0.125,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 45,
+   "max_abs": 0.25,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 48,
+   "max_abs": 0.1953125,
+   "argmax_agree": 1.0
+  },
+  {
+   "depth": 16,
+   "len": 49,
+   "max_abs": 0.25,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "seeds": [
+   0,
+   1
+  ],
+  "K": 24,
+  "chunk_prompts": 8,
+  "max_lag": 4,
+  "shift_max": 2,
+  "proj_dim": 64,
+  "greedy_depths": [
+   4,
+   16
+  ],
+  "greedy_chunk": 32
+ },
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "runtime_s": 30.114292860031128,
+ "peak_mem_gib": 6.918190956115723,
+ "windows": {
+  "mid": [
+   12,
+   18
+  ],
+  "late": [
+   18,
+   24
+  ]
+ },
+ "run_id": "smoke-20261104-044542"
+}

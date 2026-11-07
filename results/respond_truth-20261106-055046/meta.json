@@ -1,0 +1,35 @@
+{
+ "validation": [
+  {
+   "len": 61,
+   "max_abs": 3.24249267578125e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 63,
+   "max_abs": 4.57763671875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 64,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "task": "truth",
+  "K0": 64,
+  "N": 64,
+  "T": 48,
+  "doses": [
+   0.1,
+   1.0
+  ],
+  "eps": 0.1,
+  "total_s": 360,
+  "code_sha256": "01e5bfb79a20129e"
+ },
+ "runtime_s": 258.848196239,
+ "run_id": "respond_truth-20261106-055046",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c"
+}
