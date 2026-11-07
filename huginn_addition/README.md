@@ -1040,6 +1040,8 @@ Details:
 
 ## Truth stage 2: steering at the statement-final token (`truthsteer`, `analyze_truthsteer.py`; code and results reviewed by GPT-6 Astra)
 
+*Post-hoc note (2026-11-07, from Claude Opus 5.5 and GPT-6 Astra reviews of the write-up):* the doses here (class-mean distances) were about 7.5× larger for CITIES (≈ 44) than for COMPARE (≈ 5.8). Dose-normalized medians still differ (0.012 vs 0.008 logits per unit norm, 1.6×), so part of the CITIES-vs-COMPARE difference in this section reflects dose. Matched-dose equivalence was not tested. Numbers: `results/truthsteer_dose_by_dataset.json`.
+
 Run `results/tsteer-20261106-041051` (407 s).
 - **Items:** 60 judgment-format items (15 held-out units per dataset).
 - **Direction:** fold-specific B-dot truth direction; dose 1 = training class-mean distance (~1/3 of the state norm).
@@ -1065,6 +1067,8 @@ Details (median movement toward the opposite label, logits):
   - 0/15 false cities and 0/15 false comparisons flipped to True.
 
 ### Truth stage 2b: steering at the answer position (`truthsteer` site=ans, `analyze_truthsteer.py` with prespecified P5; reviewed by GPT-6 Astra)
+
+*Post-hoc note (2026-11-07, from Claude Opus 5.5 and GPT-6 Astra reviews of the write-up):* the doses here (class-mean distances) were about 10× larger for CITIES (22.4–23.6) than for COMPARE (2.3–2.6). Dose-normalized medians are similar (0.025 vs 0.026 logits per unit norm), so the answer-site median difference is largely accounted for by unequal doses. Matched-dose equivalence was not tested. Numbers: `results/truthsteer_dose_by_dataset.json`.
 
 Run `results/tsteer_ans-20261106-042907` (433 s).
 - **Setup:** same items, conditions and timing as stage 2, now at the answer position with fold-specific answer-site
@@ -1093,6 +1097,8 @@ Details:
   recurrent attenuation from weak readout coupling.
 
 ## Why truth steers weakly: a linear-response (resolvent) decomposition (`intervene_app.py respond`, `analyze_respond.py`; design, code and results reviewed by GPT-6 Astra)
+
+*Post-hoc note (2026-11-07, from a Claude Opus 5.5 review of the write-up):* truth coupling splits into two dataset clusters because of the dose difference noted under Truth stage 2 (per unit norm: CITIES 0.041, COMPARE 0.038; digits 0.207). The per-norm gap mainly reflects readout sensitivity (‖g‖ 2.76 vs 0.66). Among positive responders, truth retention is somewhat lower than digit retention (geometric mean 0.63 vs 0.82); the all-item retention medians mix in sign reversals. Digit responses at full dose are superlinear (3.72 observed vs 1.44 predicted).
 
 Runs:
 - `results/respond_digits-20261106-054706` (172 s; 50 digit items, chord direction).

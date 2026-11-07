@@ -1,0 +1,41 @@
+{
+ "note": "Post-hoc (2026-11-07, prompted by an Opus 5.5 review): per-dataset doses and per-unit-norm effects of the fold-specific mass-mean truth directions. Dose = scale (class-mean distance) from truthsteer_dirs*.npz; E24 = opposite-label movement vs sham at offset 24 under persistent ('context') forcing, as in analyze_truthsteer.py.",
+ "answer": {
+  "cities": {
+   "n": 30,
+   "dose_min": 22.401456832885742,
+   "dose_max": 23.571456909179688,
+   "dose_median": 23.058351516723633,
+   "median_E24": 0.5727711021900177,
+   "median_E24_per_unit_norm": 0.02471515195292243
+  },
+  "compare": {
+   "n": 30,
+   "dose_min": 2.255511999130249,
+   "dose_max": 2.5880751609802246,
+   "dose_median": 2.348099946975708,
+   "median_E24": 0.060211181640625,
+   "median_E24_per_unit_norm": 0.025994340485718984
+  },
+  "source_run": "results/tsteer_ans-20261106-042907"
+ },
+ "statement_final": {
+  "cities": {
+   "n": 30,
+   "dose_min": 42.84249496459961,
+   "dose_max": 44.734092712402344,
+   "dose_median": 43.731719970703125,
+   "median_E24": 0.5367002785205841,
+   "median_E24_per_unit_norm": 0.012453777934478426
+  },
+  "compare": {
+   "n": 30,
+   "dose_min": 5.575246334075928,
+   "dose_max": 6.101693153381348,
+   "dose_median": 5.81822395324707,
+   "median_E24": 0.04451274871826172,
+   "median_E24_per_unit_norm": 0.007669939606431295
+  },
+  "source_run": "results/tsteer-20261106-041051"
+ }
+}

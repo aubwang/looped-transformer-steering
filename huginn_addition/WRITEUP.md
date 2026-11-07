@@ -1,8 +1,8 @@
 # Local recurrent response predicts and enables readout control in a looped language model
 
 *An empirical study of Huginn-0125 (pinned revision `bb6621b…`). Working write-up, 2026-11-07. Revised after
-independent reviews by GPT-6 Astra (two rounds), Gemini 4 Argon (round 1), and a numbers-level fact-check against the
-raw saved outputs (Claude Opus 5.5).*
+independent reviews by GPT-6 Astra (two rounds), Gemini 4 Argon (round 1), a numbers-level fact-check against the raw
+saved outputs, and a full scientific review (both Claude Opus 5.5).*
 
 The study combines prospectively specified experiments with explicitly identified exploratory, post-hoc and
 retrospective analyses. Designs, analyses and result wording underwent model-assisted review (GPT-6 Astra throughout).
@@ -16,25 +16,30 @@ repeatedly to a latent state, and a coda reads out tokens. We studied how concep
 they can be read and controlled.
 
 **Main contribution: control.**
-- In these tasks, directions that *decode* a label (linear probes) give weak behavioral control.
+- In these tasks, directions that *decode* a label (linear probes) give weak behavioral control. At matched push norm,
+  the tested probe direction moved the True/False readout 0.25 log-odds, versus 8.1 for the loop-aware lever.
 - A local linear-response model of the recurrence predicts small-dose steering responses.
 - Pulling the readout gradient back through the recurrent dynamics gives much stronger, forcing-dependent control on
   held-out items:
-  - True/False log-odds shift 8.1, versus 0.93 for the readout gradient and 0.25 for the probe direction;
-  - +1.78 on target digits, versus ≈ −0.05 for controls;
+  - a median True/False log-odds shift of 8.1 at push norm 12.5, versus 0.93 for the readout gradient and 0.25 for
+    the probe direction;
+  - a mean gain of +1.78 in the target digit's centered logit (189/200 target effects positive; all 20 prompts),
+    versus ≈ −0.05 for readout-gradient and centroid directions, which is at random-direction noise level (|Δz| ≈ 0.05);
   - a quantitatively predicted 10×10 digit response matrix (median r = 0.978).
 - On digits, the response reorients within a single loop update, and the readout span is fed mostly from outside
-  itself. Inexpensive one-step pullbacks retain much of the effect: 76% on digits, 68% on truth at low dose.
+  itself. One-step pullbacks (one backward pass through the block) retain much of the effect: 76% on digits, 68% on
+  truth at low dose. On truth this is about what their cosine with the reference lever (0.70) predicts; on digits they
+  modestly exceed overlap-matched random controls.
 - In a retrospective test where a probe chose the steering sign, steering added no answer accuracy beyond the probe's
   own verdict.
 
 **Second contribution: dynamics.**
-- Late answer-position states are locally attracting and near-stationary in the tested settings.
-- A minority of prompts (about 13% of fresh addition prompts) settle into period-2 cycles. These originate at a source
-  token, usually upstream of the answer, whose validated own-block eigenvalue lies past −1 (−1.007 to −1.226 across 26
-  census sources). That is consistent with a period-doubling (flip) bifurcation along a contextual-input
-  family.
-- The cycles can be suppressed by eigenvalue-guided under-relaxation.
+- Late answer-position states are locally attracting and near-stationary in most tested prompts.
+- A minority of prompts (about 13% of fresh addition prompts) settle into period-2 cycles. In all 26 census cases, the
+  earliest period-2 token has a validated own-block eigenvalue past −1 (−1.007 to −1.226). Separately, two
+  contextual-input interpolation families gave evidence consistent with a period-doubling (flip) bifurcation.
+- Eigenvalue-guided under-relaxation of that source token stopped its own blink in 24/26 prompts, but all motion in
+  only 15/26: residual downstream motion often persists.
 
 **Context.**
 - Digits (and, in exploratory or partial analyses, weekdays and months) have cyclic representations.
@@ -74,6 +79,7 @@ initial addition pilot (and the pilot figures marked as such below) used bf16. T
 **Tasks.**
 - Equal-digit addition with few-shot demos, studied at teacher-forced answer positions.
 - Carry-conditioned units prediction.
+- Pointer-chasing and carry-chain screens.
 - Weekday/month successor pilots.
 - ARC-Challenge multiple choice (stability only).
 - True/False judgments: CITIES (city–country) and COMPARE (two-digit comparisons), with held-out units.
@@ -82,8 +88,9 @@ initial addition pilot (and the pilot figures marked as such below) used bf16. T
 - Prespecified hypotheses, labels and numerical gates, for the confirmatory experiments.
 - Synthetic-world checks of analyses where relevant, and smoke runs.
 - Model review of design and code before runs, with changes applied before data. Documented exceptions (post-run
-  amendments) are recorded in the README: the rtransfer rank cut, the ctrl shard merge, the tlever label fix, and the
-  post-hoc selector baseline.
+  amendments and deviations) are recorded in the README: the rtransfer rank cut, the ctrl shard merge, the tlever label
+  fix, the post-hoc selector baseline, the tsteer_ans P5 bootstrap (pooled rather than dataset-stratified), and the
+  revmech dominant-pair Ritz residuals (prespecified but not reported).
 - Result wording matched to the evidence; negative and INCONCLUSIVE verdicts kept as prespecified.
 - **Gates** include adjoint consistency (VJP vs FD, typically ≤ 1e-3), exact sham/replication equality across runs,
   replica-versus-model equality, and Neumann-tail checks.
@@ -98,8 +105,9 @@ initial addition pilot (and the pilot figures marked as such below) used bf16. T
   reaches 32% in the pilot (95% CI 24–41%) and 29% in full space.
 - Numerical cyclic order beat all sampled scrambled orders.
 - Pushing along fitted circle chords causally shifts the *immediate* digit readout toward the intended neighbor (+2.3
-  log-odds; random directions −0.06 to +0.37; radial and top-PC pushes −0.28 and −0.17). Under continued recurrence the
-  push decays, and the final answer equals baseline on 168/168 prompts.
+  log-odds; for the primary +1-target controls, random directions −0.06 to +0.37, radial −0.28, and random directions
+  within the top-50-PC subspace −0.17 to +0.15). Under continued recurrence the push decays, and the final answer
+  equals baseline on 168/168 prompts.
 - Local readout gradients align with ±1 neighbors. Far-offset sensitivity is dominated by lowering the current digit,
   and less than 1% of readout-gradient energy lies in the circle plane.
 - Exploratory/partial evidence of cyclic structure:
@@ -109,7 +117,7 @@ initial addition pilot (and the pilot figures marked as such below) used bf16. T
   computational rotation was INCONCLUSIVE; the motion was mostly additive radial growth. No complete circular decoder is
   claimed.
 
-**2.2 Locally attracting, near-stationary states.**
+**2.2 Locally attracting, near-stationary states (most tested prompts).**
 - At the tested answer positions, late states are near-stationary in fp32 (per-step drift ~5e-6). The largest observed
   Ritz modulus has median 0.78 (p10–p90 0.75–0.82).
 - A separate token-stratified sample gave leading moduli 0.66–0.87 (median 0.77). Strict leading-eigenvalue convergence
@@ -118,26 +126,41 @@ initial addition pilot (and the pilot figures marked as such below) used bf16. T
 - The answer argmax stabilizes long before the state: median loop 7 vs 74 among convergence completers, with 36/217
   positions censored at loop 128.
 - Settling-rate predictors did not beat Huginn's KL stopping rule: the RATE rule needed 6.4 more loops.
+- Exceptions: 26 period-2 and 10 unresolved prompts among 200 census prompts; 24/100 ARC prompts not stationary at
+  baseline (12 blinking, 12 unresolved); 36/217 settle positions still drifting at loop 128; month prompts not
+  stationary by loop 96.
 
 **2.3 Period-2 cycles from a flip mode at a source token.**
 - **Prevalence:** about 13% of fresh addition prompts (95% CI 8–18%) and 12% of ARC prompts (7.0–19.8%) contain a
   settled period-2 position.
-- **Source:** in analyzed cases, the cycle originates at a source token, often a demo "=" or a leading operand digit.
-  There, a validated real own-block eigenvalue lies past −1 (−1.007 to −1.226 across 26 census sources; median −1.07),
-  and downstream positions, including the answer, inherit the cycle. In two case-study prompts the "=" source is
-  itself an answer-prediction position.
-- **Bifurcation evidence:** interpolating the prelude output E between a stationary and a cycling context gives
-  evidence consistent with a supercritical flip (the tracked eigenvalue crosses −1; amplitude² is approximately linear
-  in μ). This replicated on a second problem. Validated negative modes (−0.52 to −0.87) also occur at stationary
-  positions in every sampled token category.
+- **Source token:** in all 26 census cases, the earliest period-2 token, often a demo "=" or a leading operand digit,
+  has a validated real own-block eigenvalue past −1 (−1.007 to −1.226; median −1.07). The eigenvalue is measured at the
+  hidden unstable fixed point between the two cycle states. In two case-study prompts the "=" source is itself an
+  answer-prediction position.
+- **Inheritance:** in the six cycle-source case studies, freezing everything before the answer-prediction position
+  stopped the answer-position cycle. But in problem 50, "=" kept sustaining period-2 motion when the prefix through the
+  first source was pinned: a demonstrated second oscillator. In the relaxation run, residual downstream motion is
+  common after the selected source is suppressed, consistent with additional oscillators or other unresolved dynamics
+  (see Suppression).
+- **Robustness:** for the two problems tested in fp64, fp64 closely reproduces the cycling amplitudes.
+- **Bifurcation evidence:** interpolating the prelude output E between a stationary and a cycling context gives evidence
+  consistent with a supercritical flip: the tracked eigenvalue crosses −1, amplitude² is approximately linear in μ = −1
+  − λ, and the cycle's two-step multiplier is close to the leading-order prediction 1 − 4μ. This replicated on a second
+  problem. Validated negative modes (−0.52 to −0.87) also occur at stationary positions in every sampled token category.
 - **Behavior:**
   - Real-text census prompts had unchanged tail argmaxes, with identical greedy answers through the first newline at
     budgets 509–512. Unchanged probabilities were not established. In sibling experiments, parity-averaged probability
     differences reached ≈ 5% (demo screen), and ARC letter-probability oscillations were small.
   - A narrow non-textual interpolation window showed phase-dependent argmax differences (loop-parity flicker).
-- **Suppression:**
-  - Eigenvalue-guided under-relaxation of the source token stopped the source blink in 24/26 prompts. Whole-sequence
-    stationarity was reached in only 15/26 under the −0.6 setting.
+- **Suppression:** under-relaxation replaces the update at the source token by s ← (1 − a)s + aF(s). This maps the flip
+  eigenvalue λ to 1 − a + aλ, which crosses −1 at a* = 2/(1 − λ). The relaxation strength is r = a/a*, and the setting
+  is chosen so the relaxed multiplier hits a target (−0.6 or −0.85).
+  - Relaxing only the source token stopped its own blink in 24/26 prompts. Controls: the sham kept blinking in 26/26,
+    and insufficient damping (multiplier still past −1) kept it blinking in 25/25. That is what makes the result
+    eigenvalue-specific.
+  - The fitted decay rate matched the −0.85 target (0.851) but not the −0.6 target (0.918; cause unverified).
+  - Whole-sequence stationarity was reached in only 15/26 under the −0.6 setting. In at least 6 of the 24 prompts where
+    the source stopped, a downstream position kept moving at 0.4–0.95× its undamped drift.
   - For the 24 previously resolved prompts, finite-time DECAY/PERSIST labels bracketed the predicted transition between
     r = 0.99 and 1.01. This does not directly localize an asymptotic stability threshold. The strict prespecified
     all-six-conditions criterion passed on only 5/24 (the others were UNCLEAR at r = 0.96, near the fp32 floor).
@@ -150,7 +173,7 @@ initial addition pilot (and the pilot figures marked as such below) used bf16. T
   detected (ρ = 0.08, p = 0.16; 87/150 censored).
   - Exploratory decider tracking was positive with no intervening propagate column, and not consistently positive with
     one to four.
-  - Answers did change between loops 16 and 96 on 52/150 prompts.
+  - Answers did change between loops 16 and 96 on 52/150 prompts (18 became correct, 16 became incorrect).
 - These results are compatible with refinement toward stable predictions. They do not identify the computation or
   establish a general one-step limit.
 - The early loops clearly do substantial work: on the carry-conditioned units task, digit accuracy rises from 6.5%
@@ -163,7 +186,8 @@ improvement over endpoint features. Truth prediction was near ceiling; correctne
 errors. Other results, briefly:
 - An exploratory ~15° decoded carry offset survived several controls but was not separated from column-sum information.
 - No clear association was found between low answer confidence and random-perturbation recovery, in a sample selected
-  for extreme margins. A gap-shrinking nudge did show associations (exploratory; ρ −0.45 and +0.54).
+  for extreme margins. A gap-shrinking nudge did show associations (exploratory; ρ −0.45, Holm p 0.094; ρ +0.54, Holm
+  p 0.028).
 
 ## 3. Reading versus controlling
 
@@ -175,7 +199,10 @@ shifted readouts.
 **3.1 One-shot edits are erased; persistent edits are not (digits).**
 - A one-shot answer-position edit decays to sham.
 - The same edit applied every loop settles at a shifted state: +3.7 log-odds, displacement 2.5× the push norm.
-- Answer control was limited: 8/50 target flips, versus 1/50 for a random edit.
+- Much of that displacement does not reach the readout. In the response run on the same 50 prompts, the settled
+  persistent readout (3.72) was below the one-shot edit's immediate readout (4.13).
+- Answer control was limited: 8/50 target flips (versus 1/50 for a random edit), and 12/50 produced other digits; at
+  double scale, 5/50 target flips and 31/50 other digits.
 
 **3.2 Truth is decodable but the probe direction is a weak lever.**
 - Mass-mean probes on *statement-final* states decode truth labels at loop 64: AUROC 0.997 cities, 0.914 compare.
@@ -183,27 +210,48 @@ shifted readouts.
   truth; cross-dataset transfer was asymmetric.
 - Persistent steering along the probe direction at the answer site moved the judgment by a pooled median of 0.08 logits:
   0.57 on CITIES vs 0.06 on COMPARE.
+  - The answer-site median difference is **largely accounted for by unequal doses**. The dose was the class-mean
+    distance, about 10× larger for CITIES (22.4–23.6) than for COMPARE (2.3–2.6), and dose-normalized medians are
+    similar (0.025 vs 0.026 logits per unit norm).
+  - At the statement-final site (doses ≈ 44 vs 5.8), the normalized medians still differ (0.012 vs 0.008, 1.6×).
+    Matched-dose equivalence of the datasets was not tested.
+  - Per-dataset doses and effects are saved in `results/truthsteer_dose_by_dataset.json` (post-hoc).
   - Protocol: fold-specific directions, dose equal to the class-mean distance, 24 loops. §3.4's 0.25 uses a frozen
     population mass-mean at norm 12.5 and 48 loops.
   - It passed the prespecified persistence, specificity and dose criteria but failed the bidirectional criterion.
 
 **3.3 Why: weak immediate coupling, not stronger attenuation.**
 - The local linear-response model predicted small-dose persistent responses (Spearman 0.995 digits, 0.999 truth).
-- In these formats, median immediate readout coupling per unit norm was about 5.4× larger for the tested fitted
-  digit chords than for the mass-mean truth directions (0.207 vs 0.0385; the unnormalized contrast is 4.4×). Recurrent
-  retention of the truth directions was no weaker (0.66 vs 0.41).
+- Per unit push norm, immediate readout coupling was about 5× larger for the tested digit chords (0.207) than for the
+  mass-mean truth directions (0.041 CITIES, 0.038 COMPARE). This is mainly because the digit readout is more sensitive
+  (‖g‖ 2.76 vs 0.66); both kinds of direction are nearly orthogonal to their readout gradients (cos 0.08 vs 0.06).
+- The pooled unnormalized ratio (4.4×) is unstable: truth coupling splits into two dataset clusters (because of the
+  dose difference in §3.2), and its bootstrap CI is 3.0–40.7.
+- Stronger recurrent attenuation of the truth directions was not supported (ratio 0.62, CI −0.22 to 1.22). Among
+  positive responders, truth retention was somewhat lower than digit retention (geometric mean 0.63 vs 0.82), but
+  coupling accounts for 2.88 of the 3.14 log-unit gap. All-item retention medians (0.66 vs 0.41) mix in sign reversals.
 - These results favor weak immediate coupling over stronger recurrent attenuation as the explanation for the weak truth
   steering.
-- Recurrence nevertheless reversed the predicted sign of response on 42% of digit items and 19% of truth items, and
-  digit responses were substantially nonlinear at full dose.
+- Recurrence reversed the predicted sign of response on 42% of digit items and 19% of truth items (all in CITIES).
+- Digit responses were *superlinear* at full dose: median observed 3.72 versus a linear prediction of 1.44, and 20/21
+  small-dose reversals were positive at full dose. The +3.7 in §3.1 is therefore outside the regime where the linear
+  model is validated. The small-dose fit holds within each truth dataset.
 
 **3.4 Loop-aware steering of the True/False readout (d*).**
 - d* = normalize(mean_i normalize(A_{48,i}ᵀ g_i)) is built on 60 training statements.
+- For one item, A_Tᵀg = ∇_P ΔR_T at P = 0, so the item-specific lever is the first-order optimal persistent steering
+  vector for the readout being evaluated. The population d* averages normalized item covectors and is not itself
+  optimal for the mean readout change.
+- The probe and readout-gradient baselines are not optimized for that objective. The comparison therefore shows how
+  much the loop changes the effective direction, not that probes are poorly chosen in general.
+- The push norm 12.5 came from the earlier probe-steering doses: it is the median class-mean distance, which falls
+  between the two dataset clusters (≈ 2.3 and ≈ 23). It is about 16% of the answer-position state norm (median 76).
 - On 60 held-out statements (30 units) at matched norm 12.5, with persistent forcing, it shifted True/False log-odds by
   a median of 8.13, versus 0.93 for the readout gradient and 0.25 for the probe direction.
 - It is nearly orthogonal to both (cos 0.096 and 0.025).
-- The model is strongly False-biased (sham accuracy 55%), so true-to-false flip evidence is limited to 3 sham-correct
-  true statements; log-odds shifts are measured on all 60.
+- The model is False-biased (sham accuracy 55%). True statements sit just below the threshold (median sham log-odds
+  −0.10, range −0.39 to +0.08); false statements are further below (median −0.56). True-to-false flip evidence is
+  therefore limited to 3 sham-correct true statements; log-odds shifts are measured on all 60.
 - **Readout lever, not demonstrated truth manipulation:**
   - d* raises the literal True token and shifts Yes/No and A/B formats toward their true-designated labels. Yes and A
     are confounded with affirmative/first-option polarity.
@@ -215,11 +263,13 @@ shifted readouts.
 
 **3.5 Quantitative control on digits.**
 - Frozen loop-aware digit levers (norm 3, 48 loops of forcing) raise the target centered digit logit by +1.78 on 20
-  held-out prompts, versus ≈ −0.05 for readout-gradient and centroid directions.
+  held-out prompts (189/200 target effects positive; all 20 prompts positive on average). Readout-gradient and
+  centroid directions give ≈ −0.05, at random-direction noise level (median |Δz| 0.046).
 - Each prompt's own linearized operator predicts the full 10×10 response matrix: median r = 0.978, slope 0.95,
   normalized error 0.22.
-- Averaged or swapped operators are reliably worse (r 0.93–0.95). The immediate-readout prediction is anticorrelated
-  (−0.59).
+- Excluding the target diagonal, the prediction still reaches r = 0.972.
+- Averaged or swapped operators are reliably worse, though the training-averaged operator already reaches r = 0.947
+  (swapped 0.93–0.94). The immediate-readout prediction is anticorrelated (−0.59).
 - The levers were constructed from the same operator family, so this is direction-conditioned prediction, though
   held out.
 
@@ -230,9 +280,14 @@ All analyses in this section use the same 20 held-out digit prompts and perturb 
 **4.1 The reversal is a first-step reorientation.**
 - Levers start slightly negative on the target readout and become strongly positive after one loop: c₀ = −0.13 →
   c₁ = +0.94.
-- Because the objective starts at t = 1, it places no requirement on the immediate response c₀. Empirically, the frozen
-  levers have slightly negative immediate responses but strongly positive one-step responses. The lower bound makes
-  this possible; it does not explain why the sign is negative.
+- Because the objective's sum starts at t = 1, it places no requirement on the immediate response c₀.
+- Relation to readout-gradient steering: for an item-specific lever a = A_Tᵀg/‖A_Tᵀg‖, c₀ = gᵀA_Tᵀg/‖A_Tᵀg‖, which is
+  proportional to the accumulated readout response to a push along g itself. So the two signs are linked: a lever
+  starts negative exactly when a readout-gradient push ends negative. This identity does not explain why the common
+  sign is negative.
+- For the frozen population pushes this holds approximately: across the 200 (prompt, digit) cells, lever c₀ correlates
+  with the readout-gradient push's accumulated 48-loop response (r = 0.64, 68% sign agreement), and both medians are
+  negative (−0.134 and −0.059).
 - Basis-independently:
   - 154/157 lever reversals already flip sign after one application of J.
   - Readout-gradient pushes are suppressed after one step (|c₁/c₀| = 0.05) without overall contraction (‖JP‖/‖P‖ =
@@ -249,10 +304,13 @@ All analyses in this section use the same 20 held-out digit prompts and perturb 
 - Let Q be an orthonormal basis matrix for the span of the 10 digit-readout gradients (rank 9); norms are Frobenius.
   About 97% of the squared sensitivity of the one-step readout map QᵀJ comes from directions outside Q (ρ = ‖QᵀJQ‖/‖QᵀJ‖
   = 0.17).
-- The within-span map is weak (spectral radius 0.17).
+- Reference points: ρ = 1 would require the readout span to be invariant under the adjoint Jᵀ, with no sensitivity to
+  inputs outside the span. As an isotropic random-mixing benchmark, a random 9-dimensional subspace would give about
+  √(9/5280) ≈ 0.04.
+- The within-span map is weak: spectral radius 0.17, versus ≈ 0.78 for J itself.
 - Levers lie largely outside Q: in-span norm ratio ‖QᵀP‖/‖P‖ = 0.12, about 1.4% of squared norm. Readout-gradient
   pushes: 0.71.
-- Levers have three times the one-step readout gain of readout-gradient pushes (0.34 vs 0.11).
+- Levers have three times the one-step readout gain ‖QᵀJP‖/‖P‖ of readout-gradient pushes (0.34 vs 0.11).
 - This is local Jacobian sensitivity, not measured activation flow.
 
 **4.3 Which paths carry the one-step response.**
@@ -287,7 +345,7 @@ changes in the target centered digit logit).**
 |---|---|---|
 | Readout gradient g | −0.05 | — |
 | Adapter pullback W_sᵀR_adapterᵀg | 0.875 | 49%; the prespecified half-of-reference test was INCONCLUSIVE |
-| W_sᵀg | 0.874 | — |
+| W_sᵀg | 0.874 | 49% (not separately tested; nearly collinear with the adapter pullback) |
 | One-step Jᵀg | 1.35 | 76%; passed |
 | 48-step lever | 1.78 | 100% |
 
@@ -297,6 +355,11 @@ changes in the target centered digit logit).**
   prompts conditional on two random control draws per target.
 - The remainders orthogonal to the reference steer on their own. These are effect ratios, not reconstructions of the
   reference direction.
+- For a single item, linear response gives ΔR_i ≈ ‖P‖·‖A_{T,i}ᵀg_i‖·cos(P, A_{T,i}ᵀg_i).
+- For the frozen population directions, a descriptive reference-component projection, mean_{i,k}[c_k·Δ_{L,i,k}] with c_k
+  the population cosine with the reference, gives 1.18 (Jᵀg) and 0.71 (adapter pullback). The levers' observed effects
+  are 1.35 and 0.875. This is not a full linear-response prediction; the overlap controls test against the observed
+  matched controls (1.21 and 0.74).
 
 **5.2 Cheap levers (truth; frozen population directions; 60 held-out statements; dose 1.5625; 24 loops; effects are
 median opposite-label True/False log-odds shifts).**
@@ -311,16 +374,22 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
 | g | 0.12 | 9% | 0.0007 | 0.0125 s |
 
 - "Off-target KL" is KL(x* reference ‖ pushed) after renormalizing over all tokens except True/False.
+- **Fractions ≈ cosines:** the fractions of d* closely match the population directions' cosines with d* (0.68/0.39/0.09
+  vs 0.70/0.40/0.10). The substantive finding is that the population one-step direction already has cosine ≈ 0.70 with
+  the population 48-step direction.
 - **Timing:** measured with cuda synchronization, batch 40. It excludes the 0.75 s shared 64-loop warm-up; W_sᵀg costs
-  essentially nothing beyond computing g. Population levers are built once and amortized, so they require no
-  per-test-prompt direction construction.
-- **Hypotheses (effects E):** the prespecified primary paired contrast median(E_{Jᵀg} − ½E_{d*}) was positive (0.248
-  [0.247, 0.249]). The exploratory median(E_{W_sᵀg} − ½E_{d*}) was negative (−0.136).
+  essentially nothing beyond computing g. Population levers are built once and amortized: building d* from 60 training
+  statements takes about 2 GPU-minutes (estimated: 117 s including the warm-up loops, 71 s excluding them), so the
+  cost advantage matters mainly for per-prompt (item-specific)
+  levers (1.19 s vs 0.037 s).
+- **Hypotheses (effects Δ):** the prespecified primary paired contrast median(Δ_{Jᵀg} − ½Δ_{d*}) was positive (0.248),
+  and positive for all 60 statements (0.20–0.29). The very narrow bootstrap CI ([0.247, 0.249]) describes uncertainty
+  in the median, not the statement-level spread. The exploratory median(Δ_{W_sᵀg} − ½Δ_{d*}) was negative (−0.136).
 - **Item-specific levers:** d*_item 1.30 and (Jᵀg)_item 0.88; the exploratory paired contrast
-  median(E_{Jᵀg,item} − ½E_{d*,item}) = 0.251 was positive.
+  median(Δ_{Jᵀg,item} − ½Δ_{d*,item}) = 0.251 was positive.
 - **Linearity:** effects are linear to dose 3.125. At 12.5 the relative efficacy gaps narrow (Jᵀg/d* rises from 0.68
   to 0.82).
-- **Collateral:** median KL / median E² is lowest for W_sᵀg. This is descriptive and on-prompt only; matched-effect
+- **Collateral:** median KL / median Δ² is lowest for W_sᵀg. This is descriptive and on-prompt only; matched-effect
   collateral was not tested.
 - **Oracle-sign correction:** with ground-truth-informed signs, the population d*, Jᵀg and W_sᵀg corrected all 27
   False-biased errors at every tested dose. This is readout control with an oracle sign, not truth inference.
@@ -328,8 +397,12 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
 **5.3 Probe-selected steering transmits the probe's verdict (retrospective diagnostic).**
 - A frozen probe, trained on 90 other units, chose a binary steering sign for the 60 held-out statements, using
   already-recorded both-direction runs.
-- All nine lever × dose policies exactly reproduced the probe's binary verdict: 76.7% accuracy, 0 discordant units. Even
-  the weakest tested policy overcame the baseline margins wherever the selector required a changed verdict.
+- All nine lever × dose policies exactly reproduced the probe's binary verdict: 76.7% accuracy, 0 discordant units.
+- This outcome was nearly guaranteed by the design. Every flip the selector requested (39) had a baseline margin of at
+  most 0.40 log-odds, while even the weakest policy (W_sᵀg at dose 1.5625) shifts every statement by 0.46–0.51. The
+  diagnostic therefore could not have detected steering that combines its own information with the selector's.
+- Baselines: the model's own readout with a recalibrated threshold reached 78.3% (CITIES 96.7%, COMPARE 60%), slightly
+  above the probe selector.
 - A training-fitted combination of the model readout and cross-fitted probe scores reached 90.0%. A post-hoc probe-only
   recalibration also reached 90.0%, so the model readout added no detected benefit.
 - The 76.7% ceiling reflects binary sign selection with an uncalibrated threshold at these doses. A recalibrated
@@ -350,16 +423,20 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
 - **The loop-aware geometry is cheap to approximate.**
   - One-step pullbacks recover 76% (digits) and 68% (truth, low dose) of the reference effect.
   - Adapter-transpose directions recover 49% and 39%.
+  - These fractions largely track the levers' cosines with the reference. Overlap-matched random controls reproduce
+    85–90% of the digit effects, and the levers exceed them modestly.
+  - The cost advantage matters mainly for per-prompt levers; population levers are built once.
   - These remain *readout* levers. The truth levers' behavior is consistent with response polarity, and is not shown to
     manipulate an internal truth representation.
 - **Steering transmits the sign-choosing monitor (here).** When a probe chooses the sign at the tested doses,
   answer-level steering delivers the probe's verdict. Its distinctive value, if any, would have to come from effects on
   subsequent behavior, which remain untested.
 - **Recurrence and stability.**
-  - In the tested settings, late recurrence settles readouts into locally attracting, near-stationary states. The tested
+  - In most tested prompts, late recurrence settles readouts into locally attracting, near-stationary states. The tested
     one-shot edits decayed, whereas persistent forcing maintained shifted readouts.
-  - Flip modes at source tokens (about 13% of addition prompts and 12% of ARC prompts) produce period-2 cycles that are
-    mechanistically traceable and largely suppressible by damping.
+  - In addition prompts (about 13%), period-2 cycles trace to source-token flip modes and are largely suppressible by
+    eigenvalue-guided damping, though downstream positions can keep oscillating. ARC cycles (12%) were not traced to
+    sources, but global damping removed them.
 
 ## 7. Limitations
 
@@ -382,6 +459,13 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
   unresolved.
 - **Retrospective analyses.** The selector analysis reused statements whose intervention outcomes had been inspected. It
   was prespecified before computation but is a diagnostic.
+- **What "held-out" means.** Held-out digit prompts are new operand cells within the same two prompt templates; truth
+  statements are held out by unit.
+- **Initialization.** One initialization per prompt in the control and mechanism experiments.
+- **Multiplicity.** Headline results were selected from about 40 experiments without study-level multiplicity control.
+  Confirmatory per-experiment tests were prespecified.
+- **Circle interpretation.** The circle is measured in pre-coda states, so it may partly reflect alignment with the
+  digit-token output geometry rather than the arithmetic itself.
 
 ## 8. Negative and inconclusive results (as prespecified)
 
@@ -421,14 +505,28 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
   - Here we show a source-token flip mode with bifurcation evidence inside a pretrained recurrent-depth LM's loop,
     context-controlled switching, and eigenvalue-guided suppression.
   - This is based on a limited literature search, not a systematic review.
-- **Jacobian-based steering.** The resolvent pullback is standard linear-response reasoning. The empirical findings here
-  are its held-out accuracy, the first-step reorientation, the outside-fed readout span, and the effectiveness of
-  one-step and adapter-transpose approximations.
+- **Cyclic number representations.** Weekday and month circles in other LLMs (Engels et al. 2024, arXiv:2405.14860);
+  Fourier/helical number features used for addition (Zhou et al. 2024; Kantamneni & Tegmark 2025); Fourier features in
+  modular-arithmetic transformers (Nanda et al. 2023).
+- **Fixed-point analysis of recurrent networks.** Sussillo & Barak 2013; Maheswaranathan et al. 2019 (line attractors in
+  trained RNNs).
+- **Implicit / equilibrium models.** Deep equilibrium models (Bai et al. 2019) differentiate through fixed points with
+  (I − J)⁻¹. Jacobian-free and one-step "phantom" gradients (Fung et al. 2022; Geng et al. 2021) are related
+  precedents for the resolvent pullback and the Jᵀg shortcut used here. Those works concern training gradients, not
+  steering interventions.
+- **Jacobian-based steering.** For each item, A_Tᵀg = ∇_P ΔR_T is the first-order optimal persistent steering vector:
+  standard linear-response reasoning. The population d* is an average of normalized item covectors. The empirical
+  findings here are its held-out accuracy, the first-step reorientation, the outside-fed readout span, and the
+  effectiveness of one-step and adapter-transpose approximations.
+- **Not yet done:** a baseline that directly optimizes a steering vector for the evaluated readout at norm 12.5 (where
+  d* is sublinear) would test how close d* comes to the nonlinear optimum.
 
 ## 10. Reproducibility
 
 - Code: `huginn_addition/intervene_app.py`, a Modal app with all GPU functions and configs; `analyze_*.py` and
   `make_*.py` hold the analyses and builders, with frozen rules and recorded amendments in their docstrings.
+- Raw run arrays (`.npz`/`.parquet` inside run folders, ~1.4 GB) are not in git. They are on the local disk and the
+  Modal volume `huginn-results`; `.gitignore` lists what is excluded.
 - Run directories hold `meta.json` with config and model revision. Code hashes are recorded from the later experiments
   onward; the early pilot through cycle-source runs lack them. Push-file hashes are recorded in the ovl_eval and
   tlever_eval runs.
@@ -436,6 +534,10 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
 
 | Result | Run directory |
 |---|---|
+| Circle and late-state dynamics | `collect-20261104-071439`, `intervene-20261104-072425`, `jac-20261104-164552` |
+| Period-2 cycles | `orbit-20261104-193804`, `orbit64-20261104-195601`, `cycsrc-20261105-025703`, `bifur-20261105-050715`, `bifur24-20261105-113450`, `census-20261105-{162542,163100,163615,164134}`, `ownspec-20261105-182425` |
+| Suppression | `relax-20261105-200208`, `rsweep-20261105-203941`, `mcq_base-20261106-01*`, `mcq_relax-20261106-02*` |
+| Steering and truth (§3.1–3.3) | `steer-20261106-032913`, `truth-20261106-035631`, `tsteer-20261106-041051`, `tsteer_ans-20261106-042907`, `respond_digits-20261106-054706`, `respond_truth-20261106-055046` |
 | d* | `dstar_vjp-20261106-061708`, `dseval-20261106-062151` |
 | Format controls | `ctrl_formats-20261106-064804` + `ctrl_formats-20261106-070550` (two merged shards), `ctrl_cb-20261106-071755`, `ctrl_dose-20261106-070217` |
 | Digit levers | `dglever_*-20261106-08*` |
