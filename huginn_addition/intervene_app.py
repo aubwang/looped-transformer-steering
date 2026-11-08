@@ -51,6 +51,7 @@ Levers and the readout-reversal mechanism
   blockdecomp  [BLOCKDECOMP]            -- exact one-step path decomposition               -- analyze_blockdecomp.py
   adaptcov     [ADAPTCOV]               -- adapter / one-step pullbacks (digits)           -- analyze_adaptcov.py, make_adlever_pushes.py
   truthcov     [TRUTHCOV]               -- one-step / adapter pullbacks + timings (truth)  -- make_tlever_pushes.py
+  freeprobe    [FREEPROBE]              -- readout + random-probe pullback chains (Gram)   -- analyze_freeprobe.py
 (The first pilot, per-iteration dynamics on addition, lives in modal_app.py.)
 
 Implementation notes: most functions check the manual loop against model.forward (H.validate). The pinned
@@ -4741,6 +4742,151 @@ def truthcov(items_json: str, cfg: dict, run_id: str):
     return meta
 
 
+@app.function(image=image, gpu="A100-40GB", volumes={"/cache": hf_cache, "/results": results_vol}, timeout=600)
+def freeprobe(items_json: str, cfg: dict, run_id: str):
+    """Random-probe test of the free-loop model (docs/freeloop.pdf, Section 6). Truth judgment format, q = last token, fp32,
+    noise off, seed-0 init uid + 500000, K0 warm-up loops -> x*, exactly as dstar_vjp. Per item, S = 1 + K unit start
+    vectors in the own block at q: m = 0 is gh = g / |g| (g = dR/dx_q, R = log p(' True') - log p(' False')); m = 1..K are
+    Gaussian probes normalised to unit length (cuda generator seeded cfg["seed"] + uid, independent of the model). For each
+    start u: the pullback chain w_0 = u, w_t = J^T w_{t-1} (t = 1..T; one VJP through core_block_forward per step, as
+    dstar_vjp; all S chains of an item share x*). Saved per item: the Gram matrix of all S (T + 1) chain vectors (float64;
+    vector index v = m (T + 1) + t), w_1 and a_T = sum_{t=1..T} w_t per start (float32), g, x* drift, and the relative
+    adjoint error of (J^T u) . r against u . (J r) (central FD, random unit r) for every start. Time safety: no chunk starts
+    unless elapsed + 1.3 x the slowest chunk fits in cfg["total_s"]; the absolute deadline cfg["total_s"] is also checked
+    between VJPs, and an unfinished chunk is discarded (not marked done). Every finished chunk is checkpointed to
+    chunk_<first item>.npz and committed at once; the merged freeprobe.npz is written at the end (Modal timeout 600 s
+    leaves >= 70 s for it). cfg["max_chunks"] (smoke) stops early through the same path. drift = |F(x*) - x*|_q / |x*_q|
+    is saved: the Jacobian is that of the map at the 64-step state, as in dstar_vjp, whether or not x* is stationary.
+    cfg["task"] = "digits": states exactly as dglever 'train' (h.prep, init uid, batch truncated after q = last answer
+    position, K0 = 96); the first NR = len(cfg["digits_k"]) starts are the unit gradients of the centered digit logits
+    z_k, k in digits_k (then the K probes). G is saved as (n, NR, d) for both tasks."""
+    import numpy as np
+    import torch
+
+    T0 = time.monotonic()
+    h = H("float32")
+    items = json.loads(items_json)
+    task = cfg.get("task", "truth")
+    if task == "truth":  # as dstar_vjp: judgment prompt, init uid + 500000, q = last token, readout log p(True) - log p(False)
+        seqs = []
+        for r in items:
+            ids_ = h.tok.encode(r["prompt_B"], add_special_tokens=True)
+            seqs.append(dict(uid=r["uid"] + 500000, ids=ids_, pred_pos=[len(ids_) - 1]))
+        val = h.validate(seqs[:20])
+        TF = [h.tok.encode(w_, add_special_tokens=False)[0] for w_ in (" True", " False")]
+        NR = 1
+    else:  # as dglever 'train': h.prep, init uid, batch truncated after q = last answer position, centered digit logits z_k
+        assert task == "digits"
+        h.prep(items)
+        val = h.validate(items[:10])
+        seqs = [dict(uid=p["uid"], ids=p["ids"], pred_pos=p["pred_pos"]) for p in items]
+        dig = torch.tensor(h.DIG, device=h.dev)
+        DK = list(cfg["digits_k"]); NR = len(DK)
+    n, K, T, d = len(items), cfg["K"], cfg["T"], h.d
+    S = NR + K; V = S * (T + 1)
+    GR = np.full((n, V, V), np.nan, np.float64)
+    W1 = np.zeros((n, S, d), np.float32); AT = np.zeros((n, S, d), np.float32); U0 = np.zeros((n, S, d), np.float32)
+    G = np.zeros((n, NR, d), np.float32); ADJ = np.full((n, S), np.nan, np.float32); drift = np.full(n, np.nan, np.float32)
+    DONE = np.zeros(n, bool); EQ = []; TM = []; aborted = False
+    o = f"/results/{run_id}"
+    os.makedirs(o, exist_ok=True)
+    print(f"setup {time.monotonic() - T0:.0f}s", flush=True)
+    for c0 in range(0, n, cfg["chunk"]):
+        tc = time.monotonic()
+        if (TM and tc - T0 + 1.3 * max(TM) > cfg["total_s"]) or len(TM) >= cfg.get("max_chunks", 10 ** 9):
+            print(f"stopping before item {c0} (time or max_chunks)", flush=True)
+            break
+        ch = list(range(c0, min(n, c0 + cfg["chunk"]))); N = len(ch); R = N * S
+        with torch.no_grad():
+            ids, e, s = h.batch([seqs[i] for i in ch], [0] * N)
+            q = torch.tensor([seqs[i]["pred_pos"][-1] for i in ch], device=h.dev); ar = torch.arange(N, device=h.dev)
+            if task == "digits":
+                Lq = int(q.max()) + 1
+                assert bool((q == Lq - 1).all())
+                e, s = e[:, :Lq], s[:, :Lq]
+            for k in range(cfg["K0"]):
+                s = h.step(e, s, k)
+            x = s.clone()
+            fx = h.step(e, x, cfg["K0"])
+            drift[ch] = ((fx - x)[ar, q].norm(dim=-1) / x[ar, q].norm(dim=-1)).cpu().numpy()
+        fc = h.model.freqs_cis[:, : e.shape[1]]
+        gs = []
+        for k_ in range(NR):
+            with torch.enable_grad():
+                xq = x[ar, q].clone().requires_grad_(True)
+                st = x.clone().index_put((ar, q), xq)
+                lg = torch.log_softmax(h.coda_logits(st, q[:, None])[:, 0], -1)
+                if task == "truth":
+                    Rv = lg[:, TF[0]] - lg[:, TF[1]]
+                else:
+                    zl = lg[:, dig]; Rv = (zl - zl.mean(-1, keepdim=True))[:, DK[k_]]
+                gs.append(torch.autograd.grad(Rv.sum(), xq)[0].detach())
+        g = torch.stack(gs, 1)  # (N, NR, d)
+        with torch.no_grad():
+            # iterate_one_step is @torch.no_grad in the pinned model code; VJPs use core_block_forward (checked equal here)
+            ref = h.step(e, x, cfg["K0"])
+            alt = h.model.core_block_forward(x, e, fc, None, None, torch.tensor(0, dtype=torch.long), current_step=cfg["K0"])[0]
+            EQ.append(float(((ref - alt).norm() / ref.norm()).item()))
+            assert EQ[-1] < 1e-5, EQ[-1]
+            U = torch.zeros((N, S, d), device=h.dev)
+            U[:, :NR] = g / g.norm(dim=-1, keepdim=True)
+            for j, i in enumerate(ch):
+                gen = torch.Generator(device=h.dev).manual_seed(cfg["seed"] + items[i]["uid"])
+                z = torch.randn((K, d), device=h.dev, generator=gen)
+                U[j, NR:] = z / z.norm(dim=-1, keepdim=True)
+            U = U.reshape(R, d)  # row r = j S + m
+            xr = x.repeat_interleave(S, 0); er = e.repeat_interleave(S, 0); qr = q.repeat_interleave(S, 0)
+            arr = torch.arange(R, device=h.dev)
+        chain = torch.zeros((T + 1, R, d), device=h.dev); chain[0] = U
+        w = U.clone()
+        for k in range(T):
+            if time.monotonic() - T0 > cfg["total_s"]:
+                aborted = True
+                break
+            with torch.enable_grad():
+                xq = xr[arr, qr].clone().requires_grad_(True)
+                st = xr.clone().index_put((arr, qr), xq)
+                out = h.model.core_block_forward(st, er, fc, None, None, torch.tensor(0, dtype=torch.long), current_step=cfg["K0"])[0][arr, qr]
+                w = torch.autograd.grad((out * w).sum(), xq)[0].detach()
+            chain[k + 1] = w
+            if k == 0:  # adjoint check for every start: (J^T u) . r vs u . (J r), J r by central FD (eps on unit r)
+                with torch.no_grad():
+                    r_ = torch.randn((R, d), device=h.dev, generator=torch.Generator(device=h.dev).manual_seed(9))
+                    r_ = r_ / r_.norm(dim=-1, keepdim=True)
+                    ep = 0.1; sp, sm = xr.clone(), xr.clone(); sp[arr, qr] += ep * r_; sm[arr, qr] -= ep * r_
+                    jr = (h.step(er, sp, cfg["K0"])[arr, qr] - h.step(er, sm, cfg["K0"])[arr, qr]) / (2 * ep)
+                    lhs = (w * r_).sum(-1); rhs = (U * jr).sum(-1)
+                    ADJ[ch] = ((lhs - rhs).abs() / (lhs.abs() + rhs.abs()).clamp_min(1e-12)).reshape(N, S).cpu().numpy()
+        if aborted:
+            ADJ[ch] = np.nan; drift[ch] = np.nan
+            print(f"deadline inside chunk at item {c0}: chunk discarded", flush=True)
+            break
+        with torch.no_grad():
+            Cv = chain.reshape(T + 1, N, S, d).permute(1, 2, 0, 3).reshape(N, V, d).double()  # v = m (T + 1) + t
+            GR[ch] = torch.bmm(Cv, Cv.transpose(1, 2)).cpu().numpy()
+            W1[ch] = chain[1].reshape(N, S, d).cpu().numpy()
+            AT[ch] = chain[1:].sum(0).reshape(N, S, d).cpu().numpy()
+            U0[ch] = U.reshape(N, S, d).cpu().numpy(); G[ch] = g.cpu().numpy()
+            tail = float((chain[T].norm(dim=-1) / chain[1:].sum(0).norm(dim=-1)).max())
+            del chain, Cv
+        DONE[ch] = True
+        np.savez(f"{o}/chunk_{c0:03d}.npz", idx=np.array(ch), gram=GR[ch], w1=W1[ch], aT=AT[ch], u0=U0[ch], G=G[ch], drift=drift[ch],
+                 adjoint_rel_err=ADJ[ch], uid=np.array([items[i]["uid"] for i in ch]))
+        results_vol.commit()
+        TM.append(time.monotonic() - tc)
+        print(f"items {ch[-1] + 1}/{n} {time.monotonic() - T0:.0f}s (chunk {TM[-1]:.0f}s); max |w_T|/|a_T| {tail:.1e}", flush=True)
+    np.savez_compressed(f"{o}/freeprobe.npz", gram=GR, w1=W1, aT=AT, u0=U0, G=G, drift=drift, adjoint_rel_err=ADJ, done=DONE,
+                        uid=np.array([r["uid"] for r in items]))
+    meta = {"validation": val, "cfg": cfg, "runtime_s": time.monotonic() - T0, "run_id": run_id, "revision": REVISION,
+            "eq_err": EQ, "chunk_s": TM, "complete": bool(DONE.all()), "aborted_in_chunk": aborted}
+    with open(f"{o}/meta.json", "w") as f_:
+        json.dump(meta, f_, indent=1)
+    with open(f"{o}/items.json", "w") as f_:
+        f_.write(items_json)
+    results_vol.commit()
+    return meta
+
+
 # ----------------------------------------------------------------------------- configs / entrypoint
 COLLECT = {
     "collect_smoke": dict(per_cell=1, n_digits=(2, 3), seed=0, K=24, W0=17, seeds=[0, 1], chunk=8),
@@ -4992,6 +5138,16 @@ TRUTHCOV = {  # --probs results/dstar_items.json (train + eval, as dstar_vjp)
     "truthcov_smoke": dict(K0=4, chunk=4, max_items=4),
     "truthcov": dict(K0=64, chunk=40),
 }
+FREEPROBE = {  # --probs results/dstar_items.json (every `stride`-th item: 40 of 120, balanced by dataset x split)
+    # production-shaped smoke: same shapes (40 rows, T = 48, K0 = 64), 16 items but max_chunks = 1, so it also exercises the
+    # early stop, the chunk checkpoint and a partial `done` mask
+    "freeprobe_smoke": dict(K0=64, T=48, K=4, seed=7_000_000, chunk=8, total_s=530, stride=3, max_items=16, max_chunks=1),
+    "freeprobe": dict(K0=64, T=48, K=4, seed=7_000_000, chunk=8, total_s=530, stride=3),
+    # digits: --probs results/dglever_train.json (all 20 items; states as dglever_train-20261106-080920); 6 items x 6 starts
+    "freeprobe_digits_smoke": dict(task="digits", K0=96, T=48, K=4, seed=7_000_000, chunk=6, total_s=530, stride=1,
+                                   digits_k=[0, 5], max_items=12, max_chunks=1),
+    "freeprobe_digits": dict(task="digits", K0=96, T=48, K=4, seed=7_000_000, chunk=6, total_s=530, stride=1, digits_k=[0, 5]),
+}
 RTRANSFER = {  # --probs results/dglever_eval.json
     "rtransfer": dict(K0=96, eps=0.1),
 }
@@ -5047,6 +5203,17 @@ def main(mode: str = "collect_smoke", dirs: str = "", probs: str = "", pids: str
         cfg["code_sha256"] = hashlib.sha256(open(os.path.abspath(__file__), "rb").read()).hexdigest()[:16]
         print(run_id, len(pj), "items", cfg)
         print(json.dumps(truthcov.remote(json.dumps(pj), cfg, run_id), indent=1))
+        return
+    if mode in FREEPROBE:
+        cfg = dict(FREEPROBE[mode])
+        pj = json.load(open(probs))[:: cfg.pop("stride")]
+        if cfg.get("max_items"):
+            pj = pj[: cfg.pop("max_items")]
+        assert len({p["uid"] for p in pj}) == len(pj)
+        import hashlib
+        cfg["code_sha256"] = hashlib.sha256(open(os.path.abspath(__file__), "rb").read()).hexdigest()[:16]
+        print(run_id, len(pj), "items", cfg)
+        print(json.dumps(freeprobe.remote(json.dumps(pj), cfg, run_id), indent=1))
         return
     if mode in ADAPTCOV:
         cfg = dict(ADAPTCOV[mode])

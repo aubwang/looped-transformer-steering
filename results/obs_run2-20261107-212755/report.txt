@@ -1,0 +1,139 @@
+/home/owner/work/.t3/worktrees/analysis/t3-5b527f9a/huginn_addition/analyze_obs.py:104: RuntimeWarning: All-NaN slice encountered
+  & (np.nanmax(z["a2_base_drift"][:, ri], axis=-1) < 1e-2) & (z["a2_base_kl"][:, ri, K] < 1e-3)) & done
+run ../results/obs_run2-20261107-212755: models ['D', 'L16', 'L8']
+NOTE D taken from ../results/obs_run1-20261107-212210
+
+== L16: status deadline: stopped before item 15, gate_fail [], A done 15, C done 15 / 16, runtime 343s, item_s [15.0, 14.6, 14.0, 14.0, 14.1, 14.0, 14.0, 14.0, 14.2, 14.1, 14.0, 14.0, 14.0, 14.0, 14.0]
+   G1 max 1.237043875937145e-15, G2 None, G4 {'fd_median': 0.0015660813298246107, 'fd_q90': 0.00296835575408564, 'grad_median': 2.2794647755211983e-05, 'grad_q90': 0.0010149039495435557, 'pass': True, 'a2_lin_k1_median': 1.0004039245059908, 'a2_lin_k1_q10': 0.9778157281396348, 'a2_lin_k1_q90': 1.0186643315055168}
+   floors {'a0_floor_max': 2.2093251503956922e-14, 'a0_floor_fish_max': 1.1773276141628902e-26, 'a1_dup_fish_max': 0.0, 'a2_floor_fish_max': 8.814180680382141e-27, 'a2_dup_fish_max': 0.0, 'c_floor_max': 6.111661375857595e-15, 'c_floor_fish_max': 2.013239755084427e-27, 'c_dup_fish_max': 0.0}
+   greedy accuracy at t = [16, 32, 64]: [1.0, 1.0, 1.0]
+   r=16: low-residual 11/15, A valid 15, F valid frac 1.0, median A 0.00044657265002579557, median kappa 0.0011420931542834162, A2 linearity F1(1e-2)/F1(1e-3) median 1.0012961881033435
+   r=32: low-residual 14/15, A valid 15, F valid frac 1.0, median A 0.00035533745191450403, median kappa 0.0009019018111872668, A2 linearity F1(1e-2)/F1(1e-3) median 0.9982417190955923
+   r=64: low-residual 14/15, A valid 15, F valid frac 1.0, median A 0.0004947643586507673, median kappa 0.0009683297455915843, A2 linearity F1(1e-2)/F1(1e-3) median 1.0016050971426458
+   C budget 16: greedy acc 1.0, directions with unusable base difference 0, prompts matched per direction x target [[14, 15, 15, 15, 15, 13], [14, 15, 15, 15, 15, 13], [14, 15, 15, 15, 15, 13], [15, 15, 15, 15, 14, 12], [0, 12, 13, 14, 15, 15], [0, 12, 13, 14, 15, 15]]
+   C budget 32: greedy acc 1.0, directions with unusable base difference 0, prompts matched per direction x target [[14, 15, 15, 15, 15, 13], [14, 15, 15, 15, 15, 13], [14, 15, 15, 15, 15, 13], [15, 15, 15, 15, 14, 12], [0, 12, 14, 14, 15, 15], [0, 12, 13, 14, 15, 15]]
+
+== L8: status complete, gate_fail [], A done 16, C done 16 / 16, runtime 261s, item_s [13.3, 12.8, 12.5, 12.4, 12.4, 12.5, 12.4, 12.4, 12.4, 12.5, 12.4, 12.4, 12.4, 12.4, 12.4, 12.4]
+   G1 max 1.0993254198659466e-15, G2 None, G4 {'fd_median': 0.0015791226434696231, 'fd_q90': 0.0036924252542103113, 'grad_median': 2.1571278661311508e-05, 'grad_q90': 0.0014414898062164029, 'pass': True, 'a2_lin_k1_median': 0.9997354406511108, 'a2_lin_k1_q10': 0.982423450818512, 'a2_lin_k1_q90': 1.0192497241673772}
+   floors {'a0_floor_max': 9.73497350994115e-15, 'a0_floor_fish_max': 1.142476434167114e-27, 'a1_dup_fish_max': 0.0, 'a2_floor_fish_max': 4.2460711439419575e-28, 'a2_dup_fish_max': 0.0, 'c_floor_max': 6.0232935362499756e-15, 'c_floor_fish_max': 1.3470450490430112e-28, 'c_dup_fish_max': 0.0}
+   greedy accuracy at t = [8, 32, 64]: [1.0, 1.0, 1.0]
+   r=8: low-residual 4/16, A valid 16, F valid frac 1.0, median A 0.0006476849539804846, median kappa 0.0009267931770670715, A2 linearity F1(1e-2)/F1(1e-3) median 1.0012664938579938
+   r=32: low-residual 16/16, A valid 16, F valid frac 1.0, median A 0.0006401149296892772, median kappa 0.0007129611852578052, A2 linearity F1(1e-2)/F1(1e-3) median 0.998865849806935
+   r=64: low-residual 16/16, A valid 16, F valid frac 1.0, median A 0.000561081693930615, median kappa 0.0026820259380471692, A2 linearity F1(1e-2)/F1(1e-3) median 0.9994533069131655
+   C budget 8: greedy acc 1.0, directions with unusable base difference 0, prompts matched per direction x target [[16, 16, 16, 16, 16, 14], [16, 16, 16, 16, 16, 13], [16, 16, 16, 16, 16, 15], [16, 16, 16, 16, 16, 14], [3, 9, 16, 16, 16, 16], [3, 9, 16, 16, 16, 16]]
+   C budget 32: greedy acc 1.0, directions with unusable base difference 0, prompts matched per direction x target [[16, 16, 16, 16, 16, 14], [16, 16, 16, 16, 16, 13], [16, 16, 16, 16, 16, 15], [16, 16, 16, 16, 16, 14], [3, 9, 16, 16, 16, 16], [2, 9, 16, 16, 16, 16]]
+
+== D: status complete, gate_fail [], A done 0, C done 16 / 16, runtime 37s, item_s [0.6, 0.5, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4, 0.4]
+   G1 max None, G2 [[0.0, 0.0], [0.0, 0.0]], G4 {'fd_median': 0.0021817872834210645, 'fd_q90': 0.005163592162373925, 'grad_median': 2.151213518285398e-05, 'grad_q90': 0.002317048333886226, 'pass': True}
+   floors {'a0_floor_max': None, 'a0_floor_fish_max': None, 'a1_dup_fish_max': None, 'a2_floor_fish_max': None, 'a2_dup_fish_max': None, 'c_floor_max': 9.682603138265583e-15, 'c_floor_fish_max': 3.000811761578039e-28, 'c_dup_fish_max': 0.0}
+   C budget 0: greedy acc 1.0, directions with unusable base difference 0, prompts matched per direction x target [[15, 16, 16, 16, 16, 16], [15, 16, 16, 16, 16, 15], [15, 16, 16, 16, 16, 16], [16, 16, 16, 16, 16, 16], [0, 5, 14, 15, 16, 16], [0, 5, 14, 15, 16, 16]]
+
+A: log(A_L8/A_L16) at r64 [all]: n 14, median 0.11480878278969228, CI [-0.682710466397733, 0.24140575266118436], positive 9; abs-normalized median 0.36370169455392715; curves cross: True; excluded {'not_lowres_a': 0, 'not_lowres_b': 1, 'invalid_A_a': 0, 'invalid_A_b': 0}
+
+A: log(A_L8/A_L16) at r64 [no_smoke]: n 13, median 0.09654914306309331, CI [-0.682710466397733, 0.21992077599041937], positive 8; abs-normalized median 0.34533550354662473; curves cross: True; excluded {'not_lowres_a': 0, 'not_lowres_b': 1, 'invalid_A_a': 0, 'invalid_A_b': 0}
+
+A: log(A_L8/A_L16) at r32 [all]: n 14, median 0.5332804533208036, CI [-0.4265121917019946, 0.782377523895709], positive 9; abs-normalized median 0.7823424241430328; curves cross: True; excluded {'not_lowres_a': 0, 'not_lowres_b': 1, 'invalid_A_a': 0, 'invalid_A_b': 0}
+
+A: log(A_L8/A_L16) at r32 [no_smoke]: n 13, median 0.4203364678419445, CI [-0.4265121917019946, 0.732257149418444], positive 8; abs-normalized median 0.669218491446307; curves cross: True; excluded {'not_lowres_a': 0, 'not_lowres_b': 1, 'invalid_A_a': 0, 'invalid_A_b': 0}
+
+A: log(A_L8/A_L16) at ownM [all]: n 3, median 0.24429387373558697, CI [-2.677569914806353, 0.45979017034610836], positive 2  -> INCONCLUSIVE (< 12 pairs); abs-normalized median 0.4932058009809819; curves cross: True; excluded {'not_lowres_a': 12, 'not_lowres_b': 4, 'invalid_A_a': 0, 'invalid_A_b': 0}
+
+A: log(A_L8/A_L16) at ownM [no_smoke]: n 3, median 0.24429387373558697, CI [-2.677569914806353, 0.45979017034610836], positive 2  -> INCONCLUSIVE (< 12 pairs); abs-normalized median 0.4932058009809819; curves cross: True; excluded {'not_lowres_a': 12, 'not_lowres_b': 4, 'invalid_A_a': 0, 'invalid_A_b': 0}
+C: log(linerr L8(r=8) / D) [all] random KL=1e-06: n 15, median 0.2734746798315921, CI [-0.6689769444203691, 0.7659524032038456]; log energy ratio median 3.4796989765521325
+C: log(linerr L8(r=8) / D) [all] random KL=1e-05: n 16, median 0.21246264905593348, CI [-0.4099836625220718, 0.6971044208200712]; log energy ratio median 3.634957595895046
+C: log(linerr L8(r=8) / D) [all] random KL=0.0001: n 16, median 0.14264927097656233, CI [-0.3083069645781475, 0.35725179666301676]; log energy ratio median 3.6445625838049436
+C: log(linerr L8(r=8) / D) [all] random KL=0.001: n 16, median -0.17819343452718148, CI [-0.5249694036753627, 0.11476670192907562]; log energy ratio median 3.5752328706452214
+C: log(linerr L8(r=8) / D) [all] random KL=0.01: n 16, median -0.1955223387264709, CI [-0.37063762123897015, 0.02748972955537335]; log energy ratio median 3.5405857071716627
+C: log(linerr L8(r=8) / D) [all] random KL=0.1: n 16, median -0.15841246732478567, CI [-0.27689395807118555, -0.0011463697395531164]; log energy ratio median 3.530531172760581
+C: log(linerr L8(r=8) / D) [all] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L8(r=8) / D) [all] gradient KL=1e-05: n 5, median -0.4805277857646231, CI [-1.2688701244545495, 0.6443263743468945]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 3.5317264613605714
+C: log(linerr L8(r=8) / D) [all] gradient KL=0.0001: n 14, median -0.3248508596879265, CI [-0.9597349717290952, 0.42961385938406715]; log energy ratio median 3.175441910272395
+C: log(linerr L8(r=8) / D) [all] gradient KL=0.001: n 15, median 0.189638780595356, CI [-1.3229263951121089, 0.66604449616303]; log energy ratio median 3.2127907216908307
+C: log(linerr L8(r=8) / D) [all] gradient KL=0.01: n 16, median 0.06774165943212271, CI [-1.4577612890035305, 0.6777386890692825]; log energy ratio median 3.209643909057222
+C: log(linerr L8(r=8) / D) [all] gradient KL=0.1: n 16, median 0.2828922738512534, CI [-0.6222717804920044, 0.5243925354292657]; log energy ratio median 3.3577258951918907
+C: log(linerr L8(r=8) / D) [no_smoke] random KL=1e-06: n 13, median 0.2734746798315921, CI [-0.45933053094947696, 0.9308693549769054]; log energy ratio median 3.4796989765521325
+C: log(linerr L8(r=8) / D) [no_smoke] random KL=1e-05: n 14, median 0.21246264905593348, CI [-0.4099836625220718, 1.0508788580511186]; log energy ratio median 3.634957595895046
+C: log(linerr L8(r=8) / D) [no_smoke] random KL=0.0001: n 14, median 0.14264927097656233, CI [-0.235436525020915, 0.48604887518074563]; log energy ratio median 3.6445625838049436
+C: log(linerr L8(r=8) / D) [no_smoke] random KL=0.001: n 14, median -0.07449744624289747, CI [-0.4864280393865069, 0.19085635523200853]; log energy ratio median 3.595345294872904
+C: log(linerr L8(r=8) / D) [no_smoke] random KL=0.01: n 14, median -0.09922571802832064, CI [-0.36456518176491004, 0.10070464591803567]; log energy ratio median 3.5405857071716627
+C: log(linerr L8(r=8) / D) [no_smoke] random KL=0.1: n 14, median -0.15841246732478567, CI [-0.2953969239484108, 0.038336685778652194]; log energy ratio median 3.530531172760581
+C: log(linerr L8(r=8) / D) [no_smoke] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L8(r=8) / D) [no_smoke] gradient KL=1e-05: n 5, median -0.4805277857646231, CI [-1.2688701244545495, 0.6443263743468945]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 3.5317264613605714
+C: log(linerr L8(r=8) / D) [no_smoke] gradient KL=0.0001: n 12, median -0.3248508596879265, CI [-0.8825817388959944, 0.4001693297361363]; log energy ratio median 3.175441910272395
+C: log(linerr L8(r=8) / D) [no_smoke] gradient KL=0.001: n 13, median 0.189638780595356, CI [-0.6823748829692935, 0.5930184344444758]; log energy ratio median 3.2127907216908307
+C: log(linerr L8(r=8) / D) [no_smoke] gradient KL=0.01: n 14, median 0.06774165943212271, CI [-1.4577612890035305, 0.6777386890692825]; log energy ratio median 3.209643909057222
+C: log(linerr L8(r=8) / D) [no_smoke] gradient KL=0.1: n 14, median 0.2828922738512534, CI [-0.6222717804920044, 0.4997417643418479]; log energy ratio median 3.3577258951918907
+C: log(linerr L8(r=32) / D) [all] random KL=1e-06: n 15, median 0.17643079943233855, CI [-0.6035845378957658, 0.7268938461355249]; log energy ratio median 4.9051898101399996
+C: log(linerr L8(r=32) / D) [all] random KL=1e-05: n 16, median 0.19008987967072055, CI [-0.4816582626863818, 0.76700481516154]; log energy ratio median 4.9596784362326005
+C: log(linerr L8(r=32) / D) [all] random KL=0.0001: n 16, median 0.15566542235640962, CI [-0.35878220151060103, 0.3852925175439782]; log energy ratio median 5.027667903601447
+C: log(linerr L8(r=32) / D) [all] random KL=0.001: n 16, median -0.198673267839179, CI [-0.5312611971851525, 0.11506954188271269]; log energy ratio median 4.951778004545907
+C: log(linerr L8(r=32) / D) [all] random KL=0.01: n 16, median -0.20703943168952066, CI [-0.3897060040813506, 0.01992166733242572]; log energy ratio median 4.927205084067954
+C: log(linerr L8(r=32) / D) [all] random KL=0.1: n 16, median -0.171741953882951, CI [-0.2830627902652979, 0.009540553203371369]; log energy ratio median 4.91793130547327
+C: log(linerr L8(r=32) / D) [all] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L8(r=32) / D) [all] gradient KL=1e-05: n 5, median -0.4177761913760448, CI [-1.270787562791034, 0.7645222907974386]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 4.804567261051332
+C: log(linerr L8(r=32) / D) [all] gradient KL=0.0001: n 14, median -0.3012897034447105, CI [-0.9315954551989576, 0.2343132353528463]; log energy ratio median 4.4607058412746525
+C: log(linerr L8(r=32) / D) [all] gradient KL=0.001: n 15, median 0.1854778800478691, CI [-1.324671394057906, 0.643568036606143]; log energy ratio median 4.516599873233083
+C: log(linerr L8(r=32) / D) [all] gradient KL=0.01: n 16, median 0.08285588934778715, CI [-1.3640059453273201, 0.5464499937370794]; log energy ratio median 4.527858395061088
+C: log(linerr L8(r=32) / D) [all] gradient KL=0.1: n 16, median 0.4120861974595778, CI [-0.6670752074929251, 0.5246928435672512]; log energy ratio median 4.767627013496546
+C: log(linerr L8(r=32) / D) [no_smoke] random KL=1e-06: n 13, median 0.17643079943233855, CI [-0.4301054232620754, 0.8977244889943671]; log energy ratio median 4.9051898101399996
+C: log(linerr L8(r=32) / D) [no_smoke] random KL=1e-05: n 14, median 0.19008987967072055, CI [-0.4041784572189287, 1.1474458992052188]; log energy ratio median 4.9596784362326005
+C: log(linerr L8(r=32) / D) [no_smoke] random KL=0.0001: n 14, median 0.15566542235640962, CI [-0.2794088586649816, 0.536696235647942]; log energy ratio median 5.027667903601447
+C: log(linerr L8(r=32) / D) [no_smoke] random KL=0.001: n 14, median -0.07906917589006239, CI [-0.4784041883966075, 0.1808278509037242]; log energy ratio median 4.9868251485068935
+C: log(linerr L8(r=32) / D) [no_smoke] random KL=0.01: n 14, median -0.10241024045094574, CI [-0.3897060040813506, 0.11336188952876748]; log energy ratio median 4.927205084067954
+C: log(linerr L8(r=32) / D) [no_smoke] random KL=0.1: n 14, median -0.171741953882951, CI [-0.27769121784990963, 0.041024965130736134]; log energy ratio median 4.91793130547327
+C: log(linerr L8(r=32) / D) [no_smoke] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L8(r=32) / D) [no_smoke] gradient KL=1e-05: n 5, median -0.4177761913760448, CI [-1.270787562791034, 0.7645222907974386]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 4.804567261051332
+C: log(linerr L8(r=32) / D) [no_smoke] gradient KL=0.0001: n 12, median -0.3012897034447105, CI [-0.845432060502575, 0.2114932210955045]; log energy ratio median 4.4607058412746525
+C: log(linerr L8(r=32) / D) [no_smoke] gradient KL=0.001: n 13, median 0.1854778800478691, CI [-0.6238606035051815, 0.6251558184090941]; log energy ratio median 4.516599873233083
+C: log(linerr L8(r=32) / D) [no_smoke] gradient KL=0.01: n 14, median 0.08285588934778715, CI [-1.2535836208492221, 0.5464499937370794]; log energy ratio median 4.527858395061088
+C: log(linerr L8(r=32) / D) [no_smoke] gradient KL=0.1: n 14, median 0.4120861974595778, CI [-0.6670752074929251, 0.5148804746165834]; log energy ratio median 4.767627013496546
+C: log(linerr L16(r=16) / D) [all] random KL=1e-06: n 14, median 0.2591427756498348, CI [-0.24962543832804052, 0.8309404713934228]; log energy ratio median 5.033912469123546
+C: log(linerr L16(r=16) / D) [all] random KL=1e-05: n 15, median 0.36752729994746863, CI [-0.3700108606593464, 0.6473895557328513]; log energy ratio median 5.156581877887953
+C: log(linerr L16(r=16) / D) [all] random KL=0.0001: n 15, median 0.12096324792957468, CI [-0.2920576874696402, 0.4204654023952037]; log energy ratio median 4.77095733034734
+C: log(linerr L16(r=16) / D) [all] random KL=0.001: n 15, median -0.1623580539205794, CI [-0.36353179234266786, 0.02375117494383026]; log energy ratio median 4.249526582847081
+C: log(linerr L16(r=16) / D) [all] random KL=0.01: n 15, median -0.1673686357216009, CI [-0.33260206234862816, -0.08209030015213625]; log energy ratio median 4.157051316212014
+C: log(linerr L16(r=16) / D) [all] random KL=0.1: n 14, median -0.09645626773402873, CI [-0.2417578350020546, 0.02082051236489139]; log energy ratio median 4.076497989350512
+C: log(linerr L16(r=16) / D) [all] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L16(r=16) / D) [all] gradient KL=1e-05: n 5, median -0.008343393673505653, CI [-1.736936789311815, 0.6995759880816634]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 3.860580797687508
+C: log(linerr L16(r=16) / D) [all] gradient KL=0.0001: n 12, median -0.06521052556785946, CI [-0.8644570326612602, 0.325481086777069]; log energy ratio median 4.53449907450596
+C: log(linerr L16(r=16) / D) [all] gradient KL=0.001: n 14, median 0.009771300989563875, CI [-0.8136132238862827, 0.647640238950971]; log energy ratio median 4.5562861165956825
+C: log(linerr L16(r=16) / D) [all] gradient KL=0.01: n 15, median -0.10442837415660013, CI [-1.0179467509558144, 1.7938228766097197]; log energy ratio median 4.855310918297635
+C: log(linerr L16(r=16) / D) [all] gradient KL=0.1: n 15, median 0.3129174696392873, CI [-0.11785265567458471, 1.5669726954048422]; log energy ratio median 4.526790947357216
+C: log(linerr L16(r=16) / D) [no_smoke] random KL=1e-06: n 12, median 0.2591427756498348, CI [-0.3191269351144111, 0.7247757063394501]; log energy ratio median 5.033912469123546
+C: log(linerr L16(r=16) / D) [no_smoke] random KL=1e-05: n 13, median 0.36752729994746863, CI [-0.3700108606593464, 0.5750542068861263]; log energy ratio median 5.156581877887953
+C: log(linerr L16(r=16) / D) [no_smoke] random KL=0.0001: n 13, median 0.12096324792957468, CI [-0.27380546895645147, 0.417744374615379]; log energy ratio median 4.77095733034734
+C: log(linerr L16(r=16) / D) [no_smoke] random KL=0.001: n 13, median -0.15505596417042267, CI [-0.23508898318164648, 0.0577833467345794]; log energy ratio median 4.249526582847081
+C: log(linerr L16(r=16) / D) [no_smoke] random KL=0.01: n 13, median -0.14707281965369018, CI [-0.25943200744530337, -0.03666250079482146]; log energy ratio median 4.173491250041807
+C: log(linerr L16(r=16) / D) [no_smoke] random KL=0.1: n 12, median -0.06098057217512008, CI [-0.21873913526708488, 0.030447134307880777]; log energy ratio median 4.09563058260098
+C: log(linerr L16(r=16) / D) [no_smoke] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L16(r=16) / D) [no_smoke] gradient KL=1e-05: n 5, median -0.008343393673505653, CI [-1.736936789311815, 0.6995759880816634]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 3.860580797687508
+C: log(linerr L16(r=16) / D) [no_smoke] gradient KL=0.0001: n 10, median -0.008087313950833584, CI [-0.9090902831019073, 0.5286629598336822]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 4.53449907450596
+C: log(linerr L16(r=16) / D) [no_smoke] gradient KL=0.001: n 12, median 0.05968946097463573, CI [-0.5463628378055655, 1.179873526089842]; log energy ratio median 4.5562861165956825
+C: log(linerr L16(r=16) / D) [no_smoke] gradient KL=0.01: n 13, median -0.10442837415660013, CI [-2.1651257256666043, 1.5403708351409837]; log energy ratio median 4.855310918297635
+C: log(linerr L16(r=16) / D) [no_smoke] gradient KL=0.1: n 13, median 0.3129174696392873, CI [-1.0378273005262588, 1.5669726954048422]; log energy ratio median 4.666720695903947
+C: log(linerr L16(r=32) / D) [all] random KL=1e-06: n 14, median 0.2592089798630389, CI [-0.2513543440344, 0.8551213753499978]; log energy ratio median 5.722110509777692
+C: log(linerr L16(r=32) / D) [all] random KL=1e-05: n 15, median 0.3664824379536111, CI [-0.3691082395901049, 0.6906345164644979]; log energy ratio median 5.8378206008070945
+C: log(linerr L16(r=32) / D) [all] random KL=0.0001: n 15, median 0.11950635225562811, CI [-0.29295528799201503, 0.41991965146259297]; log energy ratio median 5.479731496005254
+C: log(linerr L16(r=32) / D) [all] random KL=0.001: n 15, median -0.16307376240175792, CI [-0.36351779188772826, 0.02383930266971988]; log energy ratio median 4.950980256584269
+C: log(linerr L16(r=32) / D) [all] random KL=0.01: n 15, median -0.1689362583256789, CI [-0.33323150516758143, -0.08256678788886855]; log energy ratio median 4.850026437584447
+C: log(linerr L16(r=32) / D) [all] random KL=0.1: n 14, median -0.09616849485861109, CI [-0.24227174506684226, 0.020836671428047335]; log energy ratio median 4.769681138940118
+C: log(linerr L16(r=32) / D) [all] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L16(r=32) / D) [all] gradient KL=1e-05: n 5, median -0.006307327821519585, CI [-1.7375833254157445, 0.7163178619989534]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 4.559161790103202
+C: log(linerr L16(r=32) / D) [all] gradient KL=0.0001: n 12, median -0.06408153828121897, CI [-0.8653746363273674, 0.3320226156729909]; log energy ratio median 5.236522506701102
+C: log(linerr L16(r=32) / D) [all] gradient KL=0.001: n 14, median 0.013873493634511062, CI [-0.8147168565922049, 0.6535003073236269]; log energy ratio median 5.258456685962526
+C: log(linerr L16(r=32) / D) [all] gradient KL=0.01: n 15, median -0.1032088470221826, CI [-1.0200452792608339, 1.805875638504656]; log energy ratio median 5.568886278956509
+C: log(linerr L16(r=32) / D) [all] gradient KL=0.1: n 15, median 0.36122872494853075, CI [-0.1171779577027416, 1.5495738943555608]; log energy ratio median 5.219592721308392
+C: log(linerr L16(r=32) / D) [no_smoke] random KL=1e-06: n 12, median 0.2592089798630389, CI [-0.31865899289539834, 0.7503130565516248]; log energy ratio median 5.722110509777692
+C: log(linerr L16(r=32) / D) [no_smoke] random KL=1e-05: n 13, median 0.3664824379536111, CI [-0.3691082395901049, 0.578894973279226]; log energy ratio median 5.8378206008070945
+C: log(linerr L16(r=32) / D) [no_smoke] random KL=0.0001: n 13, median 0.11950635225562811, CI [-0.27325289560406835, 0.41879284219362284]; log energy ratio median 5.479731496005254
+C: log(linerr L16(r=32) / D) [no_smoke] random KL=0.001: n 13, median -0.15435581586615893, CI [-0.23606179586284304, 0.05691159587490827]; log energy ratio median 4.950980256584269
+C: log(linerr L16(r=32) / D) [no_smoke] random KL=0.01: n 13, median -0.14697317860723763, CI [-0.2601039298882492, -0.036077695714303526]; log energy ratio median 4.866253646806332
+C: log(linerr L16(r=32) / D) [no_smoke] random KL=0.1: n 12, median -0.060620093336877734, CI [-0.22396421507601716, 0.030865261691216443]; log energy ratio median 4.788739114926896
+C: log(linerr L16(r=32) / D) [no_smoke] gradient KL=1e-06: n 0, median None, CI None  -> INCONCLUSIVE (< 12 pairs); log energy ratio median None
+C: log(linerr L16(r=32) / D) [no_smoke] gradient KL=1e-05: n 5, median -0.006307327821519585, CI [-1.7375833254157445, 0.7163178619989534]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 4.559161790103202
+C: log(linerr L16(r=32) / D) [no_smoke] gradient KL=0.0001: n 10, median -0.0057055980996093165, CI [-0.9113044709085617, 0.5435834150328936]  -> INCONCLUSIVE (< 12 pairs); log energy ratio median 5.236522506701102
+C: log(linerr L16(r=32) / D) [no_smoke] gradient KL=0.001: n 12, median 0.0613527111993389, CI [-0.5468979856321997, 1.1879184668358589]; log energy ratio median 5.258456685962526
+C: log(linerr L16(r=32) / D) [no_smoke] gradient KL=0.01: n 13, median -0.1032088470221826, CI [-2.1656359201392013, 1.6911436422961816]; log energy ratio median 5.568886278956509
+C: log(linerr L16(r=32) / D) [no_smoke] gradient KL=0.1: n 13, median 0.36122872494853075, CI [-1.039743544266891, 1.5495738943555608]; log energy ratio median 5.358062987699701
+
+wrote ../results/obs_run2-20261107-212755/summary.json

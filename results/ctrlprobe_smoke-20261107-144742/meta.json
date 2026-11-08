@@ -1,0 +1,54 @@
+{
+ "validation": [
+  {
+   "len": 61,
+   "max_abs": 3.7670135498046875e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 63,
+   "max_abs": 3.4332275390625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 64,
+   "max_abs": 3.814697265625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "T": 2,
+  "n_c": 8,
+  "K_new": 12,
+  "seed": 7000000,
+  "seed2": 8000000,
+  "cseed": 9000000,
+  "rows": 25,
+  "total_s": 530,
+  "task": "truth",
+  "K0": 64,
+  "chunk": 8,
+  "max_chunks": 1,
+  "code_sha256": "2ec276b20b197046",
+  "intervene_sha256": "ca224794bd290089"
+ },
+ "runtime_s": 50.028535467,
+ "run_id": "ctrlprobe_smoke-20261107-144742",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "eq_err": [
+  0.0
+ ],
+ "chunk_s": [
+  34.001357544
+ ],
+ "peak_gib": [
+  17.528156757354736
+ ],
+ "complete": false,
+ "aborted_in_chunk": false,
+ "S": 41,
+ "NR": 1,
+ "n_allowed": 65531,
+ "n_real": 65533,
+ "V": 65536
+}

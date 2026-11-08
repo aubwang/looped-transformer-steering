@@ -1,0 +1,105 @@
+{
+ "cfg": {
+  "T": 64,
+  "K": 32,
+  "sig": [
+   0.001,
+   0.01
+  ],
+  "ndir_a": 4,
+  "n_starts": 8,
+  "eps": [
+   0.001,
+   0.003,
+   0.01,
+   0.03,
+   0.1,
+   0.3,
+   1.0,
+   3.0
+  ],
+  "n_rand": 4,
+  "seed": 11000000,
+  "prompt_seed": 20261107,
+  "reserve_s": 45,
+  "est_item_s": 60,
+  "dtype": "float64",
+  "models": [
+   "L4",
+   "L32",
+   "D"
+  ],
+  "total_s": 400,
+  "code_sha256": "72912126fe7ff3d3"
+ },
+ "key": "D",
+ "status": "complete",
+ "error": null,
+ "gate_fail": [],
+ "runtime_s": 37.20982119199999,
+ "n_doneA": 0,
+ "n_doneC": 16,
+ "n_requested": 16,
+ "item_s": [
+  0.6175350490000007,
+  0.47189760699999894,
+  0.40768719500000117,
+  0.4084484590000024,
+  0.40581193999999954,
+  0.41832198599999515,
+  0.4090290589999981,
+  0.40751788300000413,
+  0.4077116710000013,
+  0.4071151429999986,
+  0.4083550010000039,
+  0.40582743800000287,
+  0.4077392330000009,
+  0.40558705299999787,
+  0.4160902709999945,
+  0.4193566239999953
+ ],
+ "peak_gib": 11.82264232635498,
+ "versions": {
+  "torch": "2.6.0+cu124",
+  "transformers": "4.53.1"
+ },
+ "numerics": {
+  "param_dtype": "torch.float64",
+  "norms_patched_fp64": 33,
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "matmul_precision": "highest",
+  "sdp_flash": true,
+  "sdp_mem_eff": true,
+  "sdp_math": true,
+  "attn_impl": "sdpa"
+ },
+ "g1_max": null,
+ "g2": [
+  [
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0
+  ]
+ ],
+ "g4": {
+  "fd_median": 0.0021817872834210645,
+  "fd_q90": 0.005163592162373925,
+  "grad_median": 2.151213518285398e-05,
+  "grad_q90": 0.002317048333886226,
+  "pass": true
+ },
+ "floors": {
+  "a0_floor_max": null,
+  "a0_floor_fish_max": null,
+  "a1_dup_fish_max": null,
+  "a2_floor_fish_max": null,
+  "a2_dup_fish_max": null,
+  "c_floor_max": 9.682603138265583e-15,
+  "c_floor_fish_max": 3.000811761578039e-28,
+  "c_dup_fish_max": 0.0
+ }
+}

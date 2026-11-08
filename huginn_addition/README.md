@@ -1733,3 +1733,37 @@ Details:
   - H2 is exploratory. It tests steering superiority, so p = 1 does not test the combined policy's superiority. The gap
     is −0.133, with 8 units showing a nonzero net difference.
 - **Collateral (off-TF KL median):** W@1.5625 0.005 up to L@12.5 1.14.
+
+## Free-loop null model, read-space control and a second looped model (`intervene_app.py freeprobe`, `ctrlprobe_app.py`, `ouro_app.py`, `weights_app.py`; `analyze_freeprobe.py`, `analyze_ctrlprobe.py`, `analyze_ouro.py`, `analyze_readspace.py`, `analyze_chains.py`; design, code and results reviewed by GPT-6 Astra)
+
+Write-up: `docs/freeloop.pdf` (Draft 3). All numbers are checked by `docs/freeloop_check.py` (ALL CHECKS PASSED,
+2026-11-07). The criteria were fixed before each production run unless marked exploratory.
+
+- **Free-loop null model** (`freeprobe`, 16 Gaussian probes and the readouts per context, 48-step pullback chains at
+  the fixed point, fp32).
+  - Runs: truth `freeprobe-20261107-130520` (40 contexts) and digits `freeprobe_digits-20261107-133750` (20 contexts),
+    plus smoke runs.
+  - The thresholds were calibrated on synthetic free loops (`synth_freeprobe.py`, `calibrate_freeprobe.py`, output in
+    `results/synth_calibration/`).
+  - Verdict: NOT SUPPORTED in both contexts.
+  - Readout suppression: every readout lies below all 4 probes of its context (240 of 240, Z ≤ −7.9).
+- **Read-space control** (`ctrlprobe_app.py`). Families:
+  - C1: random-token contrasts.
+  - C2: contrasts among the top-64 tokens.
+  - C3: gradients of random centred logit combinations.
+  - Runs: `ctrlprobe-20261107-144949` (truth) and `ctrlprobe_digits-20261107-144951` (digits), plus smoke runs.
+  - Reading: SHARED in both tasks. The C3 excess is −0.224 / −0.200 (Z −28.0 / −24.3), and all 1,440 controls lie below
+    all probes.
+  - Exploratory (`analyze_readspace.py`): read directions have pullback norms like the probes', but self-cosines
+    ≈ 0.03 against 0.38.
+- **Ouro-1.4B** (`ouro_app.py`, same 40 truth prompts, 4 loops, includes C3flip).
+  - Run: `ouro-20261107-150835` (plus `ouro_smoke-20261107-150630`).
+  - PASS; NOT DETECTED. The C3 excess is +0.022 [0.016, 0.025], τ is 0.06, and the coordinate control reads
+    COORDINATE-WISE (C3 − C3flip is −0.0004 [−0.006, 0.008]).
+- **Weights proxy** (`weights_app.py`, CPU only): run `weights-20261107-145443`. The adapter state block does not
+  reproduce the deficit: τ(W_s) is 0.110, and unembedding directions give 0.101.
+- **Chain test** (`analyze_chains.py`, exploratory, existing arrays only). Exact start invariance at the fixed point
+  makes the readout chains vanish; it implies no ordering relative to probes before that.
+  - Result: normalized readout chains exceed the context's median probe chain at every t ≤ 32 (median ratio 1.11–1.33
+    truth, 1.22–1.64 digits).
+  - Reading: no support for preferential readout attenuation. Approximate start invariance is not ruled out.

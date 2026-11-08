@@ -1,0 +1,634 @@
+{
+ "run": "/home/owner/work/.t3/worktrees/analysis/t3-5b527f9a/results/obs_smoke-20261107-210456",
+ "models": [
+  "D",
+  "L4"
+ ],
+ "notes": "not spelled out in the design (flagged in the report):\n- A (and every curve summary) is valid only if every F_k it averages, k = 1..32 and all directions, clears its floor.\n- kappa per prompt = geometric mean over directions of F_8 / F_1; state persistence uses (dx_8 / dx_1)^2 so that it is\n  on the same squared scale as the Fisher response.\n- Part C matching uses doses 3e-3..1 only: at the base dose 1e-3 the linear error is zero by construction.",
+ "D": {
+  "status": "complete",
+  "gate_fail": [
+   "G4"
+  ],
+  "g4": {
+   "fd_median": 0.01893392066357545,
+   "fd_q90": 0.031823084606997336,
+   "grad_median": 0.0003519114409324727,
+   "grad_q90": 0.0021546773616786465,
+   "pass": false
+  },
+  "floors": {
+   "a0_floor_max": null,
+   "a0_floor_fish_max": null,
+   "a1_dup_fish_max": null,
+   "a2_floor_fish_max": null,
+   "a2_dup_fish_max": null,
+   "c_floor_max": 2.0890679479634855e-06,
+   "c_floor_fish_max": 8.446168593494043e-13,
+   "c_dup_fish_max": 0.0
+  },
+  "C_r0": {
+   "acc": 1.0,
+   "n_matched": {
+    "random": {
+     "0.001": 2,
+     "0.01": 0,
+     "0.1": 0
+    },
+    "gradient": {
+     "0.001": 2,
+     "0.01": 2,
+     "0.1": 2
+    }
+   },
+   "dlogp_relerr_by_dose": [
+    0.00039308777582535803,
+    0.024067141606697512,
+    0.016810984291079488,
+    0.02688357591394402,
+    0.1270883443390531,
+    0.34554713369513645,
+    0.9591188619107025
+   ]
+  }
+ },
+ "L4": {
+  "status": "complete",
+  "gate_fail": [
+   "G4"
+  ],
+  "g4": {
+   "fd_median": 0.0752262633288702,
+   "fd_q90": 0.1521646112392032,
+   "grad_median": 0.0016396674945764517,
+   "grad_q90": 0.0027119916454376863,
+   "pass": false,
+   "a2_lin_k1_median": 0.9989583922712999,
+   "a2_lin_k1_q10": 0.9623078350584232,
+   "a2_lin_k1_q90": 1.0357500878783443
+  },
+  "floors": {
+   "a0_floor_max": 6.156762083264766e-06,
+   "a0_floor_fish_max": 1.587737288922979e-10,
+   "a1_dup_fish_max": 0.0,
+   "a2_floor_fish_max": 1.606317284409169e-12,
+   "a2_dup_fish_max": 0.0,
+   "c_floor_max": 2.592452119642985e-06,
+   "c_floor_fish_max": 2.5490400769650413e-12,
+   "c_dup_fish_max": 0.0
+  },
+  "acc_loop": {
+   "4": 1.0,
+   "32": 1.0,
+   "64": 1.0
+  },
+  "A_r4": {
+   "n_done": 2,
+   "n_lowres": 0,
+   "n_validA": 0,
+   "frac_valid_F": 0.14453125,
+   "A": [
+    null,
+    null
+   ],
+   "kappa": [
+    null,
+    null
+   ],
+   "kappa_state_over_obs": [
+    null,
+    null
+   ],
+   "lin_k1_median": 1.0033664847070265
+  },
+  "A_r32": {
+   "n_done": 2,
+   "n_lowres": 2,
+   "n_validA": 0,
+   "frac_valid_F": 0.140625,
+   "A": [
+    null,
+    null
+   ],
+   "kappa": [
+    null,
+    null
+   ],
+   "kappa_state_over_obs": [
+    null,
+    null
+   ],
+   "lin_k1_median": 1.0022911144715376
+  },
+  "A_r64": {
+   "n_done": 2,
+   "n_lowres": 2,
+   "n_validA": 0,
+   "frac_valid_F": 0.14453125,
+   "A": [
+    null,
+    null
+   ],
+   "kappa": [
+    null,
+    null
+   ],
+   "kappa_state_over_obs": [
+    null,
+    null
+   ],
+   "lin_k1_median": 0.9948671404006951
+  },
+  "C_r4": {
+   "acc": 1.0,
+   "n_matched": {
+    "random": {
+     "0.001": 1,
+     "0.01": 0,
+     "0.1": 0
+    },
+    "gradient": {
+     "0.001": 2,
+     "0.01": 2,
+     "0.1": 2
+    }
+   },
+   "dlogp_relerr_by_dose": [
+    0.0008877459013817658,
+    0.10635209956282321,
+    0.16245173988929668,
+    0.3238497769361651,
+    0.6813934419998018,
+    0.8494262684865328,
+    0.9811169266563577
+   ]
+  },
+  "C_r32": {
+   "acc": 1.0,
+   "n_matched": {
+    "random": {
+     "0.001": 1,
+     "0.01": 0,
+     "0.1": 0
+    },
+    "gradient": {
+     "0.001": 2,
+     "0.01": 2,
+     "0.1": 2
+    }
+   },
+   "dlogp_relerr_by_dose": [
+    0.000553498632993015,
+    0.04214650447371561,
+    0.12427363145189621,
+    0.2959089797154799,
+    0.5904271723999902,
+    0.7715163872426944,
+    0.9747937921502228
+   ]
+  }
+ },
+ "A_compare": {},
+ "C_compare": {
+  "L4(r=4)/D random KL=0.001": {
+   "log_linerr_ratio": {
+    "n": 1,
+    "median": 0.7237228826219325,
+    "ci95": [
+     0.7237228826219325,
+     0.7237228826219325
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 1,
+    "median": 0.779884901152041,
+    "ci95": [
+     0.779884901152041,
+     0.779884901152041
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -1.4433769994141432,
+    "ci95": [
+     -1.5135942010924115,
+     -1.373159797735875
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 1,
+    "median": 0.020635098544826036,
+    "ci95": [
+     0.020635098544826036,
+     0.020635098544826036
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   }
+  },
+  "L4(r=4)/D random KL=0.01": {
+   "log_linerr_ratio": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_D": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_adapter": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   }
+  },
+  "L4(r=4)/D random KL=0.1": {
+   "log_linerr_ratio": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_D": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_adapter": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   }
+  },
+  "L4(r=4)/D gradient KL=0.001": {
+   "log_linerr_ratio": {
+    "n": 2,
+    "median": 0.09815949971331328,
+    "ci95": [
+     -0.9340930210069276,
+     1.1304120204335542
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 2,
+    "median": -3.143550641119716,
+    "ci95": [
+     -3.7663520101946566,
+     -2.5207492720447755
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -6.149419419949716,
+    "ci95": [
+     -6.362649017262269,
+     -5.936189822637162
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 2,
+    "median": -3.3816552382763625,
+    "ci95": [
+     -4.036521416868997,
+     -2.7267890596837283
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   }
+  },
+  "L4(r=4)/D gradient KL=0.01": {
+   "log_linerr_ratio": {
+    "n": 2,
+    "median": 0.11753864853922291,
+    "ci95": [
+     -0.5566933745353482,
+     0.791770671613794
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 2,
+    "median": -1.8324238503630252,
+    "ci95": [
+     -2.7041628656924104,
+     -0.9606848350336403
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -3.738848815542055,
+    "ci95": [
+     -3.9382460166484563,
+     -3.539451614435654
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 2,
+    "median": -2.0705284475196724,
+    "ci95": [
+     -2.974332272366751,
+     -1.166724622672594
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   }
+  },
+  "L4(r=4)/D gradient KL=0.1": {
+   "log_linerr_ratio": {
+    "n": 2,
+    "median": -0.9497275246007771,
+    "ci95": [
+     -1.8065499994788714,
+     -0.09290504972268293
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 2,
+    "median": -0.7373619972249879,
+    "ci95": [
+     -1.5933625638065536,
+     0.1186385693565779
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -1.2433625879246377,
+    "ci95": [
+     -1.5993991339051172,
+     -0.8873260419441584
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 2,
+    "median": -0.9754665943816345,
+    "ci95": [
+     -1.8635319704808937,
+     -0.08740121828237535
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   }
+  },
+  "L4(r=32)/D random KL=0.001": {
+   "log_linerr_ratio": {
+    "n": 1,
+    "median": 0.6765984361082142,
+    "ci95": [
+     0.6765984361082142,
+     0.6765984361082142
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 1,
+    "median": 2.84686531267985,
+    "ci95": [
+     2.84686531267985,
+     2.84686531267985
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -1.4433769994141432,
+    "ci95": [
+     -1.5135942010924115,
+     -1.373159797735875
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 1,
+    "median": 2.0876155100726352,
+    "ci95": [
+     2.0876155100726352,
+     2.0876155100726352
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   }
+  },
+  "L4(r=32)/D random KL=0.01": {
+   "log_linerr_ratio": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_D": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_adapter": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   }
+  },
+  "L4(r=32)/D random KL=0.1": {
+   "log_linerr_ratio": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_D": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   },
+   "log_energy_adapter": {
+    "n": 0,
+    "median": null,
+    "ci95": null,
+    "n_pos": 0
+   }
+  },
+  "L4(r=32)/D gradient KL=0.001": {
+   "log_linerr_ratio": {
+    "n": 2,
+    "median": 0.18682862004748113,
+    "ci95": [
+     -0.7645003743756984,
+     1.1381576144706607
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 2,
+    "median": -1.06550546883776,
+    "ci95": [
+     -1.7197178098781318,
+     -0.41129312779738836
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -6.149419419949716,
+    "ci95": [
+     -6.362649017262269,
+     -5.936189822637162
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 2,
+    "median": -1.3023020455248924,
+    "ci95": [
+     -1.9851118165159032,
+     -0.6194922745338816
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   }
+  },
+  "L4(r=32)/D gradient KL=0.01": {
+   "log_linerr_ratio": {
+    "n": 2,
+    "median": 0.16838630950854783,
+    "ci95": [
+     -0.4300161221920442,
+     0.7667887412091399
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 2,
+    "median": 0.251046709309763,
+    "ci95": [
+     -0.6153654987011845,
+     1.1174589173207106
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -3.738848815542055,
+    "ci95": [
+     -3.9382460166484563,
+     -3.539451614435654
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 2,
+    "median": 0.014250132622630751,
+    "ci95": [
+     -0.8807595053389563,
+     0.9092597705842178
+    ],
+    "n_pos": 1,
+    "conclusive": false
+   }
+  },
+  "L4(r=32)/D gradient KL=0.1": {
+   "log_linerr_ratio": {
+    "n": 2,
+    "median": -0.9031206755103206,
+    "ci95": [
+     -1.6932278364624145,
+     -0.11301351455822672
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy": {
+    "n": 2,
+    "median": 1.3548634790899625,
+    "ci95": [
+     0.516871355339068,
+     2.192855602840857
+    ],
+    "n_pos": 2,
+    "conclusive": false
+   },
+   "log_energy_D": {
+    "n": 2,
+    "median": -1.2433625879246377,
+    "ci95": [
+     -1.5993991339051172,
+     -0.8873260419441584
+    ],
+    "n_pos": 0,
+    "conclusive": false
+   },
+   "log_energy_adapter": {
+    "n": 2,
+    "median": 1.1180669024028305,
+    "ci95": [
+     0.2514773487012967,
+     1.9846564561043643
+    ],
+    "n_pos": 2,
+    "conclusive": false
+   }
+  }
+ }
+}

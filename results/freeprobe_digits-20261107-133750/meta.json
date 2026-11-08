@@ -1,0 +1,50 @@
+{
+ "validation": [
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  },
+  {
+   "len": 45,
+   "max_abs": 4.8160552978515625e-05,
+   "argmax_agree": 1.0
+  }
+ ],
+ "cfg": {
+  "task": "digits",
+  "K0": 96,
+  "T": 48,
+  "K": 4,
+  "seed": 7000000,
+  "chunk": 6,
+  "total_s": 530,
+  "digits_k": [
+   0,
+   5
+  ],
+  "code_sha256": "ca224794bd290089"
+ },
+ "runtime_s": 196.502392118,
+ "run_id": "freeprobe_digits-20261107-133750",
+ "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+ "eq_err": [
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "chunk_s": [
+  43.66958107799999,
+  51.85092515699999,
+  51.118938037999996,
+  28.090948475000005
+ ],
+ "complete": true,
+ "aborted_in_chunk": false
+}

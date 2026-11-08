@@ -1,0 +1,110 @@
+{
+ "cfg": {
+  "T": 64,
+  "K": 32,
+  "sig": [
+   0.001,
+   0.01
+  ],
+  "ndir_a": 4,
+  "n_starts": 8,
+  "eps": [
+   0.001,
+   0.003,
+   0.01,
+   0.03,
+   0.1,
+   0.3,
+   1.0,
+   3.0
+  ],
+  "n_rand": 4,
+  "seed": 11000000,
+  "prompt_seed": 20261107,
+  "reserve_s": 45,
+  "est_item_s": 60,
+  "dtype": "float64",
+  "models": [
+   "L4",
+   "L32",
+   "D"
+  ],
+  "total_s": 400,
+  "smoke_uids": [],
+  "code_sha256": "f9449bd2190bb93d",
+  "prompts_file": "/home/owner/work/.t3/worktrees/analysis/t3-5b527f9a/results/obs_screen-20261108-051120/hard_prompts.json",
+  "prompts_sha256": "e20010ed9c1a5ecf",
+  "screen_run_id": "obs_screen-20261108-051120",
+  "screen_code_sha256": "f9449bd2190bb93d"
+ },
+ "key": "D",
+ "status": "complete",
+ "error": null,
+ "gate_fail": [],
+ "runtime_s": 38.166323563999995,
+ "n_doneA": 0,
+ "n_doneC": 16,
+ "n_requested": 16,
+ "item_s": [
+  0.6457880959999969,
+  0.4668441659999978,
+  0.4051546400000028,
+  0.49602107999999845,
+  0.49597136599999914,
+  0.40308773000000286,
+  0.4931857440000016,
+  0.4098838190000009,
+  0.4947592130000018,
+  0.40141554999999585,
+  0.4967003910000045,
+  0.4991125769999982,
+  0.4943462459999992,
+  0.40431620799999735,
+  0.49943504799999516,
+  0.4079177049999956
+ ],
+ "peak_gib": 12.065286636352539,
+ "versions": {
+  "torch": "2.6.0+cu124",
+  "transformers": "4.53.1"
+ },
+ "numerics": {
+  "param_dtype": "torch.float64",
+  "norms_patched_fp64": 33,
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "matmul_precision": "highest",
+  "sdp_flash": true,
+  "sdp_mem_eff": true,
+  "sdp_math": true,
+  "attn_impl": "sdpa"
+ },
+ "g1_max": null,
+ "g2": [
+  [
+   0.0,
+   0.0
+  ],
+  [
+   0.0,
+   0.0
+  ]
+ ],
+ "g4": {
+  "fd_median": 0.0017862578376238733,
+  "fd_q90": 0.0048964064621942,
+  "grad_median": 2.5981849105618303e-05,
+  "grad_q90": 0.0008895844621403049,
+  "pass": true
+ },
+ "floors": {
+  "a0_floor_max": null,
+  "a0_floor_fish_max": null,
+  "a1_dup_fish_max": null,
+  "a2_floor_fish_max": null,
+  "a2_dup_fish_max": null,
+  "c_floor_max": 7.143530377706185e-15,
+  "c_floor_fish_max": 1.2821034282794656e-27,
+  "c_dup_fish_max": 0.0
+ }
+}

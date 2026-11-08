@@ -1,0 +1,97 @@
+{
+ "cfg": {
+  "T": 64,
+  "K": 32,
+  "sig": [
+   0.001,
+   0.01
+  ],
+  "ndir_a": 4,
+  "n_starts": 8,
+  "eps": [
+   0.001,
+   0.003,
+   0.01,
+   0.03,
+   0.1,
+   0.3,
+   1.0,
+   3.0
+  ],
+  "n_rand": 4,
+  "seed": 11000000,
+  "prompt_seed": 20261107,
+  "reserve_s": 45,
+  "est_item_s": 60,
+  "dtype": "float64",
+  "models": [
+   "L8",
+   "L16"
+  ],
+  "total_s": 400,
+  "code_sha256": "72912126fe7ff3d3"
+ },
+ "key": "L16",
+ "status": "deadline: stopped before item 15",
+ "error": null,
+ "gate_fail": [],
+ "runtime_s": 342.565912517,
+ "n_doneA": 15,
+ "n_doneC": 15,
+ "n_requested": 16,
+ "item_s": [
+  15.037746626,
+  14.588288198000015,
+  14.029046636000004,
+  14.011104996,
+  14.059700305000007,
+  14.033371433000013,
+  14.013922172999997,
+  14.005045357,
+  14.220460402000015,
+  14.074689440000014,
+  14.015533670000025,
+  13.998687191999977,
+  13.99423193499996,
+  13.953910527000005,
+  14.006753894999974
+ ],
+ "peak_gib": 12.747756958007812,
+ "versions": {
+  "torch": "2.6.0+cu124",
+  "transformers": "4.53.1"
+ },
+ "numerics": {
+  "param_dtype": "torch.float64",
+  "norms_patched_fp64": 29,
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "matmul_precision": "highest",
+  "sdp_flash": true,
+  "sdp_mem_eff": true,
+  "sdp_math": true,
+  "attn_impl": "sdpa"
+ },
+ "g1_max": 1.237043875937145e-15,
+ "g2": null,
+ "g4": {
+  "fd_median": 0.0015660813298246107,
+  "fd_q90": 0.00296835575408564,
+  "grad_median": 2.2794647755211983e-05,
+  "grad_q90": 0.0010149039495435557,
+  "pass": true,
+  "a2_lin_k1_median": 1.0004039245059908,
+  "a2_lin_k1_q10": 0.9778157281396348,
+  "a2_lin_k1_q90": 1.0186643315055168
+ },
+ "floors": {
+  "a0_floor_max": 2.2093251503956922e-14,
+  "a0_floor_fish_max": 1.1773276141628902e-26,
+  "a1_dup_fish_max": 0.0,
+  "a2_floor_fish_max": 8.814180680382141e-27,
+  "a2_dup_fish_max": 0.0,
+  "c_floor_max": 6.111661375857595e-15,
+  "c_floor_fish_max": 2.013239755084427e-27,
+  "c_dup_fish_max": 0.0
+ }
+}

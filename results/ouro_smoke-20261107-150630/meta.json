@@ -1,0 +1,40 @@
+{
+ "cfg": {
+  "n_c": 8,
+  "K": 16,
+  "loops": [
+   2,
+   3
+  ],
+  "seed": 7000000,
+  "cseed": 9000000,
+  "rows": 25,
+  "total_s": 780,
+  "fd_eps": [
+   0.003,
+   0.01,
+   0.03
+  ],
+  "max_items": 3,
+  "smoke": true,
+  "code_sha256": "c22b67637e36df3f"
+ },
+ "run_id": "ouro_smoke-20261107-150630",
+ "runtime_s": 75.787001193,
+ "model": "ByteDance/Ouro-1.4B",
+ "revision": "574fa66cb8bf5abdc979642d01cf2b79b16bfab1",
+ "S": 49,
+ "d": 2048,
+ "complete": false,
+ "item_s": [
+  11.460133946999996,
+  10.746905014999996,
+  10.733067997000006
+ ],
+ "peak_gib": 10.02891731262207,
+ "versions": {
+  "torch": "2.6.0+cu124",
+  "transformers": "4.54.1",
+  "attn": "sdpa"
+ }
+}

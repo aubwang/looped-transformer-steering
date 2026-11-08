@@ -1,0 +1,104 @@
+{
+ "cfg": {
+  "T": 64,
+  "K": 32,
+  "sig": [
+   0.001,
+   0.01
+  ],
+  "ndir_a": 4,
+  "n_starts": 8,
+  "eps": [
+   0.001,
+   0.003,
+   0.01,
+   0.03,
+   0.1,
+   0.3,
+   1.0,
+   3.0
+  ],
+  "n_rand": 4,
+  "seed": 11000000,
+  "prompt_seed": 20261107,
+  "reserve_s": 45,
+  "est_item_s": 60,
+  "dtype": "float64",
+  "models": [
+   "L4",
+   "L32",
+   "D"
+  ],
+  "total_s": 400,
+  "smoke_uids": [],
+  "code_sha256": "f9449bd2190bb93d",
+  "prompts_file": "/home/owner/work/.t3/worktrees/analysis/t3-5b527f9a/results/obs_screen-20261108-051120/hard_prompts.json",
+  "prompts_sha256": "e20010ed9c1a5ecf",
+  "screen_run_id": "obs_screen-20261108-051120",
+  "screen_code_sha256": "f9449bd2190bb93d"
+ },
+ "key": "L4",
+ "status": "complete",
+ "error": null,
+ "gate_fail": [],
+ "runtime_s": 255.096738864,
+ "n_doneA": 16,
+ "n_doneC": 16,
+ "n_requested": 16,
+ "item_s": [
+  16.123771359,
+  12.23704678,
+  11.831163700999994,
+  15.329421843999995,
+  15.338331980999996,
+  11.851267991,
+  15.330041015999996,
+  11.850192064999987,
+  15.352725101000004,
+  11.86636243000001,
+  15.333899099999996,
+  15.34062948899998,
+  15.32579920500001,
+  11.862631098000008,
+  15.357769052999998,
+  11.88615022700003
+ ],
+ "peak_gib": 13.588339805603027,
+ "versions": {
+  "torch": "2.6.0+cu124",
+  "transformers": "4.53.1"
+ },
+ "numerics": {
+  "param_dtype": "torch.float64",
+  "norms_patched_fp64": 29,
+  "tf32_matmul": false,
+  "tf32_cudnn": false,
+  "matmul_precision": "highest",
+  "sdp_flash": true,
+  "sdp_mem_eff": true,
+  "sdp_math": true,
+  "attn_impl": "sdpa"
+ },
+ "g1_max": 1.1226842610961557e-15,
+ "g2": null,
+ "g4": {
+  "fd_median": 0.0014886440240954651,
+  "fd_q90": 0.0032194461056366643,
+  "grad_median": 1.5477955945872612e-05,
+  "grad_q90": 0.0008706275947811397,
+  "pass": true,
+  "a2_lin_k1_median": 0.999798392028185,
+  "a2_lin_k1_q10": 0.984458771452412,
+  "a2_lin_k1_q90": 1.0178790451960689
+ },
+ "floors": {
+  "a0_floor_max": 1.7036872901029256e-14,
+  "a0_floor_fish_max": 7.872643114422915e-27,
+  "a1_dup_fish_max": 0.0,
+  "a2_floor_fish_max": 6.393766311974864e-27,
+  "a2_dup_fish_max": 0.0,
+  "c_floor_max": 9.16757739732864e-15,
+  "c_floor_fish_max": 3.1664463269667444e-27,
+  "c_dup_fish_max": 0.0
+ }
+}
