@@ -1,0 +1,254 @@
+[
+ {
+  "model": "L4",
+  "fam": "add3",
+  "kind": "deep",
+  "token_loops_per_second": 8846.1957359022
+ },
+ {
+  "model": "L4",
+  "fam": "addsub",
+  "kind": "deep",
+  "token_loops_per_second": 15269.935616518485
+ },
+ {
+  "model": "L4",
+  "fam": "muladd",
+  "kind": "deep",
+  "token_loops_per_second": 15284.570956512456
+ },
+ {
+  "model": "L4",
+  "fam": "add4",
+  "kind": "deep",
+  "token_loops_per_second": 16482.673547167014
+ },
+ {
+  "model": "L4",
+  "fam": "sub3",
+  "kind": "deep",
+  "token_loops_per_second": 15272.605417294542
+ },
+ {
+  "model": "L4",
+  "fam": "add3w",
+  "kind": "deep",
+  "token_loops_per_second": 15248.070828740554
+ },
+ {
+  "model": "L4",
+  "fam": "arc_easy",
+  "kind": "deep",
+  "token_loops_per_second": 12184.315799353124
+ },
+ {
+  "model": "L4",
+  "fam": "add3",
+  "kind": "std",
+  "token_loops_per_second": 16333.05015877068
+ },
+ {
+  "model": "L4",
+  "fam": "addsub",
+  "kind": "std",
+  "token_loops_per_second": 16341.310391571436
+ },
+ {
+  "model": "L4",
+  "fam": "muladd",
+  "kind": "std",
+  "token_loops_per_second": 16342.668477990557
+ },
+ {
+  "model": "L4",
+  "fam": "add4",
+  "kind": "std",
+  "token_loops_per_second": 15859.098219739359
+ },
+ {
+  "model": "L4",
+  "fam": "sub3",
+  "kind": "std",
+  "token_loops_per_second": 16308.197981152838
+ },
+ {
+  "model": "L4",
+  "fam": "add3w",
+  "kind": "std",
+  "token_loops_per_second": 16299.573067589914
+ },
+ {
+  "model": "L4",
+  "fam": "arc_easy",
+  "kind": "std",
+  "token_loops_per_second": 12586.712857906765
+ },
+ {
+  "model": "L32",
+  "fam": "add3",
+  "kind": "deep",
+  "token_loops_per_second": 9289.766952067146
+ },
+ {
+  "model": "L32",
+  "fam": "addsub",
+  "kind": "deep",
+  "token_loops_per_second": 17058.74520140537
+ },
+ {
+  "model": "L32",
+  "fam": "muladd",
+  "kind": "deep",
+  "token_loops_per_second": 16971.881000388134
+ },
+ {
+  "model": "L32",
+  "fam": "add4",
+  "kind": "deep",
+  "token_loops_per_second": 17464.300647033975
+ },
+ {
+  "model": "L32",
+  "fam": "sub3",
+  "kind": "deep",
+  "token_loops_per_second": 17022.17044518138
+ },
+ {
+  "model": "L32",
+  "fam": "add3w",
+  "kind": "deep",
+  "token_loops_per_second": 17007.73241193757
+ },
+ {
+  "model": "L32",
+  "fam": "arc_easy",
+  "kind": "deep",
+  "token_loops_per_second": 12901.881925053287
+ },
+ {
+  "model": "L32",
+  "fam": "add3",
+  "kind": "std",
+  "token_loops_per_second": 17668.240584381354
+ },
+ {
+  "model": "L32",
+  "fam": "addsub",
+  "kind": "std",
+  "token_loops_per_second": 17693.880881275218
+ },
+ {
+  "model": "L32",
+  "fam": "muladd",
+  "kind": "std",
+  "token_loops_per_second": 17713.87079071951
+ },
+ {
+  "model": "L32",
+  "fam": "add4",
+  "kind": "std",
+  "token_loops_per_second": 17262.896730887038
+ },
+ {
+  "model": "L32",
+  "fam": "sub3",
+  "kind": "std",
+  "token_loops_per_second": 17709.34729846115
+ },
+ {
+  "model": "L32",
+  "fam": "add3w",
+  "kind": "std",
+  "token_loops_per_second": 17708.516116477043
+ },
+ {
+  "model": "L32",
+  "fam": "arc_easy",
+  "kind": "std",
+  "token_loops_per_second": 13655.916277513645
+ },
+ {
+  "model": "D",
+  "fam": "add3",
+  "kind": "deep",
+  "token_loops_per_second": 17433.74409221945
+ },
+ {
+  "model": "D",
+  "fam": "addsub",
+  "kind": "deep",
+  "token_loops_per_second": 82144.95841052139
+ },
+ {
+  "model": "D",
+  "fam": "muladd",
+  "kind": "deep",
+  "token_loops_per_second": 85253.66168146412
+ },
+ {
+  "model": "D",
+  "fam": "add4",
+  "kind": "deep",
+  "token_loops_per_second": 90860.79726183103
+ },
+ {
+  "model": "D",
+  "fam": "sub3",
+  "kind": "deep",
+  "token_loops_per_second": 85517.45135031999
+ },
+ {
+  "model": "D",
+  "fam": "add3w",
+  "kind": "deep",
+  "token_loops_per_second": 84898.83107317143
+ },
+ {
+  "model": "D",
+  "fam": "arc_easy",
+  "kind": "deep",
+  "token_loops_per_second": 42052.40800940753
+ },
+ {
+  "model": "D",
+  "fam": "add3",
+  "kind": "std",
+  "token_loops_per_second": 103722.93844413511
+ },
+ {
+  "model": "D",
+  "fam": "addsub",
+  "kind": "std",
+  "token_loops_per_second": 105371.48508977947
+ },
+ {
+  "model": "D",
+  "fam": "muladd",
+  "kind": "std",
+  "token_loops_per_second": 105457.50362407173
+ },
+ {
+  "model": "D",
+  "fam": "add4",
+  "kind": "std",
+  "token_loops_per_second": 107651.46027505478
+ },
+ {
+  "model": "D",
+  "fam": "sub3",
+  "kind": "std",
+  "token_loops_per_second": 104748.80670127519
+ },
+ {
+  "model": "D",
+  "fam": "add3w",
+  "kind": "std",
+  "token_loops_per_second": 105228.00641381119
+ },
+ {
+  "model": "D",
+  "fam": "arc_easy",
+  "kind": "std",
+  "token_loops_per_second": 61167.54766417998
+ }
+]

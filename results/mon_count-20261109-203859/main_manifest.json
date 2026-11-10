@@ -1,0 +1,30 @@
+{
+ "families": [
+  "add3",
+  "add4",
+  "add3w",
+  "arc_easy"
+ ],
+ "n_main": 1500,
+ "shards": 3,
+ "items_sha256": "9b4d2ffe3720abe328c8828f63674382a2362bb612676d9ae261627486ab44a1",
+ "cfg": {
+  "seed": 11000000,
+  "item_seed": 20261109,
+  "bs_arith": 64,
+  "bs_mcq": 32,
+  "n_deep": 256,
+  "n_f32": 32,
+  "limit_s": 820,
+  "i0": 96,
+  "items_sha256": "9b4d2ffe3720abe328c8828f63674382a2362bb612676d9ae261627486ab44a1",
+  "mode": "main"
+ },
+ "code_sha256": "365ea27a09348af245ac8b968363a19e60751776f1d57fb9d8204a9825f9f4d2",
+ "analysis_sha256": {
+  "analyze_mon.py": "45b06a029a13160862f3109696ef0b5a43baf703cd3ef2acc80fdca3b45022ec",
+  "mon_probe.py": "d2a648a738c606bb8016f8c884bef85335e575a76c5de6d38ac17fa84dc5d44d",
+  "oversight_monitor.md": "ae02d80e6647ed5da627a152b33cfa46e2f9c3ec10fd92d941eb274bf979f0f5",
+  "mon_spec.md": "c8d17dda19bda38f531f07cde893a94a31a809b19bf17d8e6f01cb8342482bbf"
+ }
+}

@@ -1,0 +1,1804 @@
+{
+  "points": [
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 probe",
+      "x": 151.0,
+      "y": 0.6268929866760914,
+      "low": 0.6080016653455993,
+      "high": 0.6398046446925941
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 probe",
+      "x": 301.0,
+      "y": 0.6554279794581959,
+      "low": 0.645318464938718,
+      "high": 0.6630329051905686
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 probe",
+      "x": 600.4,
+      "y": 0.6967285418469974,
+      "low": 0.6917888066255947,
+      "high": 0.7020380213244046
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 probe",
+      "x": 901.0,
+      "y": 0.7074007247591504,
+      "low": 0.7033501037091938,
+      "high": 0.7103628620814507
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 probe",
+      "x": 1200.0,
+      "y": 0.7161473708851991,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence",
+      "x": 151.0,
+      "y": 0.7870600914927017,
+      "low": 0.7647526984116092,
+      "high": 0.8000538285274639
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence",
+      "x": 301.0,
+      "y": 0.7987018808249221,
+      "low": 0.7937311606281277,
+      "high": 0.8029716500728508
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence",
+      "x": 600.4,
+      "y": 0.802969349801533,
+      "low": 0.8019784339487803,
+      "high": 0.804415091203216
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence",
+      "x": 901.0,
+      "y": 0.8043102073641034,
+      "low": 0.8040202007031205,
+      "high": 0.8048144097709861
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence",
+      "x": 1200.0,
+      "y": 0.804247399245529,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence+probe",
+      "x": 151.0,
+      "y": 0.7812782551430807,
+      "low": 0.7574122094734178,
+      "high": 0.7990435183192646
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence+probe",
+      "x": 301.0,
+      "y": 0.793594057558598,
+      "low": 0.78810363671806,
+      "high": 0.8019101039081755
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence+probe",
+      "x": 600.4,
+      "y": 0.8073336280658082,
+      "low": 0.80396679156214,
+      "high": 0.8097703107376066
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence+probe",
+      "x": 901.0,
+      "y": 0.8084077703491904,
+      "low": 0.8014248410675009,
+      "high": 0.8129175611989725
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "L32 confidence+probe",
+      "x": 1200.0,
+      "y": 0.8088624070834267,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D probe",
+      "x": 151.0,
+      "y": 0.601006642934894,
+      "low": 0.5873114106297963,
+      "high": 0.6207769795213741
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D probe",
+      "x": 300.8,
+      "y": 0.6615201971704213,
+      "low": 0.6515437880908733,
+      "high": 0.6692999805107429
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D probe",
+      "x": 600.8,
+      "y": 0.6940372447098904,
+      "low": 0.6874492890187958,
+      "high": 0.6973356731204265
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D probe",
+      "x": 900.7999999999998,
+      "y": 0.7091421037609379,
+      "low": 0.7045558987263023,
+      "high": 0.7117148576789832
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D probe",
+      "x": 1200.0,
+      "y": 0.7146013186371931,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence",
+      "x": 151.0,
+      "y": 0.7688943464728218,
+      "low": 0.7555911102996304,
+      "high": 0.7825580592396735
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence",
+      "x": 300.8,
+      "y": 0.7843143336416879,
+      "low": 0.7805795505347074,
+      "high": 0.7899631738196761
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence",
+      "x": 600.8,
+      "y": 0.7884688427289324,
+      "low": 0.7871406943155822,
+      "high": 0.7894135880682965
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence",
+      "x": 900.7999999999998,
+      "y": 0.790240060643648,
+      "low": 0.7887462313471282,
+      "high": 0.7920942911974301
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence",
+      "x": 1200.0,
+      "y": 0.7919468121261842,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence+probe",
+      "x": 151.0,
+      "y": 0.7676936080523524,
+      "low": 0.7588271543428494,
+      "high": 0.7805736177933487
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence+probe",
+      "x": 300.8,
+      "y": 0.7905188725816529,
+      "low": 0.7859433177818829,
+      "high": 0.793266411203631
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence+probe",
+      "x": 600.8,
+      "y": 0.7935246791749032,
+      "low": 0.7898691661023498,
+      "high": 0.7972645865022547
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence+probe",
+      "x": 900.7999999999998,
+      "y": 0.7963792344958266,
+      "low": 0.791075183451865,
+      "high": 0.8035623771049781
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3",
+      "series": "D confidence+probe",
+      "x": 1200.0,
+      "y": 0.8028652638518109,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 probe",
+      "x": 150.8,
+      "y": 0.575904321256027,
+      "low": 0.5319843666217412,
+      "high": 0.5983955411761486
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 probe",
+      "x": 300.8,
+      "y": 0.5754497709707738,
+      "low": 0.546300322691284,
+      "high": 0.5930060464359843
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 probe",
+      "x": 600.8,
+      "y": 0.5932490115835006,
+      "low": 0.5886579613285734,
+      "high": 0.59594698942236
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 probe",
+      "x": 900.7999999999998,
+      "y": 0.5994347361977285,
+      "low": 0.5892591823704928,
+      "high": 0.60474604606563
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 probe",
+      "x": 1200.0,
+      "y": 0.6046758393757437,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence",
+      "x": 150.8,
+      "y": 0.6366790835986197,
+      "low": 0.6327076358998884,
+      "high": 0.6418525462661044
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence",
+      "x": 300.8,
+      "y": 0.6428073497609604,
+      "low": 0.6381911957934195,
+      "high": 0.648170858513398
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence",
+      "x": 600.8,
+      "y": 0.6485066128364789,
+      "low": 0.6460103425454932,
+      "high": 0.6509072975088039
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence",
+      "x": 900.7999999999998,
+      "y": 0.6518602955266034,
+      "low": 0.6514770372302653,
+      "high": 0.6522033885000169
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence",
+      "x": 1200.0,
+      "y": 0.653154301262264,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence+probe",
+      "x": 150.8,
+      "y": 0.622848787170284,
+      "low": 0.6156502132757513,
+      "high": 0.6332478056509621
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence+probe",
+      "x": 300.8,
+      "y": 0.6390096968408782,
+      "low": 0.6328293999294716,
+      "high": 0.6426763208362922
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence+probe",
+      "x": 600.8,
+      "y": 0.6462846764311375,
+      "low": 0.6383991154973938,
+      "high": 0.6527343617910333
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence+probe",
+      "x": 900.7999999999998,
+      "y": 0.6516186272899568,
+      "low": 0.6497242511195165,
+      "high": 0.6528102944799501
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "L32 confidence+probe",
+      "x": 1200.0,
+      "y": 0.6539365619369206,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D probe",
+      "x": 151.0,
+      "y": 0.5414618338748044,
+      "low": 0.5163904817992834,
+      "high": 0.5544250071660342
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D probe",
+      "x": 300.8,
+      "y": 0.5674882669660238,
+      "low": 0.5627622808921066,
+      "high": 0.5726400393943301
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D probe",
+      "x": 600.8,
+      "y": 0.5902019850958612,
+      "low": 0.5836085757224191,
+      "high": 0.596039728924552
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D probe",
+      "x": 900.7999999999998,
+      "y": 0.595546232583248,
+      "low": 0.588927059891343,
+      "high": 0.6012992667375727
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D probe",
+      "x": 1200.0,
+      "y": 0.6129862316675133,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence",
+      "x": 151.0,
+      "y": 0.6417452152241588,
+      "low": 0.6189374913034382,
+      "high": 0.655220804438523
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence",
+      "x": 300.8,
+      "y": 0.654194276215506,
+      "low": 0.6494786154494578,
+      "high": 0.6582218523363224
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence",
+      "x": 600.8,
+      "y": 0.6594157872672054,
+      "low": 0.6575805512081165,
+      "high": 0.6613255162945784
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence",
+      "x": 900.7999999999998,
+      "y": 0.6580060586214822,
+      "low": 0.6561104467039004,
+      "high": 0.6591477305560371
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence",
+      "x": 1200.0,
+      "y": 0.6575649125508105,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence+probe",
+      "x": 151.0,
+      "y": 0.6226674452095847,
+      "low": 0.6068128308650251,
+      "high": 0.6448000706770326
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence+probe",
+      "x": 300.8,
+      "y": 0.6457538559078452,
+      "low": 0.638943790880575,
+      "high": 0.652480316641727
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence+probe",
+      "x": 600.8,
+      "y": 0.6623193663241204,
+      "low": 0.6605124004045846,
+      "high": 0.6649591047764446
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence+probe",
+      "x": 900.7999999999998,
+      "y": 0.6646043928193645,
+      "low": 0.6611793096657543,
+      "high": 0.6693896619989114
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add4",
+      "series": "D confidence+probe",
+      "x": 1200.0,
+      "y": 0.6632282128651596,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 probe",
+      "x": 150.0,
+      "y": 0.6430587677163019,
+      "low": 0.6299323963707526,
+      "high": 0.6611901796833303
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 probe",
+      "x": 300.0,
+      "y": 0.6677251971772519,
+      "low": 0.6635029354207436,
+      "high": 0.6732965664472513
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 probe",
+      "x": 600.0,
+      "y": 0.6741178912411789,
+      "low": 0.6675502579612169,
+      "high": 0.6839708236968511
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 probe",
+      "x": 900.0,
+      "y": 0.6852754551384689,
+      "low": 0.6812310976694539,
+      "high": 0.6917719267034335
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 probe",
+      "x": 1200.0,
+      "y": 0.6909179861234656,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence",
+      "x": 150.0,
+      "y": 0.748505603985056,
+      "low": 0.7416207080590642,
+      "high": 0.7542697028998399
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence",
+      "x": 300.0,
+      "y": 0.7499347684279192,
+      "low": 0.7481409001956947,
+      "high": 0.751040740081836
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence",
+      "x": 600.0,
+      "y": 0.7533801814623732,
+      "low": 0.751974737591176,
+      "high": 0.7544387119729585
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence",
+      "x": 900.0,
+      "y": 0.7538219771096483,
+      "low": 0.7528998398861413,
+      "high": 0.7548389966198186
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence",
+      "x": 1200.0,
+      "y": 0.7532289628180039,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence+probe",
+      "x": 150.0,
+      "y": 0.7344986064164146,
+      "low": 0.7277352784202099,
+      "high": 0.7429638854296388
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence+probe",
+      "x": 300.0,
+      "y": 0.7532467532467533,
+      "low": 0.7510407400818361,
+      "high": 0.7551236434798079
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence+probe",
+      "x": 600.0,
+      "y": 0.7582013876534425,
+      "low": 0.7568315246397438,
+      "high": 0.7593399750933998
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence+probe",
+      "x": 900.0,
+      "y": 0.7610359959675028,
+      "low": 0.7606297811777265,
+      "high": 0.761412560042697
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "L32 confidence+probe",
+      "x": 1200.0,
+      "y": 0.7615015121864437,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D probe",
+      "x": 150.4,
+      "y": 0.613553020466622,
+      "low": 0.6091253076684884,
+      "high": 0.6178870130180363
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D probe",
+      "x": 300.4,
+      "y": 0.6440674687046161,
+      "low": 0.6381137968968331,
+      "high": 0.6480798757273272
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D probe",
+      "x": 600.0,
+      "y": 0.6596353495132655,
+      "low": 0.654104144784845,
+      "high": 0.6644565344120592
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D probe",
+      "x": 900.4,
+      "y": 0.6669580057458653,
+      "low": 0.6635748338638384,
+      "high": 0.6721484937566672
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D probe",
+      "x": 1200.0,
+      "y": 0.677113542537272,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence",
+      "x": 150.8,
+      "y": 0.7292020039943866,
+      "low": 0.719510628185331,
+      "high": 0.7363982110664345
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence",
+      "x": 300.8,
+      "y": 0.7375557766248289,
+      "low": 0.7338272271489394,
+      "high": 0.7395746355234258
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence",
+      "x": 600.8,
+      "y": 0.7382420623273128,
+      "low": 0.7369710607364574,
+      "high": 0.7399982456363913
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence",
+      "x": 900.7999999999998,
+      "y": 0.7385750477225423,
+      "low": 0.7383810465418452,
+      "high": 0.7388602170394339
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence",
+      "x": 1200.0,
+      "y": 0.7387978508725438,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence+probe",
+      "x": 150.8,
+      "y": 0.7229536860109637,
+      "low": 0.7113828939035735,
+      "high": 0.7294243226555878
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence+probe",
+      "x": 300.8,
+      "y": 0.7316821800771546,
+      "low": 0.7264474798992715,
+      "high": 0.7354163808677121
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence+probe",
+      "x": 600.8,
+      "y": 0.7360707575445526,
+      "low": 0.7329428978494084,
+      "high": 0.7381938424423912
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence+probe",
+      "x": 900.7999999999998,
+      "y": 0.7379827299082673,
+      "low": 0.7350387038525308,
+      "high": 0.7413029103000982
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "add3w",
+      "series": "D confidence+probe",
+      "x": 1200.0,
+      "y": 0.740075967527496,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 probe",
+      "x": 151.0,
+      "y": 0.7095941267304823,
+      "low": 0.705104364319398,
+      "high": 0.7143456609726438
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 probe",
+      "x": 300.8,
+      "y": 0.7175617801889805,
+      "low": 0.7116069609767117,
+      "high": 0.7272211646014373
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 probe",
+      "x": 600.8,
+      "y": 0.7301655889874245,
+      "low": 0.7215495038002414,
+      "high": 0.7357004470750518
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 probe",
+      "x": 900.7999999999998,
+      "y": 0.735219113812504,
+      "low": 0.7335906062988562,
+      "high": 0.7382430366446182
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 probe",
+      "x": 1200.0,
+      "y": 0.7388431514183194,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence",
+      "x": 151.0,
+      "y": 0.7489951264460379,
+      "low": 0.7394402748133777,
+      "high": 0.7543604560703315
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence",
+      "x": 300.8,
+      "y": 0.7609908872806882,
+      "low": 0.7590733437044879,
+      "high": 0.7644707734998233
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence",
+      "x": 600.8,
+      "y": 0.7628183830666887,
+      "low": 0.7613478394666632,
+      "high": 0.7641840460878233
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence",
+      "x": 900.7999999999998,
+      "y": 0.7658786979413129,
+      "low": 0.7652495018007797,
+      "high": 0.7666309781895494
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence",
+      "x": 1200.0,
+      "y": 0.7660618486379873,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence+probe",
+      "x": 151.0,
+      "y": 0.7431736698006123,
+      "low": 0.7344504042704826,
+      "high": 0.7547825677271705
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence+probe",
+      "x": 300.8,
+      "y": 0.7569785926593093,
+      "low": 0.7475216074017774,
+      "high": 0.7643534533577283
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence+probe",
+      "x": 600.8,
+      "y": 0.7643925049141943,
+      "low": 0.763521520988258,
+      "high": 0.765902548991984
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence+probe",
+      "x": 900.7999999999998,
+      "y": 0.7690989574990272,
+      "low": 0.7668592615643007,
+      "high": 0.771084988385885
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "L32 confidence+probe",
+      "x": 1200.0,
+      "y": 0.7699909518610049,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D probe",
+      "x": 150.8,
+      "y": 0.664983575031177,
+      "low": 0.6595526039995614,
+      "high": 0.6738906180574988
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D probe",
+      "x": 300.8,
+      "y": 0.6847126284692729,
+      "low": 0.6792754216379311,
+      "high": 0.6875791848889088
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D probe",
+      "x": 600.8,
+      "y": 0.7040593410552031,
+      "low": 0.6935856158861873,
+      "high": 0.713890883620558
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D probe",
+      "x": 900.7999999999998,
+      "y": 0.7162138221749009,
+      "low": 0.7087446661089004,
+      "high": 0.7234815716451224
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D probe",
+      "x": 1200.0,
+      "y": 0.7182589133639301,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence",
+      "x": 150.8,
+      "y": 0.7772945330101653,
+      "low": 0.7676431822980346,
+      "high": 0.7822853700208281
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence",
+      "x": 300.8,
+      "y": 0.7794614253828666,
+      "low": 0.7760835132379607,
+      "high": 0.7821098348696791
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence",
+      "x": 600.8,
+      "y": 0.7822176038921501,
+      "low": 0.7802233115508441,
+      "high": 0.7836170004882648
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence",
+      "x": 900.7999999999998,
+      "y": 0.7838300995308941,
+      "low": 0.7817666821375362,
+      "high": 0.7849844089533395
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence",
+      "x": 1200.0,
+      "y": 0.7834281354448195,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence+probe",
+      "x": 150.8,
+      "y": 0.7755242907222674,
+      "low": 0.7662486097106566,
+      "high": 0.7815887345790646
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence+probe",
+      "x": 300.8,
+      "y": 0.7754136986013629,
+      "low": 0.7685061345840316,
+      "high": 0.7791390169037367
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence+probe",
+      "x": 600.8,
+      "y": 0.7813731088512483,
+      "low": 0.7795931790563472,
+      "high": 0.7830090757771133
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence+probe",
+      "x": 900.7999999999998,
+      "y": 0.7843513898547974,
+      "low": 0.7814151394115153,
+      "high": 0.785884162902299
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "arc_easy",
+      "series": "D confidence+probe",
+      "x": 1200.0,
+      "y": 0.7837122023305024,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 probe",
+      "x": 150.7,
+      "y": 0.6388625505947256,
+      "low": 0.628736775682139,
+      "high": 0.6442299352761208
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 probe",
+      "x": 300.65,
+      "y": 0.6540411819488005,
+      "low": 0.646110781069827,
+      "high": 0.6596431915738881
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 probe",
+      "x": 600.5,
+      "y": 0.6735652584147753,
+      "low": 0.6715699667713578,
+      "high": 0.6761720074228673
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 probe",
+      "x": 900.6499999999999,
+      "y": 0.681832507476963,
+      "low": 0.6811275242790498,
+      "high": 0.6830655807394853
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 probe",
+      "x": 1200.0,
+      "y": 0.6876460869506819,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence",
+      "x": 150.7,
+      "y": 0.7303099763806038,
+      "low": 0.7227925780061788,
+      "high": 0.7348794385559814
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence",
+      "x": 300.65,
+      "y": 0.7381087215736225,
+      "low": 0.7354933915163818,
+      "high": 0.7401357896576435
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence",
+      "x": 600.5,
+      "y": 0.7419186317917684,
+      "low": 0.7415917959608853,
+      "high": 0.7425550974871938
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence",
+      "x": 900.6499999999999,
+      "y": 0.743967794485417,
+      "low": 0.7436629815468707,
+      "high": 0.7442765741729003
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence",
+      "x": 1200.0,
+      "y": 0.744173127990946,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence+probe",
+      "x": 150.7,
+      "y": 0.720449829632598,
+      "low": 0.7159361769819897,
+      "high": 0.7251939260172802
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence+probe",
+      "x": 300.65,
+      "y": 0.7357072750763847,
+      "low": 0.7340586063440171,
+      "high": 0.7372760258281166
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence+probe",
+      "x": 600.5,
+      "y": 0.7440530492661457,
+      "low": 0.7427577305791646,
+      "high": 0.745796062919559
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence+probe",
+      "x": 900.6499999999999,
+      "y": 0.7475403377764194,
+      "low": 0.7454177713960726,
+      "high": 0.7489275648508864
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "L32 confidence+probe",
+      "x": 1200.0,
+      "y": 0.7485728582669491,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D probe",
+      "x": 150.8,
+      "y": 0.6052512680768743,
+      "low": 0.5957741021208967,
+      "high": 0.6121003328500778
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D probe",
+      "x": 300.7,
+      "y": 0.6394471403275835,
+      "low": 0.63600083612008,
+      "high": 0.641806043758173
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D probe",
+      "x": 600.5999999999999,
+      "y": 0.6619834800935551,
+      "low": 0.6587165832354869,
+      "high": 0.6653426076125954
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D probe",
+      "x": 900.6999999999998,
+      "y": 0.671965041066238,
+      "low": 0.6699718564927738,
+      "high": 0.673621856681522
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D probe",
+      "x": 1200.0,
+      "y": 0.6807400015514771,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence",
+      "x": 150.9,
+      "y": 0.7292840246753831,
+      "low": 0.7186562929164912,
+      "high": 0.7379403516076048
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence",
+      "x": 300.8,
+      "y": 0.7388814529662223,
+      "low": 0.7354474081017595,
+      "high": 0.7423900820569498
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence",
+      "x": 600.8,
+      "y": 0.7420860740539001,
+      "low": 0.7411032472927424,
+      "high": 0.7435885876218826
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence",
+      "x": 900.7999999999998,
+      "y": 0.7426628166296417,
+      "low": 0.7422079092695753,
+      "high": 0.7430982113594018
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence",
+      "x": 1200.0,
+      "y": 0.7429344277485895,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence+probe",
+      "x": 150.9,
+      "y": 0.722209757498792,
+      "low": 0.7120310966250286,
+      "high": 0.7286600705636337
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence+probe",
+      "x": 300.8,
+      "y": 0.7358421517920039,
+      "low": 0.7316835981166048,
+      "high": 0.7393813379065394
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence+probe",
+      "x": 600.8,
+      "y": 0.7433219779737061,
+      "low": 0.7428218142998356,
+      "high": 0.7436347962603675
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence+probe",
+      "x": 900.7999999999998,
+      "y": 0.7458294367695639,
+      "low": 0.7456843075367666,
+      "high": 0.7459888959813121
+    },
+    {
+      "figure": "fig_curve",
+      "panel": "family_mean",
+      "series": "D confidence+probe",
+      "x": 1200.0,
+      "y": 0.7474704116437423,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "L32",
+      "x": 151.0,
+      "y": -0.005781836349620891,
+      "low": -0.012674790890903953,
+      "high": 0.002669770780232672
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "L32",
+      "x": 301.0,
+      "y": -0.005107823266323974,
+      "low": -0.01486801335479071,
+      "high": 0.00250727213438795
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "L32",
+      "x": 600.4,
+      "y": 0.004364278264275175,
+      "low": 0.0014522673095370697,
+      "high": 0.007791876788826313
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "L32",
+      "x": 901.0,
+      "y": 0.004097562985086937,
+      "low": -0.0026711705507029837,
+      "high": 0.008897360495851991
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "L32",
+      "x": 1200.0,
+      "y": 0.0046150078378977,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "D",
+      "x": 151.0,
+      "y": -0.001200738420469342,
+      "low": -0.00485381785830219,
+      "high": 0.0032360440432189774
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "D",
+      "x": 300.8,
+      "y": 0.006204538939964976,
+      "low": 0.002383714939768744,
+      "high": 0.01268686066892355
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "D",
+      "x": 600.8,
+      "y": 0.005055836445970963,
+      "low": 0.00045557803405327224,
+      "high": 0.008412340699336274
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "D",
+      "x": 900.7999999999998,
+      "y": 0.006139173852178399,
+      "low": 0.001195524065479181,
+      "high": 0.011468085907547998
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3",
+      "series": "D",
+      "x": 1200.0,
+      "y": 0.010918451725626666,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "L32",
+      "x": 150.8,
+      "y": -0.013830296428335628,
+      "low": -0.022204203681965518,
+      "high": 0.000540169751073627
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "L32",
+      "x": 300.8,
+      "y": -0.003797652920082347,
+      "low": -0.005494537677105726,
+      "high": -0.0005366252191933985
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "L32",
+      "x": 600.8,
+      "y": -0.002221936405341444,
+      "low": -0.010203082957745857,
+      "high": 0.0018270642822293404
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "L32",
+      "x": 900.7999999999998,
+      "y": -0.00024166823664669343,
+      "low": -0.002479137380500429,
+      "high": 0.001333257249684805
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "L32",
+      "x": 1200.0,
+      "y": 0.0007822606746565874,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "D",
+      "x": 151.0,
+      "y": -0.01907777001457404,
+      "low": -0.0388313703518266,
+      "high": -0.006277279253482426
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "D",
+      "x": 300.8,
+      "y": -0.00844042030766079,
+      "low": -0.019278061455747397,
+      "high": -0.0024020442190106905
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "D",
+      "x": 600.8,
+      "y": 0.0029035790569149253,
+      "low": 0.0011711061056631777,
+      "high": 0.0039060425832153634
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "D",
+      "x": 900.7999999999998,
+      "y": 0.006598334197882176,
+      "low": 0.002419311061245266,
+      "high": 0.01024193144287422
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add4",
+      "series": "D",
+      "x": 1200.0,
+      "y": 0.00566330031434914,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "L32",
+      "x": 150.0,
+      "y": -0.014006997568641396,
+      "low": -0.021473047500444653,
+      "high": -0.006662515566625227
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "L32",
+      "x": 300.0,
+      "y": 0.003311984818834176,
+      "low": 0.0028998398861413976,
+      "high": 0.004082903397971904
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "L32",
+      "x": 600.0,
+      "y": 0.00482120619106922,
+      "low": 0.003104429816758625,
+      "high": 0.0064579256360077775
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "L32",
+      "x": 900.0,
+      "y": 0.00721401885785448,
+      "low": 0.0065735634228784035,
+      "high": 0.008165806795943809
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "L32",
+      "x": 1200.0,
+      "y": 0.008272549368439797,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "D",
+      "x": 150.8,
+      "y": -0.006248317983422995,
+      "low": -0.008127734281757504,
+      "high": -0.003643331257664695
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "D",
+      "x": 300.8,
+      "y": -0.005873596547674387,
+      "low": -0.007379747249667945,
+      "high": -0.0038490863344091686
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "D",
+      "x": 600.8,
+      "y": -0.002171304782760286,
+      "low": -0.00481398275968159,
+      "high": 0.00010447160540083544
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "D",
+      "x": 900.7999999999998,
+      "y": -0.0005923178142750821,
+      "low": -0.0038215131869031582,
+      "high": 0.0028190307137503368
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "add3w",
+      "series": "D",
+      "x": 1200.0,
+      "y": 0.001278116654952255,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "L32",
+      "x": 151.0,
+      "y": -0.005821456645425623,
+      "low": -0.018734244183922,
+      "high": 0.0008477625908062114
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "L32",
+      "x": 300.8,
+      "y": -0.004012294621378976,
+      "low": -0.011551736302710447,
+      "high": -0.00011732014209497876
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "L32",
+      "x": 600.8,
+      "y": 0.001574121847505679,
+      "low": 0.0008301811167615858,
+      "high": 0.0021736815215948058
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "L32",
+      "x": 900.7999999999998,
+      "y": 0.0032202595577144333,
+      "low": 0.0011036477306912706,
+      "high": 0.005835486585105354
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "L32",
+      "x": 1200.0,
+      "y": 0.003929103223017538,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "D",
+      "x": 150.8,
+      "y": -0.0017702422878979052,
+      "low": -0.003549842143747317,
+      "high": -0.00036631213256832496
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "D",
+      "x": 300.8,
+      "y": -0.004047726781503854,
+      "low": -0.0075773786539290455,
+      "high": -0.0015949837246400644
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "D",
+      "x": 600.8,
+      "y": -0.0008444950409016346,
+      "low": -0.0020999287679801526,
+      "high": 0.00019657613977219768
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "D",
+      "x": 900.7999999999998,
+      "y": 0.0005212903239033562,
+      "low": -0.00035154272602089254,
+      "high": 0.0010156597487714913
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "arc_easy",
+      "series": "D",
+      "x": 1200.0,
+      "y": 0.00028406688568294314,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "L32",
+      "x": 150.7,
+      "y": -0.009860146748005885,
+      "low": -0.013038526681127288,
+      "high": -0.006856401024189052
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "L32",
+      "x": 300.65,
+      "y": -0.0024014464972377803,
+      "low": -0.0029097904898217064,
+      "high": -0.0014347851723648386
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "L32",
+      "x": 600.5,
+      "y": 0.0021344174743771578,
+      "low": 0.0011659346182791297,
+      "high": 0.0032409654323652115
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "L32",
+      "x": 900.6499999999999,
+      "y": 0.003572543291002289,
+      "low": 0.0017547898492019098,
+      "high": 0.004963737114406175
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "L32",
+      "x": 1200.0,
+      "y": 0.0043997302760029056,
+      "low": null,
+      "high": null
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "D",
+      "x": 150.9,
+      "y": -0.007074267176591071,
+      "low": -0.012002246299890856,
+      "high": -0.0025953589384196396
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "D",
+      "x": 300.8,
+      "y": -0.003039301174218513,
+      "low": -0.005928562704082568,
+      "high": 0.000574469166581687
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "D",
+      "x": 600.8,
+      "y": 0.001235903919805992,
+      "low": 4.62086384848126e-05,
+      "high": 0.0019429361138398882
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "D",
+      "x": 900.7999999999998,
+      "y": 0.0031666201399222125,
+      "low": 0.0028906846219101112,
+      "high": 0.003607197521037747
+    },
+    {
+      "figure": "fig_curve_added",
+      "panel": "family_mean",
+      "series": "D",
+      "x": 1200.0,
+      "y": 0.004535983895152751,
+      "low": null,
+      "high": null
+    }
+  ]
+}

@@ -1,0 +1,6 @@
+2026-11-10 02:13:04 start seed 0
+2026-11-10 02:21:45 restarted with 6 workers (first attempt with 4 workers stopped after 9 min; per-task times showed about 5.5 h for three seeds; workers measured at about 250 MB private memory each)
+2026-11-10 02:21:45 start seed 0
+2026-11-10 04:29:45 end seed 0 rc=0
+2026-11-10 04:29:45 start seed 1
+2026-11-10 04:29:48 local run stopped after seed 0 by request: seeds 1 and 2 run on Modal CPU containers (huginn_addition/mon_analysis_app.py)
