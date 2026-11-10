@@ -1,0 +1,608 @@
+{
+ "L32": {
+  "status": "complete",
+  "error": null,
+  "model": "L32",
+  "hf_id": "smcleish/Recurrent-Llama-3.2-train-recurrence-32",
+  "revision": "a5f6f126e9d9302445346844f1d7d29d111a06eb",
+  "cfg": {
+   "items_sha256": "df7e737cdd431b8590fc0822e70947defcfccd61e8c17851543d5a8756818901",
+   "projected_token_loops": 292380,
+   "seed": 11000000,
+   "batch": 16,
+   "n": 4,
+   "i0": 0,
+   "mode": "smoke",
+   "fams": "",
+   "limit_s": 450,
+   "model_load_seconds": 10.144487517999998
+  },
+  "gates": {
+   "G1": [
+    {
+     "fam": "add3",
+     "t": 4,
+     "pid": 10000000,
+     "error": 6.364008080339545e-05,
+     "plen": 54,
+     "batch_len": 54
+    },
+    {
+     "fam": "add3",
+     "t": 4,
+     "pid": 10000003,
+     "error": 9.964813937202166e-05,
+     "plen": 54,
+     "batch_len": 54
+    },
+    {
+     "fam": "add3",
+     "t": 32,
+     "pid": 10000000,
+     "error": 6.721533172537875e-05,
+     "plen": 54,
+     "batch_len": 54
+    },
+    {
+     "fam": "add3",
+     "t": 32,
+     "pid": 10000003,
+     "error": 6.53845383844498e-05,
+     "plen": 54,
+     "batch_len": 54
+    },
+    {
+     "fam": "acc5",
+     "t": 4,
+     "pid": 10900001,
+     "error": 4.273427333068014e-05,
+     "plen": 124,
+     "batch_len": 126
+    },
+    {
+     "fam": "acc5",
+     "t": 4,
+     "pid": 10900000,
+     "error": 5.412475601396238e-05,
+     "plen": 126,
+     "batch_len": 126
+    },
+    {
+     "fam": "acc5",
+     "t": 32,
+     "pid": 10900001,
+     "error": 4.330512219752336e-05,
+     "plen": 124,
+     "batch_len": 126
+    },
+    {
+     "fam": "acc5",
+     "t": 32,
+     "pid": 10900000,
+     "error": 3.797696444785004e-05,
+     "plen": 126,
+     "batch_len": 126
+    },
+    {
+     "fam": "story4",
+     "t": 4,
+     "pid": 11400003,
+     "error": 4.144297215979975e-05,
+     "plen": 147,
+     "batch_len": 156
+    },
+    {
+     "fam": "story4",
+     "t": 4,
+     "pid": 11400000,
+     "error": 3.5819451646545986e-05,
+     "plen": 156,
+     "batch_len": 156
+    },
+    {
+     "fam": "story4",
+     "t": 32,
+     "pid": 11400003,
+     "error": 4.502842629072745e-05,
+     "plen": 147,
+     "batch_len": 156
+    },
+    {
+     "fam": "story4",
+     "t": 32,
+     "pid": 11400000,
+     "error": 3.2887991260110994e-05,
+     "plen": 156,
+     "batch_len": 156
+    },
+    {
+     "fam": "arc_chal",
+     "t": 4,
+     "pid": 11700000,
+     "error": 2.8449868167967907e-05,
+     "plen": 155,
+     "batch_len": 219
+    },
+    {
+     "fam": "arc_chal",
+     "t": 4,
+     "pid": 11700001,
+     "error": 2.3517054636101875e-05,
+     "plen": 219,
+     "batch_len": 219
+    },
+    {
+     "fam": "arc_chal",
+     "t": 32,
+     "pid": 11700000,
+     "error": 2.9611007384744426e-05,
+     "plen": 155,
+     "batch_len": 219
+    },
+    {
+     "fam": "arc_chal",
+     "t": 32,
+     "pid": 11700001,
+     "error": 2.1698869497654982e-05,
+     "plen": 219,
+     "batch_len": 219
+    }
+   ],
+   "G2": [],
+   "G3": true,
+   "G4": true,
+   "selected_families": [
+    "arc_chal",
+    "story4",
+    "acc5",
+    "add3"
+   ]
+  },
+  "code_sha256": "4b673b05cd6ac328dff9f4683b89c2ebad305e0e48dac02a2b7005808bc24765",
+  "forward_source_sha256": "2735d6528020e7d4c64b14a95cd2c4971c811e79bc1b77514db00d5b24c4265b",
+  "dtype": "float32",
+  "chunks": [
+   "chunk0000.npz",
+   "chunk0001.npz",
+   "chunk0002.npz",
+   "chunk0003.npz",
+   "chunk0004.npz",
+   "chunk0005.npz",
+   "chunk0006.npz",
+   "chunk0007.npz",
+   "chunk0008.npz",
+   "chunk0009.npz",
+   "chunk0010.npz",
+   "chunk0011.npz",
+   "chunk0012.npz",
+   "chunk0013.npz",
+   "chunk0014.npz",
+   "chunk0015.npz",
+   "chunk0016.npz",
+   "chunk0017.npz"
+  ],
+  "items_requested": 72,
+  "items_committed": 72,
+  "timing": {
+   "batches": [
+    [
+     "add3",
+     "std",
+     54,
+     4,
+     33,
+     3.1100912110000003
+    ],
+    [
+     "add6",
+     "std",
+     99,
+     4,
+     33,
+     2.1727756079999985
+    ],
+    [
+     "chain6",
+     "std",
+     99,
+     4,
+     33,
+     2.1662598369999984
+    ],
+    [
+     "mul2add",
+     "std",
+     69,
+     4,
+     33,
+     1.9157021530000016
+    ],
+    [
+     "paren",
+     "std",
+     79,
+     4,
+     33,
+     2.1405589660000004
+    ],
+    [
+     "var4",
+     "std",
+     131,
+     4,
+     33,
+     2.6875080050000015
+    ],
+    [
+     "var4s",
+     "std",
+     131,
+     4,
+     33,
+     2.605095158000001
+    ],
+    [
+     "ptr3",
+     "std",
+     221,
+     4,
+     33,
+     3.4736606999999964
+    ],
+    [
+     "swap",
+     "std",
+     148,
+     4,
+     33,
+     2.666662416000001
+    ],
+    [
+     "acc5",
+     "std",
+     126,
+     4,
+     33,
+     3.0624241500000053
+    ],
+    [
+     "count",
+     "std",
+     159,
+     4,
+     33,
+     4.451750725000004
+    ],
+    [
+     "sort2",
+     "std",
+     83,
+     4,
+     33,
+     2.3398570300000046
+    ],
+    [
+     "bool",
+     "std",
+     111,
+     4,
+     33,
+     2.446356392999995
+    ],
+    [
+     "story2",
+     "std",
+     110,
+     4,
+     33,
+     2.5576962740000013
+    ],
+    [
+     "story4",
+     "std",
+     156,
+     4,
+     33,
+     3.4012453329999985
+    ],
+    [
+     "gsm",
+     "std",
+     109,
+     4,
+     33,
+     2.236488697999995
+    ],
+    [
+     "svamp",
+     "std",
+     111,
+     4,
+     33,
+     2.6020166029999956
+    ],
+    [
+     "arc_chal",
+     "std",
+     219,
+     4,
+     33,
+     4.145996637999993
+    ]
+   ],
+   "model_load_seconds": 10.144487517999998,
+   "total_seconds": 60.37132613
+  }
+ },
+ "D": {
+  "status": "complete",
+  "error": null,
+  "model": "D",
+  "hf_id": "smcleish/Llama-3.2-non-recurrent-posttrained",
+  "revision": "004e96ace360c1a37c08f4555227136e845087b3",
+  "cfg": {
+   "items_sha256": "df7e737cdd431b8590fc0822e70947defcfccd61e8c17851543d5a8756818901",
+   "projected_token_loops": 292380,
+   "seed": 11000000,
+   "batch": 16,
+   "n": 4,
+   "i0": 0,
+   "mode": "smoke",
+   "fams": "",
+   "limit_s": 90,
+   "model_load_seconds": 9.998965022999998
+  },
+  "gates": {
+   "G1": [],
+   "G2": [
+    {
+     "fam": "add3",
+     "t": 1,
+     "pid": 10000000,
+     "error": 4.491470973455591e-05,
+     "plen": 54,
+     "batch_len": 54
+    },
+    {
+     "fam": "add3",
+     "t": 1,
+     "pid": 10000003,
+     "error": 3.254307566180614e-05,
+     "plen": 54,
+     "batch_len": 54
+    },
+    {
+     "fam": "acc5",
+     "t": 1,
+     "pid": 10900001,
+     "error": 2.883388553165389e-05,
+     "plen": 124,
+     "batch_len": 126
+    },
+    {
+     "fam": "acc5",
+     "t": 1,
+     "pid": 10900000,
+     "error": 3.643032735034524e-05,
+     "plen": 126,
+     "batch_len": 126
+    },
+    {
+     "fam": "story4",
+     "t": 1,
+     "pid": 11400003,
+     "error": 2.6445654784268413e-05,
+     "plen": 147,
+     "batch_len": 156
+    },
+    {
+     "fam": "story4",
+     "t": 1,
+     "pid": 11400000,
+     "error": 5.7662066042851734e-05,
+     "plen": 156,
+     "batch_len": 156
+    },
+    {
+     "fam": "arc_chal",
+     "t": 1,
+     "pid": 11700000,
+     "error": 2.69094921847568e-05,
+     "plen": 155,
+     "batch_len": 219
+    },
+    {
+     "fam": "arc_chal",
+     "t": 1,
+     "pid": 11700001,
+     "error": 3.0367329728164805e-05,
+     "plen": 219,
+     "batch_len": 219
+    }
+   ],
+   "G3": true,
+   "G4": true,
+   "selected_families": [
+    "arc_chal",
+    "story4",
+    "acc5",
+    "add3"
+   ]
+  },
+  "code_sha256": "4b673b05cd6ac328dff9f4683b89c2ebad305e0e48dac02a2b7005808bc24765",
+  "forward_source_sha256": "0adba51b2e7f499e5adf3e4ffb5178a3b3f817e8173f3a76b26b5d3e68511a10",
+  "dtype": "float32",
+  "chunks": [
+   "chunk0000.npz",
+   "chunk0001.npz",
+   "chunk0002.npz",
+   "chunk0003.npz",
+   "chunk0004.npz",
+   "chunk0005.npz",
+   "chunk0006.npz",
+   "chunk0007.npz",
+   "chunk0008.npz",
+   "chunk0009.npz",
+   "chunk0010.npz",
+   "chunk0011.npz",
+   "chunk0012.npz",
+   "chunk0013.npz",
+   "chunk0014.npz",
+   "chunk0015.npz",
+   "chunk0016.npz",
+   "chunk0017.npz"
+  ],
+  "items_requested": 72,
+  "items_committed": 72,
+  "timing": {
+   "batches": [
+    [
+     "add3",
+     "std",
+     54,
+     4,
+     16,
+     2.2598494890000005
+    ],
+    [
+     "add6",
+     "std",
+     99,
+     4,
+     16,
+     2.0073835250000016
+    ],
+    [
+     "chain6",
+     "std",
+     99,
+     4,
+     16,
+     1.8631450160000007
+    ],
+    [
+     "mul2add",
+     "std",
+     69,
+     4,
+     16,
+     1.5545012520000014
+    ],
+    [
+     "paren",
+     "std",
+     79,
+     4,
+     16,
+     2.1015214309999983
+    ],
+    [
+     "var4",
+     "std",
+     131,
+     4,
+     16,
+     1.4596499600000001
+    ],
+    [
+     "var4s",
+     "std",
+     131,
+     4,
+     16,
+     1.5671932650000002
+    ],
+    [
+     "ptr3",
+     "std",
+     221,
+     4,
+     16,
+     1.692940343
+    ],
+    [
+     "swap",
+     "std",
+     148,
+     4,
+     16,
+     1.8601505930000002
+    ],
+    [
+     "acc5",
+     "std",
+     126,
+     4,
+     16,
+     1.547909077
+    ],
+    [
+     "count",
+     "std",
+     159,
+     4,
+     16,
+     1.7154268869999996
+    ],
+    [
+     "sort2",
+     "std",
+     83,
+     4,
+     16,
+     1.8479760690000049
+    ],
+    [
+     "bool",
+     "std",
+     111,
+     4,
+     16,
+     1.5963872660000007
+    ],
+    [
+     "story2",
+     "std",
+     110,
+     4,
+     16,
+     1.8442857129999979
+    ],
+    [
+     "story4",
+     "std",
+     156,
+     4,
+     16,
+     1.6410433530000006
+    ],
+    [
+     "gsm",
+     "std",
+     109,
+     4,
+     16,
+     1.9237148759999982
+    ],
+    [
+     "svamp",
+     "std",
+     111,
+     4,
+     16,
+     1.7030427460000013
+    ],
+    [
+     "arc_chal",
+     "std",
+     219,
+     4,
+     16,
+     1.937393494999995
+    ]
+   ],
+   "model_load_seconds": 9.998965022999998,
+   "total_seconds": 42.144469741
+  }
+ }
+}

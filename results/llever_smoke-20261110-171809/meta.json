@@ -1,0 +1,130 @@
+{
+  "cfg": {
+    "T": 48,
+    "restrict_cr": false,
+    "chunk": 128,
+    "K0": 64
+  },
+  "mode": "smoke",
+  "shard": 0,
+  "run_id": "llever_smoke-20261110-171809",
+  "model_revision": "a5f6f126e9d9302445346844f1d7d29d111a06eb",
+  "code_sha256": "2b551a88494a6a0ee2be305394b867e8aa8dea6daf23b8fbb33dc2be70da06d1",
+  "push_file_sha256": null,
+  "status": "complete",
+  "gates": {
+    "G1": [
+      1.0658141036401503e-14,
+      1.0658141036401503e-14,
+      6.039613253960852e-14,
+      4.618527782440651e-14,
+      8.881784197001252e-15,
+      0.0
+    ]
+  },
+  "timings": {
+    "G1": [
+      1.0658141036401503e-14,
+      1.0658141036401503e-14,
+      6.039613253960852e-14,
+      4.618527782440651e-14,
+      8.881784197001252e-15,
+      0.0
+    ],
+    "tail_median": 3.085648682943452e-16,
+    "adjoint_error": 7.58858439827544e-10,
+    "benchmark": {
+      "base_s_per_problem": 0.11978410090624991,
+      "grads_s_per_problem": 0.026594883281249926,
+      "row_loop_s": {
+        "vjp": 0.003778227988461516,
+        "jvp": 0.003601643507692305,
+        "forced": 0.003628695807692303
+      },
+      "rows": 130,
+      "chunk": 128,
+      "peak_gb": 19.597219467163086
+    },
+    "recommended_cfg": {
+      "T": 48,
+      "restrict_cr": true
+    },
+    "stages": {
+      "train": {
+        "G1": [
+          1.0658141036401503e-14,
+          1.0658141036401503e-14
+        ],
+        "base_s": 1.203791766000002,
+        "stage_s": 4.155143403,
+        "tokens": 39,
+        "base_rows": 2,
+        "stage_rows": 20
+      },
+      "pred": {
+        "G1": [
+          6.039613253960852e-14,
+          4.618527782440651e-14
+        ],
+        "base_s": 1.0223541989999987,
+        "stage_s": 3.019787794999999,
+        "tokens": 39,
+        "base_rows": 4,
+        "stage_rows": 16
+      },
+      "eval": {
+        "G1": [
+          8.881784197001252e-15,
+          0.0
+        ],
+        "base_s": 0.8023493230000014,
+        "stage_s": 2.544186304,
+        "tokens": 39,
+        "base_rows": 2,
+        "stage_rows": 26
+      }
+    },
+    "projection": {
+      "seconds": {
+        "train": 105.32369708258611,
+        "pred": 164.9615796763845,
+        "eval_shard": 355.24798587643227,
+        "eval_shard_restricted": 271.6428344672016
+      },
+      "total_seconds": 980.7812485118352,
+      "restricted_total_seconds": 813.5709456933739,
+      "T": 48,
+      "restrict_cr": true,
+      "fits": {
+        "train": true,
+        "pred": true,
+        "eval_shard": false,
+        "eval_shard_restricted": true
+      }
+    }
+  },
+  "precision": {
+    "norms": 29,
+    "rotary_original": "    @torch.no_grad()\n    @dynamic_rope_update  # power user: used with advanced RoPE types (e.g. dynamic rope)\n    def forward(self, x, position_ids):\n        inv_freq_expanded = self.inv_freq[None, :, None].float().expand(position_ids.shape[0], -1, 1).to(x.device)\n        position_ids_expanded = position_ids[:, None, :].float()\n\n        device_type = x.device.type if isinstance(x.device.type, str) and x.device.type != \"mps\" else \"cpu\"\n        with torch.autocast(device_type=device_type, enabled=False):  # Force float32\n            freqs = (inv_freq_expanded.float() @ position_ids_expanded.float()).transpose(1, 2)\n            emb = torch.cat((freqs, freqs), dim=-1)\n            cos = emb.cos() * self.attention_scaling\n            sin = emb.sin() * self.attention_scaling\n\n        return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)\n",
+    "float_cast_lines": [
+      "return self._norm(x.float()).type_as(x) * self.weight",
+      "dtype: torch.dtype = torch.float32,",
+      "logits = self.lm_head(x).float()",
+      "logits = self.lm_head(x)#.float()",
+      "logits = self.lm_head(x).float()",
+      "next_token_logits = outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32, device=input_ids.device)",
+      "logit_type = dict(copy=True, dtype=torch.float32, device=input_ids.device)",
+      "probs = F.softmax(logits[:, -1, :].float(), dim=-1)",
+      "log_probs = F.log_softmax(logits[:, -1, :].float(), dim=-1)",
+      "next_token_logits = next_token_logits.float() / generation_config.temperature",
+      "outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32), generation_config",
+      "next_token_logits = outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32)",
+      "final_token_logits = outputs.logits[i : i + 1, seq_acceptance, :].to(copy=True, dtype=torch.float32)",
+      "probs = torch.softmax(logits.float(), dim=-1)"
+    ],
+    "model_source_sha256": "69301cc1f65aeccaa48e5a33e3cc730e71c627e912b84ac166f064889a7df974",
+    "attention": "SDPA math backend; float64 Q/K/V; no eager float32 softmax",
+    "unused_casts": "label loss and generation helpers are not called"
+  },
+  "runtime_s": 35.578062666
+}

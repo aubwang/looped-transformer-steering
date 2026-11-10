@@ -42,6 +42,16 @@ Math notes are Typst sources with compiled PDFs in `docs/`; each `*_check.py` sc
 stopping GPU work there. Possible next steps: develop the conditional theory with no GPU; a capped pilot at
 non-answer positions; and, once larger evaluations resume, a second matched model family and a monitor experiment.
 
+## Follow-up runs on the Recurrent-Llama pair (2026-11-10)
+
+Results note: [`docs/followup_results.md`](docs/followup_results.md) (reviewed by GPT-6 Astra before the runs and after).
+
+| Run | Outcome | Design, code, runs |
+|---|---|---|
+| Late-shift screen | 18 task families screened for answers that still change between loops 8 and 32; two candidates re-collected on 300 fresh problems, neither accepted, so the monitoring comparison stops for this pair | `docs/lateshift_screen.md`; `lateshift_app.py`, `analyze_lateshift.py`, `lateshift_existing.py`, `lateshift_local_test.py`; `results/lateshift-20261110-*`, `results/lateshift_existing-20261110` |
+| Steering-lever replication on L32 | The Huginn pattern replicates: lever +0.165 against −0.001 for the readout gradient; own-operator prediction correlation 0.997, slope 1.01; one pass through the block misses a quarter of the response, four passes under 1 point | `docs/llever_design.md`; `llever_app.py`, `make_llever_pushes.py`, `analyze_llever.py`, `llever_local_test.py`; `results/llever_*-20261110-*` |
+| Second matched pair | None verified: the ordinary OLMo-2 / TinyLlama partners are not released | `docs/pairs_check.md` |
+
 Large raw arrays (`.npz`/`.parquet` inside run folders, and a few large per-item push files) are not in git. They live
 on the Modal volume `huginn-results` and on the local disk; see `.gitignore`.
 
