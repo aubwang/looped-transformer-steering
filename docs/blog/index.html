@@ -34,6 +34,8 @@ h1 { font-size: 30px; line-height: 1.2; margin: 28px 0 6px; }
 h2 { font-size: 22px; margin: 44px 0 8px; }
 h3 { font-size: 16px; margin: 26px 0 4px; }
 p { margin: 10px 0; }
+ul { margin: 8px 0; padding-left: 22px; }
+li { margin: 4px 0; }
 .sub { color: var(--ink2); font-size: 17px; margin-top: 0; }
 .tag { display: inline-block; font-size: 12px; letter-spacing: .04em; text-transform: uppercase;
   color: var(--ink2); border: 1px solid var(--rule); border-radius: 99px; padding: 1px 10px; }
@@ -78,13 +80,17 @@ details summary { cursor: pointer; font-size: 13px; color: var(--ink2); margin-t
 #tip { position: fixed; pointer-events: none; background: var(--ink); color: var(--page); font-size: 12px;
   padding: 4px 8px; border-radius: 4px; opacity: 0; transition: opacity .08s; z-index: 5; max-width: 240px; }
 .chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 10px 0 12px; }
-.chip { border: 1px solid var(--rule); border-radius: 6px; padding: 2px 10px; font-size: 15px; cursor: default; }
+.chip { border: 1px solid var(--rule); border-radius: 6px; padding: 2px 10px; font-size: 15px; cursor: pointer; }
 .chip sub { color: var(--ink2); font-size: 10px; margin-left: 4px; }
 .chip.hl { border-color: var(--s1); box-shadow: 0 0 0 1px var(--s1); }
 table.xt { width: 100%; margin-top: 0; }
+table.xt tr { cursor: pointer; }
 table.xt td.num { font-family: var(--mono); }
 table.xt tr.hl td { background: color-mix(in srgb, var(--s1) 18%, transparent); }
+.badge { cursor: pointer; }
 .badge.hl circle { stroke: var(--ink); stroke-width: 3; }
+.drag-plane { cursor: crosshair; }
+.drag-x { cursor: ew-resize; }
 button.on { border-color: var(--s1); box-shadow: 0 0 0 1px var(--s1); }
 code { font-family: var(--mono); font-size: .92em; background: color-mix(in srgb, var(--ink) 9%, transparent); padding: 0 4px; border-radius: 3px; }
 pre.prompt { font-family: var(--mono); font-size: 14px; line-height: 1.5; background: var(--panel); border-radius: var(--r); padding: 12px 16px; margin: 12px 0; overflow-x: auto; }
@@ -124,7 +130,7 @@ first choice for the third digit was 7 when the count was odd and 6 when it was 
     <span><i class="sw" style="background:var(--s1)"></i>probability of 7 (correct)</span>
     <span><i class="sw" style="background:var(--s2)"></i>probability of 6</span>
   </div>
-  <svg id="R_chart" viewBox="0 0 640 220" role="img" aria-label="Probabilities of the digits 7 and 6 at loop counts 505 to 512"></svg>
+  <svg id="R_chart" class="drag-x" viewBox="0 0 640 220" role="img" aria-label="Probabilities of the digits 7 and 6 at loop counts 505 to 512"></svg>
   <div class="ctl">
     <label><span>Loops</span> <output id="R_b_o"></output><input id="R_b" type="range" min="505" max="512" step="1" value="511"></label>
     <div class="btns" style="margin-top:0"><button id="R_A">Start A</button><button id="R_B">Start B</button></div>
@@ -134,22 +140,26 @@ first choice for the third digit was 7 when the count was odd and 6 when it was 
 
 <p>The two probabilities trade places because the model's internal state does not settle on this prompt. It ends
 up alternating between two states, and here the two states disagree about the digit. From start B the state
-alternates as well, but 7 stays ahead, so nothing visible happens. This example was found by a search built to
-find one, and I come back to how rare it is. First, why would one more loop change anything?</p>
+alternates as well, on a slightly narrower orbit where 7 stays ahead at both phases (a multi-thousand-dimensional
+loop can support more than one period-two orbit on the same prompt, for instance when more than one earlier token
+oscillates). This example was found by a search built to find one, and I come back to how rare it is. First, why
+would one more loop change anything?</p>
 
 <p>The rest of the post builds up to that question and one more. Section 1 is a fast tour of what a transformer
-computes, for readers who think in matrices and maps and have never looked inside one. Section 2 applies the same
-layers in a loop and asks when the state settles. Section 3 asks which way the answer moves if you push on the
-looped state. Widgets marked "toy" run on small made-up matrices; boxes marked "real model" are measurements on
-trained models.</p>
+computes, for readers who think in matrices and maps and have never looked inside one (<a href="#sec-loop">skip to
+section 2</a> if you already know attention heads and MLPs). Section 2 applies the same layers in a loop and asks
+when the state settles. Section 3 asks which way the answer moves if you push on the looped state. Widgets marked
+"toy" run on small made-up matrices; boxes marked "real model" are measurements on trained models.</p>
 
 <h2>1. A transformer in five minutes</h2>
 
 <p>A text is first cut into <em>tokens</em>. Real models cut rarer words into pieces; here one word is one token.
-Each word of the vocabulary owns a fixed vector in <span class="v rm">ℝ</span><sup><var>d</var></sup>, learned in
-training, and so does each position in the text. The vector for position <var>i</var> is the sum of the two: the
-vector of its word plus the vector of its position. Stack these as the rows of an <var>n</var> × <var>d</var>
-matrix <var>X</var>.</p>
+Each word of the vocabulary owns a fixed column vector in <span class="v rm">ℝ</span><sup><var>d</var></sup>, learned
+in training, and so does each position in the text. The vector <var>x<sub>i</sub></var> ∈
+<span class="v rm">ℝ</span><sup><var>d</var></sup> for position <var>i</var> is the sum of its word's vector and its
+position's vector. Stack the transposes <var>x</var><sub>1</sub><sup>⊤</sup>, …, <var>x<sub>n</sub></var><sup>⊤</sup>
+as the rows of an <var>n</var> × <var>d</var> matrix <var>X</var>: one row per position in the text, one column per
+coordinate.</p>
 
 <div class="demo" id="demoT">
   <span class="toy">Toy · eleven words in the plane, placed by hand</span>
@@ -171,49 +181,75 @@ matrix <var>X</var>.</p>
 the next word. Many current models put the position into the attention scores below instead of adding a vector;
 either way the two copies of "the" can be told apart.</p>
 
-<p>Everything a transformer does from here has one form: replace <var>X</var> by <var>X</var> plus something
-computed from <var>X</var>. There are two kinds of "something".</p>
+<p>Everything a transformer does from here has one form: keep <var>X</var> as a running workspace and add updates
+to it, <var>X</var> ↦ <var>X</var> + Δ<var>X</var>. Each layer makes two kinds of update with strictly separated
+jobs. First, <em>attention</em> lets positions read from earlier positions. Second, an <em>MLP</em> transforms each
+position's vector on its own.</p>
 
-<h3>The MLP: positions do not talk</h3>
-<p>A fixed nonlinear map <var>m</var> : <span class="v rm">ℝ</span><sup><var>d</var></sup> →
-<span class="v rm">ℝ</span><sup><var>d</var></sup> is applied to every row separately. Row <var>i</var> becomes
-<var>x<sub>i</sub></var> + <var>m</var>(<var>x<sub>i</sub></var>). Nothing moves between positions.</p>
+<h3>Attention: what a head is, and what Q, K and V mean</h3>
 
-<h3>Attention: positions talk, coordinates mostly do not</h3>
-<p>One attention <em>head</em> answers two questions with two matrices.</p>
-<p><b>Whom does position <var>i</var> look at?</b> A bilinear form <var>B</var> on
-<span class="v rm">ℝ</span><sup><var>d</var></sup> scores every pair of positions, and each row of scores is turned
-into a probability vector:</p>
-<p class="eq"><var>s<sub>ij</sub></var> = <var>x<sub>i</sub></var><sup>⊤</sup> <var>B</var> <var>x<sub>j</sub></var>,
-&nbsp;&nbsp; <var>A<sub>ij</sub></var> = exp(<var>s<sub>ij</sub></var>) / Σ<sub><var>k</var></sub> exp(<var>s<sub>ik</sub></var>).</p>
-<p>So <var>A</var>(<var>X</var>) is an <var>n</var> × <var>n</var> matrix with nonnegative entries whose rows sum
-to one: a row-stochastic matrix, the transition matrix of a Markov chain on the positions. It depends on
-<var>X</var>, which is where the nonlinearity lives. In a language model position <var>i</var> may only look at
-positions <var>j</var> ≤ <var>i</var>, so <var>A</var> is lower triangular.</p>
-<p><b>What does it take from them?</b> A linear map <var>M</var> on
-<span class="v rm">ℝ</span><sup><var>d</var></sup>. The head's output is</p>
-<p class="eq"><var>X</var> ↦ <var>A</var>(<var>X</var>) <var>X</var> <var>M</var>.</p>
-<p><var>A</var> multiplies on the left and mixes positions; <var>M</var> multiplies on the right and acts on
-coordinates. Row <var>i</var> of the output is a weighted average of the rows it looked at, passed through
-<var>M</var>.</p>
-<p><b>Why four matrices, and why those shapes?</b> In code a head has <var>W<sub>Q</sub></var>,
-<var>W<sub>K</sub></var>, <var>W<sub>V</sub></var> (each <var>d</var> × <var>k</var>) and <var>W<sub>O</sub></var>
-(<var>k</var> × <var>d</var>), with <var>k</var> much smaller than <var>d</var>. Only two products ever appear:
-<var>B</var> = <var>W<sub>Q</sub></var><var>W<sub>K</sub></var><sup>⊤</sup> and
-<var>M</var> = <var>W<sub>V</sub></var><var>W<sub>O</sub></var>. Writing them as products of thin matrices is a
-rank constraint: each head gets a bilinear form and a linear map of rank at most <var>k</var>, and many cheap
-heads fit where one full-rank head would.</p>
+<p>At a single step, one position often needs several different pieces of earlier text at once: to finish
+<code>816 + 254 = 10</code>, the last position needs the tens digits, whether the units carried, and how the worked
+sums were formatted. A single set of weights over the text is one probability distribution, so it mainly points at
+one place (or blurs several together). A layer therefore runs many small lookup units in parallel—55 per layer in
+Huginn—called attention <em>heads</em>, and adds all of their updates into <var>X</var>.</p>
+
+<p>Inside one head, each <var>d</var>-dimensional token vector is projected down to a much smaller scratch width
+<var>k</var> (<var>k</var> = 96 against <var>d</var> = 5,280 in Huginn) in three ways, named after a database
+lookup:</p>
+<ul>
+  <li>a <b>query</b> <var>q<sub>i</sub></var> = <var>W<sub>Q</sub></var><sup>⊤</sup><var>x<sub>i</sub></var> ∈
+  <span class="v rm">ℝ</span><sup><var>k</var></sup>: what position <var>i</var> is looking for;</li>
+  <li>a <b>key</b> <var>k<sub>j</sub></var> = <var>W<sub>K</sub></var><sup>⊤</sup><var>x<sub>j</sub></var> ∈
+  <span class="v rm">ℝ</span><sup><var>k</var></sup>: the label position <var>j</var> advertises to incoming
+  queries;</li>
+  <li>a <b>value</b> <var>v<sub>j</sub></var> = <var>W<sub>V</sub></var><sup>⊤</sup><var>x<sub>j</sub></var> ∈
+  <span class="v rm">ℝ</span><sup><var>k</var></sup>: the <var>k</var>-number message position <var>j</var> sends if
+  matched;</li>
+</ul>
+<p>and a fourth matrix <var>W<sub>O</sub></var> (<var>k</var> × <var>d</var>, whereas <var>W<sub>Q</sub></var>,
+<var>W<sub>K</sub></var>, <var>W<sub>V</sub></var> are <var>d</var> × <var>k</var>) maps the received
+<var>k</var>-vector back into <span class="v rm">ℝ</span><sup><var>d</var></sup> so every head writes back into the
+shared coordinates. Those four matrices combine into just two operations on <var>X</var>.</p>
+
+<p><b>Whom does position <var>i</var> look at?</b> Compare <var>i</var>'s query with <var>j</var>'s key by their inner
+product (divided by √<var>k</var> so scores stay moderate), and turn each row of scores into probabilities:</p>
+<p class="eq"><var>s<sub>ij</sub></var> = (<var>q<sub>i</sub></var> · <var>k<sub>j</sub></var>) / √<var>k</var>
+= <var>x<sub>i</sub></var><sup>⊤</sup> <var>B</var> <var>x<sub>j</sub></var>, &nbsp;&nbsp;
+<var>A<sub>ij</sub></var> = exp(<var>s<sub>ij</sub></var>) / Σ<sub><var>r</var> ≤ <var>i</var></sub> exp(<var>s<sub>ir</sub></var>),</p>
+<p>where <var>B</var> = <var>W<sub>Q</sub></var><var>W<sub>K</sub></var><sup>⊤</sup> / √<var>k</var> is a bilinear
+form of rank at most <var>k</var>. Because a language model predicts left to right, position <var>i</var> may only
+look at positions <var>j</var> ≤ <var>i</var> (the <em>causal mask</em>), so <var>A<sub>ij</sub></var> = 0 for
+<var>j</var> &gt; <var>i</var>. Thus <var>A</var>(<var>X</var>) is an <var>n</var> × <var>n</var> lower-triangular
+row-stochastic matrix: the transition matrix of a Markov step backwards along the text. It depends on <var>X</var>,
+so who reads whom changes with the state.</p>
+
+<p><b>What does position <var>i</var> take from them?</b> It averages the value vectors <var>v<sub>j</sub></var> with
+weights <var>A<sub>ij</sub></var> and writes the result back to <span class="v rm">ℝ</span><sup><var>d</var></sup>
+through <var>W<sub>O</sub></var><sup>⊤</sup>. Across all rows at once (<var>XW<sub>V</sub></var> has rows
+<var>v<sub>j</sub></var><sup>⊤</sup>), the head's output is</p>
+<p class="eq"><var>X</var> ↦ <var>A</var>(<var>X</var>) (<var>X W<sub>V</sub></var>) <var>W<sub>O</sub></var>
+= <var>A</var>(<var>X</var>) <var>X</var> <var>M</var>, &nbsp;&nbsp; <var>M</var> = <var>W<sub>V</sub></var><var>W<sub>O</sub></var>.</p>
+<p><var>A</var>(<var>X</var>) multiplies on the left and mixes <em>positions</em>; <var>M</var> multiplies on the
+right and acts linearly on <em>coordinates</em>. Notice that <var>W<sub>Q</sub></var>, <var>W<sub>K</sub></var> only
+ever act through <var>B</var> and <var>W<sub>V</sub></var>, <var>W<sub>O</sub></var> only through <var>M</var>.
+Factoring them through <span class="v rm">ℝ</span><sup><var>k</var></sup> forces both <var>B</var> and <var>M</var>
+to have rank at most <var>k</var>, which is how dozens of cheap heads fit in the budget of one full <var>d</var> ×
+<var>d</var> matrix.</p>
 
 <div class="demo" id="demoA">
   <span class="toy">Toy · the sentence chosen above</span>
   <h3>One head as a stochastic matrix</h3>
-  <p class="what">Here <var>B</var> = <var>β</var> · (rotation by <var>θ</var>). Click a word to choose who is
-  looking. The arcs and the numbers under the words show where its weight goes.</p>
+  <p class="what">Here <var>d</var> = <var>k</var> = 2: each word's key is its own vector
+  <var>k<sub>j</sub></var> = <var>x<sub>j</sub></var>, its query <var>q<sub>i</sub></var> rotates
+  <var>x<sub>i</sub></var> by <var>θ</var> (the orange arrow), and <var>s<sub>ij</sub></var> = <var>β</var>
+  (<var>q<sub>i</sub></var> · <var>k<sub>j</sub></var>), so <var>B</var> = <var>βR</var><sub>−<var>θ</var></sub>.
+  Click a word to choose who is looking.</p>
   <svg id="A_arcs" viewBox="0 0 640 150" role="img" aria-label="Attention weights of the selected word, drawn as arcs over the sentence"></svg>
   <div class="legend">
-    <span><i class="sw" style="background:var(--s1)"></i>weight (arc, disc, cell)</span>
-    <span><i class="sw" style="background:var(--s2)"></i>direction the selected word looks for</span>
-    <span><i class="sw" style="background:var(--s3)"></i>weighted average it receives (ring)</span>
+    <span><i class="sw" style="background:var(--s1)"></i>weight <var>A<sub>ij</sub></var> (arc, disc, cell)</span>
+    <span><i class="sw" style="background:var(--s2)"></i>query direction <var>q<sub>i</sub></var></span>
+    <span><i class="sw" style="background:var(--s3)"></i>weighted average Σ<sub><var>j</var></sub> <var>A<sub>ij</sub>x<sub>j</sub></var> (ring)</span>
   </div>
   <div class="cols">
     <svg id="A_plane" viewBox="0 0 320 320" role="img" aria-label="Token vectors, their scores along the looked-for direction and their weights"></svg>
@@ -221,7 +257,7 @@ heads fit where one full-rank head would.</p>
   </div>
   <div class="ctl">
     <label><span>Sharpness <var>β</var></span> <output id="A_beta_o"></output><input id="A_beta" type="range" min="0" max="8" step="0.1" value="2.5"></label>
-    <label><span>Rotation <var>θ</var></span> <output id="A_theta_o"></output><input id="A_theta" type="range" min="-180" max="180" step="5" value="45"></label>
+    <label><span>Query rotation <var>θ</var></span> <output id="A_theta_o"></output><input id="A_theta" type="range" min="-180" max="180" step="5" value="45"></label>
   </div>
   <div class="btns">
     <label><input id="A_mask" type="checkbox" checked> only look backwards (causal mask)</label>
@@ -230,51 +266,95 @@ heads fit where one full-rank head would.</p>
   </div>
   <p class="verdict" id="A_verdict"></p>
 </div>
-<p class="note"><b>Reading the left panel.</b> The score of a word is how far it lies along the orange arrow: the
-dotted lines drop each word onto it. The discs show the weights those scores turn into.
-<var>β</var> = 0 gives the uniform average over what is visible; large <var>β</var> picks out the single word
-furthest along the arrow. Turning <var>θ</var> turns the arrow, which changes who counts as a match without moving
-any word.</p>
-<p class="note"><b>Applying the head.</b> The button moves every word towards the average it received (here
-<var>M</var> is 0.6 times the identity) and rescales it to its old length, a stand-in for the normalisation. Press
-it a few times with <var>θ</var> = 0: the words drift into clumps. In an idealised version of this setting the
-clumping is a theorem (Geshkovski, Letrouit, Polyanskiy and Rigollet, "A mathematical perspective on
+<p class="note"><b>Reading the left panel.</b> The score of word <var>j</var> is how far its key lies along the
+selected word's orange query arrow: the dotted lines drop each word onto it. The discs show the weights those scores
+turn into. <var>β</var> = 0 gives the uniform average over what is visible; large <var>β</var> picks out the single
+word furthest along the arrow. Turning <var>θ</var> turns the query arrow, changing who counts as a match without
+moving any word.</p>
+<p class="note"><b>Applying the head.</b> Here the value–output map <var>M</var> is 0.6 times the identity: the button
+adds 0.6 of the green ring to each word and rescales it to its old length, a stand-in for normalisation. Uncheck the
+causal mask and press it a few times with <var>θ</var> = 0: the words drift into clumps. In an idealised version of
+this setting the clumping is a theorem (Geshkovski, Letrouit, Polyanskiy and Rigollet, "A mathematical perspective on
 Transformers", 2023). Pressing the same button again and again is also where section 2 starts.</p>
 
-<h3>Many heads, many layers</h3>
-<p>A layer adds up several heads and then applies the MLP:</p>
+<h3>The MLP: positions do not talk, features interact</h3>
+
+<p>Once a head's weights <var>A</var>(<var>X</var>) are set, what lands at position <var>i</var> is only a linear
+combination of earlier vectors. Attention can copy a <code>6</code> and a <code>4</code> from earlier in the line
+into different coordinates of the vector at <code>=</code>, so both pieces of data now sit in the same row—but linear
+maps alone cannot compute nonlinear rules on them, such as deciding whether 6 + 4 carries.</p>
+
+<p>That is the job of the <b>MLP</b> (<em>multilayer perceptron</em>, an old neural-network name for a small
+two-layer map on vectors). The same fixed nonlinear map <var>m</var> :
+<span class="v rm">ℝ</span><sup><var>d</var></sup> → <span class="v rm">ℝ</span><sup><var>d</var></sup> is applied to
+every row <var>x<sub>i</sub></var> separately, <var>x<sub>i</sub></var> ↦ <var>x<sub>i</sub></var> +
+<var>m</var>(<var>x<sub>i</sub></var>), with zero traffic between positions:</p>
+<p class="eq"><var>m</var>(<var>x<sub>i</sub></var>) = <var>W</var><sub>out</sub> <var>σ</var>(<var>W</var><sub>in</sub> <var>x<sub>i</sub></var>).</p>
+<p>Here <var>W</var><sub>in</sub> expands <var>x<sub>i</sub></var> into a wider hidden space
+<span class="v rm">ℝ</span><sup><var>p</var></sup> (typically three to four times <var>d</var>; in Huginn
+<var>p</var> = 17,920), <var>σ</var> : <span class="v rm">ℝ</span> → <span class="v rm">ℝ</span> applies a scalar
+switch to each coordinate on its own—classically max(0, <var>u</var>), which zeroes negative numbers and keeps
+positive ones, or a smooth version such as <var>u</var> / (1 + <var>e</var><sup>−<var>u</var></sup>)—and
+<var>W</var><sub>out</sub> maps <span class="v rm">ℝ</span><sup><var>p</var></sup> back to
+<span class="v rm">ℝ</span><sup><var>d</var></sup>.</p>
+
+<p>Writing <var>w</var><sub>1</sub><sup>⊤</sup>, …, <var>w<sub>p</sub></var><sup>⊤</sup> for the rows of
+<var>W</var><sub>in</sub> and <var>c</var><sub>1</sub>, …, <var>c<sub>p</sub></var> for the columns of
+<var>W</var><sub>out</sub> turns <var>m</var>(<var>x<sub>i</sub></var>) into a sum over <var>p</var> feature
+detectors:</p>
+<p class="eq"><var>m</var>(<var>x<sub>i</sub></var>) = Σ<sub><var>r</var>=1</sub><sup><var>p</var></sup>
+<var>σ</var>(<var>w<sub>r</sub></var> · <var>x<sub>i</sub></var>) <var>c<sub>r</sub></var>.</p>
+<p>Detector <var>r</var> tests how far <var>x<sub>i</sub></var> points along <var>w<sub>r</sub></var>. When
+<var>w<sub>r</sub></var> · <var>x<sub>i</sub></var> is negative, <var>σ</var> stays near zero and detector
+<var>r</var> is silent; when it is positive, detector <var>r</var> fires and adds a multiple of its write vector
+<var>c<sub>r</sub></var> into <var>x<sub>i</sub></var>. Where attention looks up <em>other positions in the text</em>,
+the MLP looks up <em>learned patterns inside <var>x<sub>i</sub></var></em>, combining gathered features nonlinearly
+and injecting stored facts or arithmetic rules.</p>
+<p class="note">Recent transformers, including Huginn and Llama, use a gated MLP,
+<var>W</var><sub>out</sub>(<var>σ</var>(<var>W</var><sub>1</sub><var>x<sub>i</sub></var>) ⊙
+<var>W</var><sub>3</sub><var>x<sub>i</sub></var>), multiplying the switched coordinates entry by entry with a second
+linear view <var>W</var><sub>3</sub><var>x<sub>i</sub></var>; the detector-and-write picture is the same.</p>
+
+<h3>Many heads, many layers, and the readout</h3>
+<p>One full layer adds up its heads and then applies its MLP:</p>
 <p class="eq"><var>X</var> ↦ <var>X</var> + Σ<sub><var>h</var></sub> <var>A<sub>h</sub></var>(<var>X</var>) <var>X</var> <var>M<sub>h</sub></var>,
 &nbsp; then &nbsp; <var>X</var> ↦ <var>X</var> + <var>m</var>(<var>X</var>).</p>
-<p>That is the whole machine: a sum of operators of the shape "stochastic matrix on the left, low-rank matrix on
-the right", plus a pointwise nonlinearity. (Each row is also rescaled to a standard length before it is used; I
-leave that out.) An ordinary transformer composes <var>L</var> such layers, each with its own weights, and
-finishes with a <em>readout</em>: a linear map takes the last row to one score per word of the vocabulary, and the
-highest score is the answer.</p>
+<p>That is the whole machine: a sum of operators of the shape "lower-triangular stochastic matrix on the left,
+low-rank matrix on the right", followed by a row-wise nonlinear lookup. (Each row is also rescaled to a standard
+length before each sub-step so repeated additions stay bounded; I leave that out.) An ordinary transformer composes
+<var>L</var> such layers, each with its own weights, and finishes with a <em>readout</em>: a linear map takes the
+last row <var>x<sub>n</sub></var> to one score (a <em>logit</em>) per word of the vocabulary, exponentials turn those
+scores into probabilities, and greedy decoding writes the word with the highest score.</p>
 <p class="note">This left/right way of writing a head comes from Elhage and others, "A Mathematical Framework for
 Transformer Circuits" (2021).</p>
 
-<h2>2. Use the same layers again and again</h2>
+<h2 id="sec-loop">2. Use the same layers again and again</h2>
 
 <p>An ordinary transformer is a composition <var>F<sub>L</sub></var> ∘ … ∘ <var>F</var><sub>1</sub> of different
-maps. A looped transformer keeps one block <var>F</var> and applies it repeatedly, feeding the original text back
-in each time:</p>
+maps. A looped transformer keeps one block <var>F</var> and applies it repeatedly, feeding the encoded prompt
+<var>e</var> back in at every step:</p>
 <p class="eq"><var>x</var><sub><var>t</var>+1</sub> = <var>F</var>(<var>x<sub>t</sub></var>, <var>e</var>).</p>
-<p>Here <var>x<sub>t</sub></var> is the state after <var>t</var> loops and <var>e</var> is the embedded text. More
-loops mean more computation with no more weights. The model studied below, Huginn (Geiping and others, 2025),
-loops a block of four layers and reads the answer off through two further layers.</p>
+<p>Here <var>x<sub>t</sub></var> is the state after <var>t</var> loops. More loops mean more computation with no more
+weights. Huginn (Geiping and others, 2025) encodes the text through two initial layers to get <var>e</var>, loops a
+core block of four layers from a random starting state <var>x</var><sub>0</sub>, and reads the answer off through two
+final layers.</p>
 <p>The object is now a dynamical system. The first question is whether it settles to a fixed point
-<var>x</var>* = <var>F</var>(<var>x</var>*, <var>e</var>). Near <var>x</var>* everything is governed by one matrix,
-the derivative <var>J</var> = <var>DF</var>(<var>x</var>*). If all eigenvalues of <var>J</var> lie inside the unit
-circle, the state settles. If a real eigenvalue passes −1, the fixed point survives but is no longer attracting,
-and the state starts to alternate between two points.</p>
+<var>x</var>* = <var>F</var>(<var>x</var>*, <var>e</var>). Near <var>x</var>* everything is governed by the
+derivative <var>DF</var>(<var>x</var>*). Because causal attention is lower triangular (section 1), position
+<var>i</var>'s update depends only on positions 1, …, <var>i</var>, so <var>DF</var>(<var>x</var>*) is block
+lower-triangular: each position has its own <var>d</var> × <var>d</var> derivative block <var>J<sub>i</sub></var> on
+the diagonal, and the eigenvalues of the whole system are simply the union of the eigenvalues at each position. If
+all of them lie inside the unit circle, the state settles. If a real eigenvalue at some position passes −1, the fixed
+point loses stability there and that position starts to alternate between two points—passing its oscillation forward
+through attention to later positions.</p>
 
 <div class="demo" id="demoB">
   <span class="toy">Toy · a two-dimensional loop</span>
   <h3>Settle, or flip</h3>
   <p class="what">The map is <var>x</var> ↦ <var>W</var> tanh(<var>x</var>), with fixed point 0 and eigenvalues
-  <var>λ</var> and 0.6. Click in the left panel to move the starting point.</p>
+  <var>λ</var> and 0.6. Click or drag in the left panel to move the starting point.</p>
   <div class="cols">
-    <svg id="B_plane" viewBox="0 0 320 320" role="img" aria-label="Trajectory of the loop in the plane"></svg>
+    <svg id="B_plane" class="drag-plane" viewBox="0 0 320 320" role="img" aria-label="Trajectory of the loop in the plane"></svg>
     <svg id="B_time" viewBox="0 0 320 320" role="img" aria-label="First coordinate of the state against loop number"></svg>
   </div>
   <div class="ctl">
@@ -319,17 +399,22 @@ It keeps the fixed point and moves each eigenvalue <var>λ</var> to 1 − <var>a
 
 <h2>3. Now push</h2>
 
-<p>Suppose the state has settled and you want to change the answer. The readout gives each candidate answer a
-score, and the score has a gradient <var>g</var> at <var>x</var>*: the direction in which the score rises fastest.
-The obvious move is to add a small vector <var>P</var> along <var>g</var>.</p>
-<p>In a looped model the push has to survive the loop. Add <var>P</var> to the state before every loop,
-<var>x</var><sub><var>t</var>+1</sub> = <var>F</var>(<var>x<sub>t</sub></var> + <var>P</var>). To first order the
-score then changes by</p>
+<p>Suppose the state has settled at an attracting fixed point <var>x</var>* and you want to move the answer. The
+readout gives each candidate answer a score, with gradient <var>g</var> at <var>x</var>*: the direction in which
+that score rises fastest. The obvious move is to add a small vector <var>P</var> along <var>g</var> at the last
+position.</p>
+<p>First, a one-off push does not last: because <var>x</var>* is attracting, a perturbation added on a single loop
+dies away as <var>J<sup>t</sup>P</var> → 0 (in Huginn, a one-shot answer edit shifted the score by +4.1 log-odds at
+once and washed back out to zero within 48 loops). To move where the state settles, add <var>P</var> before
+<em>every</em> loop, <var>x</var><sub><var>t</var>+1</sub> = <var>F</var>(<var>x<sub>t</sub></var> + <var>P</var>,
+<var>e</var>). Because causal attention only looks backwards, pushing the last position never alters any earlier
+position's state, keys or values, so the last position's own <var>d</var> × <var>d</var> derivative <var>J</var>
+governs the response on its own. To first order the score changes by</p>
 <p class="eq">immediately: &nbsp;<var>g</var> · <var>P</var>, &nbsp;&nbsp;&nbsp; after <var>T</var> loops:
 &nbsp;<var>g</var> · (<var>J</var> + <var>J</var><sup>2</sup> + … + <var>J<sup>T</sup></var>) <var>P</var>.</p>
-<p>The best direction for the second quantity is not <var>g</var>. It is
+<p>The best unit direction for the second quantity is not <var>g</var>. By Cauchy–Schwarz it is proportional to
 (<var>J</var> + … + <var>J<sup>T</sup></var>)<sup>⊤</sup><var>g</var>, which I will call the <em>lever</em>. For a
-symmetric <var>J</var> the two are close. Nothing forces <var>J</var> to be symmetric.</p>
+symmetric <var>J</var> the two stay aligned. Nothing in a transformer forces <var>J</var> to be symmetric.</p>
 
 <div class="demo" id="demoC">
   <span class="toy">Toy · two directions, one of them read</span>
@@ -341,8 +426,8 @@ symmetric <var>J</var> the two are close. Nothing forces <var>J</var> to be symm
     <span><i class="sw" style="background:var(--s1)"></i>effect after <var>T</var> loops</span>
   </div>
   <div class="cols">
-    <svg id="C_plane" viewBox="0 0 320 320" role="img" aria-label="Push, trajectory and readout direction"></svg>
-    <svg id="C_curve" viewBox="0 0 320 320" role="img" aria-label="Effect on the score against direction of the push"></svg>
+    <svg id="C_plane" class="drag-plane" viewBox="0 0 320 320" role="img" aria-label="Push, trajectory and readout direction"></svg>
+    <svg id="C_curve" class="drag-x" viewBox="0 0 320 320" role="img" aria-label="Effect on the score against direction of the push"></svg>
   </div>
   <div class="btns">
     <button id="C_grad">Push along the gradient</button>
@@ -362,28 +447,41 @@ symmetric <var>J</var> the two are close. Nothing forces <var>J</var> to be symm
   </div>
 </div>
 <p class="note">With <var>s</var> = 0 a push along the gradient shows up at once and is gone after one loop, while a
-push at right angles does nothing at once and builds up loop by loop. The cosine tile is also exactly the gradient
-push's final effect divided by the lever's: both equal the top-left entry of
-<var>J</var> + … + <var>J<sup>T</sup></var> over the length of its first row.</p>
+push at right angles does nothing at once and builds up loop by loop; slide <var>s</var> slightly negative and the
+lever even nudges the score backwards at once before turning positive on loop 1. The cosine tile is also the
+gradient push's final effect divided by the lever's, and the lever's immediate effect divided by the gradient's: one
+number, read three ways.</p>
 
 <div class="real">
-  <span class="toy">Real model · Recurrent-Llama, 40 addition problems not used to build the pushes</span>
-  <p>Change of the pushed answer's score, for pushes of three lengths along three directions. The cosine between
-  lever and gradient is −0.005. The centroid push points from the average state towards the average state of
-  problems with that answer.</p>
+  <span class="toy">Real models · Huginn and Recurrent-Llama, held-out problems</span>
+  <p><b>First model (Huginn).</b> Unit directions were averaged over 20 training sums and tested on 20 held-out sums
+  over 48 forced loops (ten single-digit candidates, push length 3). The lever raised its pushed digit's centred
+  score by +1.78 on average (189 of 200 problem–digit pairs positive), while the readout gradient (−0.05) and a
+  centroid push towards the average state of that digit (−0.05) sat at random-direction noise (±0.05). As with
+  negative <var>s</var> above, the lever started slightly negative at once (median −0.13) and turned positive after
+  a single loop (+0.94). On True/False statements (60 held-out items, push length 12.5), the lever shifted
+  True-against-False log-odds by a median 8.13, against 0.93 for the gradient and 0.25 for a linear probe direction
+  separating true from false states—moving the output's affirmative polarity rather than an internal belief.</p>
+  <p><b>Second model (Recurrent-Llama-3.2).</b> To check whether the pattern holds outside Huginn and across push
+  sizes in double precision, the sum experiment was repeated on Recurrent-Llama-3.2 (McLeish and others, 2025)—an
+  ordinary pretrained Llama model rebuilt so six of its layers loop around 32 times—using 40 training sums and 40
+  held-out sums (answers 70 to 79, each a single token). Here the cosine between lever and gradient is −0.005:</p>
   <div class="legend">
     <span><i class="sw" style="background:var(--s1)"></i>lever</span>
     <span><i class="sw" style="background:var(--s2)"></i>gradient</span>
     <span><i class="sw" style="background:var(--s3)"></i>centroid</span>
   </div>
   <svg id="D_chart" viewBox="0 0 640 280" role="img" aria-label="Change of target score against push length for three directions"></svg>
-  <details><summary>Table</summary>
+  <details><summary>Values for the three curves</summary>
     <table id="D_table"></table>
   </details>
-  <p>The formula predicts the full table of score changes problem by problem: correlation 0.9997 at the smallest
-  push, 0.976 at the largest, against 0.11 for the readout's own derivative with no loop.</p>
-  <p><b>The catch.</b> The correct answer leads the runner-up by a median of 4.84 on these problems, about ten times
-  the top of this chart. No push made its target the model's answer, in 0 of 360 tries at every length.</p>
+  <p><b>Predicting the whole 10 × 10 response matrix.</b> Ten candidate lever pushes times ten candidate answer
+  scores give 100 score changes on each problem. Using each problem's own <var>J</var> and readout derivative, the
+  linear-response formula predicts those 100 measured numbers with median correlation 0.9997 at the 1% push, 0.997
+  at 3%, and 0.976 at 9%, against 0.11 with the loop left out (in Huginn: 0.978, against −0.59 without the loop).</p>
+  <p><b>The catch.</b> On Recurrent-Llama the correct answer leads the runner-up by a median of 4.84, about ten
+  times the top of the chart above. No push made its target candidate become the model's answer, in 0 of 360 tries
+  at every length (and at 9%, 5 of 360 pushes tipped the answer to a different, unpushed sum).</p>
   <p class="note">The formula and the lever are textbook calculus, used to train fixed-point models since Bai,
   Kolter and Koltun (2019). Wang and Reid (2026) already intervene along Jacobian-derived directions in Huginn and
   a related model. The measurements above are what I have not found elsewhere.</p>
@@ -441,7 +539,7 @@ function bind(id, fn) { const i = $(id), o = $(id + '_o'); const up = () => { fn
   const D = { A: { p7: [0.5809, 0.4861, 0.5809, 0.4861, 0.5809, 0.4861, 0.5809, 0.4861], p6: [0.4065, 0.5015, 0.4065, 0.5015, 0.4065, 0.5015, 0.4065, 0.5015] },
               B: { p7: [0.5657, 0.5058, 0.5657, 0.5058, 0.5657, 0.5058, 0.5657, 0.5058], p6: [0.4218, 0.4818, 0.4218, 0.4818, 0.4218, 0.4818, 0.4218, 0.4818] } };
   const st = { b: 511, start: 'A' }, svg = $('R_chart');
-  const X0 = 56, X1 = 500, Y0 = 16, Y1 = 180, x = b => X0 + (b - 505) / 7 * (X1 - X0), y = v => Y1 - (v - 0.35) / 0.3 * (Y1 - Y0);
+  const X0 = 56, X1 = 492, Y0 = 16, Y1 = 180, x = b => X0 + (b - 505) / 7 * (X1 - X0), y = v => Y1 - (v - 0.35) / 0.3 * (Y1 - Y0);
   function render() {
     const d = D[st.start], i = st.b - 505, p7 = d.p7[i], p6 = d.p6[i], top = p7 > p6 ? '7' : '6';
     const dg = $('R_digit'); dg.textContent = top; dg.className = 'digit' + (top === '7' ? '' : ' bad');
@@ -457,18 +555,21 @@ function bind(id, fn) { const i = $(id), o = $(id + '_o'); const up = () => { fn
       S('polyline', { points: d[k].map((v, j) => x(505 + j) + ',' + y(v)).join(' '), fill: 'none', stroke: col, 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
       d[k].forEach((v, j) => { const g = S('g', { style: 'cursor:pointer' }, svg); S('circle', { cx: x(505 + j), cy: y(v), r: 12, fill: 'transparent' }, g);
         S('circle', { cx: x(505 + j), cy: y(v), r: 505 + j === st.b ? 6 : 4, fill: col, stroke: PAGE, 'stroke-width': 2 }, g);
-        g.addEventListener('click', () => { st.b = 505 + j; $('R_b').value = st.b; $('R_b_o').textContent = st.b; render(); });
         hover(g, 'digit ' + name + ' at ' + (505 + j) + ' loops: ' + (v * 100).toFixed(1) + '%'); });
     });
-        // values at the selected loop count, the leading digit listed first
-    const y7 = y(0.5) + (p7 >= p6 ? -9 : 9), y6 = y(0.5) + (p7 >= p6 ? 9 : -9);
-    S('text', { x: X1 + 12, y: y7 + 4, class: 'lab' }, svg, 'digit 7: ' + (p7 * 100).toFixed(1) + '%');
-    S('text', { x: X1 + 12, y: y6 + 4, class: 'lab' }, svg, 'digit 6: ' + (p6 * 100).toFixed(1) + '%');
-    $('R_verdict').innerHTML = 'At <b>' + st.b + '</b> loops, ' + top + ' leads ' + (Math.max(p7, p6) * 100).toFixed(0) + '% to ' + (Math.min(p7, p6) * 100).toFixed(0) + '%' +
+    // values at the selected loop count in fixed slots so rows do not jump when scrubbing
+    const y7 = y(0.5) - 11, y6 = y(0.5) + 11;
+    S('circle', { cx: X1 + 16, cy: y7, r: 4, fill: C1 }, svg);
+    S('text', { x: X1 + 25, y: y7 + 4, class: 'lab', 'font-weight': top === '7' ? 700 : 400 }, svg, 'digit 7: ' + (p7 * 100).toFixed(1) + '%');
+    S('circle', { cx: X1 + 16, cy: y6, r: 4, fill: C2 }, svg);
+    S('text', { x: X1 + 25, y: y6 + 4, class: 'lab', 'font-weight': top === '6' ? 700 : 400 }, svg, 'digit 6: ' + (p6 * 100).toFixed(1) + '%');
+    $('R_verdict').innerHTML = 'At <b>' + st.b + '</b> loops, ' + top + ' leads ' + (Math.max(p7, p6) * 100).toFixed(1) + '% to ' + (Math.min(p7, p6) * 100).toFixed(1) + '%' +
       (st.start === 'A' ? (top === '7' ? ': the correct digit.' : ': the wrong digit.') + ' From this start the lead changes hands at every loop.'
                         : '. From this start 7 leads at every loop count; the gap opens and closes without reversing.');
   }
   bind('R_b', (v, o) => { st.b = v; o.textContent = v.toFixed(0); render(); })();
+  drag(svg, p => { const b = Math.max(505, Math.min(512, Math.round(505 + (p[0] - X0) / (X1 - X0) * 7)));
+    if (b !== st.b) { st.b = b; $('R_b').value = b; $('R_b_o').textContent = b; render(); } });
   $('R_A').addEventListener('click', () => { st.start = 'A'; render(); });
   $('R_B').addEventListener('click', () => { st.start = 'B'; render(); });
 })();
@@ -593,7 +694,8 @@ function H(tag, cls, parent, text) { const e = document.createElement(tag); if (
     hover(ring, 'Weighted average received by ' + X[i].lab);
     // heatmap
     clear(heat); const cs = Math.floor(246 / n), x0 = 66, y0 = 40;
-    S('text', { x: x0 + n * cs / 2, y: 14, 'text-anchor': 'middle' }, heat, 'looked at →');
+    S('text', { x: x0 + n * cs / 2, y: 14, 'text-anchor': 'middle' }, heat, 'looked at (key j) →');
+    S('text', { x: x0 - 8, y: y0 - 8, 'text-anchor': 'end' }, heat, 'query i ↓');
     for (let j = 0; j < n; j++) S('text', { x: x0 + j * cs + cs / 2, y: y0 - 8, 'text-anchor': 'middle', class: 'lab', style: 'font-size:11px' }, heat, X[j].lab);
     for (let r = 0; r < n; r++) {
       S('text', { x: x0 - 8, y: y0 + r * cs + cs / 2 + 4, 'text-anchor': 'end', class: 'lab', 'font-weight': r === i ? 700 : 400 }, heat, X[r].lab);
@@ -755,8 +857,8 @@ changed();
     { name: 'gradient', col: C2, v: [0.000, -0.001, -0.003], lo: [-0.001, -0.002, -0.006], hi: [0.000, 0.000, 0.001] },
     { name: 'centroid', col: C3, v: [0.000, 0.000, -0.001], lo: [-0.001, -0.002, -0.005], hi: [0.000, 0.001, 0.004] }
   ];
-  const svg = $('D_chart'), X0 = 56, X1 = 520, Y0 = 20, Y1 = 236;
-  const x = d => X0 + (d / 10) * (X1 - X0), y = v => Y1 - (v + 0.05) / 0.6 * (Y1 - Y0);
+  const svg = $('D_chart'), X0 = 56, X1 = 480, Y0 = 20, Y1 = 236;
+  const x = d => X0 + (d / 9) * (X1 - X0), y = v => Y1 - (v + 0.05) / 0.6 * (Y1 - Y0);
   [0, 0.1, 0.2, 0.3, 0.4, 0.5].forEach(v => { S('line', { x1: X0, y1: y(v), x2: X1, y2: y(v), stroke: v === 0 ? INK2 : RULE, 'stroke-opacity': v === 0 ? 0.6 : 1 }, svg);
     S('text', { x: X0 - 8, y: y(v) + 4, 'text-anchor': 'end' }, svg, v === 0 ? '0' : '+' + v.toFixed(1)); });
   doses.forEach(d => S('text', { x: x(d), y: Y1 + 18, 'text-anchor': 'middle' }, svg, d + '%'));
@@ -771,9 +873,9 @@ changed();
       hover(g, s.name + ', push ' + d + '%: ' + sgn(s.v[i], 3) + ' (95% interval ' + fmt(s.lo[i], 3) + ' to ' + fmt(s.hi[i], 3) + ')');
     });
   });
-  S('text', { x: x(9) + 12, y: y(0.48) + 4, class: 'lab' }, svg, 'lever +0.480');
-  S('text', { x: x(9) + 12, y: y(0) - 6, class: 'lab' }, svg, 'gradient −0.003');
-  S('text', { x: x(9) + 12, y: y(0) + 12, class: 'lab' }, svg, 'centroid −0.001');
+  S('text', { x: X1 + 12, y: y(0.48) + 4, class: 'lab' }, svg, 'lever +0.480');
+  S('text', { x: X1 + 12, y: y(0) - 6, class: 'lab' }, svg, 'gradient −0.003');
+  S('text', { x: X1 + 12, y: y(0) + 12, class: 'lab' }, svg, 'centroid −0.001');
   let h = '<tr><th>Push</th><th>1%</th><th>3%</th><th>9%</th></tr>';
   series.forEach(s => { h += '<tr><td>' + s.name + '</td>' + s.v.map((v, i) => '<td>' + sgn(v, 3) + ' [' + fmt(s.lo[i], 3) + ', ' + fmt(s.hi[i], 3) + ']</td>').join('') + '</tr>'; });
   $('D_table').innerHTML = h;
