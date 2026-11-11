@@ -142,16 +142,59 @@ initial addition pilot (and the pilot figures marked as such below) used bf16. T
   first source was pinned: a demonstrated second oscillator. In the relaxation run, residual downstream motion is
   common after the selected source is suppressed, consistent with additional oscillators or other unresolved dynamics
   (see Suppression).
-- **Robustness:** for the two problems tested in fp64, fp64 closely reproduces the cycling amplitudes.
+- **Robustness:** for the two problems tested in fp64, fp64 closely reproduces the cycling amplitudes. Caveat added
+  2026-11-11: those fp64 runs were mixed precision. The pinned model code casts to float32 inside its normalisation
+  and rotary step, and the harness cast the logits to float32. A fully patched double path exists only for the
+  flicker check below; it does not retrospectively validate these amplitude measurements.
 - **Bifurcation evidence:** interpolating the prelude output E between a stationary and a cycling context gives evidence
   consistent with a supercritical flip: the tracked eigenvalue crosses −1, amplitude² is approximately linear in μ = −1
   − λ, and the cycle's two-step multiplier is close to the leading-order prediction 1 − 4μ. This replicated on a second
   problem. Validated negative modes (−0.52 to −0.87) also occur at stationary positions in every sampled token category.
 - **Behavior:**
-  - Real-text census prompts had unchanged tail argmaxes, with identical greedy answers through the first newline at
-    budgets 509–512. Unchanged probabilities were not established. In sibling experiments, parity-averaged probability
+  - Real-text census prompts had unchanged tail argmaxes at the answer-prediction positions (the only positions read
+    in that run), with identical greedy answers through the first newline at budgets 509–512. Unchanged probabilities were not established. In sibling experiments, parity-averaged probability
     differences reached ≈ 5% (demo screen), and ARC letter-probability oscillations were small.
   - A narrow non-textual interpolation window showed phase-dependent argmax differences (loop-parity flicker).
+  - **Addendum 2026-11-11, real-text flicker at operand-choice positions** (`docs/flicker_design.md`; runs
+    `flicker_scan-20261111-022450`, `flicker_confirm-20261111-023055`, `flicker_confirm64-20261111-023903`; reviews
+    `results/flicker_prerun_review.md`, `results/flicker_results_review.md`). Reading the output at every position of
+    44 prompts selected for oscillating (26 census, 18 screen), three real-token prefixes have a most-probable next
+    token that alternates at every budget from 449 to 512, from the census start: after `839 +` (` 8` at even
+    budgets, ` 1` at odd; smallest lead 0.040 in log-probability), after `2136 +` (` 1` / ` 2`; 0.010) and after
+    `2136 + 406` (` =` / `4`; 0.0014). All three are guesses about an operand, and neither phase matches the token
+    that actually follows. None of the 551 final or demonstration answer positions changed its top token. The
+    model's own forward on the cut sequence reproduces budgets 509–512; a patched double-precision computation
+    reproduces the alternating pairs over 505–512; three float32 computations agree on the gap between the two
+    tokens to about 2e-5. Four other start seeds also alternate, and for `2136 +` two of them are in the opposite
+    phase. Not established: any answer-position flicker, an effect on accuracy, prevalence in general text,
+    persistence beyond 512 loops, or behaviour with the default random start and stopping rule.
+    Descriptive follow-up added after the results (each branch uses its own budget for every token, through the
+    first newline): after `839 +`, 511 loops per token writes ` 104 = 943` and 512 loops writes ` 839 = 1678`, two
+    different correct sums; after `2136 + 406`, 511 loops writes `4 = 6300` (wrong: 2136 + 4064 = 6200) and 512
+    loops writes ` = 2542` (correct). The branches choose different operands; they are not different answers to
+    one fixed sum.
+  - **Addendum 2026-11-11, answer-digit flicker in a targeted search** (`docs/flicker2_design.md`; runs
+    `flicker2_screen-20261111-040148`, `flicker2_scan-20261111-040507`, `flicker_confirm-20261111-041415`,
+    `flicker_confirm64-20261111-041858`, `flicker_continue-20261111-042010`; reviews
+    `results/flicker2_prerun_review.md`, `results/flicker2_results_review.md`). Selection, three times over: the
+    worked examples of four prompts whose oscillation starts inside the examples (20059, 20145, 20144, 20178); 400
+    new final sums screened at 32 loops for a nearly tied answer digit; the 85 closest scanned at 512 loops
+    together with the three earlier flickers as positive controls (re-found). In 84 of the 85 every answer
+    position is on a settled period-two orbit. Among 358 settled final-answer positions, four have a most-probable
+    token that alternates at every budget from 449 to 512 between the correct digit and a wrong digit: `924 + 675`
+    (second digit, 5/6, smallest lead 0.224), `816 + 254` (third digit, 7/6, 0.031), `1279 + 7419` (last digit,
+    8/9, 0.030), `769 + 843` (third digit, 1/0, 0.027). All four are confirmed by the model's own forward
+    (509–512), by the patched double-precision path (505–512, same pair) and by the numerical guard. The scan also
+    has six flickers at other positions of the new prompts and one unresolved position (uid 30381, position 42).
+    4/358 is the yield of this selected sample, not a rate in any population and not an accuracy estimate.
+    Continuation from the `=` sign, 7 tokens, each branch at its own budget for every token: `816 + 254 =` gives
+    ` 1070` at 511 loops (correct) and ` 1060` at 512 (incorrect). `924 + 675 =` gives ` 1609` and ` 1509`, both
+    incorrect (1599): its correct/wrong flip holds only with the true earlier digits supplied.
+    Start dependence (four other seeds, budgets 505–512): for `816 + 254` one seed gives the correct digit at all
+    eight budgets and three alternate; for `924 + 675` all alternate but two seeds have a different gap
+    (−0.178/+0.260 against −0.224/+0.318), so the orbit observed is not unique across starts; for the other two
+    all alternate, some in the opposite phase. Not established: any general effect on accuracy, prevalence,
+    behaviour with the default random start and stopping rule, or anything beyond 512 loops.
 - **Suppression:** under-relaxation replaces the update at the source token by s ← (1 − a)s + aF(s). This maps the flip
   eigenvalue λ to 1 − a + aλ, which crosses −1 at a* = 2/(1 − λ). The relaxation strength is r = a/a*, and the setting
   is chosen so the relaxed multiplier hits a target (−0.6 or −0.85).
@@ -497,14 +540,33 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
     other probe directions.
   - Here, the gap is analyzed through a recurrent fixed point: single-step additions are erased by contraction, and
     effective directions are those the loop's Jacobian carries into the readout.
-- **Looped / recurrent-depth models.** Orbits in Huginn's latent trajectories were reported qualitatively by Geiping et
-  al. 2025 (arXiv:2502.05171, §7) for numerical tokens, and by Blayney et al. 2026 (arXiv:2604.11791) on GSM8K, without
-  period or mechanism. A Lyapunov study (ICML 2026) reports uniform convergence; a contracting period-2 orbit is
-  compatible with negative exponents. Period-doubling cascades were shown in an external soft-token feedback loop of
-  standard LMs (arXiv:2610.31692), and a fold bifurcation in a small looped transformer (Kim 2026, arXiv:2608.26556).
-  - Here we show a source-token flip mode with bifurcation evidence inside a pretrained recurrent-depth LM's loop,
-    context-controlled switching, and eigenvalue-guided suppression.
-  - This is based on a limited literature search, not a systematic review.
+- **Looped / recurrent-depth models.** Updated 2026-11-11 after a targeted search for earlier work
+  (`results/novelty-20261111/orbits.md`; about 50 queries, not a systematic review).
+  - *Orbits in Huginn are known.* Geiping et al. 2025 (arXiv:2502.05171, §7) show them qualitatively for numerical
+    tokens. Blayney et al. 2026 (arXiv:2604.11791, Appendix C) count them over the GSM8K test set with an FFT-based
+    classifier: orbits in 0.23–2.50% of examples (0.00–0.13% of tokens), depending on the system prompt, with
+    thresholds set by eye. They report neither the period nor a mechanism and leave the explanation to future work.
+    Their counts and the 13% here use different tasks, units and criteria and are not comparable.
+  - *Limit cycles in equilibrium models are known* (Anil et al. 2022, arXiv:2211.09961).
+  - *Flip bifurcations in recurrent attention are known.* Gao, Yang and Chen 2026 (arXiv:2609.28448) show a flip
+    bifurcation to period-two motion in a minimal recurrent self-attention model with a prescribed negative value
+    map (not a trained model). Kim 2026 (arXiv:2608.26556) analyses a small trained looped transformer through a
+    fold and a Neimark–Sacker-type transition to bounded non-stationary motion, with normal-form scaling predicted
+    from local derivatives (not only "a fold", as an earlier version of this section said). Jones 2026
+    (arXiv:2610.31692) studies an external soft-token feedback loop of standard LMs, with period-doubling scaling
+    and interval-arithmetic proofs of attracting periodic orbits.
+  - *The damping rule is known.* Movahedi et al. 2026 (arXiv:2606.18206, §3.3 and Appendix A.3) observe oscillation
+    in looped transformers and use the same relaxed update, with the eigenvalue map μ = 1 − η + ηλ and the bound
+    η < 2(1 − Re λ)/|λ − 1|². The threshold a* = 2/(1 − λ) of Section 2.3 is the case of a real λ.
+  - *Lyapunov exponents.* Kiwitt, Irwin, Ali and Liò (poster, ICML 2026 Mechanistic Interpretability Workshop; only
+    the poster was read, by the search agent) report a negative spectrum for Huginn on 20 prompts and a positive
+    leading exponent for Ouro. A contracting period-2 orbit is compatible with negative exponents.
+  - *Not found:* a flip at one source position inside a pretrained recurrent-depth LM, its inheritance by later
+    positions through attention, the two context-interpolation tests, and relaxation applied at that source
+    position alone. That narrower combination is what this write-up adds. The relaxation acts on the whole state
+    at the source position, not along an eigenvector, and stopped all motion in 15 of 26 prompts (Section 2.3).
+  - Could not be opened, possibly relevant to context-controlled bifurcations: Haschke & Steil 2005 (Neurocomputing
+    64), Doya 1992 (ISCAS).
 - **Cyclic number representations.** Weekday and month circles in other LLMs (Engels et al. 2024, arXiv:2405.14860);
   Fourier/helical number features used for addition (Zhou et al. 2024; Kantamneni & Tegmark 2025); Fourier features in
   modular-arithmetic transformers (Nanda et al. 2023).
@@ -518,6 +580,11 @@ Cosines with d*: Jᵀg 0.70, W_sᵀg 0.40, g 0.10.
   standard linear-response reasoning. The population d* is an average of normalized item covectors. The empirical
   findings here are its held-out accuracy, the first-step reorientation, the outside-fed readout span, and the
   effectiveness of one-step and adapter-transpose approximations.
+  - Interventions along directions pulled back through a Jacobian already exist for Huginn and Ouro: Wang & Reid 2026
+    (arXiv:2609.01924, §7) use Jᵥᵀu with Jᵥ a corpus-averaged Jacobian between two depths, and report that in Ouro
+    later loops partly undo a single-loop write. They give no sum of powers of J and no prediction of effect size.
+    In feed-forward models, FishBack (Wang et al. 2026, arXiv:2605.17231) pulls an output direction back through the
+    downstream Jacobian to choose the steering direction. Search memo: `results/novelty-20261111/levers.md`.
 - **Not yet done:** a baseline that directly optimizes a steering vector for the evaluated readout at norm 12.5 (where
   d* is sublinear) would test how close d* comes to the nonlinear optimum.
 

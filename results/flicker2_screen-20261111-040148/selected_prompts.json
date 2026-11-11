@@ -1,0 +1,5117 @@
+[
+  {
+    "pid": 1089,
+    "uid": 20178,
+    "family": "census",
+    "demo": "D1",
+    "a": 839,
+    "b": 339,
+    "c": 1178,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n839 + 339 =",
+    "answer": " 1178",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "p0": 26,
+    "r": 47,
+    "n_p2_positions": 22,
+    "earliest_p2_role": "demo",
+    "source": "census"
+  },
+  {
+    "pid": 1073,
+    "uid": 20147,
+    "family": "census",
+    "demo": "D2",
+    "a": 2136,
+    "b": 4060,
+    "c": 6196,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "56 + 21 = 77\n214 + 558 = 772\n1468 + 1745 = 3213\n2136 + 4060 =",
+    "answer": " 6196",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "K",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "p0": 27,
+    "r": 49,
+    "n_p2_positions": 23,
+    "earliest_p2_role": "demo",
+    "source": "census"
+  },
+  {
+    "pid": 1073,
+    "uid": 20146,
+    "family": "census",
+    "demo": "D1",
+    "a": 2136,
+    "b": 4060,
+    "c": 6196,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "72 + 15 = 87\n157 + 553 = 710\n1389 + 3938 = 5327\n2136 + 4060 =",
+    "answer": " 6196",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "K",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "p0": 31,
+    "r": 49,
+    "n_p2_positions": 19,
+    "earliest_p2_role": "demo",
+    "source": "census"
+  },
+  {
+    "pid": 3144,
+    "uid": 30144,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 312,
+    "b": 982,
+    "c": 1294,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n312 + 982 =",
+    "answer": " 1294",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 4
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.04535174369812012,
+    "screen_rank": 1
+  },
+  {
+    "pid": 3063,
+    "uid": 30063,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 1597,
+    "b": 8136,
+    "c": 9733,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n1597 + 8136 =",
+    "answer": " 9733",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 3
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.04831886291503906,
+    "screen_rank": 2
+  },
+  {
+    "pid": 3315,
+    "uid": 30315,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 631,
+    "b": 119,
+    "c": 750,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n631 + 119 =",
+    "answer": " 750",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.05083441734313965,
+    "screen_rank": 3
+  },
+  {
+    "pid": 3366,
+    "uid": 30366,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 1145,
+    "b": 4623,
+    "c": 5768,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n1145 + 4623 =",
+    "answer": " 5768",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.07747030258178711,
+    "screen_rank": 4
+  },
+  {
+    "pid": 3374,
+    "uid": 30374,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 1362,
+    "b": 6936,
+    "c": 8298,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n1362 + 6936 =",
+    "answer": " 8298",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.07871818542480469,
+    "screen_rank": 5
+  },
+  {
+    "pid": 3245,
+    "uid": 30245,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 538,
+    "b": 668,
+    "c": 1206,
+    "n_digits": 3,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n538 + 668 =",
+    "answer": " 1206",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.0798654556274414,
+    "screen_rank": 6
+  },
+  {
+    "pid": 3117,
+    "uid": 30117,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 404,
+    "b": 998,
+    "c": 1402,
+    "n_digits": 3,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n404 + 998 =",
+    "answer": " 1402",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.08770275115966797,
+    "screen_rank": 7
+  },
+  {
+    "pid": 3314,
+    "uid": 30314,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 771,
+    "b": 274,
+    "c": 1045,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 2,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n771 + 274 =",
+    "answer": " 1045",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 5
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.09061241149902344,
+    "screen_rank": 8
+  },
+  {
+    "pid": 3382,
+    "uid": 30382,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 2463,
+    "b": 7810,
+    "c": 10273,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 2,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n2463 + 7810 =",
+    "answer": " 10273",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 3
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.09143185615539551,
+    "screen_rank": 9
+  },
+  {
+    "pid": 3032,
+    "uid": 30032,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 769,
+    "b": 843,
+    "c": 1612,
+    "n_digits": 3,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n769 + 843 =",
+    "answer": " 1612",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 6
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.11675071716308594,
+    "screen_rank": 10
+  },
+  {
+    "pid": 3093,
+    "uid": 30093,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 2558,
+    "b": 2136,
+    "c": 4694,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n2558 + 2136 =",
+    "answer": " 4694",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 4
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 4
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.1230165958404541,
+    "screen_rank": 11
+  },
+  {
+    "pid": 3261,
+    "uid": 30261,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 1275,
+    "b": 9971,
+    "c": 11246,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n1275 + 9971 =",
+    "answer": " 11246",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.12938141822814941,
+    "screen_rank": 12
+  },
+  {
+    "pid": 3386,
+    "uid": 30386,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 1279,
+    "b": 7419,
+    "c": 8698,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n1279 + 7419 =",
+    "answer": " 8698",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.13987064361572266,
+    "screen_rank": 13
+  },
+  {
+    "pid": 3301,
+    "uid": 30301,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 212,
+    "b": 298,
+    "c": 510,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n212 + 298 =",
+    "answer": " 510",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.14653253555297852,
+    "screen_rank": 14
+  },
+  {
+    "pid": 3187,
+    "uid": 30187,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 6348,
+    "b": 2036,
+    "c": 8384,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n6348 + 2036 =",
+    "answer": " 8384",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 3
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 4
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.14934849739074707,
+    "screen_rank": 15
+  },
+  {
+    "pid": 3381,
+    "uid": 30381,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 9638,
+    "b": 1270,
+    "c": 10908,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n9638 + 1270 =",
+    "answer": " 10908",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.1500239372253418,
+    "screen_rank": 16
+  },
+  {
+    "pid": 3298,
+    "uid": 30298,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 7598,
+    "b": 4583,
+    "c": 12181,
+    "n_digits": 4,
+    "n_carries": 4,
+    "max_chain": 4,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n7598 + 4583 =",
+    "answer": " 12181",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 4,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 1
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.15030360221862793,
+    "screen_rank": 17
+  },
+  {
+    "pid": 3176,
+    "uid": 30176,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9317,
+    "b": 9602,
+    "c": 18919,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n9317 + 9602 =",
+    "answer": " 18919",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 8
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.15761923789978027,
+    "screen_rank": 18
+  },
+  {
+    "pid": 3170,
+    "uid": 30170,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 7554,
+    "b": 2339,
+    "c": 9893,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 2,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n7554 + 2339 =",
+    "answer": " 9893",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 3
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.15824484825134277,
+    "screen_rank": 19
+  },
+  {
+    "pid": 3088,
+    "uid": 30088,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 6456,
+    "b": 7488,
+    "c": 13944,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n6456 + 7488 =",
+    "answer": " 13944",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 4
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.16331052780151367,
+    "screen_rank": 20
+  },
+  {
+    "pid": 3105,
+    "uid": 30105,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 562,
+    "b": 776,
+    "c": 1338,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n562 + 776 =",
+    "answer": " 1338",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.16606664657592773,
+    "screen_rank": 21
+  },
+  {
+    "pid": 3172,
+    "uid": 30172,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 2616,
+    "b": 7949,
+    "c": 10565,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 2,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n2616 + 7949 =",
+    "answer": " 10565",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 5
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.1676928997039795,
+    "screen_rank": 22
+  },
+  {
+    "pid": 3073,
+    "uid": 30073,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 6336,
+    "b": 3430,
+    "c": 9766,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n6336 + 3430 =",
+    "answer": " 9766",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.16934633255004883,
+    "screen_rank": 23
+  },
+  {
+    "pid": 3124,
+    "uid": 30124,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 862,
+    "b": 118,
+    "c": 980,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 2,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n862 + 118 =",
+    "answer": " 980",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.1714799404144287,
+    "screen_rank": 24
+  },
+  {
+    "pid": 3082,
+    "uid": 30082,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 3856,
+    "b": 6623,
+    "c": 10479,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n3856 + 6623 =",
+    "answer": " 10479",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.17172503471374512,
+    "screen_rank": 25
+  },
+  {
+    "pid": 3038,
+    "uid": 30038,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 157,
+    "b": 526,
+    "c": 683,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n157 + 526 =",
+    "answer": " 683",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 3
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.17399930953979492,
+    "screen_rank": 26
+  },
+  {
+    "pid": 3227,
+    "uid": 30227,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 474,
+    "b": 115,
+    "c": 589,
+    "n_digits": 3,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n474 + 115 =",
+    "answer": " 589",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.17869234085083008,
+    "screen_rank": 27
+  },
+  {
+    "pid": 3394,
+    "uid": 30394,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 1955,
+    "b": 8588,
+    "c": 10543,
+    "n_digits": 4,
+    "n_carries": 4,
+    "max_chain": 4,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 2,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n1955 + 8588 =",
+    "answer": " 10543",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 4,
+        "dep_len": 2,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 3
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.1811847686767578,
+    "screen_rank": 28
+  },
+  {
+    "pid": 3120,
+    "uid": 30120,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 183,
+    "b": 939,
+    "c": 1122,
+    "n_digits": 3,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n183 + 939 =",
+    "answer": " 1122",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.18778371810913086,
+    "screen_rank": 29
+  },
+  {
+    "pid": 3049,
+    "uid": 30049,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 924,
+    "b": 675,
+    "c": 1599,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n924 + 675 =",
+    "answer": " 1599",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.19005441665649414,
+    "screen_rank": 30
+  },
+  {
+    "pid": 3054,
+    "uid": 30054,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 2507,
+    "b": 7615,
+    "c": 10122,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n2507 + 7615 =",
+    "answer": " 10122",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 2
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.19079852104187012,
+    "screen_rank": 31
+  },
+  {
+    "pid": 3320,
+    "uid": 30320,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 397,
+    "b": 892,
+    "c": 1289,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n397 + 892 =",
+    "answer": " 1289",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.19652032852172852,
+    "screen_rank": 32
+  },
+  {
+    "pid": 3143,
+    "uid": 30143,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 925,
+    "b": 171,
+    "c": 1096,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n925 + 171 =",
+    "answer": " 1096",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.2032935619354248,
+    "screen_rank": 33
+  },
+  {
+    "pid": 3184,
+    "uid": 30184,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9835,
+    "b": 3150,
+    "c": 12985,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n9835 + 3150 =",
+    "answer": " 12985",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 5
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.2144629955291748,
+    "screen_rank": 34
+  },
+  {
+    "pid": 3102,
+    "uid": 30102,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 861,
+    "b": 658,
+    "c": 1519,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n861 + 658 =",
+    "answer": " 1519",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.21685099601745605,
+    "screen_rank": 35
+  },
+  {
+    "pid": 3332,
+    "uid": 30332,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 325,
+    "b": 356,
+    "c": 681,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n325 + 356 =",
+    "answer": " 681",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 1
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.22007131576538086,
+    "screen_rank": 36
+  },
+  {
+    "pid": 3379,
+    "uid": 30379,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 2739,
+    "b": 9019,
+    "c": 11758,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n2739 + 9019 =",
+    "answer": " 11758",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.22070670127868652,
+    "screen_rank": 37
+  },
+  {
+    "pid": 3177,
+    "uid": 30177,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 5493,
+    "b": 9587,
+    "c": 15080,
+    "n_digits": 4,
+    "n_carries": 4,
+    "max_chain": 4,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n5493 + 9587 =",
+    "answer": " 15080",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 4,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.22444462776184082,
+    "screen_rank": 38
+  },
+  {
+    "pid": 3138,
+    "uid": 30138,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 886,
+    "b": 823,
+    "c": 1709,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n886 + 823 =",
+    "answer": " 1709",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.22532939910888672,
+    "screen_rank": 39
+  },
+  {
+    "pid": 3154,
+    "uid": 30154,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 2832,
+    "b": 5966,
+    "c": 8798,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n2832 + 5966 =",
+    "answer": " 8798",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.2289276123046875,
+    "screen_rank": 40
+  },
+  {
+    "pid": 3077,
+    "uid": 30077,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 1185,
+    "b": 6327,
+    "c": 7512,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n1185 + 6327 =",
+    "answer": " 7512",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.23209643363952637,
+    "screen_rank": 41
+  },
+  {
+    "pid": 3380,
+    "uid": 30380,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 1822,
+    "b": 9477,
+    "c": 11299,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n1822 + 9477 =",
+    "answer": " 11299",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.23365473747253418,
+    "screen_rank": 42
+  },
+  {
+    "pid": 3134,
+    "uid": 30134,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 551,
+    "b": 379,
+    "c": 930,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n551 + 379 =",
+    "answer": " 930",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.2343142032623291,
+    "screen_rank": 43
+  },
+  {
+    "pid": 3378,
+    "uid": 30378,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 8796,
+    "b": 2742,
+    "c": 11538,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n8796 + 2742 =",
+    "answer": " 11538",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.24443507194519043,
+    "screen_rank": 44
+  },
+  {
+    "pid": 3281,
+    "uid": 30281,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 4326,
+    "b": 9045,
+    "c": 13371,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n4326 + 9045 =",
+    "answer": " 13371",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 3
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 1
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.24648618698120117,
+    "screen_rank": 45
+  },
+  {
+    "pid": 3059,
+    "uid": 30059,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 4906,
+    "b": 8331,
+    "c": 13237,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n4906 + 8331 =",
+    "answer": " 13237",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 3
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 7
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.24681544303894043,
+    "screen_rank": 46
+  },
+  {
+    "pid": 3302,
+    "uid": 30302,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 123,
+    "b": 160,
+    "c": 283,
+    "n_digits": 3,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n123 + 160 =",
+    "answer": " 283",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 3
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.2505970001220703,
+    "screen_rank": 47
+  },
+  {
+    "pid": 3165,
+    "uid": 30165,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 6863,
+    "b": 7913,
+    "c": 14776,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n6863 + 7913 =",
+    "answer": " 14776",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.2509796619415283,
+    "screen_rank": 48
+  },
+  {
+    "pid": 3036,
+    "uid": 30036,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 727,
+    "b": 792,
+    "c": 1519,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n727 + 792 =",
+    "answer": " 1519",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.25503993034362793,
+    "screen_rank": 49
+  },
+  {
+    "pid": 3387,
+    "uid": 30387,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 4284,
+    "b": 1666,
+    "c": 5950,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n4284 + 1666 =",
+    "answer": " 5950",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.25663089752197266,
+    "screen_rank": 50
+  },
+  {
+    "pid": 3097,
+    "uid": 30097,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 2454,
+    "b": 2473,
+    "c": 4927,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n2454 + 2473 =",
+    "answer": " 4927",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 4
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 7
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.26372337341308594,
+    "screen_rank": 51
+  },
+  {
+    "pid": 3273,
+    "uid": 30273,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 3295,
+    "b": 5899,
+    "c": 9194,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n3295 + 5899 =",
+    "answer": " 9194",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 4
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.2638537883758545,
+    "screen_rank": 52
+  },
+  {
+    "pid": 3195,
+    "uid": 30195,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9124,
+    "b": 4858,
+    "c": 13982,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n9124 + 4858 =",
+    "answer": " 13982",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.2643096446990967,
+    "screen_rank": 53
+  },
+  {
+    "pid": 3153,
+    "uid": 30153,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 8694,
+    "b": 4086,
+    "c": 12780,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n8694 + 4086 =",
+    "answer": " 12780",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.2661631107330322,
+    "screen_rank": 54
+  },
+  {
+    "pid": 3367,
+    "uid": 30367,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 2538,
+    "b": 4151,
+    "c": 6689,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n2538 + 4151 =",
+    "answer": " 6689",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.26807141304016113,
+    "screen_rank": 55
+  },
+  {
+    "pid": 3282,
+    "uid": 30282,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 5360,
+    "b": 5149,
+    "c": 10509,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n5360 + 5149 =",
+    "answer": " 10509",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.31393003463745117,
+    "screen_rank": 56
+  },
+  {
+    "pid": 3182,
+    "uid": 30182,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 5318,
+    "b": 8274,
+    "c": 13592,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n5318 + 8274 =",
+    "answer": " 13592",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.31853652000427246,
+    "screen_rank": 57
+  },
+  {
+    "pid": 3284,
+    "uid": 30284,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 8475,
+    "b": 6007,
+    "c": 14482,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n8475 + 6007 =",
+    "answer": " 14482",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 4
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.32807350158691406,
+    "screen_rank": 58
+  },
+  {
+    "pid": 3278,
+    "uid": 30278,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 5886,
+    "b": 5132,
+    "c": 11018,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n5886 + 5132 =",
+    "answer": " 11018",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.33142638206481934,
+    "screen_rank": 59
+  },
+  {
+    "pid": 3035,
+    "uid": 30035,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 461,
+    "b": 555,
+    "c": 1016,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n461 + 555 =",
+    "answer": " 1016",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.33737683296203613,
+    "screen_rank": 60
+  },
+  {
+    "pid": 3022,
+    "uid": 30022,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 366,
+    "b": 604,
+    "c": 970,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n366 + 604 =",
+    "answer": " 970",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.3465592861175537,
+    "screen_rank": 61
+  },
+  {
+    "pid": 3317,
+    "uid": 30317,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 592,
+    "b": 164,
+    "c": 756,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n592 + 164 =",
+    "answer": " 756",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.36290764808654785,
+    "screen_rank": 62
+  },
+  {
+    "pid": 3072,
+    "uid": 30072,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9874,
+    "b": 7425,
+    "c": 17299,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n9874 + 7425 =",
+    "answer": " 17299",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 7
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.3630352020263672,
+    "screen_rank": 63
+  },
+  {
+    "pid": 3275,
+    "uid": 30275,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 7846,
+    "b": 6965,
+    "c": 14811,
+    "n_digits": 4,
+    "n_carries": 4,
+    "max_chain": 4,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n7846 + 6965 =",
+    "answer": " 14811",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 4,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 8
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 1
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.3711860179901123,
+    "screen_rank": 64
+  },
+  {
+    "pid": 3061,
+    "uid": 30061,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9335,
+    "b": 1373,
+    "c": 10708,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n9335 + 1373 =",
+    "answer": " 10708",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.3765850067138672,
+    "screen_rank": 65
+  },
+  {
+    "pid": 3086,
+    "uid": 30086,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 3958,
+    "b": 8338,
+    "c": 12296,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n3958 + 8338 =",
+    "answer": " 12296",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.382645845413208,
+    "screen_rank": 66
+  },
+  {
+    "pid": 3119,
+    "uid": 30119,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 285,
+    "b": 946,
+    "c": 1231,
+    "n_digits": 3,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n285 + 946 =",
+    "answer": " 1231",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 1
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.3883662223815918,
+    "screen_rank": 67
+  },
+  {
+    "pid": 3060,
+    "uid": 30060,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 2308,
+    "b": 4810,
+    "c": 7118,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n2308 + 4810 =",
+    "answer": " 7118",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.3901975154876709,
+    "screen_rank": 68
+  },
+  {
+    "pid": 3161,
+    "uid": 30161,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 5431,
+    "b": 9855,
+    "c": 15286,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n5431 + 9855 =",
+    "answer": " 15286",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 5
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.3985884189605713,
+    "screen_rank": 69
+  },
+  {
+    "pid": 3001,
+    "uid": 30001,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 565,
+    "b": 134,
+    "c": 699,
+    "n_digits": 3,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n565 + 134 =",
+    "answer": " 699",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "K",
+        "digit": 6
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.40747761726379395,
+    "screen_rank": 70
+  },
+  {
+    "pid": 3290,
+    "uid": 30290,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 2126,
+    "b": 3629,
+    "c": 5755,
+    "n_digits": 4,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n2126 + 3629 =",
+    "answer": " 5755",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 5
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.40891337394714355,
+    "screen_rank": 71
+  },
+  {
+    "pid": 3344,
+    "uid": 30344,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 643,
+    "b": 263,
+    "c": 906,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n643 + 263 =",
+    "answer": " 906",
+    "digit_info": [
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.41073155403137207,
+    "screen_rank": 72
+  },
+  {
+    "pid": 3074,
+    "uid": 30074,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 6632,
+    "b": 7269,
+    "c": 13901,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n6632 + 7269 =",
+    "answer": " 13901",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 3
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "K",
+        "digit": 9
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 1
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.4160468578338623,
+    "screen_rank": 73
+  },
+  {
+    "pid": 3084,
+    "uid": 30084,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9987,
+    "b": 1093,
+    "c": 11080,
+    "n_digits": 4,
+    "n_carries": 4,
+    "max_chain": 4,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n9987 + 1093 =",
+    "answer": " 11080",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 4,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.42461705207824707,
+    "screen_rank": 74
+  },
+  {
+    "pid": 3051,
+    "uid": 30051,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 1010,
+    "b": 8364,
+    "c": 9374,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n1010 + 8364 =",
+    "answer": " 9374",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 3
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 4
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.4344606399536133,
+    "screen_rank": 75
+  },
+  {
+    "pid": 3358,
+    "uid": 30358,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 8626,
+    "b": 2844,
+    "c": 11470,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n8626 + 2844 =",
+    "answer": " 11470",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.4379270076751709,
+    "screen_rank": 76
+  },
+  {
+    "pid": 3268,
+    "uid": 30268,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 2221,
+    "b": 2365,
+    "c": 4586,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 1,
+    "overflow": 0,
+    "overflow_dep": 1,
+    "prompt": "65 + 13 = 78\n280 + 513 = 793\n1975 + 1302 = 3277\n2221 + 2365 =",
+    "answer": " 4586",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 4
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 5
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 6
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20144,
+    "screen_stat": 0.44750142097473145,
+    "screen_rank": 77
+  },
+  {
+    "pid": 3058,
+    "uid": 30058,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 8062,
+    "b": 1120,
+    "c": 9182,
+    "n_digits": 4,
+    "n_carries": 0,
+    "max_chain": 0,
+    "max_dep": 2,
+    "overflow": 0,
+    "overflow_dep": 2,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n8062 + 1120 =",
+    "answer": " 9182",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 2
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.4475891590118408,
+    "screen_rank": 78
+  },
+  {
+    "pid": 3026,
+    "uid": 30026,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 696,
+    "b": 523,
+    "c": 1219,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n696 + 523 =",
+    "answer": " 1219",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "P",
+        "digit": 9
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.46689414978027344,
+    "screen_rank": 79
+  },
+  {
+    "pid": 3159,
+    "uid": 30159,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9443,
+    "b": 1844,
+    "c": 11287,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n9443 + 1844 =",
+    "answer": " 11287",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 8
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 7
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.47025442123413086,
+    "screen_rank": 80
+  },
+  {
+    "pid": 3197,
+    "uid": 30197,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 9842,
+    "b": 4253,
+    "c": 14095,
+    "n_digits": 4,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n9842 + 4253 =",
+    "answer": " 14095",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 9
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 5
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.4704451560974121,
+    "screen_rank": 81
+  },
+  {
+    "pid": 3345,
+    "uid": 30345,
+    "family": "flicker2",
+    "demo": "D1",
+    "a": 172,
+    "b": 931,
+    "c": 1103,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 2,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "48 + 48 = 96\n165 + 148 = 313\n1416 + 1396 = 2812\n172 + 931 =",
+    "answer": " 1103",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 1
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 3
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20178,
+    "screen_stat": 0.4887518882751465,
+    "screen_rank": 82
+  },
+  {
+    "pid": 3087,
+    "uid": 30087,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 3852,
+    "b": 8192,
+    "c": 12044,
+    "n_digits": 4,
+    "n_carries": 3,
+    "max_chain": 3,
+    "max_dep": 2,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n3852 + 8192 =",
+    "answer": " 12044",
+    "digit_info": [
+      {
+        "col": 4,
+        "carry_in": 1,
+        "chain_in": 3,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 2,
+        "dep_len": 2,
+        "ctype": "G",
+        "digit": 2
+      },
+      {
+        "col": 2,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "P",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 4
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 4
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.4911789894104004,
+    "screen_rank": 83
+  },
+  {
+    "pid": 3142,
+    "uid": 30142,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 901,
+    "b": 107,
+    "c": 1008,
+    "n_digits": 3,
+    "n_carries": 1,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "62 + 25 = 87\n143 + 776 = 919\n1341 + 3366 = 4707\n901 + 107 =",
+    "answer": " 1008",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 0
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "K",
+        "digit": 8
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20145,
+    "screen_stat": 0.49706101417541504,
+    "screen_rank": 84
+  },
+  {
+    "pid": 3010,
+    "uid": 30010,
+    "family": "flicker2",
+    "demo": "D2",
+    "a": 816,
+    "b": 254,
+    "c": 1070,
+    "n_digits": 3,
+    "n_carries": 2,
+    "max_chain": 1,
+    "max_dep": 1,
+    "overflow": 1,
+    "overflow_dep": 1,
+    "prompt": "33 + 36 = 69\n415 + 419 = 834\n3563 + 3209 = 6772\n816 + 254 =",
+    "answer": " 1070",
+    "digit_info": [
+      {
+        "col": 3,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "-",
+        "digit": 1
+      },
+      {
+        "col": 2,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 1,
+        "ctype": "G",
+        "digit": 0
+      },
+      {
+        "col": 1,
+        "carry_in": 1,
+        "chain_in": 1,
+        "dep_len": 1,
+        "ctype": "K",
+        "digit": 7
+      },
+      {
+        "col": 0,
+        "carry_in": 0,
+        "chain_in": 0,
+        "dep_len": 0,
+        "ctype": "G",
+        "digit": 0
+      }
+    ],
+    "ipos": 1,
+    "source": "flicker2",
+    "context_uid": 20059,
+    "screen_stat": 0.49862146377563477,
+    "screen_rank": 85
+  }
+]

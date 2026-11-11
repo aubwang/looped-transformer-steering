@@ -1,0 +1,90 @@
+{
+  "gates": {
+    "meta_ok": true,
+    "hits_sha": true,
+    "configuration": true,
+    "rows": true,
+    "branches": true,
+    "PASS": true
+  },
+  "hits": [
+    {
+      "uid": 30049,
+      "a": 924,
+      "b": 675,
+      "c": 1599,
+      "branches": [
+        {
+          "budget": 511,
+          "answer_line": " 1609",
+          "status": "INCORRECT",
+          "text": " 1609\n33",
+          "token_ids": [
+            345,
+            54,
+            48,
+            57,
+            10,
+            51,
+            51
+          ]
+        },
+        {
+          "budget": 512,
+          "answer_line": " 1509",
+          "status": "INCORRECT",
+          "text": " 1509\n33",
+          "token_ids": [
+            345,
+            53,
+            48,
+            57,
+            10,
+            51,
+            51
+          ]
+        }
+      ],
+      "right_at_one_parity_wrong_at_other": false
+    },
+    {
+      "uid": 30010,
+      "a": 816,
+      "b": 254,
+      "c": 1070,
+      "branches": [
+        {
+          "budget": 511,
+          "answer_line": " 1070",
+          "status": "CORRECT",
+          "text": " 1070\n33",
+          "token_ids": [
+            345,
+            48,
+            55,
+            48,
+            10,
+            51,
+            51
+          ]
+        },
+        {
+          "budget": 512,
+          "answer_line": " 1060",
+          "status": "INCORRECT",
+          "text": " 1060\n33",
+          "token_ids": [
+            345,
+            48,
+            54,
+            48,
+            10,
+            51,
+            51
+          ]
+        }
+      ],
+      "right_at_one_parity_wrong_at_other": true
+    }
+  ]
+}

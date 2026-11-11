@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "chunk_run_ids": [
+    "flicker2_scan-20261111-040507_0",
+    "flicker2_scan-20261111-040507_1"
+  ],
+  "prompts_sha256": "fe5ba5f7bca1747a971a46744b123ef37d2dbadfcc8e795427a6c26a3037786a",
+  "code_sha256": "4a7270a6c2d045e398dbe53ea395eae905de5900f15d714976926dbac48e323c"
+}

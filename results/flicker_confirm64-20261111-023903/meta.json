@@ -1,0 +1,60 @@
+{
+  "cfg": {
+    "K": 512,
+    "budgets": [
+      509,
+      510,
+      511,
+      512
+    ],
+    "seeds": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "tail_c2": 8,
+    "n_new": 6,
+    "compute_s": 270
+  },
+  "validation": null,
+  "runtime_s": 58.980045405,
+  "compute_s": 24.096625423,
+  "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+  "model_id": "tomg-group-umd/huginn-0125",
+  "versions": {
+    "numpy": "2.4.6",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3"
+  },
+  "code_sha256": "2a9e16541986470c4cb5c75f937165c40ea94c749d9124835ccb7ea758b67403",
+  "run_id": "flicker_confirm64-20261111-023903",
+  "flags": [],
+  "ok": true,
+  "precision": "float64 patched",
+  "start_policy": "census draw (uid, seed 0), full-length, sliced",
+  "hits_sha256": "03a03339f13c42103752ad54c71d45eab59a4dbe93f4b75028188532464608ec",
+  "patch": {
+    "norm_modules": 33,
+    "norm_source_sha256": "e005f9f15972fee142f7b8598b659588f0a945268cefb1d65d56ec619b3926e4",
+    "rotary_source_sha256": "cc4023d64d22a99a926535afcbe5c6a1c8acb6711ad0ba360e6e665ee2af6328",
+    "dtypes": {
+      "norm_input": "torch.float64",
+      "norm_output": "torch.float64",
+      "rotary_input": "torch.float64",
+      "rotary_constants": "torch.float32",
+      "rotary_output": "torch.float64",
+      "logits": "torch.float64"
+    }
+  },
+  "activation": {
+    "max_abs_difference": 4.23595241016983e-06,
+    "max_abs_value": 5.175445885871099
+  },
+  "matmul_allow_tf32": false,
+  "cudnn_allow_tf32": false,
+  "float32_matmul_precision": "highest",
+  "parameter_dtype": "torch.float64",
+  "peak_memory_allocated": 28584660480
+}

@@ -1,0 +1,172 @@
+{
+  "gates": {
+    "confirm_rows": true,
+    "confirm_hits_sha": true,
+    "confirm_model": true,
+    "confirm_start": true,
+    "confirm_precision": true,
+    "confirm_config": true,
+    "hit_provenance": true,
+    "c64_rows": true,
+    "c64_hits_sha": true,
+    "c64_model": true,
+    "c64_start": true,
+    "c64_precision": true,
+    "c64_config": true,
+    "c64_patch": true,
+    "c64_budgets": true,
+    "PASS": true
+  },
+  "hits": [
+    {
+      "uid": 30049,
+      "p": 45,
+      "C1": true,
+      "C4": true,
+      "delta": 9.5367431640625e-05,
+      "guard": true,
+      "C2": [
+        {
+          "seed": 1,
+          "alternates": true,
+          "token_at_512": 53,
+          "same_pair": true
+        },
+        {
+          "seed": 2,
+          "alternates": true,
+          "token_at_512": 53,
+          "same_pair": true
+        },
+        {
+          "seed": 3,
+          "alternates": true,
+          "token_at_512": 53,
+          "same_pair": true
+        },
+        {
+          "seed": 4,
+          "alternates": true,
+          "token_at_512": 53,
+          "same_pair": true
+        }
+      ],
+      "C3": [],
+      "label": "CONFIRMED",
+      "confirmed": true
+    },
+    {
+      "uid": 30010,
+      "p": 46,
+      "C1": true,
+      "C4": true,
+      "delta": 2.09808349609375e-05,
+      "guard": true,
+      "C2": [
+        {
+          "seed": 1,
+          "alternates": false,
+          "token_at_512": 55,
+          "same_pair": false
+        },
+        {
+          "seed": 2,
+          "alternates": true,
+          "token_at_512": 54,
+          "same_pair": true
+        },
+        {
+          "seed": 3,
+          "alternates": true,
+          "token_at_512": 54,
+          "same_pair": true
+        },
+        {
+          "seed": 4,
+          "alternates": true,
+          "token_at_512": 54,
+          "same_pair": true
+        }
+      ],
+      "C3": [],
+      "label": "CONFIRMED",
+      "confirmed": true
+    },
+    {
+      "uid": 30386,
+      "p": 49,
+      "C1": true,
+      "C4": true,
+      "delta": 6.103515625e-05,
+      "guard": true,
+      "C2": [
+        {
+          "seed": 1,
+          "alternates": true,
+          "token_at_512": 57,
+          "same_pair": true
+        },
+        {
+          "seed": 2,
+          "alternates": true,
+          "token_at_512": 56,
+          "same_pair": true
+        },
+        {
+          "seed": 3,
+          "alternates": true,
+          "token_at_512": 56,
+          "same_pair": true
+        },
+        {
+          "seed": 4,
+          "alternates": true,
+          "token_at_512": 57,
+          "same_pair": true
+        }
+      ],
+      "C3": [],
+      "label": "CONFIRMED",
+      "confirmed": true
+    },
+    {
+      "uid": 30032,
+      "p": 46,
+      "C1": true,
+      "C4": true,
+      "delta": 0.000125885009765625,
+      "guard": true,
+      "C2": [
+        {
+          "seed": 1,
+          "alternates": true,
+          "token_at_512": 48,
+          "same_pair": true
+        },
+        {
+          "seed": 2,
+          "alternates": true,
+          "token_at_512": 49,
+          "same_pair": true
+        },
+        {
+          "seed": 3,
+          "alternates": true,
+          "token_at_512": 48,
+          "same_pair": true
+        },
+        {
+          "seed": 4,
+          "alternates": true,
+          "token_at_512": 48,
+          "same_pair": true
+        }
+      ],
+      "C3": [],
+      "label": "CONFIRMED",
+      "confirmed": true
+    }
+  ],
+  "outcome": "AT LEAST ONE CONFIRMED",
+  "evidence_windows": "float32 scan: 449..512; prefix forward: 509..512; float64: 505..512 (pair agrees, phase free)"
+}

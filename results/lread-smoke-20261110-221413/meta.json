@@ -1,0 +1,536 @@
+{
+  "cfg": {
+    "smoke": true,
+    "rows": 64,
+    "n_A": 3,
+    "n_B": 3,
+    "K0": 64,
+    "items_B": [
+      {
+        "dataset": "cities",
+        "unit": "city1",
+        "truth": 1,
+        "statement": "The city of Tokyo is in Japan.",
+        "uid": 100002,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Tokyo is in Japan.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Tokyo is in Japan.\nTrue or false?",
+        "stage1_index": 2,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city4",
+        "truth": 0,
+        "statement": "The city of Rome is in Peru.",
+        "uid": 100009,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Rome is in Peru.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Rome is in Peru.\nTrue or false?",
+        "stage1_index": 9,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city9",
+        "truth": 1,
+        "statement": "The city of Sydney is in Australia.",
+        "uid": 100018,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Sydney is in Australia.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Sydney is in Australia.\nTrue or false?",
+        "stage1_index": 18,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city12",
+        "truth": 0,
+        "statement": "The city of Nairobi is in Japan.",
+        "uid": 100025,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Nairobi is in Japan.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Nairobi is in Japan.\nTrue or false?",
+        "stage1_index": 25,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city14",
+        "truth": 1,
+        "statement": "The city of Bogota is in Colombia.",
+        "uid": 100028,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Bogota is in Colombia.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Bogota is in Colombia.\nTrue or false?",
+        "stage1_index": 28,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city17",
+        "truth": 0,
+        "statement": "The city of Mexico City is in Hungary.",
+        "uid": 100035,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Mexico City is in Hungary.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Mexico City is in Hungary.\nTrue or false?",
+        "stage1_index": 35,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city22",
+        "truth": 1,
+        "statement": "The city of Istanbul is in Turkey.",
+        "uid": 100044,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Istanbul is in Turkey.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Istanbul is in Turkey.\nTrue or false?",
+        "stage1_index": 44,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city30",
+        "truth": 0,
+        "statement": "The city of Oslo is in Finland.",
+        "uid": 100061,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Oslo is in Finland.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Oslo is in Finland.\nTrue or false?",
+        "stage1_index": 61,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city48",
+        "truth": 1,
+        "statement": "The city of Dhaka is in Bangladesh.",
+        "uid": 100096,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Dhaka is in Bangladesh.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Dhaka is in Bangladesh.\nTrue or false?",
+        "stage1_index": 96,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city56",
+        "truth": 0,
+        "statement": "The city of Shanghai is in Ireland.",
+        "uid": 100113,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Shanghai is in Ireland.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Shanghai is in Ireland.\nTrue or false?",
+        "stage1_index": 113,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair9",
+        "truth": 1,
+        "statement": "25 is larger than 20.",
+        "uid": 100138,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n25 is larger than 20.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 25 is larger than 20.\nTrue or false?",
+        "stage1_index": 138,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair13",
+        "truth": 0,
+        "statement": "23 is larger than 41.",
+        "uid": 100147,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n23 is larger than 41.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 23 is larger than 41.\nTrue or false?",
+        "stage1_index": 147,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair24",
+        "truth": 1,
+        "statement": "64 is larger than 39.",
+        "uid": 100168,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n64 is larger than 39.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 64 is larger than 39.\nTrue or false?",
+        "stage1_index": 168,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair25",
+        "truth": 0,
+        "statement": "40 is larger than 54.",
+        "uid": 100171,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n40 is larger than 54.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 40 is larger than 54.\nTrue or false?",
+        "stage1_index": 171,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair27",
+        "truth": 1,
+        "statement": "77 is larger than 41.",
+        "uid": 100174,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n77 is larger than 41.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 77 is larger than 41.\nTrue or false?",
+        "stage1_index": 174,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair34",
+        "truth": 0,
+        "statement": "49 is larger than 73.",
+        "uid": 100189,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n49 is larger than 73.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 49 is larger than 73.\nTrue or false?",
+        "stage1_index": 189,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair42",
+        "truth": 1,
+        "statement": "80 is larger than 57.",
+        "uid": 100204,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n80 is larger than 57.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 80 is larger than 57.\nTrue or false?",
+        "stage1_index": 204,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair43",
+        "truth": 0,
+        "statement": "57 is larger than 92.",
+        "uid": 100207,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n57 is larger than 92.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 57 is larger than 92.\nTrue or false?",
+        "stage1_index": 207,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair45",
+        "truth": 1,
+        "statement": "85 is larger than 59.",
+        "uid": 100210,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n85 is larger than 59.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 85 is larger than 59.\nTrue or false?",
+        "stage1_index": 210,
+        "split": "train"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair48",
+        "truth": 0,
+        "statement": "65 is larger than 75.",
+        "uid": 100217,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n65 is larger than 75.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 65 is larger than 75.\nTrue or false?",
+        "stage1_index": 217,
+        "split": "train"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city6",
+        "truth": 1,
+        "statement": "The city of Moscow is in Russia.",
+        "uid": 100012,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Moscow is in Russia.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Moscow is in Russia.\nTrue or false?",
+        "stage1_index": 12,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city7",
+        "truth": 0,
+        "statement": "The city of Beijing is in Italy.",
+        "uid": 100015,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Beijing is in Italy.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Beijing is in Italy.\nTrue or false?",
+        "stage1_index": 15,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city15",
+        "truth": 1,
+        "statement": "The city of Santiago is in Chile.",
+        "uid": 100030,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Santiago is in Chile.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Santiago is in Chile.\nTrue or false?",
+        "stage1_index": 30,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city25",
+        "truth": 0,
+        "statement": "The city of Bangkok is in Japan.",
+        "uid": 100051,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Bangkok is in Japan.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Bangkok is in Japan.\nTrue or false?",
+        "stage1_index": 51,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city38",
+        "truth": 1,
+        "statement": "The city of Amsterdam is in the Netherlands.",
+        "uid": 100076,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Amsterdam is in the Netherlands.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Amsterdam is in the Netherlands.\nTrue or false?",
+        "stage1_index": 76,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city39",
+        "truth": 0,
+        "statement": "The city of Brussels is in Ukraine.",
+        "uid": 100079,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Brussels is in Ukraine.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Brussels is in Ukraine.\nTrue or false?",
+        "stage1_index": 79,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city43",
+        "truth": 1,
+        "statement": "The city of Cape Town is in South Africa.",
+        "uid": 100086,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Cape Town is in South Africa.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Cape Town is in South Africa.\nTrue or false?",
+        "stage1_index": 86,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city45",
+        "truth": 0,
+        "statement": "The city of Accra is in Russia.",
+        "uid": 100091,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Accra is in Russia.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Accra is in Russia.\nTrue or false?",
+        "stage1_index": 91,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city47",
+        "truth": 1,
+        "statement": "The city of Karachi is in Pakistan.",
+        "uid": 100094,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Karachi is in Pakistan.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Karachi is in Pakistan.\nTrue or false?",
+        "stage1_index": 94,
+        "split": "eval"
+      },
+      {
+        "dataset": "cities",
+        "unit": "city49",
+        "truth": 0,
+        "statement": "The city of Kabul is in South Korea.",
+        "uid": 100099,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\nThe city of Kabul is in South Korea.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: The city of Kabul is in South Korea.\nTrue or false?",
+        "stage1_index": 99,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair1",
+        "truth": 1,
+        "statement": "47 is larger than 13.",
+        "uid": 100122,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n47 is larger than 13.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 47 is larger than 13.\nTrue or false?",
+        "stage1_index": 122,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair2",
+        "truth": 0,
+        "statement": "14 is larger than 18.",
+        "uid": 100125,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n14 is larger than 18.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 14 is larger than 18.\nTrue or false?",
+        "stage1_index": 125,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair6",
+        "truth": 1,
+        "statement": "56 is larger than 18.",
+        "uid": 100132,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n56 is larger than 18.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 56 is larger than 18.\nTrue or false?",
+        "stage1_index": 132,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair14",
+        "truth": 0,
+        "statement": "23 is larger than 42.",
+        "uid": 100149,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n23 is larger than 42.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 23 is larger than 42.\nTrue or false?",
+        "stage1_index": 149,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair17",
+        "truth": 1,
+        "statement": "30 is larger than 26.",
+        "uid": 100154,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n30 is larger than 26.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 30 is larger than 26.\nTrue or false?",
+        "stage1_index": 154,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair23",
+        "truth": 0,
+        "statement": "37 is larger than 55.",
+        "uid": 100167,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n37 is larger than 55.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 37 is larger than 55.\nTrue or false?",
+        "stage1_index": 167,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair38",
+        "truth": 1,
+        "statement": "58 is larger than 54.",
+        "uid": 100196,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n58 is larger than 54.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 58 is larger than 54.\nTrue or false?",
+        "stage1_index": 196,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair41",
+        "truth": 0,
+        "statement": "56 is larger than 84.",
+        "uid": 100203,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n56 is larger than 84.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 56 is larger than 84.\nTrue or false?",
+        "stage1_index": 203,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair54",
+        "truth": 1,
+        "statement": "93 is larger than 69.",
+        "uid": 100228,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n93 is larger than 69.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 93 is larger than 69.\nTrue or false?",
+        "stage1_index": 228,
+        "split": "eval"
+      },
+      {
+        "dataset": "compare",
+        "unit": "pair57",
+        "truth": 0,
+        "statement": "83 is larger than 88.",
+        "uid": 100235,
+        "prompt_A": "Water boils at 100 degrees Celsius at sea level.\nThe moon is made of cheese.\nCats are mammals.\nThe sun rises in the west.\n83 is larger than 88.",
+        "prompt_B": "Statement: The Pacific is an ocean.\nTrue or false? True\nStatement: Spiders have six legs.\nTrue or false? False\nStatement: Ice is frozen water.\nTrue or false? True\nStatement: 83 is larger than 88.\nTrue or false?",
+        "stage1_index": 235,
+        "split": "eval"
+      }
+    ]
+  },
+  "run_id": "lread-smoke-20261110-221413",
+  "model_pin": [
+    "smcleish/Recurrent-Llama-3.2-train-recurrence-32",
+    "a5f6f126e9d9302445346844f1d7d29d111a06eb"
+  ],
+  "code_sha256": "c59b4734f6e11ba6486be0fcffe28461d9fb1fd18014981c52711125f842f4bd",
+  "gates": {
+    "G1": [
+      2.1316282072803006e-14,
+      2.3092638912203256e-14,
+      1.9539925233402755e-14,
+      2.1316282072803006e-14,
+      1.7985612998927536e-14,
+      2.4868995751603507e-14,
+      2.842170943040401e-14,
+      2.042810365310288e-14
+    ]
+  },
+  "timings": {
+    "A": {
+      "G1": [
+        2.1316282072803006e-14,
+        2.3092638912203256e-14
+      ],
+      "context_s": [
+        1.8533839499999996,
+        1.135451526999999,
+        1.1243820510000013
+      ],
+      "elapsed_s": 16.838959584,
+      "error": null
+    },
+    "B": {
+      "G1": [
+        1.9539925233402755e-14,
+        2.1316282072803006e-14,
+        1.7985612998927536e-14,
+        2.4868995751603507e-14,
+        2.842170943040401e-14,
+        2.042810365310288e-14
+      ],
+      "context_s": [
+        1.4479327069999997,
+        1.4449950610000002,
+        1.4505047630000014
+      ],
+      "elapsed_s": 21.183687481,
+      "error": null
+    }
+  },
+  "setup_s": 12.719442074,
+  "runtime_s": 21.184742041,
+  "precision": {
+    "norms": 29,
+    "rotary_original": "    @torch.no_grad()\n    @dynamic_rope_update  # power user: used with advanced RoPE types (e.g. dynamic rope)\n    def forward(self, x, position_ids):\n        inv_freq_expanded = self.inv_freq[None, :, None].float().expand(position_ids.shape[0], -1, 1).to(x.device)\n        position_ids_expanded = position_ids[:, None, :].float()\n\n        device_type = x.device.type if isinstance(x.device.type, str) and x.device.type != \"mps\" else \"cpu\"\n        with torch.autocast(device_type=device_type, enabled=False):  # Force float32\n            freqs = (inv_freq_expanded.float() @ position_ids_expanded.float()).transpose(1, 2)\n            emb = torch.cat((freqs, freqs), dim=-1)\n            cos = emb.cos() * self.attention_scaling\n            sin = emb.sin() * self.attention_scaling\n\n        return cos.to(dtype=x.dtype), sin.to(dtype=x.dtype)\n",
+    "float_cast_lines": [
+      "return self._norm(x.float()).type_as(x) * self.weight",
+      "dtype: torch.dtype = torch.float32,",
+      "logits = self.lm_head(x).float()",
+      "logits = self.lm_head(x)#.float()",
+      "logits = self.lm_head(x).float()",
+      "next_token_logits = outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32, device=input_ids.device)",
+      "logit_type = dict(copy=True, dtype=torch.float32, device=input_ids.device)",
+      "probs = F.softmax(logits[:, -1, :].float(), dim=-1)",
+      "log_probs = F.log_softmax(logits[:, -1, :].float(), dim=-1)",
+      "next_token_logits = next_token_logits.float() / generation_config.temperature",
+      "outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32), generation_config",
+      "next_token_logits = outputs.logits[:, -1, :].to(copy=True, dtype=torch.float32)",
+      "final_token_logits = outputs.logits[i : i + 1, seq_acceptance, :].to(copy=True, dtype=torch.float32)",
+      "probs = torch.softmax(logits.float(), dim=-1)"
+    ],
+    "model_source_sha256": "69301cc1f65aeccaa48e5a33e3cc730e71c627e912b84ac166f064889a7df974",
+    "attention": "SDPA math backend; float64 Q/K/V; no eager float32 softmax",
+    "unused_casts": "label loss and generation helpers are not called"
+  },
+  "versions": {
+    "torch": "2.6.0+cu124",
+    "transformers": "4.53.1",
+    "numpy": "2.4.6"
+  },
+  "status": "complete",
+  "errors": {
+    "A": null,
+    "B": null
+  }
+}

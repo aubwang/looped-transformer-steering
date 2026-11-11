@@ -1,0 +1,27 @@
+{
+  "gates": {
+    "validation": true,
+    "meta_ok": true,
+    "configuration": false,
+    "manifest": true,
+    "complete": true,
+    "shapes": false,
+    "finite": true,
+    "reference_preflight": true,
+    "reproduction": false,
+    "roles_consistent": true,
+    "PASS": false
+  },
+  "K": 64,
+  "tail": 16,
+  "prompts": 44,
+  "completed": 44,
+  "flicker": [],
+  "unresolved": [],
+  "counts_by_tier": {
+    "A": 0,
+    "B": 0
+  },
+  "hits": [],
+  "status": "SMOKE: plumbing statistics only; no classification is licensed"
+}

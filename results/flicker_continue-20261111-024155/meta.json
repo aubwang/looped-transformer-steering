@@ -1,0 +1,35 @@
+{
+  "cfg": {
+    "K": 512,
+    "budgets": [],
+    "seeds": [],
+    "tail_c2": 8,
+    "n_new": 9,
+    "compute_s": 290,
+    "parts": [
+      "C3"
+    ]
+  },
+  "validation": null,
+  "runtime_s": 218.992205765,
+  "compute_s": 196.521395903,
+  "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+  "model_id": "tomg-group-umd/huginn-0125",
+  "versions": {
+    "numpy": "2.4.6",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3"
+  },
+  "code_sha256": "ae88423a854ad04269e1690ca14cc4ea03ec5ceb732111a306fa9a916f1f7736",
+  "run_id": "flicker_continue-20261111-024155",
+  "flags": [],
+  "ok": true,
+  "precision": "float32",
+  "start_policy": "census draw (uid, seed 0), full-length, sliced",
+  "hits_sha256": "e532152cec074b44e763aecdd929e8d8f822c02223e62e29abe4e67c63e2e24d",
+  "matmul_allow_tf32": false,
+  "cudnn_allow_tf32": false,
+  "float32_matmul_precision": "highest",
+  "parameter_dtype": "torch.float32",
+  "peak_memory_allocated": 14371950592
+}

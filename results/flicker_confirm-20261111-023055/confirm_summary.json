@@ -1,0 +1,312 @@
+{
+  "gates": {
+    "confirm_rows": true,
+    "confirm_hits_sha": true,
+    "confirm_model": true,
+    "confirm_start": true,
+    "confirm_precision": true,
+    "confirm_config": true,
+    "hit_provenance": true,
+    "c64_rows": true,
+    "c64_hits_sha": true,
+    "c64_model": true,
+    "c64_start": true,
+    "c64_precision": true,
+    "c64_config": true,
+    "c64_patch": true,
+    "c64_budgets": true,
+    "PASS": true
+  },
+  "hits": [
+    {
+      "uid": 20178,
+      "p": 40,
+      "C1": true,
+      "C4": true,
+      "delta": 2.47955322265625e-05,
+      "guard": true,
+      "C2": [
+        {
+          "seed": 1,
+          "alternates": true,
+          "token_at_512": 1056,
+          "same_pair": true
+        },
+        {
+          "seed": 2,
+          "alternates": true,
+          "token_at_512": 1056,
+          "same_pair": true
+        },
+        {
+          "seed": 3,
+          "alternates": true,
+          "token_at_512": 1056,
+          "same_pair": true
+        },
+        {
+          "seed": 4,
+          "alternates": true,
+          "token_at_512": 1056,
+          "same_pair": true
+        }
+      ],
+      "C3": [
+        {
+          "budget": 511,
+          "token_ids": [
+            345,
+            48,
+            52,
+            328
+          ],
+          "top_lp": [
+            [
+              -1.7452869415283203,
+              -1.7857246398925781
+            ],
+            [
+              -1.647258996963501,
+              -1.8764917850494385
+            ],
+            [
+              -2.009991407394409,
+              -2.126906156539917
+            ],
+            [
+              -1.87912118434906,
+              -2.254401683807373
+            ]
+          ],
+          "text": " 104 =",
+          "complete": false
+        },
+        {
+          "budget": 512,
+          "token_ids": [
+            1056,
+            51,
+            57,
+            328
+          ],
+          "top_lp": [
+            [
+              -1.5463522672653198,
+              -1.9473952054977417
+            ],
+            [
+              -0.9487815499305725,
+              -1.903745174407959
+            ],
+            [
+              -0.6985509991645813,
+              -1.7450940608978271
+            ],
+            [
+              -0.06613489240407944,
+              -3.137132167816162
+            ]
+          ],
+          "text": " 839 =",
+          "complete": false
+        }
+      ],
+      "label": "CONFIRMED",
+      "confirmed": true
+    },
+    {
+      "uid": 20147,
+      "p": 41,
+      "C1": true,
+      "C4": true,
+      "delta": 1.71661376953125e-05,
+      "guard": true,
+      "C2": [
+        {
+          "seed": 1,
+          "alternates": true,
+          "token_at_512": 345,
+          "same_pair": true
+        },
+        {
+          "seed": 2,
+          "alternates": true,
+          "token_at_512": 402,
+          "same_pair": true
+        },
+        {
+          "seed": 3,
+          "alternates": true,
+          "token_at_512": 402,
+          "same_pair": true
+        },
+        {
+          "seed": 4,
+          "alternates": true,
+          "token_at_512": 345,
+          "same_pair": true
+        }
+      ],
+      "C3": [
+        {
+          "budget": 511,
+          "token_ids": [
+            402,
+            49,
+            51,
+            54
+          ],
+          "top_lp": [
+            [
+              -1.5447584390640259,
+              -1.5549036264419556
+            ],
+            [
+              -0.8626880049705505,
+              -2.402130126953125
+            ],
+            [
+              -1.1231273412704468,
+              -1.6568740606307983
+            ],
+            [
+              -1.2848029136657715,
+              -1.6003661155700684
+            ]
+          ],
+          "text": " 2136",
+          "complete": false
+        },
+        {
+          "budget": 512,
+          "token_ids": [
+            345,
+            55,
+            52,
+            53
+          ],
+          "top_lp": [
+            [
+              -1.5496413707733154,
+              -1.5688636302947998
+            ],
+            [
+              -2.0092949867248535,
+              -2.0622620582580566
+            ],
+            [
+              -1.282557487487793,
+              -2.2479162216186523
+            ],
+            [
+              -0.721900999546051,
+              -2.2567977905273438
+            ]
+          ],
+          "text": " 1745",
+          "complete": false
+        }
+      ],
+      "label": "CONFIRMED",
+      "confirmed": true
+    },
+    {
+      "uid": 20146,
+      "p": 44,
+      "C1": true,
+      "C4": true,
+      "delta": 2.6702880859375e-05,
+      "guard": true,
+      "C2": [
+        {
+          "seed": 1,
+          "alternates": true,
+          "token_at_512": 328,
+          "same_pair": true
+        },
+        {
+          "seed": 2,
+          "alternates": true,
+          "token_at_512": 328,
+          "same_pair": true
+        },
+        {
+          "seed": 3,
+          "alternates": true,
+          "token_at_512": 328,
+          "same_pair": true
+        },
+        {
+          "seed": 4,
+          "alternates": true,
+          "token_at_512": 328,
+          "same_pair": true
+        }
+      ],
+      "C3": [
+        {
+          "budget": 511,
+          "token_ids": [
+            52,
+            328,
+            893,
+            51
+          ],
+          "top_lp": [
+            [
+              -2.014315366744995,
+              -2.0157344341278076
+            ],
+            [
+              -0.05881144478917122,
+              -4.558520793914795
+            ],
+            [
+              -0.017589999362826347,
+              -5.509034633636475
+            ],
+            [
+              -0.930614709854126,
+              -1.2251684665679932
+            ]
+          ],
+          "text": "4 = 63",
+          "complete": false
+        },
+        {
+          "budget": 512,
+          "token_ids": [
+            328,
+            402,
+            53,
+            52
+          ],
+          "top_lp": [
+            [
+              -2.0076100826263428,
+              -2.0204789638519287
+            ],
+            [
+              -0.28742295503616333,
+              -2.115462064743042
+            ],
+            [
+              -0.10170511901378632,
+              -2.8233866691589355
+            ],
+            [
+              -0.3834255635738373,
+              -1.348296046257019
+            ]
+          ],
+          "text": " = 254",
+          "complete": false
+        }
+      ],
+      "label": "CONFIRMED",
+      "confirmed": true
+    }
+  ],
+  "outcome": "AT LEAST ONE CONFIRMED",
+  "evidence_windows": "float32 scan: 449..512; prefix forward: 509..512; float64: 505..512 (pair agrees, phase free)"
+}

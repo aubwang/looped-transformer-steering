@@ -206,3 +206,26 @@ One other released pair was found whose matching in data and training budget is 
   solving tasks, or an identical mechanism in the two models.
 - A second fully verified matched pair has not been established. Release of the ordinary OLMo-2 or TinyLlama
   partner by the authors is one route; verifying the other candidate pair is another.
+
+## 5. Addendum: read-space self-gain on L32 (2026-11-10, later the same day)
+
+Design `docs/lread_design.md` (Draft 1.2; reviewed before the run, `results/lread_prerun_review.md`), run
+`results/lread-run-20261110-221504` (2.5 GPU-minutes; 3.5 with two test runs), results reviewed in
+`results/steering_results_review3.md`. The diagnostic is the one of `docs/freeloop.pdf`: the self-gain
+`alpha(u) = <u, J u>` of unit directions at the settled state, for 16 random directions (their mean estimates
+`tr(J)/d`), 8 sampled directions the output reads (C3) and the task gradients.
+
+| | Huginn (true/false; digits) | L32 (sums; true/false) | Ouro-1.4B |
+|---|---|---|---|
+| mean self-gain of random directions | 0.241; 0.258 | −0.0014 [−0.0018, −0.0008]; 0.000 | 0.060 |
+| excess of read directions | −0.224; −0.200 | −0.0002 [−0.0017, 0.0004]; +0.005 [0.004, 0.007] | +0.022 |
+
+Registered reading on the sums: NOT DETECTED, with the trace estimate near zero. All 640 random-direction
+self-gains lie between −0.017 and 0.015, the task gradients' between −0.019 and 0.038. So on L32 no deficit of
+the read directions was detected and the readout is not set apart on this diagnostic, where in Huginn the read
+directions are below every random direction. This is not a finding of equality, does not measure the length of
+what a push becomes (only `u·Ju` and `J^T u` were measured; `||J^T u||` is about 0.21 to 0.24), and does not
+explain the steering response. One gate threshold (drift at loop 64) was corrected after a three-problem test
+run and before the main run; see the design note, section 8. Full account: `docs/steering_results.pdf`,
+Section 4.
+

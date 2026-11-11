@@ -1,0 +1,2337 @@
+{
+  "s1_by_scale_1_0_p1_g0": {
+    "value": 4.130550861358643,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P1/G0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p1_g0_ci": {
+    "value": "[3.902494430541992, 4.821896553039551]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P1/G0_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p1_g48": {
+    "value": -9.5367431640625e-07,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P1/G48",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p1_return_ratio": {
+    "value": 2.235094871139154e-05,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P1/return_ratio",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p1_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P1/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p2_g8": {
+    "value": 3.593071460723877,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P2/G8",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p2_g48": {
+    "value": 3.716435432434082,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P2/G48",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p2_g48_ci": {
+    "value": "[2.45894718170166, 5.592247009277344]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P2/G48_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p2_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P2/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p2_late_drift_median": {
+    "value": 4.06697563448688e-06,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P2/late_drift_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p2_lag2_closure_median": {
+    "value": 1.217719316482544,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P2/lag2_closure_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p2_settled": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P2/settled",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p3_median_paired_diff": {
+    "value": 2.9409632682800293,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P3/median_paired_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p3_ci": {
+    "value": "[1.4853081703186035, 4.815158843994141]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P3/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p3_sham_to_target_chord": {
+    "value": 8,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P3/sham_to_target_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p3_sham_to_target_random": {
+    "value": 1,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P3/sham_to_target_random",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p3_n_sham_correct": {
+    "value": 50,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P3/n_sham_correct",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p3_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P3/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p4_median_paired_diff": {
+    "value": 3.716456890106201,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P4/median_paired_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p4_ci": {
+    "value": "[2.458981513977051, 5.029995441436768]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P4/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_p4_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/P4/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_check_t1_equivalence_max_abs_diff": {
+    "value": 0.00043392181396484375,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/CHECK_t1_equivalence_max_abs_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_displacement_over_push_context_chord": {
+    "value": 2.5096116065979004,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/displacement_over_push/context_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_displacement_over_push_oneshot_chord": {
+    "value": 2.235094871139154e-05,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/displacement_over_push/oneshot_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_displacement_over_push_context_chord_along": {
+    "value": 1.6967976093292236,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/displacement_over_push/context_chord_along",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_wrap_9_to_0_context_g48": {
+    "value": "[9.435867309570312, 8.442039489746094, 5.595912933349609, 0.9912502765655518, 8.32832145690918]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/wrap_9_to_0_context_G48",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_1_0_other_digit_argmax_t48_context_chord": {
+    "value": 12,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/1.0/other_digit_argmax_t48_context_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p1_g0": {
+    "value": 8.250185012817383,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P1/G0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p1_g0_ci": {
+    "value": "[7.103452682495117, 9.065010070800781]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P1/G0_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p1_g48": {
+    "value": -5.7220458984375e-06,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P1/G48",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p1_return_ratio": {
+    "value": 1.1874653864651918e-05,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P1/return_ratio",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p1_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P1/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p2_g8": {
+    "value": 6.8129072189331055,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P2/G8",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p2_g48": {
+    "value": 6.894326210021973,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P2/G48",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p2_g48_ci": {
+    "value": "[4.961233139038086, 8.252949714660645]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P2/G48_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p2_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P2/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p2_late_drift_median": {
+    "value": 3.4977110772160813e-06,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P2/late_drift_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p2_lag2_closure_median": {
+    "value": 1.189500093460083,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P2/lag2_closure_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p2_settled": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P2/settled",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p3_median_paired_diff": {
+    "value": 4.03047513961792,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P3/median_paired_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p3_ci": {
+    "value": "[3.5878982543945312, 4.862143516540527]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P3/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p3_sham_to_target_chord": {
+    "value": 5,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P3/sham_to_target_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p3_sham_to_target_random": {
+    "value": 1,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P3/sham_to_target_random",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p3_n_sham_correct": {
+    "value": 50,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P3/n_sham_correct",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p3_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P3/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p4_median_paired_diff": {
+    "value": 6.894311428070068,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P4/median_paired_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p4_ci": {
+    "value": "[4.961275100708008, 8.252982139587402]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P4/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_p4_holds": {
+    "value": "true",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/P4/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_check_t1_equivalence_max_abs_diff": {
+    "value": 0.0005340576171875,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/CHECK_t1_equivalence_max_abs_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_displacement_over_push_context_chord": {
+    "value": 2.0301589965820312,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/displacement_over_push/context_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_displacement_over_push_oneshot_chord": {
+    "value": 1.1874653864651918e-05,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/displacement_over_push/oneshot_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_displacement_over_push_context_chord_along": {
+    "value": 1.3294641971588135,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/displacement_over_push/context_chord_along",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_wrap_9_to_0_context_g48": {
+    "value": "[9.710269927978516, 9.614912986755371, 6.450878143310547, 3.311513900756836, 7.126926422119141]",
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/wrap_9_to_0_context_G48",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s1_by_scale_2_0_other_digit_argmax_t48_context_chord": {
+    "value": 31,
+    "source": "results/steer-20261106-032913/analysis_summary.json:/by_scale/2.0/other_digit_argmax_t48_context_chord",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_n": {
+    "value": 50,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_valid": {
+    "value": 50,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/valid",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_sham_drift_q": {
+    "value": 1.4595001630368643e-05,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_sham_drift_q",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_sham_drift_prefix": {
+    "value": 6.07307993050199e-05,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_sham_drift_prefix",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_tail": {
+    "value": 3.0364280837347936e-08,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_tail",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_fd_rel": {
+    "value": 0.003458220701639394,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_fd_rel",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_l1_frac_accurate": {
+    "value": 0.9,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/L1_frac_accurate",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_l1_holds": {
+    "value": "true",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/L1_holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_l1_spearman": {
+    "value": 0.995390156062425,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/L1_spearman",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_eligible": {
+    "value": 50,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/eligible",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_reversal_fraction": {
+    "value": 0.42,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/reversal_fraction",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_s0": {
+    "value": 3.3582597144585438,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_S0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_s0_per_norm": {
+    "value": 0.20717406459167556,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_S0_per_norm",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_st": {
+    "value": 1.4386063515080068,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_ST",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_sinf": {
+    "value": 1.4385829649727073,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_Sinf",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_obs_dose01": {
+    "value": 1.717057228088379,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_obs_dose01",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_obs_dose1": {
+    "value": 3.71641206741333,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_obs_dose1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_retention": {
+    "value": 0.41457102526487366,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_retention",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_retention_cutoff_sensitivity_0_01": {
+    "value": 0.41457102526487366,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/retention_cutoff_sensitivity/0.01",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_retention_cutoff_sensitivity_0_02": {
+    "value": 0.41457102526487366,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/retention_cutoff_sensitivity/0.02",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_retention_cutoff_sensitivity_0_05": {
+    "value": 0.41457102526487366,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/retention_cutoff_sensitivity/0.05",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_amplification": {
+    "value": 2.617310429096618,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_amplification",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_cos_g_d": {
+    "value": 0.08172995632217256,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_cos_g_d",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_cos_d_dlin": {
+    "value": 0.6484241374600832,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_cos_d_dlin",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_digits_median_oneshot_immediate": {
+    "value": 4.130550861358643,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/digits/median_oneshot_immediate",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_n": {
+    "value": 60,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_valid": {
+    "value": 59,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/valid",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_sham_drift_q": {
+    "value": 5.568110282183625e-05,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_sham_drift_q",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_sham_drift_prefix": {
+    "value": 0.00016091483121272177,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_sham_drift_prefix",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_tail": {
+    "value": 1.6687111632251047e-09,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_tail",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_fd_rel": {
+    "value": 0.0035609872704210266,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_fd_rel",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_l1_frac_accurate": {
+    "value": 1.0,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/L1_frac_accurate",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_l1_holds": {
+    "value": "true",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/L1_holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_l1_spearman": {
+    "value": 0.9992402104032732,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/L1_spearman",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_eligible": {
+    "value": 59,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/eligible",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_reversal_fraction": {
+    "value": 0.1864406779661017,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/reversal_fraction",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_s0": {
+    "value": 0.7584397997681526,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_S0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_s0_per_norm": {
+    "value": 0.03850033286991092,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_S0_per_norm",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_st": {
+    "value": 0.06287206085355337,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_ST",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_sinf": {
+    "value": 0.06287206240830794,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_Sinf",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_obs_dose01": {
+    "value": 0.0624847412109375,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_obs_dose01",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_obs_dose1": {
+    "value": 0.08343315124511719,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_obs_dose1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_retention": {
+    "value": 0.6649206005317931,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_retention",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_retention_cutoff_sensitivity_0_01": {
+    "value": 0.6649206005317931,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/retention_cutoff_sensitivity/0.01",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_retention_cutoff_sensitivity_0_02": {
+    "value": 0.6649206005317931,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/retention_cutoff_sensitivity/0.02",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_retention_cutoff_sensitivity_0_05": {
+    "value": 0.6649206005317931,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/retention_cutoff_sensitivity/0.05",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_amplification": {
+    "value": 2.068947487273714,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_amplification",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_cos_g_d": {
+    "value": 0.05875484630108693,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_cos_g_d",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_cos_d_dlin": {
+    "value": 0.6363392497249389,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_cos_d_dlin",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_truth_median_oneshot_immediate": {
+    "value": 0.8267230987548828,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/truth/median_oneshot_immediate",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_att_ratio": {
+    "value": 0.6234895187986449,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_att/ratio",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_att_ci95": {
+    "value": "[-0.2177213645925961, 1.217971744886826]",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_att/ci95",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_att_holds": {
+    "value": "false",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_att/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_att_gated_by_l1": {
+    "value": "false",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_att/gated_by_L1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_coup_ratio": {
+    "value": 4.427852699034426,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_coup/ratio",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_coup_ci95": {
+    "value": "[3.0070302059178187, 40.685006528244905]",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_coup/ci95",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_coup_holds": {
+    "value": "true",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_coup/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_h_coup_gated_by_l1": {
+    "value": "false",
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/H_coup/gated_by_L1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_digits_n": {
+    "value": 29,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/digits/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_digits_mean_log_sinf": {
+    "value": 1.2277155830629725,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/digits/mean_log_Sinf",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_digits_mean_log_s0": {
+    "value": 1.4262764245711481,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/digits/mean_log_S0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_digits_mean_log_ret": {
+    "value": -0.1985608415081759,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/digits/mean_log_ret",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_truth_n": {
+    "value": 48,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/truth/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_truth_mean_log_sinf": {
+    "value": -1.9118461260262372,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/truth/mean_log_Sinf",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_truth_mean_log_s0": {
+    "value": -1.4548799220582194,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/truth/mean_log_S0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_truth_mean_log_ret": {
+    "value": -0.45696620396801757,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/truth/mean_log_ret",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_difference_mean_log_sinf": {
+    "value": 3.1395617090892096,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/difference/mean_log_Sinf",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_difference_mean_log_s0": {
+    "value": 2.8811563466293677,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/difference/mean_log_S0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_exact_log_decomposition_difference_mean_log_ret": {
+    "value": 0.2584053624598417,
+    "source": "results/respond_truth-20261106-055046/analysis_summary.json:/exact_log_decomposition/difference/mean_log_ret",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s2_text_only_1": {
+    "value": "mass-mean truth directions (0.041 CITIES, 0.038 COMPARE). This is mainly because the digit readout is more sensitive",
+    "source": "huginn_addition/WRITEUP.md:226",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s3_p1_dstar": {
+    "value": 8.125032901763916,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P1/dstar",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p1_mm": {
+    "value": 0.25368785858154297,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P1/mm",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p1_paired_diff": {
+    "value": 8.031717777252197,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P1/paired_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p1_ci": {
+    "value": "[7.845057964324951, 8.13498067855835]",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P1/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p1_additive_superiority": {
+    "value": "true",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P1/additive_superiority",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p1_twofold_descriptive": {
+    "value": "true",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P1/twofold_descriptive",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p2_true_toward_false_median": {
+    "value": 9.41361379623413,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P2/true_toward_false/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p2_true_toward_false_ci": {
+    "value": "[9.368385314941406, 9.470640659332275]",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P2/true_toward_false/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p2_false_toward_true_median": {
+    "value": 6.737037658691406,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P2/false_toward_true/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p2_false_toward_true_ci": {
+    "value": "[6.650758266448975, 6.783557444810867]",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P2/false_toward_true/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p2_holds": {
+    "value": "true",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P2/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p3_paired_diff": {
+    "value": 7.130030155181885,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P3/paired_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p3_ci": {
+    "value": "[7.063615322113037, 7.218717575073242]",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P3/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p3_holds": {
+    "value": "true",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P3/holds",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p4_paired_diff": {
+    "value": -0.22411203384399414,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P4/paired_diff",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p4_ci": {
+    "value": "[-0.31591081619262695, -0.1649341583251953]",
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P4/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_p4_item": {
+    "value": 7.664066791534424,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/P4/item",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_pop_true_sham_own": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_pop_true/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_pop_true_flipped": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_pop_true/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_pop_true_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_pop_true/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_pop_false_sham_own": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_pop_false/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_pop_false_flipped": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_pop_false/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_pop_false_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_pop_false/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_g_pop_true_sham_own": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/g_pop_true/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_g_pop_true_flipped": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/g_pop_true/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_g_pop_true_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/g_pop_true/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_g_pop_false_sham_own": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/g_pop_false/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_g_pop_false_flipped": {
+    "value": 20,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/g_pop_false/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_g_pop_false_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/g_pop_false/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_mm_pop_true_sham_own": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/mm_pop_true/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_mm_pop_true_flipped": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/mm_pop_true/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_mm_pop_true_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/mm_pop_true/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_mm_pop_false_sham_own": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/mm_pop_false/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_mm_pop_false_flipped": {
+    "value": 12,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/mm_pop_false/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_mm_pop_false_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/mm_pop_false/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_item_true_sham_own": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_item_true/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_item_true_flipped": {
+    "value": 3,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_item_true/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_item_true_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_item_true/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_item_false_sham_own": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_item_false/sham_own",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_item_false_flipped": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_item_false/flipped",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s3_flips_t48_dstar_item_false_n": {
+    "value": 30,
+    "source": "results/dseval-20261106-062151/analysis_summary.json:/flips_t48/dstar_item_false/n",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "dstar_cosines_dstar_g": {
+    "value": 0.09580319504286317,
+    "source": "results/dstar_pushes_meta.json:/cosines/dstar_g",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "dstar_cosines_dstar_mm": {
+    "value": 0.02484014847493491,
+    "source": "results/dstar_pushes_meta.json:/cosines/dstar_mm",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "dstar_cosines_g_mm": {
+    "value": 0.06378254274033712,
+    "source": "results/dstar_pushes_meta.json:/cosines/g_mm",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "dstar_cosines_item_vs_pop_dstar_median": {
+    "value": 0.9531171633956221,
+    "source": "results/dstar_pushes_meta.json:/cosines/item_vs_pop_dstar_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "dstar_n_train": {
+    "value": 60,
+    "source": "results/dstar_pushes_meta.json:/n_train",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "dstar_n_eval": {
+    "value": 60,
+    "source": "results/dstar_pushes_meta.json:/n_eval",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "dstar_c_norm": {
+    "value": 12.5,
+    "source": "results/dstar_pushes_meta.json:/c_norm",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats": {
+    "value": "INCONCLUSIVE",
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/verdict",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_tf_sham_semantic_accuracy": {
+    "value": 0.5666666666666667,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/tf/sham_semantic_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_tf_sham_auroc": {
+    "value": 0.92,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/tf/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_yn_sham_semantic_accuracy": {
+    "value": 0.7666666666666667,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/yn/sham_semantic_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_yn_sham_auroc": {
+    "value": 0.9511111111111111,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/yn/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_rev_sham_semantic_accuracy": {
+    "value": 0.23333333333333334,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/rev/sham_semantic_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_rev_sham_auroc": {
+    "value": 0.03111111111111111,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/rev/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_ab_sham_semantic_accuracy": {
+    "value": 0.7666666666666667,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/ab/sham_semantic_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_formats_ab_sham_auroc": {
+    "value": 0.8755555555555555,
+    "source": "results/ctrl_formats-20261106-070550/analysis_summary.json:/formats/ab/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb": {
+    "value": "INCONCLUSIVE",
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/verdict",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_yn_sham_accuracy": {
+    "value": 0.7666666666666667,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/yn/sham_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_yn_sham_auroc": {
+    "value": 0.9511111111111111,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/yn/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_fq_sham_accuracy": {
+    "value": 0.5,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/fq/sham_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_fq_sham_auroc": {
+    "value": 0.4888888888888889,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/fq/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_ab_sham_accuracy": {
+    "value": 0.7666666666666667,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/ab/sham_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_ab_sham_auroc": {
+    "value": 0.8755555555555555,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/ab/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_ba_sham_accuracy": {
+    "value": 0.5,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/ba/sham_accuracy",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "ctrl_cb_ba_sham_auroc": {
+    "value": 0.52,
+    "source": "results/ctrl_cb-20261106-071755/analysis_summary.json:/formats/ba/sham_auroc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p1_mean_target_effect_l": {
+    "value": 1.7768999254703524,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P1/mean_target_effect/L",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p1_mean_target_effect_g": {
+    "value": -0.04602689623832702,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P1/mean_target_effect/G",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p1_mean_target_effect_c": {
+    "value": -0.046341561079025276,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P1/mean_target_effect/C",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p1_l_minus_g_target_ci": {
+    "value": "[1.6394665397107604, 2.0344786145687106]",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P1/L_minus_G_target_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p1_l_minus_c_target_ci": {
+    "value": "[1.6336727633178234, 2.039875744521618]",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P1/L_minus_C_target_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p1_random_median_abs": {
+    "value": 0.04622197151184082,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P1/random_median_abs",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_corr_full": {
+    "value": 0.9779327602482815,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_corr/FULL",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_corr_averaged": {
+    "value": 0.9467317890568767,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_corr/AVERAGED",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_corr_swapped": {
+    "value": 0.9382945998748671,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_corr/SWAPPED",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_corr_swapped_same_digit": {
+    "value": 0.9306384457164334,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_corr/SWAPPED_SAME_DIGIT",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_corr_identity": {
+    "value": -0.5868565003809029,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_corr/IDENTITY",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_slope_full": {
+    "value": 0.9494735211283192,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_slope/FULL",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_slope_averaged": {
+    "value": 0.9364829251301967,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_slope/AVERAGED",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_slope_swapped": {
+    "value": 0.9379977768618684,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_slope/SWAPPED",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_slope_swapped_same_digit": {
+    "value": 0.923286882056731,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_slope/SWAPPED_SAME_DIGIT",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_slope_identity": {
+    "value": -3.1887589537345535,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_slope/IDENTITY",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_norm_error_full": {
+    "value": 0.22138176012574898,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_norm_error/FULL",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_norm_error_averaged": {
+    "value": 0.36975322720126036,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_norm_error/AVERAGED",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_norm_error_swapped": {
+    "value": 0.38215253709845626,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_norm_error/SWAPPED",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_norm_error_swapped_same_digit": {
+    "value": 0.38602193395703305,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_norm_error/SWAPPED_SAME_DIGIT",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_median_norm_error_identity": {
+    "value": 1.1095889825377139,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/median_norm_error/IDENTITY",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_full_minus_swapped_same_digit_ci": {
+    "value": "[0.033989587700988484, 0.05632337156362379]",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/FULL_minus_SWAPPED_SAME_DIGIT_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_full_minus_swapped_ci": {
+    "value": "[0.03032568260477182, 0.0625351982971048]",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/FULL_minus_SWAPPED_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_full_minus_averaged_ci": {
+    "value": "[0.022256165519943198, 0.040035320178628625]",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/FULL_minus_AVERAGED_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_full_minus_identity_ci": {
+    "value": "[1.4770720246820455, 1.5872411435448073]",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/FULL_minus_IDENTITY_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_context_specific_operator_matters": {
+    "value": "true",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/context_specific_operator_matters",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_loop_operator_beyond_readout": {
+    "value": "true",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/loop_operator_beyond_readout",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_p3_gates_pass": {
+    "value": "true",
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/P3/gates_pass",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_train_tail_median": {
+    "value": 2.714321681196452e-06,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/train_tail_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_train_tail_q95": {
+    "value": 2.645795939315576e-05,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/train_tail_q95",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_pred_tail_median": {
+    "value": 2.4716708060197805e-06,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/pred_tail_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_pred_tail_q95": {
+    "value": 3.454382802393027e-05,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/pred_tail_q95",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_adjoint_rel_err_median": {
+    "value": 0.00020174285870802334,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/adjoint_rel_err_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_sham_last_step_drift_median": {
+    "value": 5.046522346674465e-06,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/sham_last_step_drift_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_endpoint_displacement_l_median": {
+    "value": 0.17037442326545715,
+    "source": "results/dglever_eval-20261106-082140/analysis_summary.json:/endpoint_displacement_L_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s4_text_only_1": {
+    "value": "- Frozen loop-aware digit levers (norm 3, 48 loops of forcing) raise the target centered digit logit by +1.78 on 20",
+    "source": "huginn_addition/WRITEUP.md:265",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s4_text_only_2": {
+    "value": "- Excluding the target diagonal, the prediction still reaches r = 0.972.",
+    "source": "huginn_addition/WRITEUP.md:270",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s5_primary_median_corr_c0_s": {
+    "value": -0.5911356933756807,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/median_corr_c0_S",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_ci_c0_s": {
+    "value": "[-0.6548648385349141, -0.5253662302478493]",
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/ci_c0_S",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_median_corr_c0_s_noflip": {
+    "value": -0.07979137814921346,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/median_corr_c0_S_noflip",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_ci_c0_noflip": {
+    "value": "[-0.2645227685533645, 0.04748784594181314]",
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/ci_c0_noflip",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_median_corr_s_observed": {
+    "value": 0.9779445323621963,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/median_corr_S_observed",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_krylov40_c0_s": {
+    "value": -0.5911354151433337,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/krylov40/c0_S",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_krylov40_c0_noflip": {
+    "value": -0.16779489236236322,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/krylov40/c0_noflip",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_krylov40_verdict": {
+    "value": "REWEIGHTING",
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/krylov40/verdict",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_verdict": {
+    "value": "REWEIGHTING",
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/verdict",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_primary_verdict_before_gates": {
+    "value": "REWEIGHTING",
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/PRIMARY/verdict_before_gates",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_g1_median": {
+    "value": 0.0006906183950172126,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/G1_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_g1_q90": {
+    "value": 0.004506395059718293,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/G1_q90",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_g2_s_q90": {
+    "value": 4.791104637494263e-14,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/G2_S_q90",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_g2_c0_q90": {
+    "value": 3.923108720499056e-14,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/G2_c0_q90",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_g3_orth_median": {
+    "value": 4.3298697960381105e-15,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/G3_orth_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_g3_fd_eps_median": {
+    "value": 0.0021792007425372574,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/G3_fd_eps_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_condw_median": {
+    "value": 74.94135356725484,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/condW_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_condw_q90": {
+    "value": 216.43547879416133,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/condW_q90",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_cancellation_s_median": {
+    "value": 19.491798113980472,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/cancellation_S_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_cancellation_c0_median": {
+    "value": 35.900481901966934,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/cancellation_c0_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_gates_pass": {
+    "value": "true",
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/gates/pass",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_target_reversal_fraction": {
+    "value": 0.785,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/target_reversal_fraction",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_median_c1_over_c0": {
+    "value": -3.998304744243103,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/median_c1_over_c0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_1": {
+    "value": 155,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_2": {
+    "value": 2,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/2",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_3": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/3",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_4": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/4",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_5": {
+    "value": 15,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/5",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_6": {
+    "value": 3,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/6",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_7": {
+    "value": 4,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/7",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_8": {
+    "value": 6,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/8",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_9": {
+    "value": 3,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/9",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_10": {
+    "value": 2,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/10",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_11": {
+    "value": 3,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/11",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_13": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/13",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_17": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/17",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_21": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/21",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_28": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/28",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_first_sign_change_none": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/first_sign_change/None",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_target_median_contrib_forward": {
+    "value": 1.5743396712921376,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/target_median_contrib/forward",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_target_median_contrib_overshoot": {
+    "value": 0.013492783592010876,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/target_median_contrib/overshoot",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_target_median_contrib_rotating": {
+    "value": 0.2334838781992335,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/target_median_contrib/rotating",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_fullmatrix_median_contrib_forward": {
+    "value": -0.02054225559599383,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/fullmatrix_median_contrib/forward",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_fullmatrix_median_contrib_overshoot": {
+    "value": 0.0,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/fullmatrix_median_contrib/overshoot",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_fullmatrix_median_contrib_rotating": {
+    "value": 0.014023181847443554,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/fullmatrix_median_contrib/rotating",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_l_readout_weighted_amplitude_share_reversing": {
+    "value": 0.48474591422760516,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/L/readout_weighted_amplitude_share_reversing",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_target_reversal_fraction": {
+    "value": 0.655,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/target_reversal_fraction",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_median_c1_over_c0": {
+    "value": 0.004942233153934096,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/median_c1_over_c0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_first_sign_change_1": {
+    "value": 91,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/first_sign_change/1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_first_sign_change_2": {
+    "value": 83,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/first_sign_change/2",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_first_sign_change_3": {
+    "value": 15,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/first_sign_change/3",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_first_sign_change_4": {
+    "value": 8,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/first_sign_change/4",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_first_sign_change_5": {
+    "value": 2,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/first_sign_change/5",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_first_sign_change_6": {
+    "value": 1,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/first_sign_change/6",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_target_median_contrib_forward": {
+    "value": 0.1464811045841115,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/target_median_contrib/forward",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_target_median_contrib_overshoot": {
+    "value": -0.017426133410094295,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/target_median_contrib/overshoot",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_target_median_contrib_rotating": {
+    "value": -0.16187614494483513,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/target_median_contrib/rotating",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_fullmatrix_median_contrib_forward": {
+    "value": 0.0012279536366155142,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/fullmatrix_median_contrib/forward",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_fullmatrix_median_contrib_overshoot": {
+    "value": 0.0,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/fullmatrix_median_contrib/overshoot",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_fullmatrix_median_contrib_rotating": {
+    "value": -0.009089233326254637,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/fullmatrix_median_contrib/rotating",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_g_readout_weighted_amplitude_share_reversing": {
+    "value": 0.6723136155500512,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/G/readout_weighted_amplitude_share_reversing",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_secondary_r0_median_abs_s": {
+    "value": 0.047394062515205594,
+    "source": "results/revmech-20261106-204036/analysis_summary.json:/SECONDARY/R0_median_abs_S",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s5_text_only_1": {
+    "value": "- 154/157 lever reversals already flip sign after one application of J.",
+    "source": "huginn_addition/WRITEUP.md:292",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s5_text_only_2": {
+    "value": "- Readout-gradient pushes are suppressed after one step (|c₁/c₀| = 0.05) without overall contraction (‖JP‖/‖P‖ =",
+    "source": "huginn_addition/WRITEUP.md:293",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s6_summary_gate_adjoint_median": {
+    "value": 0.0006165875768551947,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/gate_adjoint_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_gate_pass": {
+    "value": "true",
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/gate_pass",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_rank": {
+    "value": "[9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9, 9]",
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/rank",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r1_median_rho": {
+    "value": 0.17118643561037206,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R1/median_rho",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r1_ci": {
+    "value": "[0.16792186822518818, 0.17610319990777104]",
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R1/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r1_fed_from_outside": {
+    "value": "true",
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R1/fed_from_outside",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r1_median_outside_norm_share": {
+    "value": 0.9852382895556628,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R1/median_outside_norm_share",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r3_median_eig_real": {
+    "value": 0.08585238868102957,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R3/median_eig_real",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r3_median_neg_frac": {
+    "value": 0.2222222222222222,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R3/median_neg_frac",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r3_median_radius": {
+    "value": 0.17404984915634897,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R3/median_radius",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r3_median_top_sv_in": {
+    "value": 0.2325,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R3/median_top_sv_in",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_inspan": {
+    "value": 0.11751749550839781,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L/inspan",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_gain": {
+    "value": 0.3355362531399022,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L/gain",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_topv": {
+    "value": 0.18461440049908992,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L/topV",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_c0": {
+    "value": -0.13511640688575038,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L/c0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_c1": {
+    "value": 0.9448610884522198,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L/c1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_g_inspan": {
+    "value": 0.7057404628212463,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/G/inspan",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_g_gain": {
+    "value": 0.1052734367291728,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/G/gain",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_g_topv": {
+    "value": 0.015284952582041125,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/G/topV",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_g_c0": {
+    "value": 2.1819085469477253,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/G/c0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_g_c1": {
+    "value": -0.0021740351089487115,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/G/c1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_c_inspan": {
+    "value": 0.16151700593499352,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/C/inspan",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_c_gain": {
+    "value": 0.09207646113540427,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/C/gain",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_c_topv": {
+    "value": 0.014516224053110247,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/C/topV",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_c_c0": {
+    "value": 0.1845912515200906,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/C/c0",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_c_c1": {
+    "value": -0.016140586853106334,
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/C/c1",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_minus_g_gain_ci": {
+    "value": "[0.20308428379384352, 0.23448395198377348]",
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L_minus_G_gain_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_minus_g_inspan_ci": {
+    "value": "[-0.631658450892651, -0.5465709158474704]",
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L_minus_G_inspan_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s6_summary_r2_l_minus_g_topv_ci": {
+    "value": "[0.14157800441733387, 0.1879627107001354]",
+    "source": "results/rtransfer-20261106-205118/analysis_summary.json:/summary/R2/L_minus_G_topV_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s7_d1_label": {
+    "value": "NO MAJORITY GROUP",
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/D1_label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s7_d4_label": {
+    "value": "NOT TRANSMITTED",
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/D4_label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_adapter_median": {
+    "value": 0.5287114605344012,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ADAPTER/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_adapter_ci": {
+    "value": "[0.4767488041860487, 0.5576657413324864]",
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ADAPTER/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_adapter_n_defined": {
+    "value": 20,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ADAPTER/n_defined",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_adapter_median_signed_numerator": {
+    "value": 4.731304995715618,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ADAPTER/median_signed_numerator",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_attn_median": {
+    "value": 0.07367292626842775,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ATTN/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_attn_ci": {
+    "value": "[0.05080131918897271, 0.0836469511970648]",
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ATTN/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_attn_n_defined": {
+    "value": 20,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ATTN/n_defined",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_attn_median_signed_numerator": {
+    "value": 0.6581601917278022,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/ATTN/median_signed_numerator",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_mlp_median": {
+    "value": 0.3986717116592154,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/MLP/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_mlp_ci": {
+    "value": "[0.3764454996282346, 0.4365896077601462]",
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/MLP/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_mlp_n_defined": {
+    "value": 20,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/MLP/n_defined",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_shares_mlp_median_signed_numerator": {
+    "value": 3.39349004579708,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/group_share/MLP/median_signed_numerator",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_query_median": {
+    "value": 0.9621584110127368,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/attn_query_share_of_attn/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_query_ci": {
+    "value": "[0.9288068501242243, 0.9783245078281564]",
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/attn_query_share_of_attn/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_query_n_defined": {
+    "value": 17,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/attn_query_share_of_attn/n_defined",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "block_query_median_signed_numerator": {
+    "value": 0.6438927910057828,
+    "source": "results/blockdecomp-20261106-220105/analysis_summary.json:/families/L/attn_query_share_of_attn/median_signed_numerator",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_l_mean": {
+    "value": 1.7768999254703524,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/L/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_l_ci": {
+    "value": "[1.5885274028480052, 1.993608950734138]",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/L/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_a_mean": {
+    "value": 0.874985624551773,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/A/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_a_ci": {
+    "value": "[0.7905256920456887, 0.9662636286318301]",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/A/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_w_mean": {
+    "value": 0.874080013036728,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/W/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_w_ci": {
+    "value": "[0.7890657626986504, 0.9658369104862214]",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/W/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_b_mean": {
+    "value": 1.3540745186805725,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/B/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_target_effect_mean_b_ci": {
+    "value": "[1.204714323848486, 1.5204911063015458]",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/target_effect_mean/B/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_ratio_of_means_to_l_a": {
+    "value": 0.49242256809716556,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/ratio_of_means_to_L/A",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_ratio_of_means_to_l_w": {
+    "value": 0.49191290995487863,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/ratio_of_means_to_L/W",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_ratio_of_means_to_l_b": {
+    "value": 0.7620432075386259,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/ratio_of_means_to_L/B",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_original_scale_mean_target_effect_l": {
+    "value": 1.7768999254703524,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/original_scale/mean_target_effect/L",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_original_scale_mean_target_effect_g": {
+    "value": -0.04602689623832702,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/original_scale/mean_target_effect/G",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_original_scale_mean_target_effect_c": {
+    "value": -0.046341561079025276,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/original_scale/mean_target_effect/C",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_original_scale_random_median_abs": {
+    "value": 0.04622197151184082,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/original_scale/random_median_abs",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_h1_primary_a_vs_half_l_mean": {
+    "value": -0.013464338183403025,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/H1_primary_A_vs_half_L/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_h1_primary_a_vs_half_l_ci": {
+    "value": "[-0.07628115345537662, 0.05074184922873967]",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/H1_primary_A_vs_half_L/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_h1_primary_a_vs_half_l_label": {
+    "value": "INCONCLUSIVE",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/H1_primary_A_vs_half_L/label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_h3_secondary_b_vs_half_l_mean": {
+    "value": 0.4656245559453964,
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/H3_secondary_B_vs_half_L/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_h3_secondary_b_vs_half_l_ci": {
+    "value": "[0.39947148852050307, 0.5401272139400244]",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/H3_secondary_B_vs_half_L/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_h3_secondary_b_vs_half_l_label": {
+    "value": "B RETAINS >= HALF OF L",
+    "source": "results/adlever_eval-20261106-225059/analysis_summary.json:/H3_secondary_B_vs_half_L/label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "adapt_alignment_g": {
+    "value": -0.04454218986812215,
+    "source": "results/adaptcov-20261106-224906/analysis_summary.json:/S2_cos_with_L/G",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "adapt_alignment_a": {
+    "value": 0.4012845361336326,
+    "source": "results/adaptcov-20261106-224906/analysis_summary.json:/S2_cos_with_L/A",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "adapt_alignment_w": {
+    "value": 0.4013266223861328,
+    "source": "results/adaptcov-20261106-224906/analysis_summary.json:/S2_cos_with_L/W",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "adapt_alignment_b": {
+    "value": 0.6625735523887508,
+    "source": "results/adaptcov-20261106-224906/analysis_summary.json:/S2_cos_with_L/B",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "adapt_alignment_r_bar_train": {
+    "value": 0.9999999999999998,
+    "source": "results/adaptcov-20261106-224906/analysis_summary.json:/S2_cos_with_L/R_bar(train)",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s8_text_only_1": {
+    "value": "0.9987 (min 0.9937), norm ratios 2.71–2.87 (5th–95th percentile 2.72–2.86).",
+    "source": "huginn_addition/WRITEUP.md:332",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s9_h1_a_excess_mean": {
+    "value": 0.13353897631168363,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/excess_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_ci97_5": {
+    "value": "[0.06980383347719904, 0.1996355034261941]",
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/ci97_5",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_per_draw_excess_a": {
+    "value": 0.13419447898864748,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/per_draw_excess/a",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_per_draw_excess_b": {
+    "value": 0.13288347363471986,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/per_draw_excess/b",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_cos_with_l_mean": {
+    "value": 0.4012845361333503,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/cos_with_L_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_observed_mean": {
+    "value": 0.874985624551773,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/observed_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_control_mean": {
+    "value": 0.7414466482400893,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/control_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_label": {
+    "value": "A ABOVE MATCHED CONTROL",
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_linear_overlap_prediction_mean": {
+    "value": 0.7132051796970721,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/linear_overlap_prediction_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_additivity_prediction_mean": {
+    "value": 0.8467977000752583,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/additivity_prediction_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_perp_effect_mean": {
+    "value": 0.14596813559532165,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/perp_effect/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h1_a_perp_effect_ci": {
+    "value": "[0.08355331468582153, 0.21095459046959872]",
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/perp_effect/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_excess_mean": {
+    "value": 0.14247568905353547,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/excess_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_ci97_5": {
+    "value": "[0.08834154915809633, 0.20008348427712913]",
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/ci97_5",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_per_draw_excess_a": {
+    "value": 0.14589402437210083,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/per_draw_excess/a",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_per_draw_excess_b": {
+    "value": 0.13905735373497008,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/per_draw_excess/b",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_cos_with_l_mean": {
+    "value": 0.6625735524076194,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/cos_with_L_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_observed_mean": {
+    "value": 1.3540745186805725,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/observed_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_control_mean": {
+    "value": 1.211598829627037,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/control_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_label": {
+    "value": "B ABOVE MATCHED CONTROL",
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_linear_overlap_prediction_mean": {
+    "value": 1.183353227862965,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/linear_overlap_prediction_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_additivity_prediction_mean": {
+    "value": 1.3427233571557886,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/additivity_prediction_mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_perp_effect_mean": {
+    "value": 0.21240694165229795,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/perp_effect/mean",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s9_h2_b_perp_effect_ci": {
+    "value": "[0.15003193551301958, 0.27810509729385374]",
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/perp_effect/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "overlap_a_fraction": {
+    "value": 0.8473815196905762,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H1_A/control_mean; /H1_A/observed_mean",
+    "note": "DERIVED ratio of loaded JSON values"
+  },
+  "overlap_b_fraction": {
+    "value": 0.8947800234861774,
+    "source": "results/ovl_eval-20261106-232326/analysis_summary.json:/H2_B/control_mean; /H2_B/observed_mean",
+    "note": "DERIVED ratio of loaded JSON values"
+  },
+  "s10_compute_seconds_per_item_measured_shared_warmup_64_loops": {
+    "value": 0.7518476241416666,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/compute_seconds_per_item/measured_shared_warmup_64_loops",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_compute_seconds_per_item_measured_g": {
+    "value": 0.01251999306666664,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/compute_seconds_per_item/measured_G",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_compute_seconds_per_item_measured_w": {
+    "value": 0.012534026841666624,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/compute_seconds_per_item/measured_W",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_compute_seconds_per_item_measured_b": {
+    "value": 0.037063797116666686,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/compute_seconds_per_item/measured_B",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_compute_seconds_per_item_estimated_l_g_plus_48_vjps": {
+    "value": 1.1906225874666687,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/compute_seconds_per_item/estimated_L_g_plus_48_vjps",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_compute_seconds_per_item_batch": {
+    "value": 40,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/compute_seconds_per_item/batch",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_compute_seconds_per_item_historical_dstar_vjp_wall_s_120_items_incl_load": {
+    "value": 252.7,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/compute_seconds_per_item/historical_dstar_vjp_wall_s_120_items_incl_load",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h1_primary_bpop_1_5625_median": {
+    "value": 0.2475132942199707,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H1_primary_Bpop@1.5625/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h1_primary_bpop_1_5625_ci": {
+    "value": "[0.2465667724609375, 0.24879691004753113]",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H1_primary_Bpop@1.5625/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h1_primary_bpop_1_5625_reference_median": {
+    "value": 1.2361640930175781,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H1_primary_Bpop@1.5625/reference_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h1_primary_bpop_1_5625_reference_ci": {
+    "value": "[1.2253378629684448, 1.2496919631958008]",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H1_primary_Bpop@1.5625/reference_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h1_primary_bpop_1_5625_label": {
+    "value": "PAIRED CONTRAST B_pop - 0.5L POSITIVE",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H1_primary_Bpop@1.5625/label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h2_exploratory_wpop_1_5625_median": {
+    "value": -0.13599491119384766,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H2_exploratory_Wpop@1.5625/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h2_exploratory_wpop_1_5625_ci": {
+    "value": "[-0.1403217613697052, -0.13057708740234375]",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H2_exploratory_Wpop@1.5625/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h2_exploratory_wpop_1_5625_reference_median": {
+    "value": 1.2361640930175781,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H2_exploratory_Wpop@1.5625/reference_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h2_exploratory_wpop_1_5625_reference_ci": {
+    "value": "[1.2253378629684448, 1.2496919631958008]",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H2_exploratory_Wpop@1.5625/reference_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h2_exploratory_wpop_1_5625_label": {
+    "value": "PAIRED CONTRAST W_pop - 0.5L NEGATIVE",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H2_exploratory_Wpop@1.5625/label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h3_exploratory_bitem_1_5625_median": {
+    "value": 0.2505831718444824,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H3_exploratory_Bitem@1.5625/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h3_exploratory_bitem_1_5625_ci": {
+    "value": "[0.24588775634765625, 0.2519693523645401]",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H3_exploratory_Bitem@1.5625/ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h3_exploratory_bitem_1_5625_reference_median": {
+    "value": 1.2982549667358398,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H3_exploratory_Bitem@1.5625/reference_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h3_exploratory_bitem_1_5625_reference_ci": {
+    "value": "[1.2823152542114258, 1.322397232055664]",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H3_exploratory_Bitem@1.5625/reference_ci",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_h3_exploratory_bitem_1_5625_label": {
+    "value": "PAIRED CONTRAST B_item - 0.5L POSITIVE",
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/H3_exploratory_Bitem@1.5625/label",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_e_median_by_offset_l_pop_1_5625_24": {
+    "value": 1.2361640930175781,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/E_median_by_offset/L_pop@1.5625/24",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_ratio_of_medians_to_l_l_pop_1_5625": {
+    "value": 1.0,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/ratio_of_medians_to_L/L_pop@1.5625",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_collateral_at_24_l_pop_1_5625_offtf_kl_median": {
+    "value": 0.059580011293292046,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/collateral_at_24/L_pop@1.5625/offtf_kl_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_e_median_by_offset_b_pop_1_5625_24": {
+    "value": 0.8466968834400177,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/E_median_by_offset/B_pop@1.5625/24",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_ratio_of_medians_to_l_b_pop_1_5625": {
+    "value": 0.6849389075629604,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/ratio_of_medians_to_L/B_pop@1.5625",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_collateral_at_24_b_pop_1_5625_offtf_kl_median": {
+    "value": 0.02496748138219118,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/collateral_at_24/B_pop@1.5625/offtf_kl_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_e_median_by_offset_w_pop_1_5625_24": {
+    "value": 0.4870119094848633,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/E_median_by_offset/W_pop@1.5625/24",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_ratio_of_medians_to_l_w_pop_1_5625": {
+    "value": 0.3939702764671211,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/ratio_of_medians_to_L/W_pop@1.5625",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_collateral_at_24_w_pop_1_5625_offtf_kl_median": {
+    "value": 0.00476526259444654,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/collateral_at_24/W_pop@1.5625/offtf_kl_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_e_median_by_offset_g_pop_1_5625_24": {
+    "value": 0.11688423156738281,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/E_median_by_offset/G_pop@1.5625/24",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_ratio_of_medians_to_l_g_pop_1_5625": {
+    "value": 0.09455397728149408,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/ratio_of_medians_to_L/G_pop@1.5625",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "truthcheap_collateral_at_24_g_pop_1_5625_offtf_kl_median": {
+    "value": 0.0007146583520807326,
+    "source": "results/tlever_eval-20261106-235208/analysis_summary.json:/collateral_at_24/G_pop@1.5625/offtf_kl_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "selector_model": {
+    "value": 0.55,
+    "source": "results/tlever_eval-20261106-235208/selector_summary.json:/accuracy/MODEL/acc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "selector_calibrated": {
+    "value": 0.7833333333333333,
+    "source": "results/tlever_eval-20261106-235208/selector_summary.json:/accuracy/CALIBRATED/acc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "selector_selector": {
+    "value": 0.7666666666666667,
+    "source": "results/tlever_eval-20261106-235208/selector_summary.json:/accuracy/SELECTOR/acc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "selector_combined": {
+    "value": 0.9,
+    "source": "results/tlever_eval-20261106-235208/selector_summary.json:/accuracy/COMBINED/acc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "selector_steer_l_1_5625": {
+    "value": 0.7666666666666667,
+    "source": "results/tlever_eval-20261106-235208/selector_summary.json:/accuracy/STEER_L@1.5625/acc",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s10_text_only_1": {
+    "value": "recalibration also reached 90.0%, so the model readout added no detected benefit.",
+    "source": "huginn_addition/WRITEUP.md:407",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s11_stationarity_drift_at_k_median": {
+    "value": 6.758794825145742e-06,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/stationarity/drift_at_K_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_stationarity_drift_at_k_p90": {
+    "value": 1.1579949386941735e-05,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/stationarity/drift_at_K_p90",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_stationarity_prefix_drift_median": {
+    "value": 1.0991102499247063e-05,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/stationarity/prefix_drift_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_stationarity_ref_drift_median_by_step": {
+    "value": "[6.36e-06, 4.74e-06, 4.04e-06]",
+    "source": "results/jac-20261104-164552/analysis/summary.json:/stationarity/ref_drift_median_by_step",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_stationarity_n_rows_drift_gt_1e_4_all": {
+    "value": 8,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/stationarity/n_rows_drift_gt_1e-4_all",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_stationarity_n_problems_drift_gt_1e_4_all": {
+    "value": 6,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/stationarity/n_problems_drift_gt_1e-4_all",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_stationarity_drift_at_k_max": {
+    "value": 0.018439600244164467,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/stationarity/drift_at_K_max",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_spectral_radius_median": {
+    "value": 0.7816124296977329,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/spectral_radius_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_spectral_radius_p10_p90": {
+    "value": "[0.7546160518892004, 0.819379834645824]",
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/spectral_radius_p10_p90",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_frac_leading_complex": {
+    "value": 0.7142857142857143,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/frac_leading_complex",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_leading_rotation_deg_median": {
+    "value": 13.083076758258752,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/leading_rotation_deg_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_n_eigs_modulus_gt_half_median": {
+    "value": 54.0,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/n_eigs_modulus_gt_half_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_leading_mode_plane_overlap_median": {
+    "value": 0.18244443094246765,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/leading_mode_plane_overlap_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_top8_plane_overlap_max_median": {
+    "value": 0.24352411208306007,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/top8_plane_overlap_max_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_random_2d_overlap_expectation": {
+    "value": 0.019462473604038074,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/random_2d_overlap_expectation",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_arnoldi_resid_top2_median": {
+    "value": "[0.018, 0.0242]",
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/arnoldi_resid_top2_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_fresh_fd_resid_top2_median_eps_small": {
+    "value": "[[0.0181, 0.0242], [0.0184, 0.0245]]",
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/fresh_fd_resid_top2_median_eps_small",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_spectrum_plane_quotient_exceeds_radius_frac": {
+    "value": 0.047619047619047616,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/spectrum/plane_quotient_exceeds_radius_frac",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_b_median": {
+    "value": "[[0.7253999710083008, -0.006899999920278788], [-0.006099999882280827, 0.6938999891281128]]",
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/B_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_eig_modulus_median": {
+    "value": "[0.7242084741592407, 0.6891558170318604]",
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/eig_modulus_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_frac_complex_eigs": {
+    "value": 0.5170068027210885,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/frac_complex_eigs",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_rotation_deg_per_step_median_abs": {
+    "value": 0.4138459265232086,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/rotation_deg_per_step_median_abs",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_polar_rotation_deg_per_step_circle_coords_median": {
+    "value": 0.5897815385010244,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/polar_rotation_deg_per_step_circle_coords/median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_polar_rotation_deg_per_step_circle_coords_p10": {
+    "value": -4.511232980183652,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/polar_rotation_deg_per_step_circle_coords/p10",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_polar_rotation_deg_per_step_circle_coords_p90": {
+    "value": 5.651935723097022,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/polar_rotation_deg_per_step_circle_coords/p90",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_max_plane_gain_median": {
+    "value": 0.8636310696601868,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/max_plane_gain_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_leak_frac_median": {
+    "value": 0.5272139310836792,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/leak_frac_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_fd_check_max_abs_diff_eps_vs_small": {
+    "value": 0.00026696640998125076,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/fd_check_max_abs_diff_eps_vs_small",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_time_variation_k_8_eig_modulus_max_median": {
+    "value": 0.7242043614387512,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/time_variation/K+8/eig_modulus_max_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_time_variation_k_8_median_abs_diff_from_k": {
+    "value": 1.3433396816253662e-05,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/time_variation/K+8/median_abs_diff_from_K",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_time_variation_k_32_eig_modulus_max_median": {
+    "value": 0.7242002487182617,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/time_variation/K+32/eig_modulus_max_median",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_plane_block_time_variation_k_32_median_abs_diff_from_k": {
+    "value": 1.3828277587890625e-05,
+    "source": "results/jac-20261104-164552/analysis/summary.json:/plane_block/time_variation/K+32/median_abs_diff_from_K",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s11_text_only_1": {
+    "value": "passed at only 14/40 positions.",
+    "source": "huginn_addition/WRITEUP.md:124",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s12_revision": {
+    "value": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+    "source": "results/dstar_vjp-20261106-061708/meta.json:/revision",
+    "note": "Saved value; see section caveats. Arrays retain saved element precision."
+  },
+  "s12_text_only_1": {
+    "value": "√(9/5280) ≈ 0.04.",
+    "source": "huginn_addition/WRITEUP.md:309",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  },
+  "s12_text_only_2": {
+    "value": "**Model.** Huginn-0125 with test-time noise off and a seeded random initial state. All mechanistic work is in fp32; the",
+    "source": "huginn_addition/WRITEUP.md:51",
+    "note": "UNVERIFIED-AGAINST-JSON"
+  }
+}

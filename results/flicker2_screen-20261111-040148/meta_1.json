@@ -1,0 +1,50 @@
+{
+  "cfg": {
+    "K": 32,
+    "tail": 8,
+    "compute_s": 200,
+    "reproduce": false,
+    "preflight": false
+  },
+  "validation": [
+    {
+      "len": 48,
+      "max_abs": 6.103515625e-05,
+      "argmax_agree": 1.0
+    },
+    {
+      "len": 51,
+      "max_abs": 6.771087646484375e-05,
+      "argmax_agree": 1.0
+    },
+    {
+      "len": 52,
+      "max_abs": 5.435943603515625e-05,
+      "argmax_agree": 1.0
+    }
+  ],
+  "runtime_s": 78.481798178,
+  "compute_s": 73.57747014899999,
+  "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+  "model_id": "tomg-group-umd/huginn-0125",
+  "versions": {
+    "numpy": "2.4.6",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3"
+  },
+  "code_sha256": "4a7270a6c2d045e398dbe53ea395eae905de5900f15d714976926dbac48e323c",
+  "run_id": "flicker2_screen-20261111-040148_1",
+  "flags": [],
+  "ok": true,
+  "load_s": 6.239230323000001,
+  "loop_s": 1.8882089100833337,
+  "tail_loop_s": 3.2159148938749986,
+  "reference_sha256": {},
+  "reference_errors": [],
+  "precision": "float32",
+  "matmul_allow_tf32": false,
+  "cudnn_allow_tf32": false,
+  "float32_matmul_precision": "highest",
+  "parameter_dtype": "torch.float32",
+  "peak_memory_allocated": 21968729088
+}

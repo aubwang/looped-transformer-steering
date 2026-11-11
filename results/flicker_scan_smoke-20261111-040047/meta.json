@@ -1,0 +1,55 @@
+{
+  "cfg": {
+    "K": 64,
+    "tail": 16,
+    "compute_s": 150,
+    "reproduce": false,
+    "preflight": true
+  },
+  "validation": [
+    {
+      "len": 45,
+      "max_abs": 4.8160552978515625e-05,
+      "argmax_agree": 1.0
+    },
+    {
+      "len": 49,
+      "max_abs": 6.580352783203125e-05,
+      "argmax_agree": 1.0
+    },
+    {
+      "len": 52,
+      "max_abs": 6.008148193359375e-05,
+      "argmax_agree": 1.0
+    }
+  ],
+  "runtime_s": 50.021707755,
+  "compute_s": 33.777897003999996,
+  "revision": "bb6621b65e90b6a4b9b29ef88dc83866d450470c",
+  "model_id": "tomg-group-umd/huginn-0125",
+  "versions": {
+    "numpy": "2.4.6",
+    "torch": "2.6.0+cu124",
+    "transformers": "4.51.3"
+  },
+  "code_sha256": "4a7270a6c2d045e398dbe53ea395eae905de5900f15d714976926dbac48e323c",
+  "run_id": "flicker_scan_smoke-20261111-040047",
+  "flags": [],
+  "ok": true,
+  "load_s": 18.160758726,
+  "loop_s": 0.4157965857916665,
+  "tail_loop_s": 0.7097137619999998,
+  "reference_sha256": {
+    "census-20261105-162542": "b44cb23894fe5c123b12fff272e60b6c68289a764eee45ef7ca74673f97c582d",
+    "census-20261105-163100": "17c9366aedb161fe2ae97cad709f40659325558067fa4d082df46ea5bfee7fdb",
+    "census-20261105-163615": "48864d81d37d0e595b35d874910427add8e802ebb898ea04862e169db00c8005",
+    "census-20261105-164134": "e462736e0f61c86a429a178ffb4cb1b580fa5a19ded01966bdcf9748fd0ff306"
+  },
+  "reference_errors": [],
+  "precision": "float32",
+  "matmul_allow_tf32": false,
+  "cudnn_allow_tf32": false,
+  "float32_matmul_precision": "highest",
+  "parameter_dtype": "torch.float32",
+  "peak_memory_allocated": 15970056704
+}
