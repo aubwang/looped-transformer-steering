@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Pushing a looped transformer</title>
+<title>1070 at 511 loops, 1060 at 512</title>
 <style>
 :root {
   --ink: var(--foreground, #1a1a19);
@@ -87,22 +87,61 @@ table.xt tr.hl td { background: color-mix(in srgb, var(--s1) 18%, transparent); 
 .badge.hl circle { stroke: var(--ink); stroke-width: 3; }
 button.on { border-color: var(--s1); box-shadow: 0 0 0 1px var(--s1); }
 code { font-family: var(--mono); font-size: .92em; background: color-mix(in srgb, var(--ink) 9%, transparent); padding: 0 4px; border-radius: 3px; }
+pre.prompt { font-family: var(--mono); font-size: 14px; line-height: 1.5; background: var(--panel); border-radius: var(--r); padding: 12px 16px; margin: 12px 0; overflow-x: auto; }
+.ansline { font-family: var(--mono); font-size: 22px; margin: 6px 0 2px; display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.digit { display: inline-block; min-width: 1.2em; text-align: center; font-weight: 700; font-size: 28px; padding: 0 6px; border-radius: 6px; border: 3px solid var(--s1); }
+.digit.bad { border-color: var(--s2); }
+.ansline .mark { font-family: var(--sans); font-size: 14px; color: var(--ink2); margin-left: 6px; }
 ul.todo { color: var(--ink2); font-size: 14px; }
 a { color: var(--s1); }
 </style>
 </head>
 <body>
 
-<span class="tag">Draft, first pass</span>
-<h1>Pushing a looped transformer</h1>
-<p class="sub">A transformer as a pile of simple operators, what changes when the same operators are applied again and
-again, and what happens when you lean on the result.</p>
+<span class="tag">Draft, second pass</span>
+<h1>1070 at 511 loops, 1060 at 512</h1>
+<p class="sub">What happens inside a transformer that runs its layers in a loop: when it settles, when it does
+not, and which way it moves when you push it.</p>
 
-<p>This post has two halves. The first is a fast tour of a transformer for readers who think in matrices and maps
-and have never looked inside one. The second takes a <em>looped</em> transformer, one that applies the same layers
-repeatedly until its state settles, and asks a concrete question: if you add a small vector to its state at every
-loop, which way does the answer move? The widgets run on two-dimensional toy matrices. The numbers in the boxes
-marked "real model" are measurements on trained models.</p>
+<p>Huginn is a language model that applies the same block of layers over and over before it writes each token.
+How many times is a setting. Give it three worked sums and a fourth to finish:</p>
+<pre class="prompt">33 + 36 = 69
+415 + 419 = 834
+3563 + 3209 = 6772
+816 + 254 =</pre>
+<p>With 511 loops per token it writes <code>1070</code>, which is right. With 512 it writes <code>1060</code>.
+This is not noise that more loops would average out. At every loop count we checked, from 449 to 512, the model's
+first choice for the third digit was 7 when the count was odd and 6 when it was even.</p>
+
+<div class="demo" id="demoR">
+  <span class="toy" style="color:var(--s1)">Real model · replay of saved measurements</span>
+  <h3>The third digit, loop by loop</h3>
+  <p class="what">The model's probabilities for its two leading choices of the digit after
+  <code>816 + 254 = 10</code>, at loop counts 505 to 512. Start A is the starting state used in the search;
+  start B is another random one.</p>
+  <div class="ansline"><span>816 + 254 = 10</span><span id="R_digit" class="digit"></span><span id="R_mark" class="mark"></span></div>
+  <div class="legend">
+    <span><i class="sw" style="background:var(--s1)"></i>probability of 7 (correct)</span>
+    <span><i class="sw" style="background:var(--s2)"></i>probability of 6</span>
+  </div>
+  <svg id="R_chart" viewBox="0 0 640 220" role="img" aria-label="Probabilities of the digits 7 and 6 at loop counts 505 to 512"></svg>
+  <div class="ctl">
+    <label><span>Loops</span> <output id="R_b_o"></output><input id="R_b" type="range" min="505" max="512" step="1" value="511"></label>
+    <div class="btns" style="margin-top:0"><button id="R_A">Start A</button><button id="R_B">Start B</button></div>
+  </div>
+  <p class="verdict" id="R_verdict"></p>
+</div>
+
+<p>The two probabilities trade places because the model's internal state does not settle on this prompt. It ends
+up alternating between two states, and here the two states disagree about the digit. From start B the state
+alternates as well, but 7 stays ahead, so nothing visible happens. This example was found by a search built to
+find one, and I come back to how rare it is. First, why would one more loop change anything?</p>
+
+<p>The rest of the post builds up to that question and one more. Section 1 is a fast tour of what a transformer
+computes, for readers who think in matrices and maps and have never looked inside one. Section 2 applies the same
+layers in a loop and asks when the state settles. Section 3 asks which way the answer moves if you push on the
+looped state. Widgets marked "toy" run on small made-up matrices; boxes marked "real model" are measurements on
+trained models.</p>
 
 <h2>1. A transformer in five minutes</h2>
 
@@ -265,8 +304,8 @@ It keeps the fixed point and moves each eigenvalue <var>λ</var> to 1 − <var>a
     <tr><td style="font-family:var(--mono)">816 + 254 =</td><td style="text-align:left;font-family:var(--mono)">1070</td><td style="text-align:left;font-family:var(--mono)">1060</td></tr>
   </table>
   <p>In the first row the model has to invent the second number, and its two leading guesses swap places at every
-  loop; both sums it then writes are correct. In the second row the sum is fixed, the right answer is 1070, and
-  the third digit flips between 7 and 6: correct at 511 loops, wrong at 512.</p>
+  loop; both sums it then writes are correct. The second row is the example from the top of the page: the sum is fixed, the right answer is 1070, and
+  the third digit flips between 7 and 6.</p>
   <p>These are examples that a search was built to find, and they say nothing about how often this happens. The
   second search screened 400 new sums for nearly tied answer digits, ran the 85 closest for 512 loops, and found
   four answer digits flipping between the correct digit and a wrong one, out of 358 answer positions on the
@@ -396,6 +435,43 @@ function drag(svg, fn) { let on = false;
   svg.addEventListener('pointerup', () => { on = false; });
   svg.addEventListener('pointercancel', () => { on = false; }); }
 function bind(id, fn) { const i = $(id), o = $(id + '_o'); const up = () => { fn(parseFloat(i.value), o); }; i.addEventListener('input', up); return up; }
+
+/* ---------- Replay R: measured probabilities for 816 + 254 (Huginn, budgets 505..512) ---------- */
+(function () {
+  const D = { A: { p7: [0.5809, 0.4861, 0.5809, 0.4861, 0.5809, 0.4861, 0.5809, 0.4861], p6: [0.4065, 0.5015, 0.4065, 0.5015, 0.4065, 0.5015, 0.4065, 0.5015] },
+              B: { p7: [0.5657, 0.5058, 0.5657, 0.5058, 0.5657, 0.5058, 0.5657, 0.5058], p6: [0.4218, 0.4818, 0.4218, 0.4818, 0.4218, 0.4818, 0.4218, 0.4818] } };
+  const st = { b: 511, start: 'A' }, svg = $('R_chart');
+  const X0 = 56, X1 = 500, Y0 = 16, Y1 = 180, x = b => X0 + (b - 505) / 7 * (X1 - X0), y = v => Y1 - (v - 0.35) / 0.3 * (Y1 - Y0);
+  function render() {
+    const d = D[st.start], i = st.b - 505, p7 = d.p7[i], p6 = d.p6[i], top = p7 > p6 ? '7' : '6';
+    const dg = $('R_digit'); dg.textContent = top; dg.className = 'digit' + (top === '7' ? '' : ' bad');
+    $('R_mark').textContent = top === '7' ? 'correct' : 'wrong';
+    $('R_A').classList.toggle('on', st.start === 'A'); $('R_B').classList.toggle('on', st.start === 'B');
+    clear(svg);
+    [0.4, 0.5, 0.6].forEach(v => { S('line', { x1: X0, y1: y(v), x2: X1, y2: y(v), stroke: v === 0.5 ? INK2 : RULE, 'stroke-opacity': v === 0.5 ? 0.6 : 1 }, svg);
+      S('text', { x: X0 - 8, y: y(v) + 4, 'text-anchor': 'end' }, svg, Math.round(v * 100) + '%'); });
+    for (let b = 505; b <= 512; b++) S('text', { x: x(b), y: Y1 + 18, 'text-anchor': 'middle', 'font-weight': b === st.b ? 700 : 400 }, svg, b);
+    S('text', { x: (X0 + X1) / 2, y: Y1 + 36, 'text-anchor': 'middle' }, svg, 'loops');
+    S('line', { x1: x(st.b), y1: Y0, x2: x(st.b), y2: Y1, stroke: INK, 'stroke-width': 1 }, svg);
+    [['p7', C1, '7'], ['p6', C2, '6']].forEach(([k, col, name]) => {
+      S('polyline', { points: d[k].map((v, j) => x(505 + j) + ',' + y(v)).join(' '), fill: 'none', stroke: col, 'stroke-width': 2, 'stroke-linejoin': 'round' }, svg);
+      d[k].forEach((v, j) => { const g = S('g', { style: 'cursor:pointer' }, svg); S('circle', { cx: x(505 + j), cy: y(v), r: 12, fill: 'transparent' }, g);
+        S('circle', { cx: x(505 + j), cy: y(v), r: 505 + j === st.b ? 6 : 4, fill: col, stroke: PAGE, 'stroke-width': 2 }, g);
+        g.addEventListener('click', () => { st.b = 505 + j; $('R_b').value = st.b; $('R_b_o').textContent = st.b; render(); });
+        hover(g, 'digit ' + name + ' at ' + (505 + j) + ' loops: ' + (v * 100).toFixed(1) + '%'); });
+    });
+        // values at the selected loop count, the leading digit listed first
+    const y7 = y(0.5) + (p7 >= p6 ? -9 : 9), y6 = y(0.5) + (p7 >= p6 ? 9 : -9);
+    S('text', { x: X1 + 12, y: y7 + 4, class: 'lab' }, svg, 'digit 7: ' + (p7 * 100).toFixed(1) + '%');
+    S('text', { x: X1 + 12, y: y6 + 4, class: 'lab' }, svg, 'digit 6: ' + (p6 * 100).toFixed(1) + '%');
+    $('R_verdict').innerHTML = 'At <b>' + st.b + '</b> loops, ' + top + ' leads ' + (Math.max(p7, p6) * 100).toFixed(0) + '% to ' + (Math.min(p7, p6) * 100).toFixed(0) + '%' +
+      (st.start === 'A' ? (top === '7' ? ': the correct digit.' : ': the wrong digit.') + ' From this start the lead changes hands at every loop.'
+                        : '. From this start 7 leads at every loop count; the gap opens and closes without reversing.');
+  }
+  bind('R_b', (v, o) => { st.b = v; o.textContent = v.toFixed(0); render(); })();
+  $('R_A').addEventListener('click', () => { st.start = 'A'; render(); });
+  $('R_B').addEventListener('click', () => { st.start = 'B'; render(); });
+})();
 
 /* ---------- shared sentence ---------- */
 const VOC = { the: [-1.0, 0.45], a: [-0.85, 0.82], on: [-0.9, -0.3], cat: [0.85, 0.75], dog: [1.08, 0.46], bird: [0.6, 1.04],
