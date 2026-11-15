@@ -118,7 +118,7 @@ class TutorialChecks(unittest.TestCase):
     def test_live_alternative_contexts(self):
         for context in ("on the mat sat the", "a dog", "the cat sat on the mat on a"):
             with self.subTest(context=context):
-                _, d = self.module.app.run(defs={"context_box": mo.ui.text(value=context)})
+                _, d = self.module.app.run(defs={"text": context})
                 self.check_live_identities(d)
 
     def test_live_slider_endpoints_and_zero_direction(self):

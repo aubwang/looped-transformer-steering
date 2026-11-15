@@ -30,25 +30,7 @@ def _(mo):
     mo.md(r"""
     # A looped transformer on eleven words
 
-    Suppose only eleven words exist, and the only text ever written is five short sentences. This notebook starts
-    there and asks one question: given the words so far, how likely is each word to come next?
-
-    **Part I** answers by construction. We build the simplest thing that could work, find exactly how it fails, and
-    test a small architectural change that addresses it. After about ten such choices, the thing on the page
-    is a transformer. **Part II** treats that transformer as an object of study: what its internal vectors contain,
-    what happens when one layer is applied again and again, and how to test whether something inside the model
-    causes what comes out. **Part III** reports the same questions asked of two trained looped models, Huginn and
-    Recurrent-Llama, which is what the experiments in this repository measure.
-
-    The worked-example numbers below are computed live from the context you type; the labeled experiments have
-    their own fixed inputs, and Part III reports saved measurements. Vectors have two coordinates, so individual
-    calculations can be checked with pencil and paper. Expand the larger matrices when you want the full detail. Three kinds of numbers
-    appear, and they are kept apart:
-
-    - **Hand-set** numbers are starting values chosen by a person: the embedding table, the attention matrices, the
-      MLP. Nothing learned them. Most can be changed with sliders.
-    - **Trained** numbers come out of an optimization that runs here: the table in section 4, the controlled comparison in section 8, and the probes in Part II.
-    - **Measured** numbers come from experiments on trained models. They appear in Part III.
+    I've looked around the internet and haven't really found a tutorial and guide on what is a transformer that felt like it was satisfying enough from a motivational and mathematical perspective, so I set out to make my own. My goal was to create something where each next step and additional part of the transformer arrives naturally as a solution to a obstacle that we're trying to overcome, and also to express what a transformer is in a clean, mathematical way.
     """)
     return
 
@@ -333,6 +315,7 @@ def _(E, VOCAB, mo, np):
         mpl,
         new_fig,
         num,
+        pct_cell,
         pct_plain,
         plane,
         show,
@@ -345,11 +328,11 @@ def _(E, VOCAB, mo, np):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    # Part I · Constructing a transformer
+    # Part I · Building a transformer
 
-    ## 1 · Eleven words, five sentences
+    ## 1 · Eleven words and five sentences
 
-    Suppose English had just eleven words:
+    Let's suppose that we are living in a world where the English language has only $11$ words:
     """)
     return
 
@@ -367,6 +350,7 @@ def _(np):
         "the cat sat on the grass",
     ]
 
+
     def encode(text):
         """Text to token ids: one integer per word."""
         return np.array([ID[word] for word in text.split()])
@@ -376,20 +360,17 @@ def _(np):
 
 @app.cell(hide_code=True)
 def _(CORPUS, VOCAB, mo):
+    _groups = [VOCAB[_i:_i + 4] for _i in range(0, len(VOCAB), 4)]
+    _set_rows = [r",\ ".join(r"\text{" + _word + "}" for _word in _group) for _group in _groups]
+    _set = r"\begin{aligned}\mathcal V=\{&" + r",\\ &".join(_set_rows) + r"\}.\end{aligned}"
     mo.vstack([
-        mo.Html(
-            '<div style="border-left:3px solid currentColor;padding:.5rem 1.1rem;font-size:1.05rem">'
-            + " · ".join(VOCAB) + '</div>'
-        ),
-        mo.md(r"""
-        We want to predict the next word in a sentence. If someone writes
+        mo.md(rf"""
+        Let's call this our **vocabulary**, written $\mathcal V$:
 
-        **the cat sat on the ____**
+        $${_set}$$
 
-        what might go in the blank? *Mat*, *hat*, and *grass* all sound possible. We'd like a model to assign
-        a probability to each word, using examples of how the language is used.
-
-        Suppose we collect these five sentences as our **training data**:
+        Now, suppose you go out into the world and collect the following five sentences from various books.
+        You decide to store them as your **training data**:
         """),
         mo.Html(
             '<ol style="font-size:1.2rem;line-height:1.7;padding-left:1.5rem;list-style:decimal">'
@@ -402,11 +383,17 @@ def _(CORPUS, VOCAB, mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    Each sentence begins with *the cat sat on the*. In three of them, the next word is *mat*; in one it is
-    *hat*; and in one it is *grass*.
+    Now you wonder: could we use these examples to predict what comes next? Suppose someone gives us
+    the beginning of a sentence:
 
-    Let's count how often each of our eleven words fills that blank. We include every word we could predict,
-    even if it never appears in that position in these five examples.
+    **the cat sat on the ____**
+
+    The words before the blank are the **context**. We are working with our vocabulary $\mathcal V$,
+    so any word $v\in\mathcal V$ is a candidate to fill the blank. But which candidates are more likely
+    after this particular context?
+
+    Let's look at the training data to make a more informed guess. All five sentences begin with
+    *the cat sat on the*. Count the words that come next:
     """)
     return
 
@@ -433,6 +420,21 @@ def _(CORPUS, ID, VOCAB, np):
 def _(QUESTION, VOCAB, counts, grid, mo, pct_cell, pct_plain, show, target):
     _total = int(counts.sum())
     mo.vstack([
+        show(grid(
+            [[f"<b>{_word}</b>", str(int(_count)), f"{int(_count)}/{_total}"]
+             for _word, _count in zip(VOCAB, counts) if _count > 0],
+            cols=["word in the blank", "count", "share of observations"],
+            bracket=False,
+            left=(0,),
+        )),
+        mo.md(r"""
+        *Mat* follows this context in three of our five observations; *hat* and *grass* each follow it once.
+        That gives us a reason to guess *mat* more often than either of the others.
+
+        What about the other words in $\mathcal V$? They are still candidates, but none of them filled
+        this blank in our five examples. Let's extend the table to include the whole vocabulary,
+        giving those words a count of zero. A zero here means **not observed in this data**.
+        """),
         mo.md(f"**{QUESTION} ____**"),
         show(grid(
             [[f"<b>{_word}</b>", f"{int(_count)}", f"{int(_count)}/{_total}", pct_cell(_frequency)]
@@ -447,29 +449,53 @@ def _(QUESTION, VOCAB, counts, grid, mo, pct_cell, pct_plain, show, target):
 
 
 @app.cell(hide_code=True)
-def _(VOCAB, mo):
-    _groups = [VOCAB[_i:_i + 4] for _i in range(0, len(VOCAB), 4)]
-    _set_rows = [r",\ ".join(r"\text{" + _word + "}" for _word in _group) for _group in _groups]
-    _set = r"\begin{aligned}\mathcal V=\{&" + r",\\ &".join(_set_rows) + r"\}.\end{aligned}"
-    mo.md(rf"""
-    We can now give these words a mathematical name. Our **vocabulary** is the set
+def _(mo):
+    mo.md(r"""
+    This table gives the **observed frequency** of each word after *the cat sat on the*.
+    We can write it as a function $f$, which takes a word from our vocabulary and returns its share
+    of the observations:
 
-    $${_set}$$
+    $$f:\mathcal V\longrightarrow[0,1],\qquad f(v)=\frac{\operatorname{count}(v)}{5}.$$
 
-    A candidate next word is an element $v\in\mathcal V$. We have **five observations** of what follows
-    *the cat sat on the*: one next word from each sentence. To find the share of observations that end in
-    a particular word, we divide its count by the total number of observations, five. This is its
-    **observed frequency**, which we'll call $f(v)$. For this sentence beginning, $f(\text{{mat}})=3/5$,
-    $f(\text{{hat}})=1/5$, and $f(\text{{grass}})=1/5$. The other eight words each have frequency 0.
+    For example,
 
-    These frequencies form an **observed probability distribution** on $\mathcal V$: they are nonnegative
-    and add up to 1. This describes the five examples we collected; it isn't yet a model's prediction.
+    $$\begin{aligned}
+    f(\text{mat})&=\frac35, & f(\text{hat})&=\frac15,\\
+    f(\text{grass})&=\frac15, & f(\text{bird})&=0.
+    \end{aligned}$$
 
-    We can also ask about a group of words. The observed probability of *mat or hat*, for example, is
-    $3/5+1/5=4/5$. Such a group is an **event**, written as a subset $A\subseteq\mathcal V$. Its probability
-    is the sum of the frequencies of its members:
+    The other seven words also have frequency zero in these observations.
 
-    $$P(A)=\sum_{{v\in A}}f(v).$$
+    Summing over every candidate accounts for all five observations:
+
+    $$\begin{aligned}
+    \sum_{v\in\mathcal V}f(v)
+    &=f(\text{mat})+f(\text{hat})\\
+    &\quad+f(\text{grass})+f(\text{bird})\\
+    &\quad+f(\text{the})+f(\text{a})+f(\text{on})\\
+    &\quad+f(\text{cat})+f(\text{dog})\\
+    &\quad+f(\text{sat})+f(\text{chased})\\[4pt]
+    &=\frac{3+1+1+0+\cdots+0}{5}\\
+    &=1.
+    \end{aligned}$$
+
+    We can also ask about a group of words. Such a group is an **event**, a subset $A\subseteq\mathcal V$.
+    We assign it a probability by adding the frequencies of its members:
+
+    $$P(A)=\sum_{v\in A}f(v).$$
+
+    For *mat or hat*, we combine the two one-word sets using a union:
+
+    $$\{\text{mat}\}\cup\{\text{hat}\}=\{\text{mat},\text{hat}\}.$$
+
+    These sets have no word in common, so their probabilities add:
+
+    $$\begin{aligned}
+    P(\{\text{mat}\}\cup\{\text{hat}\})
+    &=P(\{\text{mat}\})+P(\{\text{hat}\})\\
+    &=f(\text{mat})+f(\text{hat})\\
+    &=\frac35+\frac15=\frac45.
+    \end{aligned}$$
 
     This rule defines a **probability measure** on our finite vocabulary.
     """)
@@ -477,104 +503,23 @@ def _(VOCAB, mo):
 
 
 @app.cell
-def _(ID, np, target):
+def _(np):
     def is_measure(p):
-        """Eleven numbers are a probability measure on the vocabulary if none is negative and they add up to 1."""
+        """Check nonnegative entries and total mass one on the vocabulary."""
         return bool(np.all(p >= 0) and np.isclose(p.sum(), 1.0))
-
-    def prob(event, p):
-        """P(A) for an event A, a set of words: add up its members."""
-        return float(p[[ID[word] for word in event]].sum())
-
-    {
-        "f is a probability measure": is_measure(target),
-        "P(mat or hat)": prob({"mat", "hat"}, target),
-        "P(something to sit on)": prob({"mat", "hat", "grass"}, target),
-        "P(an animal)": prob({"cat", "dog", "bird"}, target),
-    }
     return (is_measure,)
 
 
-@app.cell(hide_code=True)
-def _(VOCAB, continuations, mo):
-    _seen = continuations("the cat sat on the")
-    _unseen = continuations("a cat sat on the")
-    _shares = ", ".join(
-        f"**{_word}** {int(_count)}/{int(_seen.sum())}"
-        for _word, _count in zip(VOCAB, _seen) if _count > 0
-    )
-    mo.vstack([
-        mo.md(r"""
-        ### What if we change just one word?
-
-        We could make an autocomplete rule that remembers each sentence beginning and looks up the
-        next-word counts. Here's what happens when we change *the* to *a*:
-        """),
-        mo.md(f"> **the** cat sat on the **____**\n>\n> Five observations: {_shares}."),
-        mo.md("> **a** cat sat on the **____**\n>\n> " + (
-            "No observations: this sentence beginning never appears in our five examples."
-            if _unseen is None else "This sentence beginning has observations in the data."
-        )),
-        mo.md(r"""
-        Every word is still in our vocabulary. And the meaning has changed only a little: a cat is
-        still sitting on something. We'd expect *mat*, *hat*, and *grass* to remain plausible answers.
-        But an exact lookup has no counts for the second beginning.
-
-        We could collect more sentences and store more beginnings. With just eleven words, though,
-        there are already $11^5=161{,}051$ possible five-word sequences, and the number grows with
-        every extra position. Remembering each sequence separately also misses what these two have
-        in common.
-
-        We'd like a model to **use what it learns from one context in other, similar contexts**.
-        The predictions need not be identical: changing a word can matter. Our five examples alone
-        do not tell us the exact probabilities for the new context.
-
-        The box below controls the worked example. Use two to eight words from our vocabulary; the calculations
-        update for that context. The separate training and diagnostic experiments keep their own inputs.
-        """),
-    ])
-    return
-
-
-@app.cell(hide_code=True)
-def _(mo):
-    context_box = mo.ui.text(value="the cat sat on the", label="Context:", full_width=True)
-    context_box
-    return (context_box,)
-
-
-@app.cell(hide_code=True)
-def _(ID, context_box, mo):
-    _typed = context_box.value.lower().split()
-    _unknown = [_w for _w in _typed if _w not in ID]
-    _usable = 2 <= len(_typed) <= 8 and not _unknown
-    text = " ".join(_typed) if _usable else "the cat sat on the"
-    (
-        None
-        if _usable
-        else mo.callout(
-            mo.md(
-                (f"Not in the vocabulary: **{', '.join(_unknown)}**. " if _unknown else "Use two to eight words. ")
-                + f"Using *{text}* instead."
-            ),
-            kind="warn",
-        )
-    )
+@app.cell
+def _(QUESTION):
+    text = QUESTION
     return (text,)
 
 
-@app.cell(hide_code=True)
-def _(VOCAB, continuations, mo, text):
-    _c = continuations(text)
-    f_obs = None if _c is None else _c / _c.sum()  # what the five sentences say about the typed context, if anything
-    mo.md(
-        f"In the five sentences, *{text}* is followed by: "
-        + ", ".join(f"**{VOCAB[_v]}** {int(_c[_v])}/{int(_c.sum())}" for _v in range(len(VOCAB)) if _c[_v] > 0)
-        + "."
-        if _c is not None
-        else f"*{text}* never occurs at the start of any of the five sentences, so the data says nothing about what "
-        "follows it. A model will still have to give an answer."
-    )
+@app.cell
+def _(continuations, text):
+    _counts = continuations(text)
+    f_obs = None if _counts is None else _counts / _counts.sum()
     return (f_obs,)
 
 
@@ -583,8 +528,13 @@ def _(mo):
     mo.md(r"""
     ## 2 · Turning words into numbers
 
-    We want to calculate a prediction, but our input is a sentence made of words. The calculations need
-    numbers. How could we turn the words into numbers?
+    We want to predict after new contexts too, such as ***a*** *cat sat on the*. Similar contexts should help
+    us make similar predictions.
+
+    We'd like our model to use what words have in common. For example, *cat* and *dog* can both fill
+    the same place in a sentence. If we represent words with numbers, we can compare them through
+    calculations and use those comparisons to make predictions. The question is: what numbers would
+    capture useful similarities between words?
 
     Let's try a simple idea: assign a different number to each word. Here is one possible assignment,
     starting at zero. We'll call these numbers **word IDs**.
@@ -671,7 +621,21 @@ def _(np):
 
 
 @app.cell(hide_code=True)
-def _(E, ID, INK, MUTED, ORANGE, VOCAB, arrow, grid, mo, new_fig, np, plane, show):
+def _(
+    E,
+    ID,
+    INK,
+    MUTED,
+    ORANGE,
+    VOCAB,
+    arrow,
+    grid,
+    mo,
+    new_fig,
+    np,
+    plane,
+    show,
+):
     _fig, _ax = new_fig(1, width=5.0, height=4.6)
     plane(_ax)
     for _name, _xy in {"function words": (-1.6, 1.1), "animals": (0.95, 1.3), "places": (1.0, -1.15),
@@ -1184,20 +1148,20 @@ def _(mo):
 
     ### Suppose we already have the scores
 
-    Assume a function $s$ takes the sequence representation $X$ and a candidate word $v$, and
+    Assume a function $s$ takes a candidate word $v$ and the sequence representation $X$, and
     returns a finite real number. For a context of $n$ words, its input and output types are
 
-    $$s:\mathbb R^{n\times d}\times\mathcal V\longrightarrow\mathbb R.$$
+    $$s:\mathcal V\times\mathbb R^{n\times d}\longrightarrow\mathbb R.$$
 
-    That is, a matrix and a candidate word go in; one real-valued score comes out:
+    That is, a candidate word and a matrix go in; one real-valued score comes out:
 
-    $$(X,v)\longmapsto s(X,v)\in\mathbb R.$$
+    $$(v,X)\longmapsto s(v,X)\in\mathbb R.$$
 
     This description leaves an enormous range of possible functions. One could ignore the
     context and store a fixed score for each word; another could calculate its score from every
     row of $X$. Even the constant function
 
-    $$s(X,v)=1\quad\text{for every }X\text{ and }v$$
+    $$s(v,X)=1\quad\text{for every }v\text{ and }X$$
 
     qualifies. It always returns a real number, although it makes no distinction between words
     or contexts. Specifying the inputs and output does not yet tell us which function will
@@ -1206,7 +1170,7 @@ def _(mo):
     Hold $X$ fixed and run this function for each of our eleven candidate words. We'll name the
     score for candidate $v$ with the shorthand
 
-    $$z_v:=s(X,v).$$
+    $$z_v:=s(v,X).$$
 
     Call these eleven scores **logits**. Higher means the scoring function favors that word more,
     but the numbers can be negative and need not sum to anything in particular. We haven't yet
@@ -1236,7 +1200,7 @@ def _(mo):
 
     This works for any finite real scores. We never needed to know how the function $s$ computed them.
 
-    **Try the constant function.** If $s(X,v)=1$, our eleven logits are
+    **Try the constant function.** If $s(v,X)=1$, our eleven logits are
 
     $$z=(1,1,1,1,1,1,1,1,1,1,1).$$
 
@@ -1259,29 +1223,6 @@ def _(mo):
     giving every word the same probability doesn't match the training data. Softmax preserves
     the order of the scores; to favor *mat* over *hat*, the scoring function has to give *mat*
     a higher score in the first place.
-
-    ### What should produce the scores?
-
-    Try using the word right before the blank as our first clue. Its vector $x_n$ is the last
-    row of $X$, written as a column: the word embedding plus its position offset.
-
-    **One candidate, one score.** Choose a word $v$, such as *mat*. Lowercase $e_v$ is that
-    word's embedding. Compare it with $x_n$:
-
-    $$s(X,v)=e_v^\top x_n=z_v\in\mathbb R.$$
-
-    A $1\times2$ row times a $2\times1$ column produces **one number**, the score for that
-    particular $v$. The function uses $X$ by taking its last row; this first attempt ignores
-    the earlier rows.
-
-    **All candidates, eleven scores.** Uppercase $E$ contains every candidate's embedding as
-    a row. Multiplying the whole table computes all those separate scores at once:
-
-    $$z=E\,x_n\in\mathbb R^{11}.$$
-
-    Here $11\times2$ times $2\times1$ gives an $11\times1$ column, one score per word.
-    Apply softmax to $z$, then pick the highest-probability word. This tests a similarity-based
-    guess; similar words are not necessarily good continuations.
     """)
     return
 
@@ -1320,9 +1261,40 @@ def _(E, X, first_predictor, is_measure, np, text):
 
 @app.cell(hide_code=True)
 def _(
-    E, ID, VOCAB, denominator0, exp_z0, grid,
-    mo, np, num, p0, pct_plain, show, text, vocab_table, x_last, z0,
+    E,
+    ID,
+    VOCAB,
+    denominator0,
+    exp_z0,
+    grid,
+    mo,
+    np,
+    num,
+    p0,
+    pct_plain,
+    show,
+    text,
+    vocab_table,
+    x_last,
+    z0,
 ):
+    _examples = []
+    for _candidate in ("a", "cat", "mat"):
+        _i = ID[_candidate]
+        _examples.append(mo.md(rf"""
+        For **{_candidate}**, take its embedding and multiply matching coordinates with $x_n$:
+
+        $$\begin{{aligned}}
+        z_{{\text{{{_candidate}}}}}
+        &=e_{{\text{{{_candidate}}}}}^\top x_n\\
+        &=({E[_i, 0]:.2f})({x_last[0]:.2f})+({E[_i, 1]:.2f})({x_last[1]:.2f})\\
+        &={z0[_i]:.4f}.
+        \end{{aligned}}$$
+        """))
+    _last_word = text.split()[-1]
+    _occurrence = sum(_word == _last_word for _word in text.split())
+    _occurrence_note = ('In this sentence, that is the **second “the”**.'
+                        if _last_word == "the" and _occurrence == 2 else '')
     _w = "mat"
     _k = ID[_w]
     _winner = int(np.argmax(z0))
@@ -1334,9 +1306,46 @@ def _(
     _mark[_k, 1:3] = True
     mo.vstack([
         mo.md(rf"""
-        For **{text} ____**, the last word is **{text.split()[-1]}**, so
-        $x_n=({x_last[0]:.2f},\ {x_last[1]:.2f})^\top$.
-        Below, each row of $E$ produces one score. The *mat* row is highlighted.
+        ### What should produce the scores?
+
+        Let's try a simple guess: use the word immediately before the blank as a clue to what comes next.
+        Our context is **{text} ____**. The last word is **{text.split()[-1]}**, at position {len(text.split())}.
+        {_occurrence_note}
+
+        Its vector is the last row of $X$, written as a column:
+
+        $$x_n=x_{{{len(text.split())}}}=e_{{\text{{{_last_word}}}}}+p_{{{len(text.split())}}}
+        =\begin{{bmatrix}}{x_last[0]:.2f}\\{x_last[1]:.2f}\end{{bmatrix}}.$$
+
+        How could we compare that clue with a candidate next word? We already have one comparison:
+        the **dot product**. Let's try giving each candidate $v$ the score
+
+        $$s(v,X)=e_v^\top x_n=z_v\in\mathbb R.$$
+
+        A higher score means a stronger match under this comparison: direction and vector length both
+        contribute. A lower score means a weaker match; vectors pointing in opposite directions have
+        a negative dot product. Our guess is that a stronger match deserves a higher next-word probability.
+        We'll test whether that guess works.
+
+        **One candidate at a time.** Keep $x_n$ fixed and change only the candidate's embedding:
+        """),
+        *_examples,
+        mo.md(r"""
+        Each multiplication gives **one real number for one word**. Repeating it for all eleven words
+        gives eleven scores. We can write those calculations together by stacking the candidate embeddings:
+
+        $$\underbrace{\begin{bmatrix}
+        e_{\text{the}}^\top\\e_{\text{a}}^\top\\e_{\text{on}}^\top\\
+        e_{\text{cat}}^\top\\\vdots\\e_{\text{chased}}^\top
+        \end{bmatrix}}_{E}\,x_n
+        =\underbrace{\begin{bmatrix}
+        e_{\text{the}}^\top x_n\\e_{\text{a}}^\top x_n\\e_{\text{on}}^\top x_n\\
+        e_{\text{cat}}^\top x_n\\\vdots\\e_{\text{chased}}^\top x_n
+        \end{bmatrix}}_{z}.$$
+
+        Uppercase $E$ is our whole embedding table. Lowercase $e_v$ is one word's vector.
+        So $z=E x_n$ is an $11\times2$ matrix times a $2\times1$ column, giving an
+        $11\times1$ column of real scores. Here is the numerical calculation; the *mat* row is highlighted:
         """),
         show(
             grid(E, rows=VOCAB, name="<i>E</i>", mark=_matrix_mark),
@@ -1346,16 +1355,17 @@ def _(
             grid(z0[:, None], rows=VOCAB, name="<i>z</i>", fmt="{:.4f}", mark=_score_mark),
         ),
         mo.md(rf"""
-        The highlighted row computes just **one** of those scores:
+        All eleven scores are finite real numbers, so we can use the softmax transformation we just built:
 
-        $$\begin{{aligned}}
-        s(X,\mathrm{{mat}})
-        &= ({E[_k, 0]:.2f})({x_last[0]:.2f})+({E[_k, 1]:.2f})({x_last[1]:.2f})\\
-        &= {z0[_k]:.4f}.
-        \end{{aligned}}$$
+        $$p=\operatorname{{softmax}}(z)=\operatorname{{softmax}}(E x_n).$$
 
-        The highest score belongs to **{VOCAB[_winner]}** ({z0[_winner]:.4f}), also first after
-        softmax ({p0[_winner]:.1%}). The guess is **{text} {VOCAB[_winner]}**.
+        It turns these scores into positive probabilities that sum to one. Higher scores get higher
+        probabilities. The highest score belongs to **{VOCAB[_winner]}** ({z0[_winner]:.4f}), which gets
+        **{p0[_winner]:.1%}**. The guess is **{text} {VOCAB[_winner]}**.
+
+        In this first attempt, $x_n$ contains only the last word and its position. The earlier words
+        do not affect the scores. Also, matching the last word is not the same as being a good continuation:
+        the repeated **the** above shows why we need to test this rule against the data.
         """),
         mo.accordion({"Turn all eleven scores into probabilities": mo.vstack([
             show(vocab_table(
@@ -1448,8 +1458,8 @@ def _(mo):
     ## 4 · How wrong is it, and what can be changed?
 
     The predictor produces a measure. The data produced a measure too, for the one context it knows about. This
-    section always uses that context, *the cat sat on the*, whatever is typed in the box, because it is the only
-    one for which the data has more than one thing to say.
+    section uses that context, *the cat sat on the*, because it is the only one for which the data has
+    more than one thing to say.
     """)
     return
 
@@ -1475,42 +1485,232 @@ def _(ID, loss_floor, loss_start, mo, num, p_question):
         rf"""
     ### A number for "how wrong"
 
-    Go through the five sentences. In each, the model gave some probability to the word that actually came next.
-    A good model gives those words high probability. Multiply the five probabilities to get the probability the
-    model assigns to the data as a whole, $p(\text{{mat}})^3\,p(\text{{hat}})\,p(\text{{grass}})$. Take the
-    logarithm to turn the product into a sum, flip the sign so that smaller is better, and average over the five:
+    We want to choose a model that gives high probability to the data we observed. To make that precise,
+    suppose we have $n$ observed endings $y_1,\ldots,y_n$, all after the same context. Our model gives
+    each possible ending $v$ a probability $p(v)$.
 
-    $$L = -\tfrac15\big[\,3\log p(\text{{mat}}) + \log p(\text{{hat}}) + \log p(\text{{grass}})\,\big]
-        = -\sum_{{v \in \mathcal V}} f(v)\,\log p(v)$$
+    **Define the likelihood.** Treat the observations as independent draws from the same distribution $p$.
+    Under that assumption, their joint probability is a product:
 
-    This is the **negative log-likelihood**, the **loss**. A word the model was sure of costs nearly 0. A word it
-    gave probability near 0 costs without limit. With the numbers of section 3:
+    $$\boxed{{\mathcal L(p)=\prod_{{i=1}}^{{n}}p(y_i)}}.$$
 
-    $$L = -\big(0.6\,\ln {num(_m, "{:.4f}")} + 0.2\,\ln {num(_h, "{:.4f}")} + 0.2\,\ln {num(_g, "{:.4f}")}\big)
-        = {num(loss_start, "{:.3f}")}$$
+    Hold the observations fixed and vary $p$. This function of $p$ is the **likelihood**: it tells us how
+    much probability the model assigns to the particular data we collected. We want to **maximize** it.
 
-    Among all measures $p$, the loss is smallest exactly when $p = f$ (Gibbs' inequality), and its value there is
-    $-\sum f \log f = {num(loss_floor, "{:.3f}")}$. So lowering the loss and approaching the observed distribution
-    are the same thing, and {num(loss_floor, "{:.3f}")} is the floor.
+    Here $n=5$, and our observed endings are
+
+    $$\text{{mat}},\quad\text{{mat}},\quad\text{{mat}},\quad\text{{hat}},\quad\text{{grass}}.$$
+
+    So the likelihood is
+
+    $$\mathcal L(p)=p(\text{{mat}})^3p(\text{{hat}})p(\text{{grass}}).$$
+
+    **Group repeated words.** Recall that $f(v)$ is the observed frequency from section 1:
+
+    $$f(v)=\frac{{\operatorname{{count}}(v)}}{{n}},\qquad nf(v)=\operatorname{{count}}(v).$$
+
+    Each occurrence contributes one factor. Since *mat* occurs three times,
+
+    $$\underbrace{{p(\text{{mat}})\,p(\text{{mat}})\,p(\text{{mat}})}}_{{\text{{three occurrences}}}}
+    =p(\text{{mat}})^3.$$
+
+    The exponent is its count, which we can also write using its frequency:
+
+    $$nf(\text{{mat}})=5\cdot\frac35=3=\operatorname{{count}}(\text{{mat}}).$$
+
+    The same rewriting works for every word: replace its repeated factors by $p(v)^{{nf(v)}}$.
+    Multiplying over the words we observed gives the same likelihood:
+
+    $$\mathcal L(p)=\prod_{{\substack{{v\in\mathcal V\\f(v)>0}}}}p(v)^{{nf(v)}}.$$
+
+    **Define a loss to minimize.** We want a number that gets smaller when the likelihood gets larger.
+    We choose
+
+    $$\boxed{{L(p)=-\frac1n\ln\mathcal L(p)}}.$$
+
+    Each part has a purpose:
+
+    - **The logarithm** turns products into sums. It is strictly increasing (monotonic): if
+      $\mathcal L(p_1)>\mathcal L(p_2)>0$, then $\ln\mathcal L(p_1)>\ln\mathcal L(p_2)$.
+      It preserves which model has the larger likelihood.
+    - **The minus sign** reverses that ordering: higher likelihood gives lower loss.
+    - **Dividing by $n$** gives an average per observation. Since $n$ is fixed and positive,
+      this scaling does not change which model minimizes the loss.
+
+    Now substitute the likelihood and simplify:
+
+    $$\begin{{aligned}}
+    L(p)&=-\frac1n\ln\mathcal L(p)\\
+    &=-\frac1n\ln\prod_{{v:f(v)>0}}p(v)^{{nf(v)}}\\
+    &=-\frac1n\sum_{{v:f(v)>0}}nf(v)\ln p(v)\\
+    &=-\sum_{{v\in\mathcal V}}f(v)\ln p(v).
+    \end{{aligned}}$$
+
+    This is the **average negative log-likelihood**, also called the **cross-entropy** from $f$ to $p$.
+    Minimizing it is equivalent to maximizing the original likelihood.
+
+    With our five observations, the same calculation is
+
+    $$\begin{{aligned}}
+    L(p)&=-\frac15\ln\big[p(\text{{mat}})^3p(\text{{hat}})p(\text{{grass}})\big]\\
+    &=-\big[\tfrac35\ln p(\text{{mat}})\\
+    &\qquad+\tfrac15\ln p(\text{{hat}})+\tfrac15\ln p(\text{{grass}})\big].
+    \end{{aligned}}$$
+
+    Each observed word contributes $-\ln p(v)$. Assigning an observed word probability $0.9$ costs
+    about $0.105$; assigning it $0.01$ costs about $4.605$. The loss penalizes being confident that an
+    outcome will not happen when it does. Probability assigned to unobserved words also leaves less
+    for the observed ones, because the probabilities must sum to one.
+
+    **Keep the two distributions separate.** We are comparing them for the same context,
+    *the cat sat on the*:
+
+    - $f(v)$ is **what we observed**: the fraction of our five examples ending in $v$. It is fixed by the data.
+    - $p(v)$ is **what the model predicts**: its softmax probability for $v$. It changes when we change the model's weights.
+
+    | Next word | Observed $f(v)$ | Model's current $p(v)$ |
+    |:--|--:|--:|
+    | mat | 0.60 | {_m:.4f} |
+    | hat | 0.20 | {_h:.4f} |
+    | grass | 0.20 | {_g:.4f} |
+    | All other words combined | 0.00 | {1-_m-_h-_g:.4f} |
+
+    The $f(v)$ values weight the loss, while the $p(v)$ values go inside the logarithms:
+
+    $$\begin{{aligned}}
+    L(p)&=-\big[0.6\ln {_m:.4f}\\
+    &\qquad+0.2\ln {_h:.4f}+0.2\ln {_g:.4f}\big]\\
+    &\approx {loss_start:.3f}.
+    \end{{aligned}}$$
+
+    **What would an ideal fit look like?** The model's probabilities $p$ would match the observed
+    frequencies $f$: $p=f$. Does that give zero loss? Substituting $f$ into the loss gives
+
+    $$\begin{{aligned}}
+    L(f)=H(f)&=-\sum_{{v\in\mathcal V}}f(v)\ln f(v)\\
+    &=-\big[0.6\ln0.6+0.2\ln0.2+0.2\ln0.2\big]\\
+    &\approx {loss_floor:.3f}.
+    \end{{aligned}}$$
+
+    This is the **entropy of the observed distribution**: the baseline loss that remains even with
+    an exact fit, because these observations contain three different endings.
+
+    **How far above that baseline is a model $p$?** Define its excess loss as
+
+    $$D_{{\mathrm{{KL}}}}(f\|p):=L(p)-H(f).$$
+
+    Expanding the difference gives the **Kullback–Leibler divergence**, or **KL divergence**:
+
+    $$\begin{{aligned}}
+    D_{{\mathrm{{KL}}}}(f\|p)
+    &=-\sum_{{v:f(v)>0}}f(v)\ln p(v)\\
+    &\quad+\sum_{{v:f(v)>0}}f(v)\ln f(v)\\
+    &=\sum_{{v:f(v)>0}}f(v)\ln\frac{{f(v)}}{{p(v)}}.
+    \end{{aligned}}$$
+
+    It is nonnegative and equals zero exactly when $p=f$. Thus $H(f)$ is the minimum loss over all
+    distributions $p$, and minimizing our loss means minimizing the excess above that baseline:
+
+    $$\boxed{{L(p)=H(f)+D_{{\mathrm{{KL}}}}(f\|p)}}.$$
+
+    For our current model, the excess is ${loss_start:.3f}-{loss_floor:.3f}={loss_start-loss_floor:.3f}$.
+    Here “ideal” means matching the observed data; it does not assert that $f$ is the true distribution.
+    We use $0\ln0=0$; assigning $p(v)=0$ to an observed word gives infinite loss.
 
     ### What can be changed
 
-    Not the data. Not softmax, and not the rule "read the last row": those are fixed formulas. The only numbers in
-    the predictor that we picked freely are the 22 entries of $E$. They are the model's **parameters**, also called
-    its **weights**, and written $\theta$ when there are too many to name. **Training** means adjusting $\theta$
-    to lower $L$. Nothing else is learned: when people say a model "learned" something, the whole of what changed
-    is a list of numbers like this one.
+    Let's pause and take inventory of what we have built:
+
+    | Component | Its role |
+    |:--|:--|
+    | Training data and frequencies $f$ | Tell us what was observed |
+    | Embedding table $E$ | Gives each word its two numbers |
+    | Position offsets | Add position information to the embeddings |
+    | Scoring rule $z=E x_n$ | Compares candidates with the last word-position vector |
+    | Softmax $p=\operatorname{{softmax}}(z)$ | Turns scores into probabilities |
+    | Loss $L(p)$ | Measures how well those probabilities fit the data |
+
+    Our goal is to **make the loss smaller**. We could try changing the scoring rule. But first,
+    let's ask a narrower question: if we keep that rule, the position offsets, softmax, and the loss
+    formula fixed, do we still have room to improve? The training data stays fixed too.
+
+    Yes: we can change the **22 entries of $E$**, which we chose by hand. The formulas stay the same,
+    but different embeddings give different $x_n$ and candidate vectors, hence different scores,
+    probabilities, and loss.
+
+    These adjustable numbers are the model's **parameters**, also called its **weights**. We use
+    $\theta$ as a collective name for them. **Training** means finding values of these parameters
+    that lower the loss. For this first model, that means adjusting $E$.
 
     ### Which way to change them
 
-    $L$ depends on $E$ through the logits. Its slope with respect to each logit has a simple form,
+    Changing $E$ changes the logits, which changes the loss. First, how does the loss change when
+    we nudge just one logit $z_v$, keeping the others fixed? Throughout this calculation, the data $f$ stays fixed.
 
-    $$\frac{{\partial L}}{{\partial z_v}} = p(v) - f(v)$$
+    **Write the loss in terms of logits.** Call the softmax denominator $Z$:
 
-    the model's probability minus the observed one. Words the model overrates get their logits pushed down, words
-    it underrates get pushed up, and the pushes stop only when $p = f$. The chain rule carries those slopes back to
-    $E$, which enters twice: every row scores a word, and the row for *the* is also the word being read. One step
-    of **gradient descent** moves every entry of $E$ a little way down its slope. Then repeat.
+    $$Z=\sum_{{u\in\mathcal V}}e^{{z_u}},\qquad p(u)=\frac{{e^{{z_u}}}}{{Z}}.$$
+
+    Taking the logarithm gives $\ln p(u)=z_u-\ln Z$. Substitute that into the loss:
+
+    $$\begin{{aligned}}
+    L&=-\sum_u f(u)\big(z_u-\ln Z\big)\\
+    &=-\sum_u f(u)z_u+\Big(\sum_u f(u)\Big)\ln Z\\
+    &=-\sum_u f(u)z_u+\ln Z,
+    \end{{aligned}}$$
+
+    because the observed frequencies sum to one. Here $u$ runs over all vocabulary words;
+    $v$ names the particular word whose logit we are changing.
+
+    **Differentiate the two terms.** Start with the first sum. The frequencies $f(u)$ come from the
+    data, so they stay constant while we change a logit. For example, its nonzero terms are
+
+    $$-\sum_u f(u)z_u
+    =-0.6z_{{\text{{mat}}}}-0.2z_{{\text{{hat}}}}-0.2z_{{\text{{grass}}}}.$$
+
+    If we vary only $z_{{\text{{mat}}}}$, the last two terms are constant. The first is a straight line
+    with slope $-0.6$: increasing $z_{{\text{{mat}}}}$ by $\Delta$ changes this sum by $-0.6\Delta$.
+    Thus its derivative is $-0.6=-f(\text{{mat}})$.
+
+    In general, split out the term for the word $v$:
+
+    $$-\sum_u f(u)z_u=-f(v)z_v-\sum_{{u\ne v}}f(u)z_u.$$
+
+    With respect to $z_v$, we have $\partial z_v/\partial z_v=1$, while every other $z_u$ is held fixed.
+    Using the constant-multiple rule and the fact that a constant has derivative zero,
+
+    $$\begin{{aligned}}
+    \frac{{\partial}}{{\partial z_v}}\Big[-\sum_u f(u)z_u\Big]
+    &=-f(v)\cdot1-0\\
+    &=-f(v).
+    \end{{aligned}}$$
+
+    We are differentiating the logit, not the frequency; $f(v)$ remains as its fixed coefficient.
+
+    In the second term, use the chain rule. Only $e^{{z_v}}$ in $Z$ changes with $z_v$:
+
+    $$\begin{{aligned}}
+    \frac{{\partial\ln Z}}{{\partial z_v}}
+    &=\frac1Z\frac{{\partial Z}}{{\partial z_v}}\\
+    &=\frac{{e^{{z_v}}}}Z=p(v).
+    \end{{aligned}}$$
+
+    Adding the derivatives gives
+
+    $$\boxed{{\frac{{\partial L}}{{\partial z_v}}=p(v)-f(v)}}.$$
+
+    **Read the sign.** If $p(v)>f(v)$, the slope is positive: a small decrease in $z_v$ lowers the loss.
+    If $p(v)<f(v)$, the slope is negative: a small increase lowers the loss. For *mat* right now,
+
+    $$\frac{{\partial L}}{{\partial z_{{\text{{mat}}}}}}
+    ={_m:.4f}-0.6\approx{_m-0.6:.4f}.$$
+
+    So, holding the other logits fixed, increasing the *mat* logit would lower the loss.
+
+    We adjust $E$, rather than setting the logits independently. The chain rule carries these slopes
+    back to $E$, which enters twice: each row scores a candidate, and the row for *the* also supplies
+    the last-word vector $x_n$. One step of **gradient descent** moves each entry of $E$ a small distance
+    opposite its derivative. Then we recompute and repeat.
     """
     )
     return
@@ -1934,26 +2134,94 @@ def _(mo):
     mo.md(r"""
     ## 6 · Letting rows read earlier rows
 
-    We want a transformation
+    Our first scoring rule was $s(v,X)=e_v^\top x_n$. It compared each candidate with only the last
+    word-position vector. In *the cat sat on the*, that vector represents the final **the**; it contains
+    no information about **cat**, **sat**, or **on**. Changing earlier words cannot change the prediction
+    if the last word and its position stay the same.
 
-    $$T : \mathbb R^{n \times d} \to \mathbb R^{n \times d}, \qquad X \mapsto H$$
+    Instead of using only $x_n$, let's combine the word vectors with a **weighted sum**:
 
-    whose output row $h_i$ can depend on rows of $X$ other than row $i$. The output keeps the shape of the input for
-    a practical reason: the last row of $H$ can then be scored against $E$ exactly as before.
+    $$h_n=\alpha_{n1}x_1+\alpha_{n2}x_2+\cdots+\alpha_{nn}x_n
+    =\sum_{j=1}^{n}\alpha_{nj}x_j.$$
 
-    **Which rows may row $i$ use?** We read only the last row, but nothing is special about it. Every beginning of
-    a sentence is itself a context (*the*, *the cat*, *the cat sat*, …), and row $i$ is the last row of the first
-    $i$ words. In training, each of those rows is asked to predict the word that follows it. If row $i$ could see
-    row $i + 1$ it would be reading the answer. So row $i$ may use rows $j \le i$ and no others.
+    Each weight says how much of one word's vector to include. The result is one vector $h_n$
+    containing contributions from the context. We then use it in place of $x_n$:
 
-    The simplest way to combine several vectors into one is a weighted sum:
+    $$s(v,X)=e_v^\top h_n.$$
 
-    $$h_i = \sum_{j \le i} \alpha_{ij}\, x_j$$
+    Now an earlier word can affect the score through its contribution to the sum.
 
-    Everything now turns on the weights $\alpha_{ij}$. We try three ways of choosing them, each fixing the failure
-    of the one before.
+    We can apply the same rule at every position, using only the words available up to that point.
+    For example, at position 3:
 
-    ### First try: equal weights
+    $$h_3=\alpha_{31}x_1+\alpha_{32}x_2+\alpha_{33}x_3.$$
+
+    This combines **the**, **cat**, and **sat** to help predict what comes next.
+    The first subscript in $\alpha_{32}$ says which row receives the information (row 3);
+    the second says which row it comes from (row 2, *cat*). Rows 4 and 5 contribute nothing:
+    row 3 must predict what follows *the cat sat* without seeing *on the*.
+    """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(X, mo, words):
+    import html as _html
+
+    _row_count = len(words)
+    _height = 100 + 52 * _row_count
+    _rows_svg = []
+    for _i, (_word, _row) in enumerate(zip(words, X), start=1):
+        _y = 94 + 52 * (_i - 1)
+        _color = "#4d9de0" if _i <= 3 else "#888888"
+        _rows_svg.append(
+            f'<text x="12" y="{_y}" fill="{_color}" font-size="17">{_html.escape(_word)}</text>'
+            f'<path d="M 76 {_y-5} H 111" stroke="{_color}" marker-end="url(#row-arrow)"/>'
+            f'<rect x="123" y="{_y-23}" width="143" height="35" rx="4" fill="{_color}" fill-opacity=".12"/>'
+            f'<text x="132" y="{_y}" fill="currentColor" font-size="15" font-family="monospace">{_row[0]:.2f}  {_row[1]:.2f}</text>'
+            f'<text x="278" y="{_y}" fill="{_color}" font-size="13">x<tspan baseline-shift="sub" font-size="10">{_i}</tspan>ᵀ</text>'
+        )
+        if _i <= 3:
+            _target_y = 143 + 16 * (_i - 1)
+            _rows_svg.append(
+                f'<path d="M 314 {_y-5} C 342 {_y-5}, 350 {_target_y}, 375 {_target_y}" '
+                'fill="none" stroke="#4d9de0" stroke-width="1.6" marker-end="url(#row-arrow)"/>'
+            )
+    _svg = (
+        f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 {_height}" '
+        'role="img" aria-label="Words map to rows of X. The first three rows combine into h3; later rows are excluded." '
+        'style="width:100%;max-width:650px;display:block;margin:1rem auto">'
+        '<defs><marker id="row-arrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">'
+        '<path d="M0,0 L6,3 L0,6" fill="#4d9de0"/></marker></defs>'
+        '<text x="12" y="28" fill="currentColor" font-size="16">Sentence</text>'
+        '<text x="134" y="28" fill="currentColor" font-size="16">Matrix X</text>'
+        '<text x="119" y="51" fill="currentColor" font-size="11">embedding + position</text>'
+        f'<path d="M 122 66 H 116 V {_height-32} H 122 M 269 66 H 275 V {_height-32} H 269" '
+        'fill="none" stroke="currentColor" stroke-width="1.5"/>'
+        + ''.join(_rows_svg)
+        + '<rect x="382" y="132" width="78" height="56" rx="8" fill="#4d9de0" fill-opacity=".16" '
+        'stroke="#4d9de0"/>'
+        '<text x="407" y="168" fill="currentColor" font-size="23">h₃</text>'
+        '<text x="337" y="218" fill="currentColor" font-size="12">weighted sum of</text>'
+        '<text x="337" y="235" fill="currentColor" font-size="12">rows 1, 2, and 3</text>'
+        '</svg>'
+    )
+    mo.vstack([
+        mo.Html(_svg),
+        mo.md("Each word maps to one row of $X$. To build $h_3$, follow only the arrows from the first three "
+              "rows, multiplying them by $\\alpha_{31}$, $\\alpha_{32}$, and $\\alpha_{33}$ before adding. "
+              "The later rows have no arrows into $h_3$."),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(mo):
+    mo.md(r"""
+    The result depends on the weights $\alpha_{ij}$. We try three ways of choosing them, each addressing a
+    limitation of the previous choice.
+
+    ### Start with equal weights
 
     Give every permitted row the same weight, $\alpha_{ij} = 1/i$. Row $i$ becomes the average of rows 1 to $i$.
     """)
@@ -1969,11 +2237,31 @@ def _(X, X_b, n, np):
 
 
 @app.cell(hide_code=True)
+def _(H_avg, X, mo):
+    mo.stop(len(X) < 3)
+    mo.md(rf"""
+    **At row 3, equal weights mean one third each:**
+
+    $$\begin{{aligned}}
+    h_3&=\tfrac13x_1+\tfrac13x_2+\tfrac13x_3\\
+    &=\tfrac13\left(
+    \begin{{bmatrix}}{X[0,0]:.2f}\\{X[0,1]:.2f}\end{{bmatrix}}
+    +\begin{{bmatrix}}{X[1,0]:.2f}\\{X[1,1]:.2f}\end{{bmatrix}}
+    +\begin{{bmatrix}}{X[2,0]:.2f}\\{X[2,1]:.2f}\end{{bmatrix}}
+    \right)\\
+    &=\begin{{bmatrix}}{H_avg[2,0]:.3f}\\{H_avg[2,1]:.3f}\end{{bmatrix}}.
+    \end{{aligned}}$$
+
+    We average each coordinate separately. This is the third row of $H$ in the matrix calculation below.
+    """)
+    return
+
+@app.cell(hide_code=True)
 def _(
     E,
     H_avg,
-    H_avg_b,
     U,
+    VOCAB,
     X,
     embed,
     grid,
@@ -1985,27 +2273,23 @@ def _(
     show,
     softmax,
     text,
-    text_b,
-    top_words,
     vec,
     words,
 ):
+    _h_last = H_avg[-1]
+    _new_scores = E @ _h_last
+    _new_probs = softmax(_new_scores)
+    _winner = int(np.argmax(_new_probs))
     _nums = [str(_i + 1) for _i in range(n)]
-    _nice = {"the cat sat on the": "on the cat sat the"}
+    _nice = {"the cat sat on the": "the sat cat on the"}
     _alt = _nice.get(text, " ".join(words[:-1][::-1] + words[-1:]))
     if _alt == text:
         _alt = " ".join(words[1:-1] + words[:1] + words[-1:])
     _same = bool(np.allclose((U @ embed(_alt))[-1], H_avg[-1]))
-    _differ = (
-        "The two contexts now get different last rows and different predictions. That is the first time anything "
-        "before the last word has had a say."
-        if not np.allclose(H_avg[-1], H_avg_b[-1])
-        else "These two contexts contain the same words in a different order, and they still get the same last "
-        "row. The next paragraph says why."
-    )
     _order = (
-        f"Reorder the words of the context, for example into *{_alt}*. The new last row is "
-        f"{vec(H_avg[-1], '{:.3f}')} again (`{_same}`)."
+        f"For *{text}*, the final average is {vec(H_avg[-1], '{:.3f}')}. "
+        f"Reordering those words into *{_alt}* gives exactly the same average. "
+        "So multiplying by $E$ gives the same scores, and softmax gives the same probabilities."
         if _alt != text
         else "This context has only one distinct ordering of its words, so there is nothing to compare."
     )
@@ -2019,21 +2303,69 @@ def _(
                 "=",
                 grid(H_avg, rows=row_labels, cols=["1", "2"], name="<i>H</i>", mark=last_row_mask(X.shape)),
             ),
+            mo.md(rf"""
+            Blue marks the weights and rows used to produce the last row of $H$.
+
+            **How do we turn $H$ into a prediction?** Take its last row, now a combination of all
+            the words in the context, and write it as a column:
+
+            $$h_n=\begin{{bmatrix}}{_h_last[0]:.3f}\\{_h_last[1]:.3f}\end{{bmatrix}}.$$
+
+            Use the same embedding table $E$ to compute a score for every possible next word:
+
+            $$z=E h_n.$$
+
+            Each row below corresponds to one word in our vocabulary:
+            """),
+            show(
+                grid(E, rows=VOCAB, name="<i>E</i>"), "×",
+                grid(_h_last[:,None], name="<i>h<sub>n</sub></i>", fmt="{:.3f}"), "=",
+                grid(_new_scores[:,None], rows=VOCAB, name="new scores <i>z</i>", fmt="{:.4f}"),
+            ),
+            mo.md(rf"""
+            Finally, apply softmax to those scores:
+
+            $$p(v)=\frac{{e^{{z_v}}}}{{\sum_{{u\in\mathcal V}}e^{{z_u}}}}.$$
+
+            **The model's next-word prediction for “{text} ____”**
+
+            The table gives the calculated probability of each possible next word for this context.
+            """),
+            show(grid(
+                [[_word, f"{_score:.4f}", f"{_prob:.1%}"]
+                 for _word, _score, _prob in zip(VOCAB, _new_scores, _new_probs)],
+                cols=["possible next word", "score", "probability"], bracket=False, left=(0,),
+            )),
+            mo.md(f"The highest probability is **{VOCAB[_winner]}** ({_new_probs[_winner]:.1%}). "
+                  f"Choosing it gives **{text} {VOCAB[_winner]}**. "
+                  "We changed how the context vector is built; scoring and softmax work as before."),
             mo.md(
                 f"""
-    Blue marks what produces the last row: its weights, the rows they multiply, and the result. Read out with the
-    same $E$ as before:
+    **What fails: the final average cannot distinguish word order.** Each row of $X$ combines a word
+    with its position. But averaging all the rows separates those two contributions:
 
-    | context | last row after averaging | three most probable next words |
-    |---|---|---|
-    | *{text}* | {vec(H_avg[-1], "{:.3f}")} | {top_words(softmax(E @ H_avg[-1]))} |
-    | *{text_b}* | {vec(H_avg_b[-1], "{:.3f}")} | {top_words(softmax(E @ H_avg_b[-1]))} |
+    $$h_n=\\frac{{1}}{{n}}\\sum_{{j=1}}^{{n}}(e_{{w_j}}+p_j)
+    =\\frac{{1}}{{n}}\\left(\\sum_{{j=1}}^{{n}}e_{{w_j}}+\\sum_{{j=1}}^{{n}}p_j\\right).$$
 
-    {_differ}
+    The first sum keeps which words appear and how many times each appears. The second keeps the
+    position offsets. Neither sum keeps **which word was at which position**.
 
-    **What fails.** The average loses the order of the words completely, position offsets and all. The sum
-    $\\sum_j (e_{{w_j}} + p_j)$ splits into $\\sum_j e_{{w_j}} + \\sum_j p_j$, and neither part depends on which
-    word stood where. {_order} And every word has the same say, $1/n$, whether or not it bears on what comes next.
+    For example, swap *cat* and *sat* at positions 2 and 3. Before the swap, their contribution is
+
+    $$(e_{{\\text{{cat}}}}+p_2)+(e_{{\\text{{sat}}}}+p_3).$$
+
+    After the swap, it is
+
+    $$(e_{{\\text{{sat}}}}+p_2)+(e_{{\\text{{cat}}}}+p_3).$$
+
+    Both add up to $e_{{\\text{{cat}}}}+e_{{\\text{{sat}}}}+p_2+p_3$.
+    The individual rows change, but their sum does not. Adding position offsets helped us distinguish
+    the rows; averaging them equally loses the association between each word and its position.
+
+    {_order}
+
+    There is a second limitation: every word contributes the same fraction, $1/n$. The model cannot
+    give one word more influence because it is more useful for predicting what comes next.
     """
             ),
         ]
@@ -2044,25 +2376,142 @@ def _(
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ### Second try: unequal weights, fixed in advance
+    ### From fixed mixing weights to context-dependent attention
 
-    Let the weights depend on the two positions, say with recent rows counting more. Order now matters. But the
-    weights are the same for every text: position $i - 3$ gets its weight whether it holds *cat* or *on*. In *the
-    cat sat on the*, the word that says most about what comes next is three back. In *on the mat sat the*, it is
-    one or two back. A table of weights fixed in advance cannot follow that.
+    Equal averaging gives every word the same influence. What if we let training choose a different
+    coefficient for each pair of positions, then kept those coefficients fixed for every sentence?
+    For example, suppose it chose
 
-    ### Third try: weights computed from the rows themselves
+    $$\alpha_{52}=0.3.$$
 
-    Let $\alpha_{ij}$ be a function of the two rows involved, $x_i$ and $x_j$. Two requirements shape it. The
-    weights of one row should be non-negative and add up to 1, so that $h_i$ is a weighted *average*: it stays on
-    the scale of the rows however long the text is. And we would like to start from an unrestricted score, any real
-    number per pair of rows. Section 3 already has the tool for turning arbitrary scores into non-negative numbers
-    that add up to 1:
+    That says: whenever we build row 5's output, take $0.3$ times the vector at position 2. The vector
+    changes with the word, so the output can change. But the **amount of influence** given to that
+    position stays the same, whatever word is there.
 
-    $$\alpha_{ij} = \frac{e^{s_{ij}}}{\sum_{k \le i} e^{s_{ik}}}, \qquad s_{ij} = \text{a score for how much row } i \text{ should take from row } j$$
+    **The useful relationship can move.** Step outside our eleven-word vocabulary for a short grammar
+    example. Both sentence beginnings have five words and end with *cabinet*:
 
-    The simplest score for two vectors is again their inner product, $s_{ij} = x_i^{\top} x_j$.
+    | Position | 1 | 2 | 3 | 4 | 5 | Next word |
+    |---|---|---|---|---|---|---|
+    | A | the | **keys** | beside | the | cabinet | **are** |
+    | B | beside | the | keys | the | **cabinet** | **is** |
+
+    Read them as “The keys beside the cabinet **are**…” and “Beside the keys, the cabinet **is**…”.
+    To choose *are* or *is*, the relevant relationship is to the grammatical subject. In A, that is
+    *keys* at position 2. In B, it is *cabinet* at position 5; position 2 contains *the*.
+    A fixed $\alpha_{52}$ cannot give position 2 more influence in A and less in B.
+
+    This does not prescribe one correct set of attention weights. It illustrates the flexibility we
+    want: **choose contributions using the words and their context, not only their position numbers**.
+    Early layers may need to build up contextual information before a later layer can recognize a
+    relationship such as “grammatical subject.”
+
+    **What if $\alpha_{ij}$ varied with the words being compared?** Instead of assigning a constant
+    to the position pair $(i,j)$, calculate its weight from the input. For example, the contribution
+    from position 2 to position 5 can change when those positions contain different words.
+
+    We can make that change explicit in the notation:
+
+    $$\underbrace{\alpha_{ij}}_{\text{fixed mixing weight}}
+    \quad\longrightarrow\quad
+    \underbrace{\alpha_{ij}(X)}_{\text{weight computed for this input}}.$$
+
+    We already represent each word and its position by a vector $x_i=e_{w_i}+p_i$. So compare
+    $x_i$ with $x_j$ to get a score, then normalize the scores over all permitted contributors.
+    This lets the weight depend on the words being compared, their positions, and the alternatives
+    available in that context. The rule stays the same; its result changes with the input.
+
+    We'll call this **context-dependent attention** to emphasize the change. The analogy is deciding
+    how much attention to give each word while reading. Mathematically, $\alpha_{ij}$ says how much
+    row $j$ contributes to the weighted sum for row $i$; it does not measure mental effort or establish
+    the word's overall importance. “Context-dependent” is an explanatory label here: this dependence
+    is already part of the standard attention mechanism.
+
+    The dependence can include word identity and position, and in later layers the surrounding
+    information already incorporated into each row. We first need a rule for computing these weights;
+    then we can give that rule parameters to learn.
+
+    We already know a way to compare two vectors: their inner product. Start with
+
+    $$s_{ij}=x_i^\top x_j.$$
+
+    A higher score gives row $j$ more influence on row $i$. Turn the scores into weights using softmax
+    over the permitted positions:
+
+    $$\alpha_{ij}(X)=\frac{e^{s_{ij}}}{\sum_{k\le i}e^{s_{ik}}},\qquad
+    h_i=\sum_{j\le i}\alpha_{ij}(X)x_j.$$
+
+    These weights are positive and sum to one. Changing the words can now change how much each
+    row contributes. From here on we write $\alpha_{ij}$ for brevity, with the dependence on $X$
+    understood. Next we will give the comparison rule its own adjustable parameters, $W_Q$ and $W_K$.
     """)
+    return
+
+
+@app.cell(hide_code=True)
+def _(VOCAB, embed, grid, mo, np, show, softmax):
+    _weights = np.zeros((len(VOCAB), len(VOCAB)))
+    for _r, _word5 in enumerate(VOCAB):
+        for _c, _word2 in enumerate(VOCAB):
+            _input = embed(f"the {_word2} sat on {_word5}")
+            _weights[_r, _c] = softmax(_input @ _input[4])[1]
+    _row_words = ["the", "cat", "on"]
+    _col_words = ["cat", "dog", "bird"]
+    _rids = [VOCAB.index(_w) for _w in _row_words]
+    _cids = [VOCAB.index(_w) for _w in _col_words]
+    _mark = np.zeros((3, 3), dtype=bool)
+    _mark[0, 0] = True
+    _full_mark = np.zeros_like(_weights, dtype=bool)
+    _full_mark[VOCAB.index("the"), VOCAB.index("cat")] = True
+    _example = embed("the cat sat on the")
+    _scores = _example @ _example[4]
+    _weight = softmax(_scores)[1]
+    mo.vstack([
+        mo.md(r"""
+        **Picture the dependence as a word-by-word lookup table.** Fix positions 1, 3, and 4,
+        and vary only the words at positions 2 and 5:
+
+        $$\text{the}\quad\boxed{\text{word at 2}}\quad\text{sat}\quad\text{on}
+        \quad\boxed{\text{word at 5}}.$$
+
+        Read **down the rows for the word at position 5** (receiving information), then
+        **across the columns for the word at position 2** (contributing information).
+        The cell contains the computed attention weight $\alpha_{52}$ for that input.
+        Here is a small part of the table:
+        """),
+        show(grid(_weights[np.ix_(_rids, _cids)],
+                  rows=[f"5: {_w}" for _w in _row_words],
+                  cols=[f"2: {_w}" for _w in _col_words],
+                  fmt="{:.1%}", mark=_mark, name="Computed weight α₅₂", shape=False)),
+        mo.md(rf"""
+        **For “the cat sat on the”:** choose the **the** row and the **cat** column.
+        The highlighted cell is **{_weight:.1%}**. Thus position 5 takes {_weight:.1%} of
+        position 2's vector in its weighted sum. It is one of five contributions to $h_5$,
+        not a probability of predicting *cat* next.
+
+        This entry was computed by comparing row 5 with all five rows, then taking the weight
+        assigned to row 2:
+
+        $$\alpha_{{52}}=\frac{{e^{{x_5^\top x_2}}}}{{\sum_{{j=1}}^5 e^{{x_5^\top x_j}}}}
+        =\frac{{e^{{{_scores[1]:.3f}}}}}{{{np.exp(_scores).sum():.3f}}}
+        \approx {_weight:.4f}.$$
+        """),
+        mo.accordion({"Show every vocabulary-word pair": show(grid(
+            _weights, rows=[f"5: {_w}" for _w in VOCAB], cols=[f"2: {_w}" for _w in VOCAB],
+            fmt="{:.1%}", mark=_full_mark, name="Computed weight α₅₂", shape=False,
+        ))}),
+        mo.md(r"""
+        A fixed coefficient would put the same number, such as $0.3$, in every cell.
+        This table changes with the words. Some substitutions make odd sentences; we are probing
+        the calculation, not claiming that every combination is grammatical.
+
+        **This is a table of outputs, not a table of learned parameters.** We generated each cell
+        using the same dot-product-and-softmax rule. It applies to the template above: changing
+        the other words can change the denominator and hence these weights too. Each cell comes
+        from a different input, so the rows of this table do not need to sum to one. For any one
+        input, it is the five weights $\alpha_{51},\ldots,\alpha_{55}$ that sum to one.
+        """),
+    ])
     return
 
 
@@ -2098,17 +2547,12 @@ def _(A_raw, S_raw, grid, last_row_mask, mo, n, np, row_labels, show, words):
     Row $i$ of $S$ holds row $i$'s scores for every row, and row $i$ of $A$ the weights they turn into. Faded
     entries are the forbidden ones, $j > i$; they get weight 0. Each row of $A$ adds up to 1.
 
-    **What this score chooses.** The last row, *{words[-1]}*, puts its largest weight
-    ({A_raw[-1, _best]:.0%}) on row {_best + 1}, *{words[_best]}*, and {_selfish} of the {n} rows put their largest
-    weight on themselves. These are measurements, not a theorem about dot products. For example,
-    $(1,0)\\cdot(2,0)=2>1=(1,0)\\cdot(1,0)$. With equal norms, self-similarity is maximal by Cauchy–Schwarz;
-    these rows do not have equal norms. Dot products reflect both direction and magnitude.
+    The last row, *{words[-1]}*, puts its largest weight ({A_raw[-1, _best]:.0%}) on
+    row {_best + 1}, *{words[_best]}*.
 
-    The limitation is that raw dot products impose one fixed notion of compatibility. The unmasked scores are
-    symmetric, $s_{{ij}}=s_{{ji}}$, even when what one row needs from another is directional. The causal mask
-    and row normalization need not be symmetric. Learned projections let training change which combinations
-    of coordinates matter and separate the roles of asking and answering. Raw attention can already exchange
-    useful information; queries and keys expand the available scoring functions.
+    Raw dot products compare the original word-and-position vectors directly. But resembling the current
+    word is not the same as being useful for predicting what follows it. We want training to adjust
+    **what makes two rows a useful match**.
     """
             ),
         ]
@@ -2119,20 +2563,102 @@ def _(A_raw, S_raw, grid, last_row_mask, mo, n, np, row_labels, show, words):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    ### The repair: let the question differ from the asker
+    ### Q and K: learn how to compute the attention weights
 
-    Before comparing two rows, transform each side with its own matrix:
+    We already have context-dependent attention: even the direct dot product changes with its inputs.
+    Queries and keys give us a trainable rule for computing those weights.
 
-    $$q_i = W_Q^{\top}x_i \quad \text{(what row } i \text{ is looking for)} \qquad k_j = W_K^{\top}x_j \quad \text{(how row } j \text{ presents itself)} \qquad s_{ij} = q_i^{\top}k_j$$
+    So far, training could change the embeddings, but the comparison itself was fixed: multiply matching
+    coordinates and add. Give the comparison its own adjustable numbers. A matrix can mix and rescale
+    coordinates before we take their dot product.
 
-    $q_i$ is called row $i$'s **query** and $k_j$ row $j$'s **key**. As matrices, $Q = X W_Q$, $K = X W_K$ and
-    $S = Q K^{\top}$. With $W_Q = W_K = I$ this is the previous try, so nothing has been lost. Otherwise
-    $s_{ij} = x_i^{\top}W_Q W_K^{\top}x_j$ is a general bilinear score: it need not be symmetric, and a row need
-    not score highly against itself. The entries of $W_Q$ and $W_K$ are eight new parameters.
+    **Which row are we predicting from?** Suppose we have read *the cat sat* and want to predict
+    the next word:
 
-    On the full matrix, projections act from the right: row $i$ stores $x_i^{\top}$. Two sliders set $W_Q$ as "turn the row by an angle
-    $\theta$ and stretch it by $\beta$". $W_K$ stays the identity. These weights are **hand-set**; at the default,
-    a query is its row turned a quarter turn and doubled.
+    $$\underbrace{\text{the}\quad\text{cat}\quad\text{sat}}_{\text{known input: positions 1, 2, 3}}
+    \quad\underbrace{\text{\_\_\_}}_{\text{predict position 4}}.$$
+
+    Here we build the output for **row $i=3$**, the row containing *sat*. We already know that word.
+    The output $h_3$ will help us predict the word **after sat**, which is *on* in our training sentences.
+    We are not trying to reconstruct *sat* or guess its embedding.
+
+    **Where can that row get information?** The index $j$ runs over the known input rows:
+    $j=1$ is *the*, $j=2$ is *cat*, and $j=3$ is *sat* itself. Each is a possible contributor to $h_3$.
+    Even if a longer sentence is present during training, positions 4 and beyond are masked out when
+    computing this output: position 4 would reveal the answer.
+
+    So $i$ names the **output position receiving information**, and $j$ names an **input position
+    supplying information**. Both refer to words already in the input. The candidate next word is
+    a separate vocabulary choice, scored later from $h_i$.
+
+    Give the two roles separate transformations:
+
+    $$q_i=W_Q^\top x_i,\qquad k_j=W_K^\top x_j,$$
+    $$s_{ij}=q_i^\top k_j.$$
+
+    These matrices do not belong to one particular word: **the same $W_Q$ and $W_K$ act on every
+    row**. In our example, each takes two coordinates and produces two new coordinates. Think of this
+    as learning a space for comparisons, rather than adding a new dimension to the original row.
+
+    We call $q_i$ a **query** and $k_j$ a **key**. Keep the query from *sat*, $q_3$, fixed and
+    compare it with the three permitted keys:
+
+    $$\begin{aligned}
+    s_{31}&=q_3^\top k_1 &&\text{(sat compares with the)},\\
+    s_{32}&=q_3^\top k_2 &&\text{(sat compares with cat)},\\
+    s_{33}&=q_3^\top k_3 &&\text{(sat compares with itself)}.
+    \end{aligned}$$
+
+    For example, $s_{32}$ helps decide **how much the cat row contributes to the sat row's output**.
+    It is not a score for predicting *cat* next. Softmax turns these three scores into weights:
+
+    $$(\alpha_{31},\alpha_{32},\alpha_{33})
+    =\operatorname{softmax}(s_{31},s_{32},s_{33}),$$
+    $$h_3=\alpha_{31}x_1+\alpha_{32}x_2+\alpha_{33}x_3.$$
+
+    Then $E h_3$ gives scores for the possible **next words**, and another softmax turns those
+    scores into a prediction for position 4. The first softmax chooses how to combine input positions;
+    the second produces probabilities over our vocabulary. Later we will let each input row send
+    a transformed value instead of its original $x_j$.
+
+    A key is therefore **a row's vector for being compared with a query**. The query $q_3$ from *sat*
+    compares with the key $k_2$ from *cat* to determine one contribution to $h_3$. When we instead
+    build $h_5$ to predict after *the cat sat on the*, the query $q_5$ compares with that same key
+    $k_2$. Different queries can give the same key different scores.
+
+    **Why a separate key transformation?** We could compare $q_3$ with the original $x_2$; that is
+    the special case $W_K=I$. Learning $W_K$ lets training change which combinations of *cat*'s
+    coordinates participate in this comparison. The query $q_2$ from *cat* has a different job:
+    it compares with keys at positions 1 and 2 to build $h_2$, used to predict position 3.
+    The matrices let the same input row have different representations for these two roles.
+
+    **What new freedom does this give us?** Substituting the definitions shows the scoring rule:
+
+    $$s_{ij}=x_i^\top\underbrace{W_QW_K^\top}_{\text{learned comparison}}x_j.$$
+
+    With both matrices equal to the identity, we recover $x_i^\top x_j$. With other entries, a coordinate
+    of one row can be compared with a different coordinate of the other, and some combinations can count
+    more than others. The score need not be symmetric: how useful row $j$ is to row $i$ can differ from
+    how useful row $i$ is to row $j$.
+
+    We apply the same two matrices to every row. Stacking the queries and keys gives
+
+    $$Q=XW_Q,\qquad K=XW_K,\qquad S=QK^\top.$$
+
+    Entry $(i,j)$ of $S$ is exactly the single score $q_i^\top k_j$. Mask future positions and apply
+    softmax along each row to get $A$, just as before. Thus $Q$ and $K$ are intermediate results;
+    the adjustable parameters are the entries of $W_Q$ and $W_K$ (eight numbers in our two-dimensional toy).
+
+    **Why should learning these matrices help?** Their entries change the scores, which change the weights,
+    which change the combined vector and its next-word prediction. The loss therefore has a path back
+    to these entries through the same chain rule we used for $E$. Training can favor comparisons that
+    improve prediction. This gives the model a useful choice of scoring rules; it does not guarantee
+    that every choice, or every training run, will work well.
+
+    Below, two sliders let us inspect that choice directly. They set $W_Q$ to rotate by $\theta$ and
+    stretch by $\beta$, while $W_K$ stays the identity. At the default, the query rotates a quarter turn
+    and doubles in length. These are hand-set examples, not learned optimal weights. Training would
+    adjust individual matrix entries, without restricting them to these two slider settings.
     """)
     return
 
@@ -2163,9 +2689,52 @@ def _(X, beta1, causal_softmax, np, theta1):
 
 
 @app.cell(hide_code=True)
+def _(WK1, WQ1, causal_softmax, embed, mo):
+    _sentences = ["the cat sat on the", "the bird sat on the"]
+    _rows = []
+    for _sentence in _sentences:
+        _x = embed(_sentence)
+        _scores = (_x @ WQ1) @ (_x @ WK1).T
+        _attention = causal_softmax(_scores)
+        _rows.append(f"| {_sentence} | 0.300 | {_scores[4,1]:.3f} | {_attention[4,1]:.3f} |")
+    mo.vstack([
+        mo.md(r"""
+        **Same learned rule, different computed weights.** Return to our eleven-word vocabulary.
+        Here we change only the word at position 2. Both sentences use exactly the same $E$, position
+        offsets, $W_Q$, and $W_K$. With the current slider settings:
+        """),
+        mo.md("| Five-word context | Fixed coefficient α₅₂ | Score q₅ · k₂ | Computed α₅₂ |\n"
+              "|---|---:|---:|---:|\n" + "\n".join(_rows)),
+        mo.md(r"""
+        The fixed coefficient is an illustrative choice: it stays at $0.3$ in both sentences.
+        For attention, the query $q_5$ stays the same here because the final word and its position
+        stay the same. Changing *cat* to *bird* changes $x_2$ and its key $k_2$. This can change the
+        score and hence the weight:
+
+        $$\alpha_{52}=\frac{\exp(q_5^\top k_2)}{\sum_{j=1}^{5}\exp(q_5^\top k_j)}.$$
+
+        The denominator compares this match with all the permitted alternatives. Changing another
+        key can therefore change $\alpha_{52}$ too. Some parameter settings give equal weights;
+        for example, setting the query stretch to zero makes every score zero.
+
+        **What is fixed, and what is recomputed?** Training adjusts the entries of $W_Q$ and $W_K$.
+        During prediction those matrices are fixed, but queries, keys, scores, and attention weights
+        are calculated from each new input. No new sentence information is created: the matrices
+        control how the existing information is compared.
+
+        The computed weight is still **one number**, just like the fixed coefficient. Content
+        dependence comes from making it a function of the input, not from adding an “importance
+        dimension.” These hand-set numbers demonstrate that dependence; they do not show that
+        *cat* or *bird* deserves more attention in a trained model.
+        """),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
 def _(mo, n, words):
     score_query = mo.ui.dropdown({f"{i+1}: {w}": i for i, w in enumerate(words)},
-                                value=f"{n}: {words[-1]}", label="Query row")
+                                value=f"{min(3,n)}: {words[min(3,n)-1]}", label="Query row")
     score_key = mo.ui.dropdown({f"{i+1}: {w}": i for i, w in enumerate(words)},
                               value=f"1: {words[0]}", label="Key row")
     mo.hstack([score_query, score_key], justify="start", wrap=True)
@@ -2173,7 +2742,65 @@ def _(mo, n, words):
 
 
 @app.cell(hide_code=True)
-def _(A1, K1, Q1, S1, WK1, WQ1, X, grid, mo, n, np, num, row_labels, score_key, score_query, show):
+def _(A1, BLUE, Figure, K1, ORANGE, Q1, S1, mo, np, score_query, words):
+    _i = score_query.value
+    _q = Q1[_i]
+    _keys = K1[:_i+1]
+    _fig = Figure(figsize=(6, 5), layout="constrained")
+    _ax = _fig.subplots()
+    _lim = max(1.5, float(np.abs(np.vstack([_keys, _q])).max()) * 1.3)
+    _ax.axhline(0, color="#bbb", lw=0.7)
+    _ax.axvline(0, color="#bbb", lw=0.7)
+    for _j, _k in enumerate(_keys):
+        _ax.annotate("", xy=_k, xytext=(0, 0),
+                     arrowprops=dict(arrowstyle="->", color=BLUE, alpha=0.6))
+        _ax.annotate(f"key {_j+1}: {words[_j]}", xy=_k, xytext=(5, 7),
+                     textcoords="offset points", fontsize=9, color=BLUE)
+    _ax.annotate("", xy=_q, xytext=(0, 0),
+                 arrowprops=dict(arrowstyle="->", color=ORANGE, lw=2))
+    _ax.annotate(f"query {_i+1}: {words[_i]}", xy=_q, xytext=(5, -14),
+                 textcoords="offset points", fontsize=9, color=ORANGE)
+    _ax.set(xlim=(-_lim, _lim), ylim=(-_lim, _lim), aspect="equal",
+            xlabel="comparison coordinate 1", ylabel="comparison coordinate 2",
+            title="One query compared with every permitted key")
+    _rows = "\n".join(
+        f"| {_j+1}: {words[_j]} | {S1[_i,_j]:.3f} | {A1[_i,_j]:.1%} |"
+        for _j in range(_i+1)
+    )
+    mo.vstack([
+        mo.md("**Plot the comparison.** The orange arrow is the selected row's query. "
+              "The blue arrows are the keys it may compare with. All arrows start at the origin "
+              "and are drawn at their actual lengths. Change the query row or the sliders above."),
+        _fig,
+        mo.md("| Key being compared | Query · key | Attention weight |\n"
+              "|---|---:|---:|\n" + _rows),
+        mo.md("A larger dot product gets a larger weight. Both direction and length matter; "
+              "distance between arrow tips is not the score. These weights tell this row how much "
+              "to take from each value, which we introduce next. The sliders are hand-set, "
+              "so a high weight here need not mean the row is useful for prediction."),
+    ])
+    return
+
+
+@app.cell(hide_code=True)
+def _(
+    A1,
+    K1,
+    Q1,
+    S1,
+    WK1,
+    WQ1,
+    X,
+    grid,
+    mo,
+    n,
+    np,
+    num,
+    row_labels,
+    score_key,
+    score_query,
+    show,
+):
     _i, _j = score_query.value, score_key.value
     _allowed = _j <= _i
     _mark = np.zeros_like(S1, dtype=bool)
@@ -2230,14 +2857,43 @@ def _(mo):
 @app.cell(hide_code=True)
 def _(mo):
     mo.md(r"""
-    The weights $\alpha_{ij}$ are called **attention weights**, and the construction **attention**: row $i$
-    attends to row $j$ with weight $\alpha_{ij}$. The rule $j \le i$ is the **causal mask**.
+    The computed coefficients $\alpha_{ij}$ are the **attention weights**. The learned matrices
+    $W_Q$ and $W_K$ are **parameters of the rule that produces them**. Attention is the full operation:
+    compute scores, normalize them into weights, and combine the vectors using those weights.
+    The Q/K comparison is one part of that operation. The restriction $j\le i$ is the **causal mask**.
 
-    *Forced or chosen?* What section 5 forced is only that the last row must depend on earlier rows, in a way that
-    can tell contexts apart. Everything about *how* is a choice: a weighted average instead of some other
-    combination, softmax to normalize, an inner product of two linear maps as the score. Other designs meet the
-    same requirement (a running summary passed from row to row, or fixed windows of neighbours). Attention is the
-    one that transformers use, not the only one that could exist.
+    ### What happens to position information?
+
+    Each query and key still starts from a word **at a particular position**:
+
+    $$q_i=W_Q^\top(e_{w_i}+p_i),\qquad
+    k_j=W_K^\top(e_{w_j}+p_j).$$
+
+    Swapping two words changes which embedding is paired with each position offset. That can change
+    their queries and keys, and therefore their attention weights. The causal mask also keeps track of
+    which positions each row may use.
+
+    Recall why equal averaging failed: swapping *cat* and *sat* left the sum unchanged. With unequal
+    weights $a$ and $b$ on their two positions, compare the contributions before and after a swap:
+
+    $$\begin{aligned}
+    \text{before: }&a(e_{\text{cat}}+p_2)+b(e_{\text{sat}}+p_3),\\
+    \text{after: }&a(e_{\text{sat}}+p_2)+b(e_{\text{cat}}+p_3).
+    \end{aligned}$$
+
+    Subtracting gives
+
+    $$(a-b)(e_{\text{cat}}-e_{\text{sat}}).$$
+
+    Equal averaging had $a=b$, so this was always zero. With different weights and different embeddings,
+    it is nonzero. This calculation holds the weights fixed to isolate the effect; in attention,
+    swapping words can change the weights too.
+
+    We can still split a weighted sum into word and position contributions. The difference is that
+    the word contributions now have weights tied to their rows, so a swap no longer has to cancel.
+    Attention **can distinguish word orders**; it does not preserve every detail automatically.
+    Equal weights or transformations that discard useful coordinates can still lose information.
+    Position offsets make order available, and training must learn to use it.
 
     ## 7 · What should a row send?
 
@@ -2255,28 +2911,39 @@ def _(A1, E, X, softmax):
 
 
 @app.cell(hide_code=True)
-def _(A1, H_copy, mo, np, p_copy, top_words, vec, words):
+def _(A1, H_copy, mo, np, p_copy, top_words, vec):
     _best = int(np.argmax(A1[-1]))
     mo.md(
         rf"""
     The last row becomes {vec(H_copy[-1], "{:.3f}")}, and the three most probable next words are
     {top_words(p_copy)}.
 
-    **Why add a value map?** These predictions are measurements for the selected weights, not a theorem that
-    averaging must copy words. The readout scores $e_v^{{\top}}h_n$. Raw averaging ties the coordinates used
-    to describe a word to the message it sends. Alignment and magnitude can favor attended words, but other
-    predictions are possible too.
+    **Choosing a row and choosing what to take from it are different decisions.** Queries and keys
+    control which rows receive weight. So far, a selected row sends its entire original vector $x_j$.
+    Give training a separate way to change that contribution:
 
-    A value map gives training an independent way to transform what is sent. For example, information about
-    *sat* might help predict a place rather than another verb. That is an architectural motivation, not a fact
-    learned by our hand-set toy. Introduce one more matrix:
+    $$v_j=W_V^\top x_j,\qquad h_i=\sum_{{j\le i}}\alpha_{{ij}}v_j.$$
 
-    $$v_j = W_V^\top x_j, \qquad h_i = \sum_{{j \le i}} \alpha_{{ij}}\, v_j, \qquad \text{{as matrices: }} V = X W_V,\quad H = A V$$
+    We call $v_j$ the row's **value**. If we change $W_V$ while holding $X$, $W_Q$, and $W_K$ fixed,
+    the attention weights stay exactly the same, but the vector sent by each row changes. For example,
+    a row containing *sat* could supply a contribution that helps score possible places next. Copying
+    its original embedding does not give training this separate control.
 
-    $v_j$ is row $j$'s **value**. Each row now has three vectors derived from it, each with its own job: a query
-    (what it looks for), a key (how it is found) and a value (what it sends when read). $W_V$ adds four parameters.
-    Two more sliders set it as a turn $\varphi$ and a stretch $\gamma$; at the default, a value is its row turned a
-    quarter turn.
+    Stack the values to perform every weighted sum at once:
+
+    $$V=XW_V,\qquad H=AV.$$
+
+    Here $V$ is the matrix of value vectors; $\mathcal V$ is still our vocabulary. Each output row
+    is a weighted sum of value rows. We then read the last row with $E$ and softmax as before.
+
+    Setting $W_V=I$ recovers the raw-row average. Other choices can transform the information being
+    combined. As with queries and keys, the value map acts on the word-plus-position vector; it can
+    retain useful position distinctions, but it can also discard them. Its four entries are trained
+    through their effect on the prediction loss.
+
+    The three maps therefore control **what to look for** ($W_Q$), **what to match against** ($W_K$),
+    and **what to send** ($W_V$). Below, two sliders illustrate the value map with a rotation
+    $\varphi$ and stretch $\gamma$; the default rotates each value a quarter turn.
     """
     )
     return
@@ -2308,7 +2975,20 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(A1, AV1, V1, WV1, X, grid, mo, np, row_labels, score_query, show, value_coordinate):
+def _(
+    A1,
+    AV1,
+    V1,
+    WV1,
+    X,
+    grid,
+    mo,
+    np,
+    row_labels,
+    score_query,
+    show,
+    value_coordinate,
+):
     _i, _c = score_query.value, value_coordinate.value
     _terms = A1[_i, :_i+1] * V1[:_i+1, _c]
     mo.vstack([
@@ -2521,10 +3201,7 @@ def _(E, ID, encode, np, offsets, softmax):
 
     comparison_runs = {(seed, name): comparison_train(seed, allow)
                        for seed in (7, 17, 29) for name, allow in (("A", False), ("B", True))}
-    return (
-        SECOND_CONTEXTS, SECOND_TARGETS, comparison_init, comparison_loss_grad,
-        comparison_runs, comparison_train, second_ids,
-    )
+    return SECOND_CONTEXTS, SECOND_TARGETS, comparison_runs
 
 
 @app.cell(hide_code=True)
@@ -2534,7 +3211,20 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(BLUE, ORANGE, SECOND_CONTEXTS, SECOND_TARGETS, VOCAB, comparison_runs, comparison_seed, grid, mo, new_fig, np, show):
+def _(
+    BLUE,
+    ORANGE,
+    SECOND_CONTEXTS,
+    SECOND_TARGETS,
+    VOCAB,
+    comparison_runs,
+    comparison_seed,
+    grid,
+    mo,
+    new_fig,
+    np,
+    show,
+):
     _fig, _ax = new_fig(1, width=6.5, height=3.0)
     _summary = []
     _selected_seed = comparison_seed.value
@@ -2656,13 +3346,8 @@ def _(mo):
 
 
 @app.cell(hide_code=True)
-def _(beta1, context_box, gamma1, mo, phi1, theta1):
-    mo.vstack(
-        [
-            context_box,
-            mo.hstack([beta1, theta1, gamma1, phi1], justify="start", gap=1.5, wrap=True),
-        ]
-    )
+def _(beta1, gamma1, mo, phi1, theta1):
+    mo.hstack([beta1, theta1, gamma1, phi1], justify="start", gap=1.5, wrap=True)
     return
 
 
@@ -3345,8 +4030,8 @@ def _(mo):
     | 3 | A matrix is not a probability measure | Score the last row against $E$, then softmax | Non-negative and summing to 1 is forced; the rest is chosen |
     | 4 | The measure is far from the data | Descend the loss over the parameters | The data forces a target; the loss and the descent are chosen |
     | 5–6 | The last row ignores every earlier word | Each row takes a weighted average of earlier rows | Depending on earlier rows is forced; averaging is chosen |
-    | 6 | Equal or fixed weights ignore content | Weights from scores between rows | Chosen |
-    | 6 | Raw dot products fix a symmetric compatibility score | Queries and keys | Chosen |
+    | 6 | Fixed mixing weights cannot adapt to the words | Context-dependent attention weights computed from the input | Chosen |
+    | 6 | Direct dot products fix how rows are compared | Q/K parameters let training adjust the scoring rule | Chosen |
     | 7 | What is useful to send may differ from the embedding | Values | Chosen |
     | 8 | Replacement has no direct off switch | Add the update instead of replacing | Chosen |
     | 10 | One question per row | Several heads | Chosen |
@@ -3774,11 +4459,20 @@ def _(attend, embed, heads, np, probe_b, probe_u):
     control_noun = 1 - control_template  # animal present; opposed to the template label in these controls
     control_h = np.array([attend(embed(c), heads)[-1] for c in CONTROL_CONTEXTS])
     control_pred = (control_h @ probe_u + probe_b > 0).astype(int)
-    return CONTROL_CONTEXTS, control_h, control_noun, control_pred, control_template
+    return CONTROL_CONTEXTS, control_noun, control_pred, control_template
 
 
 @app.cell(hide_code=True)
-def _(CONTROL_CONTEXTS, control_noun, control_pred, control_template, grid, mo, np, show):
+def _(
+    CONTROL_CONTEXTS,
+    control_noun,
+    control_pred,
+    control_template,
+    grid,
+    mo,
+    np,
+    show,
+):
     _template_acc = float(np.mean(control_pred == control_template))
     _noun_acc = float(np.mean(control_pred == control_noun))
     mo.accordion({"Control experiment: noun category versus word-order template": mo.vstack([
@@ -3891,17 +4585,16 @@ def _(
 
 @app.cell(hide_code=True)
 def _(
-    E,
-    ID,
-    VOCAB,
-    softmax,
     BLUE,
     B_IN,
+    E,
+    ID,
     INK,
     MUTED,
     ORANGE,
     RULE,
     SURFACE,
+    VOCAB,
     W_IN,
     after_mlp,
     alphas,
@@ -3926,6 +4619,7 @@ def _(
     r_actual,
     r_naive,
     show,
+    softmax,
     vec,
 ):
     _a = push_alpha.value
@@ -4322,11 +5016,11 @@ def _(
     embed,
     gain,
     heads,
+    loop_step,
     np,
     probe_b,
     probe_u,
     run_loop,
-    loop_step,
     test_idx,
     train_idx,
     train_probe,
@@ -4519,8 +5213,26 @@ def _(X, gain, heads, jacobian, keeps_moving, loop_step, np, run_loop):
 
 @app.cell(hide_code=True)
 def _(
-    H_star, J_full, X, eig_full, fixed_valid, gain, grid, heads, jacobian,
-    loop_step, mo, n, np, residual, rho, row_labels, show, starts_same, starts_settled, stretch,
+    H_star,
+    J_full,
+    X,
+    eig_full,
+    fixed_valid,
+    gain,
+    grid,
+    heads,
+    jacobian,
+    loop_step,
+    mo,
+    n,
+    np,
+    residual,
+    rho,
+    row_labels,
+    show,
+    starts_same,
+    starts_settled,
+    stretch,
 ):
     def own_block(S, X, heads, i, g):
         """Derivative of row i's next state with respect to row i's current state."""
@@ -4785,7 +5497,6 @@ def _(damp_a, damp_where, gain, mo):
 
 @app.cell(hide_code=True)
 def _(
-    fixed_valid,
     BLUE,
     ORANGE,
     RULE,
@@ -4797,6 +5508,7 @@ def _(
     damped_probs,
     damped_states,
     end_label,
+    fixed_valid,
     gain,
     grid,
     keeps_moving,
@@ -4986,8 +5698,8 @@ def _(
     n,
     np,
     own_block,
-    train_probe,
     train_idx,
+    train_probe,
     unit,
 ):
     T_PUSH, PUSH_SIZE = 24, 0.03
@@ -5033,11 +5745,6 @@ def _(
 
 @app.cell(hide_code=True)
 def _(
-    fixed_valid,
-    rho,
-    residual,
-    diag_residuals,
-    test_idx,
     AQUA,
     BLUE,
     J_last,
@@ -5050,15 +5757,15 @@ def _(
     accuracy,
     arrow,
     d_place,
+    diag_residuals,
     diag_settled,
     diag_y,
     directions,
+    fixed_valid,
     gain,
     grid,
-    keeps_moving,
     loop_probe_b,
     loop_probe_u,
-    loop_states,
     measured,
     mo,
     new_fig,
@@ -5066,7 +5773,10 @@ def _(
     num,
     plane,
     predicted,
+    residual,
+    rho,
     show,
+    test_idx,
     text,
     vec,
 ):
