@@ -1,0 +1,11 @@
+# Predicting the winning token after a sustained push
+
+Fixed before screening on 2026-11-17. Use the pinned Recurrent-Llama L32, the original float64 harness, and the frozen digit-class directions for tokens 70 through 79. All comparisons use the same state initialization and last-position input push.
+
+Screen 192 unique prompts apiece in four families (addition, three-term addition, subtraction, multiply-add), with true answers 70 through 79. Randomize the order once. At 64 loops require last-position relative drift below 1e-4, unchanged winner since loop 32, a numeric leading token, and a whole-vocabulary runner-up in the ten supported targets. Select the first 24 eligible prompts per group in fixed order, without using any pushed outputs. Near means an unpushed top-two logit gap at most 0.5; far means at least 2. Stop if either group has fewer than 12. This is a selected difficulty sample. Report all denominators.
+
+On eligible prompts apply the runner-up's fixed population direction for 48 updates. Primary dose is 9% of the original training reference norm (largest previously tested), secondary doses 1% and 3%. Before measuring any interventions, save whole-vocabulary winner forecasts and original runner-up minus original winner margin changes for the 48-term and one-term Jacobian sums. Both use the same unforced logits and direction. The third forecast is no change. Use an unforced continuation as sham for observed shifts and report any change from the screened winner.
+
+Primary descriptive comparisons in the near group at 9% are absolute margin-change error and exact whole-vocabulary winner accuracy, paired by prompt. Also report requested-target flips, switches to other tokens, direction of differences against each baseline, and far-group outcomes. With few switches or identical forecasts the incremental behavioral question may remain unresolved. Retain every selected prompt. This is a pilot.
+
+Budget the screen as one A100-40GB call (600s maximum, zero configured retries, 1 container); conditional prediction and evaluation are each capped at 1200s. Use the existing Modal cache and standard regional pricing. Check stage completion before starting the next stage. Store each stage locally before continuing.

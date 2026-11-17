@@ -1,0 +1,98 @@
+{
+  "near_0.01": {
+    "n": 24,
+    "winner_correct": {
+      "full": 24,
+      "one": 24,
+      "unchanged": 24
+    },
+    "mean_absolute_error": {
+      "full": 0.0011509665464108532,
+      "one": 0.018978647144335458,
+      "unchanged": 0.05781824915089014
+    },
+    "target_wins": 0,
+    "third_token_wins": 0,
+    "sham_winner_changes": 0
+  },
+  "near_0.03": {
+    "n": 24,
+    "winner_correct": {
+      "full": 23,
+      "one": 22,
+      "unchanged": 19
+    },
+    "mean_absolute_error": {
+      "full": 0.010267040714434938,
+      "one": 0.05988597880094042,
+      "unchanged": 0.17529180044784853
+    },
+    "target_wins": 5,
+    "third_token_wins": 0,
+    "sham_winner_changes": 0
+  },
+  "near_0.09": {
+    "n": 24,
+    "winner_correct": {
+      "full": 21,
+      "one": 20,
+      "unchanged": 11
+    },
+    "mean_absolute_error": {
+      "full": 0.08636524045770087,
+      "one": 0.1968109172182012,
+      "unchanged": 0.5143057082121101
+    },
+    "target_wins": 12,
+    "third_token_wins": 1,
+    "sham_winner_changes": 0
+  },
+  "far_0.01": {
+    "n": 24,
+    "winner_correct": {
+      "full": 24,
+      "one": 24,
+      "unchanged": 24
+    },
+    "mean_absolute_error": {
+      "full": 0.0013866718637211772,
+      "one": 0.015653599518364578,
+      "unchanged": 0.067013925305073
+    },
+    "target_wins": 0,
+    "third_token_wins": 0,
+    "sham_winner_changes": 0
+  },
+  "far_0.03": {
+    "n": 24,
+    "winner_correct": {
+      "full": 24,
+      "one": 24,
+      "unchanged": 24
+    },
+    "mean_absolute_error": {
+      "full": 0.012931812811945604,
+      "one": 0.05059438436793523,
+      "unchanged": 0.20016480451224247
+    },
+    "target_wins": 0,
+    "third_token_wins": 0,
+    "sham_winner_changes": 0
+  },
+  "far_0.09": {
+    "n": 24,
+    "winner_correct": {
+      "full": 24,
+      "one": 24,
+      "unchanged": 24
+    },
+    "mean_absolute_error": {
+      "full": 0.12056083780414657,
+      "one": 0.20369028663550406,
+      "unchanged": 0.6039832627015677
+    },
+    "target_wins": 0,
+    "third_token_wins": 0,
+    "sham_winner_changes": 0
+  }
+}
