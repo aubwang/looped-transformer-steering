@@ -450,11 +450,11 @@ Where $\m{A}$ is a lower-triangular matrix of position-pair weights: row $i$ is 
 
 Iterative generation exposes the following problems:
 
-- **Rows we never trained don't exist.** In our training data, we have $4$ sentences that are all $6$ words long (`the cat sat on the mat/hat/grass`), and therefore training only gives us the weights for $\v{h}_1, \dots, \v{h}_5$ (and $\v{h}_5$ is the one that predicts the blank in `the cat sat on the ___`). However, if we wanted to take this a step further and predict `the cat sat on the mat ____` (or beyond), we need $\v{h}_6$, but we can't compute it because it needs weights that weren't ever trained ($\alpha_{61}, \dots, \alpha_{66}$).
+First, rows we never trained don't exist. In our training data, we have $4$ sentences that are all $6$ words long (`the cat sat on the mat/hat/grass`), and therefore training only gives us the weights for $\v{h}_1, \dots, \v{h}_5$ (and $\v{h}_5$ is the one that predicts the blank in `the cat sat on the ___`). However, if we wanted to take this a step further and predict `the cat sat on the mat ____` (or beyond), we need $\v{h}_6$, but we can't compute it because it needs weights that weren't ever trained ($\alpha_{61}, \dots, \alpha_{66}$).
 
-- **Trained rows don't share what they learned.** Each $\alpha_{ij}$ is only updated by examples where position $i$ reads position $j$. This means that if our training teaches $\alpha_{52}$ something like "after `the`, look back at the noun", that heuristic only gets used when position is exactly $i = 5$ and it's evaluating position $j=2$. Essentially we are forcing our weights to work in a very granular and compartmentalized manner, which is not good for language, where what matters is which words are nearby and how far back they are, not their *absolute* position. For example, if you read an article like `a` or `the`, you expect a noun like `cat` to follow the article. This doesn't change if you read the article at the start of a book or at the end of a book.
+Second, trained rows don't share what they learned. Each $\alpha_{ij}$ is only updated by examples where position $i$ reads position $j$. This means that if our training teaches $\alpha_{52}$ something like "after `the`, look back at the noun", that heuristic only gets used when position is exactly $i = 5$ and it's evaluating position $j=2$. Essentially we are forcing our weights to work in a very granular and compartmentalized manner, which is not good for language, where what matters is which words are nearby and how far back they are, not their *absolute* position. For example, if you read an article like `a` or `the`, you expect a noun like `cat` to follow the article. This doesn't change if you read the article at the start of a book or at the end of a book.
 
-- **Way too many weights.** A context of length $n$ needs $1 + 2 + \cdots + n = \frac{n(n+1)}{2}$ separate weights. Doubling the context roughly quadruples the weights. If you want a context length of $5{,}000$, you would need $12{,}502{,}500$ weights. 
+Third, there are way too many weights. A context of length $n$ needs $1 + 2 + \cdots + n = \frac{n(n+1)}{2}$ separate weights. Doubling the context roughly quadruples the weights. If you want a context length of $5{,}000$, you would need $12{,}502{,}500$ weights. 
 
 {{widget: weight-triangle}}
 
@@ -472,24 +472,27 @@ $$\underbrace{s_{ij} = g(\v{x}_i, \v{x}_j)}_{\text{1. score pairs } (\m{S})} \qu
 
 Let's walk through each of those three steps.
 
-**Step 1 · Define $g$ to score word pairs ($s_{ij} = g(\v{x}_i, \v{x}_j)$).** Instead of looking up a stored number for $(i, j)$, we pick a function $g: \mathbb R^d \times \mathbb R^d \to \mathbb R$ that reads the two rows $\v{x}_i$ and $\v{x}_j$ and outputs a raw score $s_{ij}$ for how much position $i$ cares about position $j$. Look at what having a shared rule $g$ immediately fixes:
+**Step 1 · Define $g$ to score word pairs ($s_{ij} = g(\v{x}_i, \v{x}_j)$).** Instead of looking up a stored number for $(i, j)$, we pick a function $g: \mathbb R^d \times \mathbb R^d \to \mathbb R$ that reads the two rows $\v{x}_i$ and $\v{x}_j$ and outputs a raw score $s_{ij}$ for how much position $i$ cares about position $j$. Let's go back through our problems and see what having a shared rule $g$ immediately fixes.
 
-- **Shuffling the sentence:** before, $\alpha_{5j}$ never looked at $\v{x}_j$ at all. Now $g(\v{x}_i, \v{x}_j)$ reads $\v{x}_j = \v{e}_{w_j} + \v{p}_j$, and since the position offset $\v{p}_j$ is small, $g(\v{x}_i, \v{x}_j) \approx g(\v{e}_{w_i}, \v{e}_{w_j})$ is mostly decided by which words are at $i$ and $j$. If `dog` moves from position $1$ to position $4$, $\v{e}_{\text{dog}}$ moves with it, so its score moves with it as well.
-- **Rows we never trained:** suppose we have a 67-word prompt and want $\v{h}_{67}$ to predict word $68$. We can just plug in $g(\v{x}_{67}, \v{x}_1), \dots, g(\v{x}_{67}, \v{x}_{67})$. Every input vector is already available to us: $\v{x}_{67} = \v{e}_{w_{67}} + \v{p}_{67}$ is just the last word's corresponding embedding in $\m{E}$ plus its position offset, so we have everything we need to compute $\v{h}_{67}$.
-- **Trained rows don't share:** previously, the weight for `the` at position $5$ looking at `cat` at position $2$ was its own number $\alpha_{52}$, so training it did nothing for $\alpha_{96}$, even if `the` and `cat` were at positions $9$ and $6$. If we make our scoring function a function of two vectors, then training must change the numbers that $g$ reads (and any weights inside $g$). Let's define $g(\v{x}_i, \v{x}_j) = \v{x}_i^\top \v{x}_j$ and expand it with $\v{x} = \v{e} + \v{p}$, so $g(\v{x}_5, \v{x}_2) = \v{e}_{\text{the}}^\top \v{e}_{\text{cat}} + \v{e}_{\text{the}}^\top \v{p}_2 + \v{p}_5^\top \v{e}_{\text{cat}} + \v{p}_5^\top \v{p}_2$. Since $\v{p}$ is small, the last three terms are  also small, so if training wants to increase $g$, it mostly does it by making the vectors $\v{e}_{\text{the}}$ and $\v{e}_{\text{cat}}$ in $\m{E}$ line up more. Now if `the` shows up at position $9$ and `cat` at position $6$, we know that expanding $g(\v{x}_9, \v{x}_6)$ will yield the same first term $\v{e}_{\text{the}}^\top \v{e}_{\text{cat}}$ with different (small) offset terms, so the score goes up by about the same amount even though we never explicitly trained `the` and `cat` on positions $9$ and  $6$.
-- **Way too many weights:** instead of storing $\frac{n(n+1)}{2}$ separate numbers in $\m{A}$, we only store the weights inside $g$, which don't grow with the context length $n$ at all.
+Take shuffling first. Before, $\alpha_{5j}$ never looked at $\v{x}_j$ at all. Now $g(\v{x}_i, \v{x}_j)$ reads $\v{x}_j = \v{e}_{w_j} + \v{p}_j$, and since the position offset $\v{p}_j$ is small, $g(\v{x}_i, \v{x}_j) \approx g(\v{e}_{w_i}, \v{e}_{w_j})$ is mostly decided by which words are at $i$ and $j$. If `dog` moves from position $1$ to position $4$, $\v{e}_{\text{dog}}$ moves with it, so its score moves with it as well.
+
+Now the rows we never trained. Suppose we have a 67-word prompt and want $\v{h}_{67}$ to predict word $68$. We can just plug in $g(\v{x}_{67}, \v{x}_1), \dots, g(\v{x}_{67}, \v{x}_{67})$. Every input vector is already available to us: $\v{x}_{67} = \v{e}_{w_{67}} + \v{p}_{67}$ is just the last word's corresponding embedding in $\m{E}$ plus its position offset, so we have everything we need to compute $\v{h}_{67}$.
+
+What about trained rows not sharing? Previously, the weight for `the` at position $5$ looking at `cat` at position $2$ was its own number $\alpha_{52}$, so training it did nothing for $\alpha_{96}$, even if `the` and `cat` were at positions $9$ and $6$. If we make our scoring function a function of two vectors, then training must change the numbers that $g$ reads (and any weights inside $g$). Let's define $g(\v{x}_i, \v{x}_j) = \v{x}_i^\top \v{x}_j$ and expand it with $\v{x} = \v{e} + \v{p}$, so $g(\v{x}_5, \v{x}_2) = \v{e}_{\text{the}}^\top \v{e}_{\text{cat}} + \v{e}_{\text{the}}^\top \v{p}_2 + \v{p}_5^\top \v{e}_{\text{cat}} + \v{p}_5^\top \v{p}_2$. Since $\v{p}$ is small, the last three terms are  also small, so if training wants to increase $g$, it mostly does it by making the vectors $\v{e}_{\text{the}}$ and $\v{e}_{\text{cat}}$ in $\m{E}$ line up more. Now if `the` shows up at position $9$ and `cat` at position $6$, we know that expanding $g(\v{x}_9, \v{x}_6)$ will yield the same first term $\v{e}_{\text{the}}^\top \v{e}_{\text{cat}}$ with different (small) offset terms, so the score goes up by about the same amount even though we never explicitly trained `the` and `cat` on positions $9$ and  $6$.
+
+And instead of storing $\frac{n(n+1)}{2}$ separate numbers in $\m{A}$, we only store the weights inside $g$, which don't grow with the context length $n$ at all.
 
 For our first concrete try at $g$, let's use $g(\v{x}_i, \v{x}_j) = \v{x}_i^\top \v{x}_j$, which collects all pairwise scores into $\m{S} = \m{X}\m{X}^\top$.
 
-**Step 2 · Mask and normalize $s_{ij}$ into $\alpha_{ij}(\m{X})$.** Remember that $\v{h}_i$ predicts word $i+1$, so it can only look at positions $1, \dots, i$. If $\v{h}_5$ could look at position $6$, it would just read the answer (`mat`), and when we're generating, word $6$ doesn't exist yet. So just like the zeros above the diagonal of $\m{A}$ in Section 5, we set $\alpha_{ij}(\m{X}) = 0$ for every $j > i$. This is the **causal mask**. For the positions row $i$ can see, we use softmax so the weights are positive and add up to $1$:
+**Step 2 · Mask and normalize $s_{ij}$ into $\alpha_{ij}(\m{X})$.** Remember that $\v{h}_i$ predicts word $i+1$, so it can only look at positions $1, \dots, i$. If $\v{h}_5$ could look at position $6$, it would just read the answer (`mat`), and when we're generating, word $6$ doesn't exist yet. So just like the zeros above the diagonal of $\m{A}$ earlier, we set $\alpha_{ij}(\m{X}) = 0$ for every $j > i$. This is the **causal mask**. For the positions row $i$ can see, we use softmax so the weights are positive and add up to $1$:
 
 $$\alpha_{ij}(\m{X}) = \frac{e^{s_{ij}}}{\sum_{k \le i} e^{s_{ik}}} \qquad (j \le i)$$
 
-Normalizing each row to $1$ gives us three properties:
+Normalizing each row to $1$ does three things for us. First, every row is on the same scale at every length: whether $i = 5$ or $i = 67$, $\alpha_{i1} + \cdots + \alpha_{ii} = 1$, so $\v{h}_{67}$ stays around the same size as $\v{h}_5$ instead of growing as a sum of $67$ unnormalized terms.
 
-- **Same scale at every length:** whether $i = 5$ or $i = 67$, $\alpha_{i1} + \cdots + \alpha_{ii} = 1$, so $\v{h}_{67}$ stays around the same size as $\v{h}_5$ instead of growing as a sum of $67$ unnormalized terms.
-- **Words compete for weight:** to get $\alpha_{ij}$, we divide $e^{s_{ij}}$ by the sum of $e^{s_{ik}}$ over every position $k$ that row $i$ can see. So $\alpha_{ij}$ depends on how $s_{ij}$ compares to the other scores in the row. If one word's score goes up, its weight goes up and every other word's weight goes down, since the row still has to add up to $1$.
-- **Weighted average (no negative weights):** since $e^{s_{ij}} > 0$, every $\alpha_{ij}(\m{X})$ sits between $0$ and $1$. Unlike Section 4's weights (where $\alpha_1 = -1.16$ could subtract a vector), $\v{h}_i$ blends $\v{x}_1, \dots, \v{x}_i$ and always lands somewhere in between (which comes back in Section 6).
+Second, words compete for weight. To get $\alpha_{ij}$, we divide $e^{s_{ij}}$ by the sum of $e^{s_{ik}}$ over every position $k$ that row $i$ can see. So $\alpha_{ij}$ depends on how $s_{ij}$ compares to the other scores in the row. If one word's score goes up, its weight goes up and every other word's weight goes down, since the row still has to add up to $1$.
+
+Third, there are no negative weights. Since $e^{s_{ij}} > 0$, every $\alpha_{ij}(\m{X})$ sits between $0$ and $1$. Unlike Section 4's weights (where $\alpha_1 = -1.16$ could subtract a vector), $\v{h}_i$ blends $\v{x}_1, \dots, \v{x}_i$ and always lands somewhere in between (which comes back in Section 6).
 
 **Step 3 · Aggregate into $\m{H} = \m{A}\m{X}$.** Finally, row $i$ uses its normalized weights $\alpha_{i1}(\m{X}), \dots, \alpha_{ii}(\m{X})$ to take a weighted average of the visible rows, giving its summary vector $\v{h}_i = \sum_{j=1}^i \alpha_{ij}(\m{X})\,\v{x}_j$. Stacking all $n$ rows gives $\m{H} = \m{A}\m{X}$:
 
@@ -497,16 +500,16 @@ Normalizing each row to $1$ gives us three properties:
 
 Notice how the three matrices in the widget match our three steps ($\m{S} \to \m{A} \to \m{H}$), and none of them are saved parameters: click **“dog on the grass chased”** ($n = 5$), **“a dog chased”** ($n = 3$), or **“the cat sat on the mat”** ($n = 6$), and $\m{S}$, $\m{A}$, and $\m{H}$ recompute and resize on the spot.
 
-- **Row $i$ of $\m{A}$** gathers context into $\v{h}_i$ to predict word $i+1$. To predict the next word after an $n$-word prompt, we read the bottom row $\v{h}_n$ via $\v{z} = \m{E}\v{h}_n$; during training, one $6$-word training sentence gives $5$ predictions in one pass (rows $1$ through $5$), all training the same rule $g$.
-- **Column $j$ of $\m{A}$** ($j \le i$) is the earlier word at position $j$ being looked back at, and cell $(i, j)$ is its share $\alpha_{ij}(\m{X})$.
-- **Generating past the training length:** because no row of $\m{A}$ is stored, there is no "last row" to run out of. Pick word $n+1$ from $\m{E}\v{h}_n$, append it so $\m{X}$ now has $n+1$ rows, and run the same three steps again to get $\v{h}_{n+1}$ and keep generating.
+Row $i$ of $\m{A}$ gathers context into $\v{h}_i$ to predict word $i+1$, and column $j$ ($j \le i$) is the earlier word at position $j$ being looked back at, so cell $(i, j)$ is its share $\alpha_{ij}(\m{X})$. To predict the next word after an $n$-word prompt, we read the bottom row $\v{h}_n$ via $\v{z} = \m{E}\v{h}_n$. During training, one $6$-word training sentence gives $5$ predictions in one pass (rows $1$ through $5$), all training the same rule $g$.
+
+Because no row of $\m{A}$ is stored, there is no "last row" to run out of when we generate past the training length. Pick word $n+1$ from $\m{E}\v{h}_n$, append it so $\m{X}$ now has $n+1$ rows, and run the same three steps again to get $\v{h}_{n+1}$ and keep generating.
 
 ::: details Optional: Scaling the scores before softmax (and why real transformers divide by $\sqrt{d}$)
 Suppose we multiply every score by a positive number $c$ before applying softmax, $\operatorname{softmax}(c\, s_{ij})$:
-- **$c = 0$:** every score becomes $0$, giving equal shares $\alpha_{ij} = 1/i$—recovering our equal-weights average from Section 3.
+- **$c = 0$:** every score becomes $0$, giving equal shares $\alpha_{ij} = 1/i$, which is our equal-weights average from Section 3.
 - **Huge $c$:** whichever position has the largest score takes nearly all of the weight, so $\v{h}_i$ copies that single row.
 
-So $c$ acts like a sharpness dial between averaging every visible word equally and copying the single top-scoring word. In real transformers with large dimension $d$, dot products grow roughly like $\sqrt{d}$, which would push that dial all the way toward copying one word—so they divide scores by $\sqrt{d}$ to keep the shares balanced.
+So $c$ acts like a sharpness dial between averaging every visible word equally and copying the single top-scoring word. In real transformers with large dimension $d$, dot products grow roughly like $\sqrt{d}$, which would push that dial all the way toward copying one word, so they divide scores by $\sqrt{d}$ to keep the shares balanced.
 :::
 
 ### Queries and keys ($\m{W}_Q$ and $\m{W}_K$)
@@ -518,9 +521,9 @@ Why? Remember our single-word score $z_v = \v{e}_v^\top \v{h}_i$: the left side 
 - **Row $i$** is doing the lookup: it needs a **query** describing *what kind of earlier word it is looking for* to predict word $i+1$.
 - **Row $j \le i$** is an earlier entry in $\m{X}$: it needs a **key** describing *what sits at position $j$*.
 
-Using raw dot products $s_{ij} = \v{x}_i^\top \v{x}_j$ forced every word to use the **exact same vector $\v{x}$** for both jobs—like standing on `the` and typing `"the"` into a search bar, which naturally just finds other `the`'s instead of `cat` or `sat`.
+Using raw dot products $s_{ij} = \v{x}_i^\top \v{x}_j$ forced every word to use the **exact same vector $\v{x}$** for both jobs. It's like standing on `the` and typing `"the"` into a search bar, which naturally just finds other `the`'s instead of `cat` or `sat`.
 
-To separate *what a word looks for* from *how other words match against it*, we multiply by two small learned $2 \times 2$ matrices—$\m{W}_Q$ to turn $\v{x}_i$ into a **query** $\v{q}_i$, and $\m{W}_K$ to turn $\v{x}_j$ into a **key** $\v{k}_j$:
+To separate *what a word looks for* from *how other words match against it*, we multiply by two small learned $2 \times 2$ matrices: $\m{W}_Q$ to turn $\v{x}_i$ into a **query** $\v{q}_i$, and $\m{W}_K$ to turn $\v{x}_j$ into a **key** $\v{k}_j$:
 
 $$\v{q}_i = \m{W}_Q^\top \v{x}_i, \qquad \v{k}_j = \m{W}_K^\top \v{x}_j, \qquad s_{ij} = \v{q}_i^\top \v{k}_j = \v{x}_i^\top \underbrace{\m{W}_Q \m{W}_K^\top}_{\text{learned comparison}} \v{x}_j$$
 
@@ -567,9 +570,9 @@ $$s_{ij} \approx \v{e}_{w_i}^\top \m{W}_Q \m{W}_K^\top \v{e}_{w_j}$$
 
 Evaluating that formula across all $11$ possible query words $u$ and all $11$ possible key words $v$ produces the $11 \times 11$ compatibility table $\m{E}\m{W}_Q\m{W}_K^\top\m{E}^\top$ (often called the **QK circuit**).
 
-How can $8$ numbers in $\m{W}_Q$ and $\m{W}_K$ govern all $11^2 = 121$ entries of that table? In fact, $\m{W}_Q\m{W}_K^\top$ is a $2 \times 2$ matrix, so it really has only **$4$ degrees of freedom**, forcing $\m{E}\m{W}_Q\m{W}_K^\top\m{E}^\top$ to have **rank at most $2$**. That means it *cannot* store $121$ unrelated numbers—and that's okay because our vocabulary isn't $121$ unrelated pairs. Words with similar grammatical roles already cluster together in $\m{E}$ (`cat`, `dog`, `bird` in the top-right; `sat`, `chased` at the bottom), so one $2 \times 2$ linear rule applies to whole clusters at once.
+How can $8$ numbers in $\m{W}_Q$ and $\m{W}_K$ govern all $11^2 = 121$ entries of that table? In fact, $\m{W}_Q\m{W}_K^\top$ is a $2 \times 2$ matrix, so it really has only **$4$ degrees of freedom**, forcing $\m{E}\m{W}_Q\m{W}_K^\top\m{E}^\top$ to have **rank at most $2$**. That means it *cannot* store $121$ unrelated numbers, and that's okay because our vocabulary isn't $121$ unrelated pairs. Words with similar grammatical roles already cluster together in $\m{E}$ (`cat`, `dog`, `bird` in the top-right; `sat`, `chased` at the bottom), so one $2 \times 2$ linear rule applies to whole clusters at once.
 
-Adding the three $\v{p}$ terms back in then shifts those baseline word–word scores slightly by slot, breaking ties between duplicate words (like `the` at slot $1$ vs. slot $5$). The real limit of $d = 2$ is that a single query arrow $\v{q}_i \in \mathbb R^2$ can only point in one direction at a time—it can't simultaneously pull heavily from *both* the verb (`sat`) and the animal (`cat`), which is what will force us to introduce **multi-head attention** later.
+Adding the three $\v{p}$ terms back in then shifts those baseline word–word scores slightly by slot, breaking ties between duplicate words (like `the` at slot $1$ vs. slot $5$). The real limit of $d = 2$ is that a single query arrow $\v{q}_i \in \mathbb R^2$ can only point in one direction at a time. It can't simultaneously pull heavily from *both* the verb (`sat`) and the animal (`cat`), which is what will force us to introduce **multi-head attention** later.
 :::
 
 Setting $\m{W}_Q = \m{W}_K = \m{I}$ recovers raw dot products $\m{X} \m{X}^\top$. In a trained model, $\m{W}_Q$ and $\m{W}_K$ are unrestricted $2 \times 2$ matrices (not required to be rotations); to make $\m{W}_Q$ easy to steer by hand in 2D, the explorer below parameterizes it with a turn angle $\theta$ and stretch $\beta$. Drag $\beta$ or $\theta$ (which also updates the comparison bars above!) and click any cell in $\m{S}$ or $\m{A}$ to inspect its query-key geometry:
@@ -596,7 +599,7 @@ Why did we put positions on a circle $\v{p}_j = r(\cos j\omega, \sin j\omega)^\t
 
 $$\v{p}_i^\top \v{p}_j = r^2\big(\cos i\omega\cos j\omega + \sin i\omega\sin j\omega\big) = r^2\cos\!\big((i - j)\omega\big)$$
 
-By the trig angle-difference identity, $i$ and $j$ only show up as $i - j$, how many words apart they are. And if $\m{W}_Q$ turns by $\theta = 3\omega$, then $\v{p}_i^\top \m{W}_Q \v{p}_j = r^2\cos((i - j)\omega - 3\omega)$ peaks at $i - j = 3$, whether you're at positions $(5, 2)$ or $(100, 97)$. That's the rule "look 3 words back" from Section 5, stored once in $\m{W}_Q$ instead of once per position pair.
+By the trig angle-difference identity, $i$ and $j$ only show up as $i - j$, how many words apart they are. And if $\m{W}_Q$ turns by $\theta = 3\omega$, then $\v{p}_i^\top \m{W}_Q \v{p}_j = r^2\cos((i - j)\omega - 3\omega)$ peaks at $i - j = 3$, whether you're at positions $(5, 2)$ or $(100, 97)$. That's a rule like "look 3 words back", stored once in $\m{W}_Q$ instead of once per position pair.
 
 The problem is the other two position terms, $\v{e}_{w_i}^\top \m{W}_Q \m{W}_K^\top \v{p}_j$ and $\v{p}_i^\top \m{W}_Q \m{W}_K^\top \v{e}_{w_j}$. Each one mixes a word with a single position, so they depend on $j$ or $i$ by itself, and they get in the way of the clean $i - j$ term.
 
