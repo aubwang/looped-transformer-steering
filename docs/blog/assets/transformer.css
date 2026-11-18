@@ -318,6 +318,9 @@ details.md-details[open] > summary {
 .sat-turn-panel + .sat-turn-panel { border-left: 1px solid var(--rule); }
 .sat-turn-panel svg { display: block; width: 100%; height: auto; font-size: 14px; }
 .sat-turn-panel span { display: block; font-size: 13px; font-variant-numeric: tabular-nums; }
+.sat-turn.summary-turn { max-width: 660px; column-gap: 14px; }
+.summary-turn .sat-turn-panel + .sat-turn-panel { border-left: 0; }
+.summary-turn .sat-turn-panel svg { margin: 6px 0; }
 .one-query { font: 14px/1.45 var(--sans); color: var(--ink); }
 .one-query label, .query-controls {
   display: flex;

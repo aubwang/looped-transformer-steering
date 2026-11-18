@@ -167,7 +167,7 @@ The plots compare each offset with the one at position $100$ using cosine simila
 - **One circle (top):** hits $+1$ every $8$ steps ($j = 4, 12, \dots, 100, \dots, 196$), note that all of these positions have identical offsets.
 - **Three circles (bottom):** hits $+1$ **only** at $j = 100$.
 
-(Modern architectures like Huginn and Llama apply these multi-plane rotations directly to queries and keys inside attention, as we will see in the RoPE discussion in Section 6, rather than adding $\m{P}$ upfront.)
+(Modern architectures like Huginn and Llama apply these multi-plane rotations directly to queries and keys inside attention, as we will see in the RoPE discussion in Section 5, rather than adding $\m{P}$ upfront.)
 :::
 
 Stack the rounded position offsets as the rows $\v{p}_i^\top$ of $\m{P}$. Adding them to the word embeddings gives the sequence matrix $\m{X} = \m{E}_{\mathrm{ctx}} + \m{P}$.
@@ -278,7 +278,7 @@ Click through the words to build $\v{h}$ one step at a time. Then try sliding $\
 
 {{widget: summary-walk}}
 
-The arrow from the origin to our final point is $\v{h}$. That's what we mean by a **summary**. When we score `mat`, all its embedding gets to see is where we ended up. Two prompts that land at the same point get the same score for every candidate.
+The arrow from the origin to our final point is $\v{h}$. That's what we mean by a **summary**. You can also think of it as a blend of our five words, where $\alpha_j$ says how much of word $j$ goes in. When we score `mat`, all its embedding gets to see is where we ended up. Two prompts that land at the same point get the same score for every candidate.
 
 Suppose we replace `cat` with `dog` in slot $2$. Four of our five steps stay the same. Both words get the same position offset in slot $2$, and therefore the endpoint moves by $\alpha_2(\v{e}_{\mathrm{dog}}-\v{e}_{\mathrm{cat}})$. So what if `cat` showed up in slot $4$ of another prompt? Making the same replacement there moves the endpoint by $\alpha_4(\v{e}_{\mathrm{dog}}-\v{e}_{\mathrm{cat}})$. We reuse the word embeddings wherever the words appear, but how much they count still depends on the slot.
 
@@ -416,7 +416,7 @@ After $2{,}000$ steps, the model assigns positive weight on `cat` ($\alpha_2 = +
 
 Squashing into $\v{h} \in \mathbb R^2$ already lets our trained model generalize across similar words *in the same slot* (swapping `cat` for `dog` at position $2$, or `the` for `a` at position $1$). And notice that having "fixed parameters" after training isn't a bug by itself: once training finishes, *every* model's learned parameters stay fixed.
 
-What holds our Section 4 model back is *what* those weights $\valpha = (\alpha_1, \dots, \alpha_5)$ are attached to: they are **position-only weights**, storing one number per slot $j$ without looking at the word vector $\v{x}_j$ sitting there. That creates two big problems.
+What holds our Section 4 model back is *what* those weights $\valpha = (\alpha_1, \dots, \alpha_5)$ are attached to: they are **position-only weights**, storing one number per slot $j$ without looking at the word vector $\v{x}_j$ sitting there. That creates two big problems, and the second one splits into three.
 
 **1. The model breaks when we shuffle or reword the sentence**
 
@@ -472,17 +472,17 @@ $$\underbrace{s_{ij} = g(\v{x}_i, \v{x}_j)}_{\text{1. score pairs } (\m{S})} \qu
 
 Let's walk through each of those three steps.
 
-**Step 1 · Define $g$ to score word pairs ($s_{ij} = g(\v{x}_i, \v{x}_j)$).** Instead of looking up a stored number for $(i, j)$, we pick a function $g: \mathbb R^d \times \mathbb R^d \to \mathbb R$ that reads the two rows $\v{x}_i$ and $\v{x}_j$ and outputs a raw score $s_{ij}$ for how much position $i$ cares about position $j$. Let's go back through our problems and see what having a shared rule $g$ immediately fixes.
+**Step 1 · Define $g$ to score word pairs ($s_{ij} = g(\v{x}_i, \v{x}_j)$).** Instead of looking up a stored number for $(i, j)$, we pick a function $g: \mathbb R^d \times \mathbb R^d \to \mathbb R$ that reads the two rows $\v{x}_i$ and $\v{x}_j$ and outputs a number $s_{ij}$ for how much position $i$ cares about position $j$. We'll call $s_{ij}$ an **attention score**. Careful, this isn't the same kind of number as the logits $z_v$ from Section 3. A logit compares a candidate word against our summary. An attention score compares two rows of the prompt against each other, and its only job is to build the weights. The simplest thing we can try is the dot product from Section 2, $g(\v{x}_i, \v{x}_j) = \v{x}_i^\top \v{x}_j$, so let's use that for now. Let's go back through our problems and see what having a shared rule $g$ immediately fixes.
 
 Take shuffling first. Before, $\alpha_{5j}$ never looked at $\v{x}_j$ at all. Now $g(\v{x}_i, \v{x}_j)$ reads $\v{x}_j = \v{e}_{w_j} + \v{p}_j$, and since the position offset $\v{p}_j$ is small, $g(\v{x}_i, \v{x}_j) \approx g(\v{e}_{w_i}, \v{e}_{w_j})$ is mostly decided by which words are at $i$ and $j$. If `dog` moves from position $1$ to position $4$, $\v{e}_{\text{dog}}$ moves with it, so its score moves with it as well.
 
 Now the rows we never trained. Suppose we have a 67-word prompt and want $\v{h}_{67}$ to predict word $68$. We can just plug in $g(\v{x}_{67}, \v{x}_1), \dots, g(\v{x}_{67}, \v{x}_{67})$. Every input vector is already available to us: $\v{x}_{67} = \v{e}_{w_{67}} + \v{p}_{67}$ is just the last word's corresponding embedding in $\m{E}$ plus its position offset, so we have everything we need to compute $\v{h}_{67}$.
 
-What about trained rows not sharing? Previously, the weight for `the` at position $5$ looking at `cat` at position $2$ was its own number $\alpha_{52}$, so training it did nothing for $\alpha_{96}$, even if `the` and `cat` were at positions $9$ and $6$. If we make our scoring function a function of two vectors, then training must change the numbers that $g$ reads (and any weights inside $g$). Let's define $g(\v{x}_i, \v{x}_j) = \v{x}_i^\top \v{x}_j$ and expand it with $\v{x} = \v{e} + \v{p}$, so $g(\v{x}_5, \v{x}_2) = \v{e}_{\text{the}}^\top \v{e}_{\text{cat}} + \v{e}_{\text{the}}^\top \v{p}_2 + \v{p}_5^\top \v{e}_{\text{cat}} + \v{p}_5^\top \v{p}_2$. Since $\v{p}$ is small, the last three terms are  also small, so if training wants to increase $g$, it mostly does it by making the vectors $\v{e}_{\text{the}}$ and $\v{e}_{\text{cat}}$ in $\m{E}$ line up more. Now if `the` shows up at position $9$ and `cat` at position $6$, we know that expanding $g(\v{x}_9, \v{x}_6)$ will yield the same first term $\v{e}_{\text{the}}^\top \v{e}_{\text{cat}}$ with different (small) offset terms, so the score goes up by about the same amount even though we never explicitly trained `the` and `cat` on positions $9$ and  $6$.
+What about trained rows not sharing? Previously, the weight for `the` at position $5$ looking at `cat` at position $2$ was its own number $\alpha_{52}$, so training it did nothing for $\alpha_{96}$, even if `the` and `cat` were at positions $9$ and $6$. Now that the attention score is a function of two vectors, training must change the numbers that $g$ reads (and any weights we later put inside $g$). Let's expand our dot product with $\v{x} = \v{e} + \v{p}$, so $g(\v{x}_5, \v{x}_2) = \v{e}_{\text{the}}^\top \v{e}_{\text{cat}} + \v{e}_{\text{the}}^\top \v{p}_2 + \v{p}_5^\top \v{e}_{\text{cat}} + \v{p}_5^\top \v{p}_2$. Since $\v{p}$ is small, the last three terms are  also small, so if training wants to increase $g$, it mostly does it by making the vectors $\v{e}_{\text{the}}$ and $\v{e}_{\text{cat}}$ in $\m{E}$ line up more. Now if `the` shows up at position $9$ and `cat` at position $6$, we know that expanding $g(\v{x}_9, \v{x}_6)$ will yield the same first term $\v{e}_{\text{the}}^\top \v{e}_{\text{cat}}$ with different (small) offset terms, so the score goes up by about the same amount even though we never explicitly trained `the` and `cat` on positions $9$ and  $6$.
 
-And instead of storing $\frac{n(n+1)}{2}$ separate numbers in $\m{A}$, we only store the weights inside $g$, which don't grow with the context length $n$ at all.
+And instead of storing $\frac{n(n+1)}{2}$ separate numbers in $\m{A}$, we only store whatever weights end up inside $g$ (a raw dot product has none), and those don't grow with the context length $n$ at all.
 
-For our first concrete try at $g$, let's use $g(\v{x}_i, \v{x}_j) = \v{x}_i^\top \v{x}_j$, which collects all pairwise scores into $\m{S} = \m{X}\m{X}^\top$.
+Just like we stacked the weights $\alpha_{ij}$ into $\m{A}$, we can stack the attention scores into an $n \times n$ matrix $\m{S}$, with $s_{ij}$ in row $i$ and column $j$. We don't have to fill it in one cell at a time, either. Entry $(i, j)$ of $\m{X}\m{X}^\top$ is row $i$ of $\m{X}$ dotted with row $j$ of $\m{X}$, which is exactly $\v{x}_i^\top \v{x}_j$. So with our dot product, $\m{S} = \m{X}\m{X}^\top$.
 
 **Step 2 · Mask and normalize $s_{ij}$ into $\alpha_{ij}(\m{X})$.** Remember that $\v{h}_i$ predicts word $i+1$, so it can only look at positions $1, \dots, i$. If $\v{h}_5$ could look at position $6$, it would just read the answer (`mat`), and when we're generating, word $6$ doesn't exist yet. So just like the zeros above the diagonal of $\m{A}$ earlier, we set $\alpha_{ij}(\m{X}) = 0$ for every $j > i$. This is the **causal mask**. For the positions row $i$ can see, we use softmax so the weights are positive and add up to $1$:
 
@@ -516,32 +516,21 @@ So $c$ acts like a sharpness dial between averaging every visible word equally a
 
 Look closely at $\m{A}$ in the raw dot-product widget above: in `the cat sat on the`, row $5$ (`the`) gives its biggest shares to row $5$ (`the`, $32.6\%$) and row $1$ (`the`, $27.2\%$), and barely $4.9\%$ to `cat`!
 
-Why? Remember our single-word score $z_v = \v{e}_v^\top \v{h}_i$: the left side ($\v{e}_v^\top$) only tests candidate $v$, so all the work of reading the prompt happens on the right side inside $\v{h}_i = \sum_{j \le i} \alpha_{ij}(\m{X})\,\v{x}_j$. Building $\v{h}_i$ works like a lookup over rows $1, \dots, i$ of $\m{X}$:
+Why? The raw score $s_{ij} = \v{x}_i^\top \v{x}_j$ is big when the two vectors point the same way, so every row is really asking "who looks like me?". The word that looks most like `the` is `the`. It's the same thing that went wrong in Section 3, when we scored every candidate against the last word and our best guess came out as `the cat sat on the the`.
 
-- **Row $i$** is doing the lookup: it needs a **query** describing *what kind of earlier word it is looking for* to predict word $i+1$.
-- **Row $j \le i$** is an earlier entry in $\m{X}$: it needs a **key** describing *what sits at position $j$*.
+To fill in the blank, the last `the` doesn't need to find more `the`s. It would be a lot more useful if it found `cat` or `sat`. So what if `the` could search in a different direction than the one it sits in? We can do that by putting one matrix between the two vectors:
 
-Using raw dot products $s_{ij} = \v{x}_i^\top \v{x}_j$ forced every word to use the **exact same vector $\v{x}$** for both jobs. It's like standing on `the` and typing `"the"` into a search bar, which naturally just finds other `the`'s instead of `cat` or `sat`.
+$$s_{ij} = \v{x}_i^\top \m{W} \v{x}_j$$
 
-To separate *what a word looks for* from *how other words match against it*, we multiply by two small learned $2 \times 2$ matrices: $\m{W}_Q$ to turn $\v{x}_i$ into a **query** $\v{q}_i$, and $\m{W}_K$ to turn $\v{x}_j$ into a **key** $\v{k}_j$:
+Since $\v{x}_i^\top \m{W} = (\m{W}^\top \v{x}_i)^\top$, this moves the arrow for $\v{x}_i$ to $\m{W}^\top \v{x}_i$ first and then takes the same dot product as before. Setting $\m{W} = \m{I}$ gives back the raw score.
 
-$$\v{q}_i = \m{W}_Q^\top \v{x}_i, \qquad \v{k}_j = \m{W}_K^\top \v{x}_j, \qquad s_{ij} = \v{q}_i^\top \v{k}_j = \v{x}_i^\top \underbrace{\m{W}_Q \m{W}_K^\top}_{\text{learned comparison}} \v{x}_j$$
+**A worked example.** Let's try one $\m{W}$ by hand on row $5$ of `the cat sat on the`: turn the arrow by $90^\circ$ and stretch it by $2$.
 
-The same $8$ numbers in $\m{W}_Q$ and $\m{W}_K$ act on every row (since row $i$ of $\m{X}$ is $\v{x}_i^\top$, its query row is $\v{q}_i^\top = \v{x}_i^\top \m{W}_Q$), giving two $n \times d$ matrices whose product fills in the $n \times n$ score matrix $\m{S}$:
+$$\m{W} = \begin{bmatrix} 0 & 2 \\ -2 & 0 \end{bmatrix}, \qquad \m{W}^\top \v{x}_5 = \begin{bmatrix} 0 & -2 \\ 2 & 0 \end{bmatrix} \begin{bmatrix} -1.11 \\ 0.29 \end{bmatrix} = \begin{bmatrix} -0.58 \\ -2.22 \end{bmatrix}$$
 
-$$\m{Q} = \m{X} \m{W}_Q, \qquad \m{K} = \m{X} \m{W}_K, \qquad \underbrace{\m{S}}_{n \times n} = \underbrace{\m{Q}}_{n \times d} \; \underbrace{\m{K}^\top}_{d \times n}$$
+`the` sits in the upper left of our plane, and `sat` is near the bottom. After the turn, the arrow for `the` points almost straight down, right at `sat`. Now we dot it with each row $j = 1, \dots, 5$ that row $5$ can see:
 
-**A worked example.** Every score $s_{ij}$ involves two words at two positions, so let's do one row by hand. Take `the cat sat on the` and row $5$. For now we keep $\m{W}_K = \m{I}$ (so $\v{k}_j = \v{x}_j$), and pick a $\m{W}_Q$ that turns by $90^\circ$ and stretches by $2$:
-
-$$\m{W}_Q = \begin{bmatrix} 0 & 2 \\ -2 & 0 \end{bmatrix}$$
-
-The word at position $i = 5$ (`the`) is the one doing the lookup, so its row is the only one that becomes a query:
-
-$$\v{q}_5 = \m{W}_Q^\top \v{x}_5 = \begin{bmatrix} 0 & -2 \\ 2 & 0 \end{bmatrix} \begin{bmatrix} -1.11 \\ 0.29 \end{bmatrix} = \begin{bmatrix} -0.58 \\ -2.22 \end{bmatrix}$$
-
-Each position $j = 1, \dots, 5$ that row $5$ can see becomes a key, and we dot every key with the same $\v{q}_5$:
-
-| $j$ | Word at $j$ | $\v{k}_j = \v{x}_j$ | $s_{5j} = \v{q}_5^\top \v{k}_j$ | $\alpha_{5j}$ | $\alpha_{5j}$ with raw dot products |
+| $j$ | Word at $j$ | $\v{x}_j$ | $s_{5j} = \v{x}_5^\top \m{W} \v{x}_j$ | $\alpha_{5j}$ | $\alpha_{5j}$ with raw dot products |
 |:--:|:--:|:--:|:--:|:--:|:--:|
 | $1$ | `the` | $(-0.89, 0.51)$ | $-0.62$ | $3.8\%$ | $27.2\%$ |
 | $2$ | `cat` | $(0.75, 0.90)$ | $-2.43$ | $0.6\%$ | $4.9\%$ |
@@ -549,7 +538,27 @@ Each position $j = 1, \dots, 5$ that row $5$ can see becomes a key, and we dot e
 | $4$ | `on` | $(-1.00, -0.05)$ | $0.69$ | $13.9\%$ | $26.1\%$ |
 | $5$ | `the` | $(-1.11, 0.29)$ | $0.00$ | $6.9\%$ | $32.6\%$ |
 
-`the` sits in the upper left of our plane. With raw dot products, $\v{q}_5 = \v{x}_5$ points right back at the upper left, so the two `the`s win. Turning by $90^\circ$ makes $\v{q}_5$ point almost straight down, which is where `sat` and `chased` live, so now `sat` takes about $75\%$ of row $5$. Also look at rows $1$ and $5$: same word, but the scores differ ($-0.62$ vs. $0.00$), and the only thing that differs between $\v{x}_1$ and $\v{x}_5$ is the position offset. Rows $1$ through $4$ do the same thing with their own queries $\v{q}_1, \dots, \v{q}_4$ against the keys they can see, which fills in the rest of $\m{S}$.
+The share for `sat` goes from $9.2\%$ to $74.8\%$. Now look at the last row, where $s_{55} = 0.00$. Why exactly zero? Turn any arrow by $90^\circ$ and it ends up perpendicular to where it started, so if $\m{R}_{90^\circ}$ is a quarter turn, then $\v{x}^\top \m{R}_{90^\circ} \v{x} = 0$ for every $\v{x}$. Every word's score with itself is zero, so `the` stops finding itself. Row $1$ is also `the`, but its position offset is different, so $\v{x}_1$ isn't quite $\v{x}_5$ and its score comes out to $-0.62$.
+
+To be clear, we picked this turn by hand. Nothing says the best $\m{W}$ is a rotation. It's a $2 \times 2$ matrix, and training is free to set its four numbers to whatever lowers the loss.
+
+A transformer doesn't store $\m{W}$ as one matrix. It writes it as a product of two, $\m{W} = \m{W}_Q \m{W}_K^\top$, and gives each half its own job:
+
+$$\v{q}_i = \m{W}_Q^\top \v{x}_i, \qquad \v{k}_j = \m{W}_K^\top \v{x}_j, \qquad s_{ij} = \v{q}_i^\top \v{k}_j = \v{x}_i^\top \m{W}_Q \m{W}_K^\top \v{x}_j$$
+
+$\v{q}_i$ is the **query**. It's what row $i$ is asking for. $\v{k}_j$ is the **key**. It's how row $j$ advertises itself to whichever row is searching. In our example $\m{W}_Q$ was the turn and $\m{W}_K = \m{I}$, so the turned arrow $(-0.58, -2.22)^\top$ was $\v{q}_5$ and each key was just $\v{x}_j$.
+
+Earlier we stacked the raw attention scores into $\m{S} = \m{X}\m{X}^\top$. We can do the same thing here. The same two matrices act on every row, so let's stack the queries as the rows of a matrix $\m{Q}$ and the keys as the rows of $\m{K}$. Row $i$ of $\m{X}$ is $\v{x}_i^\top$, so row $i$ of $\m{Q}$ is $\v{q}_i^\top = \v{x}_i^\top \m{W}_Q$, and the keys work the same way:
+
+$$\m{Q} = \m{X} \m{W}_Q, \qquad \m{K} = \m{X} \m{W}_K$$
+
+Entry $(i, j)$ of $\m{Q}\m{K}^\top$ is row $i$ of $\m{Q}$ dotted with row $j$ of $\m{K}$, which is $\v{q}_i^\top \v{k}_j = s_{ij}$. So we get every attention score at once:
+
+$$\underbrace{\m{S}}_{n \times n} = \underbrace{\m{Q}}_{n \times d} \; \underbrace{\m{K}^\top}_{d \times n} = \m{X}\m{W}_Q\m{W}_K^\top\m{X}^\top$$
+
+Rows $1$ through $4$ do the same thing with their own queries $\v{q}_1, \dots, \v{q}_4$ against the keys they can see, which fills in the rest of $\m{S}$.
+
+Does splitting $\m{W}$ in two buy us anything? At $d = 2$, no. $\m{W}_Q$ and $\m{W}_K$ hold $8$ numbers between them, but the score only ever sees their product, which has $4$. The split starts to matter once queries and keys are smaller than the embedding, which is how multi-head attention works. We haven't gotten there yet.
 
 Notice why those $8$ fixed parameters succeed where Section 4's $5$ slot parameters broke: once trained, $\m{W}_Q$ and $\m{W}_K$ are still fixed numbers, they just act on the **$d = 2$ embedding coordinates** instead of the **slot numbers**. When the words move slots or the sentence length changes, each word carries its embedding coordinates with it, so the importance bars move right along with the words:
 
@@ -575,7 +584,7 @@ How can $8$ numbers in $\m{W}_Q$ and $\m{W}_K$ govern all $11^2 = 121$ entries o
 Adding the three $\v{p}$ terms back in then shifts those baseline word–word scores slightly by slot, breaking ties between duplicate words (like `the` at slot $1$ vs. slot $5$). The real limit of $d = 2$ is that a single query arrow $\v{q}_i \in \mathbb R^2$ can only point in one direction at a time. It can't simultaneously pull heavily from *both* the verb (`sat`) and the animal (`cat`), which is what will force us to introduce **multi-head attention** later.
 :::
 
-Setting $\m{W}_Q = \m{W}_K = \m{I}$ recovers raw dot products $\m{X} \m{X}^\top$. In a trained model, $\m{W}_Q$ and $\m{W}_K$ are unrestricted $2 \times 2$ matrices (not required to be rotations); to make $\m{W}_Q$ easy to steer by hand in 2D, the explorer below parameterizes it with a turn angle $\theta$ and stretch $\beta$. Drag $\beta$ or $\theta$ (which also updates the comparison bars above!) and click any cell in $\m{S}$ or $\m{A}$ to inspect its query-key geometry:
+Setting $\m{W}_Q = \m{W}_K = \m{I}$ recovers raw dot products $\m{X} \m{X}^\top$. To try other matrices, the explorer below keeps $\m{W}_K = \m{I}$ and lets you steer $\m{W}_Q$ by hand with a turn angle $\theta$ and stretch $\beta$. Our worked example is $\theta = 90^\circ$, $\beta = 2$. Drag $\beta$ or $\theta$ (which also updates the comparison bars above!) and click any cell in $\m{S}$ or $\m{A}$ to inspect its query-key geometry:
 
 {{widget: qk-explorer}}
 
@@ -585,16 +594,9 @@ Setting $\m{W}_Q = \m{W}_K = \m{I}$ recovers raw dot products $\m{X} \m{X}^\top$
 - **Readout softmax** (Section 3) runs across the $11$ vocabulary logits $\v{z}$. Its output is a distribution over $\mathcal V$ deciding *which word comes next*.
 :::
 
-### Does word order stay intact?
+What about word order? Swapping `cat` and `sat` changes $\v{x}_2$ and $\v{x}_3$, so their queries and keys change and the weights change with them, and we saw in Section 3 that unequal weights are enough to tell the two orders apart. Position offsets plus input-dependent weights keep word order intact.
 
-Remember why equal weights ($\alpha_j = \tfrac{1}{n}$) lost word order: swapping `cat` and `sat` cancelled under addition. With unequal weights $a \ne b$ on positions $2$ and $3$, compare the weighted sums before and after swapping `cat` and `sat`:
-
-$$\big[a(\v{e}_{\text{cat}} + \v{p}_2) + b(\v{e}_{\text{sat}} + \v{p}_3)\big] - \big[a(\v{e}_{\text{sat}} + \v{p}_2) + b(\v{e}_{\text{cat}} + \v{p}_3)\big] = (a - b)(\v{e}_{\text{cat}} - \v{e}_{\text{sat}}) \ne 0$$
-
-Plus, swapping words changes $\v{q}_i$ and $\v{k}_j$ themselves (since $\v{q}_i = \m{W}_Q^\top(\v{e}_{w_i} + \v{p}_i)$), changing the weights $a$ and $b$ too! Position offsets + input-dependent weights keep word order intact.
-
-### Putting position inside the score (RoPE)
-
+::: details Optional: Putting position inside the score (RoPE)
 Why did we put positions on a circle $\v{p}_j = r(\cos j\omega, \sin j\omega)^\top$ back in Section 2? If we expand $s_{ij}$ with $\v{x}_i = \v{e}_{w_i} + \v{p}_i$ and $\v{x}_j = \v{e}_{w_j} + \v{p}_j$, one of the terms only involves positions. With $\m{W}_Q = \m{W}_K = \m{I}$ it's
 
 $$\v{p}_i^\top \v{p}_j = r^2\big(\cos i\omega\cos j\omega + \sin i\omega\sin j\omega\big) = r^2\cos\!\big((i - j)\omega\big)$$
@@ -614,22 +616,122 @@ $$s_{ij} = \v{q}_i^\top \v{k}_j = \v{e}_{w_i}^\top \m{W}_Q \, \m{R}_i^\top \m{R}
 Rotating back by $i\omega$ and then forward by $j\omega$ is the same as rotating by $(j - i)\omega$, so $\m{R}_i^\top \m{R}_j = \m{R}_{j-i}$. Now each score depends on exactly two things: which two words they are, and how far apart they are. There are no cross-terms, and since a rotation never changes a vector's length, position can't drown out the word like adding the index did in Section 2. Here position really is a linear map $\m{R}_i$ acting on the query and key.
 
 Our widgets keep adding $\v{p}_i$ because it's easier to draw in 2D, but everything else in this section works the same with RoPE.
+:::
 
 ## 6 · What should a row send?
 
-OK, so the last `the` gives about $75\%$ of its weight to `sat`. What does it actually get from `sat`? So far, row $3$ sends $\v{x}_3$, which pulls $\v{h}_5$ toward `sat`'s own vector. But we're trying to fill in `the cat sat on the ____`. It would be nice if finding `sat` helped us predict a place where a cat could sit.
+OK, so here's where we are. We have five words, `the cat sat on the`, and row $5$ has to fill in the blank. With the query we picked by hand in Section 5, it puts about $75\%$ of its weight on `sat`. So what does our model predict?
 
-Let's give each row one more matrix, $\m{W}_V$. Row $3$ sends the **value** $\v{v}_3 = \m{W}_V^\top \v{x}_3$. Its contribution to the sum is now about $0.75\,\v{v}_3$. The same matrix transforms every other row's vector too:
+To find out, we need logits. In Section 3, the logit for one candidate word $v$ was
+
+$$z_v = \v{e}_v^\top \v{h}, \qquad \v{h} = \alpha_1 \v{x}_1 + \alpha_2 \v{x}_2 + \cdots + \alpha_n \v{x}_n$$
+
+Back then we had one blend $\v{h}$ for the whole prompt, and its weights were the same for every sentence. With attention, every row $i$ gets its own blend $\v{h}_i$, and the weights depend on the words in the sentence. The blend that fills in our blank is $\v{h}_5$. Its weights are row $5$ of $\m{A}$, which is why they have two subscripts:
+
+$$z_v = \v{e}_v^\top \v{h}_5, \qquad \v{h}_5 = \alpha_{51} \v{x}_1 + \alpha_{52} \v{x}_2 + \alpha_{53} \v{x}_3 + \alpha_{54} \v{x}_4 + \alpha_{55} \v{x}_5$$
+
+Keep in mind that the $\alpha_{5j}$ aren't trained parameters anymore. What gets trained is $\m{W}_Q$ and $\m{W}_K$, and the weights come out of them fresh for every sentence. First come the attention scores $s_{ij}$, then softmax:
+
+$$\alpha_{ij} = \frac{e^{s_{ij}}}{\sum_{k \le i} e^{s_{ik}}}, \qquad s_{ij} = \v{x}_i^\top \m{W}_Q \m{W}_K^\top \v{x}_j$$
+
+A different five words would give us different weights. For our five, the worked example in Section 5 gave us
+
+$$\v{h}_5 = 0.038\,\v{x}_1 + 0.006\,\v{x}_2 + 0.748\,\v{x}_3 + 0.139\,\v{x}_4 + 0.069\,\v{x}_5 = (-0.48, -0.70)$$
+
+So for this sentence, our blend is about $75\%$ `sat`.
+
+Now we can finally compute all eleven logits with $\v{z} = \m{E}\v{h}_5$ and apply softmax:
+
+| Ending | `sat` | `chased` | `on` | `the` | `hat` | `grass` | `mat` |
+|:--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Probability | $19.2\%$ | $18.3\%$ | $12.5\%$ | $9.8\%$ | $9.4\%$ | $7.5\%$ | $6.9\%$ |
+
+Our best guess is `the cat sat on the sat`. How wrong is that? Let's go back to our data. After `the cat sat on the`, we saw `mat` twice, `hat` once and `grass` once. Section 4 gave us a number for how far a prediction is from those endings, the loss $L$. Our model gives the three of them $6.86\%$, $9.43\%$ and $7.52\%$, so
+
+$$L(\mu) = -\big(0.50 \ln 0.0686 + 0.25 \ln 0.0943 + 0.25 \ln 0.0752\big) \approx 2.577$$
+
+A model that gives all eleven words the same chance gets $\ln 11 \approx 2.398$. So we're doing worse than a model that knows nothing.
+
+What went wrong? Let's distribute $\v{e}_v$ across the sum inside $\v{h}_5$:
+
+$$z_v = \alpha_{51}\,\v{e}_v^\top\v{x}_1 + \alpha_{52}\,\v{e}_v^\top\v{x}_2 + \alpha_{53}\,\v{e}_v^\top\v{x}_3 + \alpha_{54}\,\v{e}_v^\top\v{x}_4 + \alpha_{55}\,\v{e}_v^\top\v{x}_5$$
+
+Every term is still a candidate dotted against one of the words in our prompt. Attention only changed how much each term counts. Add the terms back up and the logit asks how much $v$ looks like our blend $\v{h}_5$, the same as it did in Section 3. Remember our very first predictor there? It used $\v{h} = \v{x}_5$, a blend that's $100\%$ the last word, and it predicted `the`. Now our blend is mostly `sat`, and the two words that look most like it are `sat` and `chased`.
+
+We picked our query by hand, though. Could better weights fix this? Let's find out. We'll leave the embeddings in $\m{E}$ exactly where Section 2 put them, with similar words close together, and ask what the best possible weights could do.
+
+Look at `mat` and `the` in our table. `mat` filled the blank in two of our four sentences and `the` never did, but our model gives `the` $9.8\%$ and `mat` only $6.9\%$. How far ahead of `the` could better weights put `mat`? We saw in Section 3 that only the difference between two logits matters, $\mu(\code{mat}) / \mu(\code{the}) = e^{z_{\text{mat}} - z_{\text{the}}}$. So let's subtract the two logits term by term:
+
+$$z_{\text{mat}} - z_{\text{the}} = \sum_{j=1}^{5} \alpha_{5j}\,(\v{e}_{\text{mat}} - \v{e}_{\text{the}})^\top \v{x}_j$$
+
+Here $\v{e}_{\text{mat}} - \v{e}_{\text{the}} = (2.00, -0.85)^\top$. Let's dot it with each of our five rows:
+
+| $j$ | Word at $j$ | $\v{x}_j$ | $(\v{e}_{\text{mat}} - \v{e}_{\text{the}})^\top \v{x}_j$ |
+|:--:|:--:|:--:|:--:|
+| $1$ | `the` | $(-0.89, 0.51)$ | $-2.2135$ |
+| $2$ | `cat` | $(0.75, 0.90)$ | $0.7350$ |
+| $3$ | `sat` | $(-0.31, -0.99)$ | $0.2215$ |
+| $4$ | `on` | $(-1.00, -0.05)$ | $-1.9575$ |
+| $5$ | `the` | $(-1.11, 0.29)$ | $-2.4665$ |
+
+For `cat`, that's $(2.00)(0.75) + (-0.85)(0.90) = 0.735$. Softmax weights are always positive and add up to $1$, so $z_{\text{mat}} - z_{\text{the}}$ is a weighted average of these five numbers, and an average can never be bigger than the biggest number in it. That's the $0.735$ from `cat`. So whatever $\m{W}_Q$ and $\m{W}_K$ we choose, `mat` can be at most $e^{0.735} \approx 2.09$ times as likely as `the`. To get even that close we'd have to put all of our weight on `cat`, and then our top three guesses would be `bird`, `cat` and `dog`.
+
+The loss tells the same story. No set of weights gets $L$ below $2.207$. The best ones put about $40\%$ on `cat` and $60\%$ on `sat`, and that only just beats the uniform guess at $2.398$.
+
+So better weights can't fix this. It's the catch we flagged in Section 5: a blend always lands somewhere in between the rows it's made of.
+
+What else is there to change? Look at one term, $\alpha_{5j}\,\v{e}_v^\top\v{x}_j$. The weight can't save us, and we're leaving the embeddings where they are. What's left is the dot product itself.
+
+We've been here before. In Section 5, the raw attention score was a plain dot product too, and it had `the` looking for more `the`s, because a plain dot product is big when two vectors point the same way. We fixed that by putting a matrix between the two vectors, so $\v{x}_i^\top\v{x}_j$ became $\v{x}_i^\top\m{W}\v{x}_j$. Let's try the same thing here:
+
+$$\v{e}_v^\top\v{x}_j \quad\longrightarrow\quad \v{e}_v^\top\m{W}_V^\top\v{x}_j$$
+
+Just like before, this moves the arrow for $\v{x}_j$ to $\m{W}_V^\top\v{x}_j$ first and then takes the same dot product. Up to now we've really been using $\m{W}_V = \m{I}$ without saying so. Putting $\m{W}_V$ into every term gives us
+
+$$z_v = \v{e}_v^\top \underbrace{(\alpha_{51} \m{W}_V^\top\v{x}_1 + \alpha_{52} \m{W}_V^\top\v{x}_2 + \alpha_{53} \m{W}_V^\top\v{x}_3 + \alpha_{54} \m{W}_V^\top\v{x}_4 + \alpha_{55} \m{W}_V^\top\v{x}_5)}_{\v{h}_5}$$
+
+We call $\v{v}_j = \m{W}_V^\top \v{x}_j$ the **value** of row $j$. It's what row $j$ adds to the blend in place of $\v{x}_j$:
 
 $$\v{v}_j = \m{W}_V^\top \v{x}_j, \qquad \v{h}_i = \sum_{j \le i} \alpha_{ij}\v{v}_j$$
 
-Stack those values as rows and the whole calculation becomes
+**A worked example.** Which matrix should we try? We don't know, so let's start with the one we already have. Here's the quarter turn from Section 5, without the stretch:
+
+$$\m{W}_V^\top = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix}, \qquad \v{v}_3 = \m{W}_V^\top \v{x}_3 = \begin{bmatrix} 0 & -1 \\ 1 & 0 \end{bmatrix} \begin{bmatrix} -0.31 \\ -0.99 \end{bmatrix} = \begin{bmatrix} 0.99 \\ -0.31 \end{bmatrix}$$
+
+The other four words get the same turn. Just like in Section 3, we can lay the five weighted steps tip to tail and see where they end up. Click through the words to build $\v{h}_5$ one step at a time, with $\alpha_{5j}\v{x}_j$ on the left and $\alpha_{5j}\v{v}_j$ on the right:
+
+{{widget: summary-turn}}
+
+Every step is the same length on both sides, because the weights haven't changed. Row $5$ still gives $74.8\%$ to `sat`. Each step just points a quarter turn away from where it did, so the whole path does too, and we end up at $(0.70, -0.48)$ and not $(-0.48, -0.70)$. Here's the readout now:
+
+| Ending | `grass` | `hat` | `mat` | `chased` | `dog` | `sat` | `cat` |
+|:--|:--:|:--:|:--:|:--:|:--:|:--:|:--:|
+| Probability | $20.2\%$ | $15.6\%$ | $14.7\%$ | $10.8\%$ | $9.7\%$ | $8.6\%$ | $7.0\%$ |
+
+The top three are exactly the three endings we saw, and `sat` dropped from first to sixth. `mat` is now $6.12$ times as likely as `the`, well past the $2.09$ that no weights could reach. Our loss went from $2.577$ down to $1.821$, below the $2.207$ that was the best the weights alone could do.
+
+Did we just get lucky with that turn? Let's try the other quarter turns and see:
+
+| Turn | $\v{h}_5$ | Top three guesses | Loss $L$ |
+|:--:|:--:|:--:|:--:|
+| $0^\circ$ ($\m{W}_V = \m{I}$) | $(-0.48, -0.70)$ | `sat`, `chased`, `on` | $2.577$ |
+| $90^\circ$ | $(0.70, -0.48)$ | `grass`, `hat`, `mat` | $1.821$ |
+| $180^\circ$ | $(0.48, 0.70)$ | `bird`, `cat`, `dog` | $2.586$ |
+| $270^\circ$ | $(-0.70, 0.48)$ | `the`, `a`, `on` | $3.451$ |
+
+So yes, a little lucky. Each turn points our blend at a different kind of word: the verbs, then the places to sit, then the animals, then the small words. Our blend is $75\%$ `sat` in all four rows. What changes is what reading `sat` makes us predict, and only the $90^\circ$ turn beats the uniform guess at $2.398$. So we don't get to pick the right matrix. The data does. $\m{W}_V$ is four more numbers that training can adjust to lower $L$, the same way it adjusted the $\alpha$'s in Section 4, and the result doesn't have to be a turn.
+
+So each row's vector now gets used in two separate ways. Its key decides how much weight the row gets, and its value is what gets added into the sum. Before $\m{W}_V$, the thing added into the sum was just $\v{x}_j$ itself.
+
+Stack the values as rows and the whole calculation becomes
 
 $$\m{V} = \m{X}\m{W}_V, \qquad \m{H} = \m{A}\m{V}$$
 
+$\m{A}$ is the same $\m{A}$ we built in Section 5. So $\m{W}_Q$ and $\m{W}_K$ decide where row $i$ reads, and $\m{W}_V$ decides what it gets from there.
+
 We've just built one **causal self-attention head**. “Self” means that the queries, keys, and values all come from the same sequence. “Causal” means that row $i$ can read through position $i$, so the word it's trying to predict stays out of view.
 
-Try turning the value vector below. The weight on `sat` stays where it was. What changes is the direction `sat` pulls $\v{h}_5$, and you can see which candidate words that favors when we read out $\m{E}\v{h}_5$.
+The widget below starts at our quarter turn. Try turning the value vector yourself. The weight on `sat` stays where it was. What changes is the direction `sat` pulls $\v{h}_5$, and you can see which candidate words that favors when we read out $\m{E}\v{h}_5$.
 
 {{widget: value-explorer}}
 
@@ -657,10 +759,28 @@ Take the dot product of $\v{e}_{\mathrm{mat}}$ with the sum we just built. We ca
 
 $$z_{\mathrm{mat}}=\v{e}_{\mathrm{mat}}^\top\v{h}_5=\sum_{j=1}^5\alpha_{5j}\,\v{e}_{\mathrm{mat}}^\top\v{v}_j$$
 
-At the starting settings, the value matrix turns the vector for `sat` into $(0.99,-0.31)^\top$. The embedding for `mat` is $(1.00,-0.45)^\top$, so position $3$ contributes
+With our quarter turn, $\v{v}_3 = (0.99,-0.31)^\top$ and $\v{e}_{\mathrm{mat}} = (1.00,-0.45)^\top$, so position $3$ contributes
 
 $$\alpha_{53}\,\v{e}_{\mathrm{mat}}^\top\v{v}_3 \approx 0.7484\big[(1.00)(0.99)+(-0.45)(-0.31)\big]\approx +0.845$$
 
-Adding the other four terms brings the logit for `mat` to $0.918$. Now we apply softmax across the eleven candidate endings. The model gives `mat` a $14.7\%$ chance. Its first choice is `grass` at $20.2\%$. So we can follow one path through the head all the way to the blank: the query and key determine how much row $5$ reads from `sat`, and the value and readout determine how that term affects the score for `mat`.
+Adding the other four terms brings the logit for `mat` to $0.918$. Softmax across the eleven endings turns that into the $14.7\%$ from our table. So we can follow one path through the head all the way to the blank: the query and key determine how much row $5$ reads from `sat`, and the value and readout determine how that term affects the logit for `mat`.
 
 What if we turn the value stretch all the way down to zero? Every word now sends the zero vector. Row $5$ still has its original input $\v{x}_5$ available at the start of the calculation, but by the time we read out $\v{h}_5$, all we have is zero. Every logit is zero too, so all eleven endings get the same probability. If attention has nothing to add, shouldn't we at least get to keep the word we started with?
+
+## 7 · Keeping what we started with
+
+Let's answer that. With the value stretch at zero, $\v{h}_5 = \v{0}$ and every ending gets $1/11 \approx 9.1\%$. The row has forgotten everything, even its own word $\v{x}_5$.
+
+Why did we lose $\v{x}_5$? Because $\m{H} = \m{A}\m{V}$ replaces each row with what it gathered. The only way row $5$'s own word gets through is the weight it puts on itself, $\alpha_{55}$. With our $90^\circ$ query that was $6.9\%$, and even that share arrives as $\v{v}_5$ and not $\v{x}_5$.
+
+So what if we add what attention gathered to the row, instead of replacing the row with it?
+
+$$\v{h}_i = \v{x}_i + \sum_{j \le i} \alpha_{ij}\v{v}_j, \qquad \m{H} = \m{X} + \m{A}\m{V}$$
+
+Try $\m{W}_V = \m{0}$ again. Every value is still zero, but now $\v{h}_5 = \v{x}_5$, and reading it out gives $\m{E}\v{x}_5$. That's exactly the Section 3 predictor, the one that guessed `the` at $26.8\%$. That wasn't a good predictor, but now each row starts from its own word and attention only has to add a correction on top of it. The logits split the same way:
+
+$$\v{z} = \m{E}\v{h}_n = \underbrace{\m{E}\v{x}_n}_{\text{Section 3}} + \underbrace{\m{E}\sum_{j \le n}\alpha_{nj}\v{v}_j}_{\text{what attention adds}}$$
+
+Keeping the input and adding to it is called a **residual connection**. The widgets above show $\m{H} = \m{A}\m{V}$ without the added $\m{X}$.
+
+$\m{H}$ still has the same shape as $\m{X}$, so nothing stops us from feeding it into another layer just like this one. In a follow-up post we'll stack layers, then reuse one layer for every step, loop it, and ask whether the loop settles.

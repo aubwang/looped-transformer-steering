@@ -2016,6 +2016,88 @@
       </figure>`;
     },
 
+    "summary-turn"(el) {
+      const words = QUESTION.split(" ");
+      const X = embed(QUESTION);
+      const Q = matMul(X, turnMatrix(90, 2.0));
+      const alpha = causalSoftmax(matMul(Q, transpose(X)))[4];
+      const V = matMul(X, turnMatrix(90, 1.0));
+      const panels = [
+        { title: "Without <b class=mm>W</b><sub>V</sub>: steps α<sub>5<i>j</i></sub><b class=vm>x</b><sub><i>j</i></sub>", rows: X },
+        { title: "With <b class=mm>W</b><sub>V</sub>: steps α<sub>5<i>j</i></sub><b class=vm>v</b><sub><i>j</i></sub>", rows: V },
+      ];
+      el.innerHTML = `
+        <div class="w-card summary-walk">
+          <div class="w-chips" role="group" aria-label="Word steps for row 5">
+            <button type="button" class="w-chip">Start</button>
+            ${words.map((w, j) => `<div class="walk-control">
+              <button type="button" class="w-chip" aria-label="Through word ${j + 1}, ${w}">${cw(w)}</button>
+              <label>α<sub>5${j + 1}</sub> = ${fmtPct(alpha[j], 1)}</label>
+            </div>`).join("")}
+          </div>
+          <figure class="sat-turn summary-turn">
+            ${panels.map((_, k) => `<div class="sat-turn-panel"><strong>${panels[k].title}</strong><div data-plane="${k}"></div><span data-cap="${k}"></span></div>`).join("")}
+          </figure>
+        </div>`;
+      const buttons = Array.from(el.querySelectorAll("button"));
+
+      function draw(k, count) {
+        const rows = panels[k].rows;
+        const plane = makePlaneSVG({ width: 300, height: 270, lim: 1.65, table: E_BASE, showWords: true, wordAlpha: 0.7 });
+        const pts = [[0, 0]];
+        rows.forEach((r, j) => pts.push([pts[j][0] + alpha[j] * r[0], pts[j][1] + alpha[j] * r[1]]));
+        const px = q => [plane.sx(q[0]), plane.sy(q[1])];
+        const end = pts[count];
+        const mid = px([pts[5][0] / 2, pts[5][1] / 2]);
+        // A label beside a segment, pushed to the side facing away from `avoid`
+        function sideLabel(from, to, avoid, text, attrs) {
+          const [x1, y1] = px(from), [x2, y2] = px(to);
+          const L = Math.hypot(x2 - x1, y2 - y1) || 1;
+          let nx = -(y2 - y1) / L, ny = (x2 - x1) / L;
+          const mx = (x1 + x2) / 2, my = (y1 + y2) / 2;
+          if (nx * (avoid[0] - mx) + ny * (avoid[1] - my) > 0) { nx = -nx; ny = -ny; }
+          return `<text x="${(mx + 14 * nx).toFixed(1)}" y="${(my + 14 * ny + 4).toFixed(1)}" text-anchor="middle" font-size="12" ${attrs}>${text}</text>`;
+        }
+        let inner = "";
+        for (let j = 0; j < count; j++) {
+          const [x1, y1] = px(pts[j]), [x2, y2] = px(pts[j + 1]);
+          const current = j === count - 1 && count < words.length;
+          const color = current ? "orange" : "blue";
+          const head = Math.hypot(x2 - x1, y2 - y1) >= 10 ? ` marker-end="url(#arr-${color})"` : "";
+          inner += `<line x1="${x1.toFixed(1)}" y1="${y1.toFixed(1)}" x2="${x2.toFixed(1)}" y2="${y2.toFixed(1)}" stroke="var(--${color})" stroke-width="3" stroke-linecap="round"${head}/>`;
+        }
+        if (count >= 3) inner += sideLabel(pts[2], pts[3], mid, "sat", `fill="var(--ink)"`);
+        if (count === words.length) {
+          const [x, y] = px(end);
+          inner += `<line x1="${plane.sx(0).toFixed(1)}" y1="${plane.sy(0).toFixed(1)}" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="var(--ink)" stroke-width="2.2" stroke-dasharray="5 4" marker-end="url(#arr-ink)"/>`;
+          const satMid = px([(pts[2][0] + pts[3][0]) / 2, (pts[2][1] + pts[3][1]) / 2]);
+          inner += sideLabel([0, 0], end, satMid, "h₅", `fill="var(--ink)" font-weight="700"`);
+        }
+        el.querySelector(`[data-plane="${k}"]`).innerHTML = plane.wrap(inner);
+        const cap = el.querySelector(`[data-cap="${k}"]`);
+        if (count === words.length) {
+          const p = softmax(E_BASE.map(e => dot(e, end)));
+          const top = [...p.keys()].sort((a, b) => p[b] - p[a]).slice(0, 3);
+          cap.innerHTML = `<b class=vm>h</b><sub>5</sub> = ${fmtVec(end, 2)} · top guesses: ${top.map(i => `<code>${VOCAB[i]}</code>`).join(", ")}`;
+        } else if (count === 0) {
+          cap.innerHTML = `Start at the origin`;
+        } else {
+          const step = [alpha[count - 1] * rows[count - 1][0], alpha[count - 1] * rows[count - 1][1]];
+          cap.innerHTML = `Step ${count} (${cw(words[count - 1])}) adds ${fmtVec(step, 2)} · now at ${fmtVec(end, 2)}`;
+        }
+      }
+      function show(count) {
+        buttons.forEach((button, j) => {
+          button.classList.toggle("active", j === count);
+          button.setAttribute("aria-pressed", String(j === count));
+        });
+        draw(0, count);
+        draw(1, count);
+      }
+      buttons.forEach((button, j) => button.addEventListener("click", () => show(j)));
+      show(words.length);
+    },
+
     "one-query"(el) {
       const words = QUESTION.split(" ");
       const X = embed(QUESTION);
