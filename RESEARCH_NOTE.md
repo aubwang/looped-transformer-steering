@@ -1,4 +1,4 @@
-# Looped language models as dynamical systems
+# Steering looped transformers
 
 **What repeating a block does to reading and steering a model's hidden state**
 
