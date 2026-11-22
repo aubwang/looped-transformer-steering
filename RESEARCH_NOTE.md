@@ -4,8 +4,8 @@
 
 *Preview research note, November 2026. Work in progress and not peer reviewed.*
 
-*This page and the linked write-ups were drafted by AI agents under the author's direction. See
-[How this was done](#how-this-was-done).*
+*This is a preliminary write-up. It and the linked write-ups were drafted by AI agents under the author's
+direction; the author's own write-up will follow. See [How this was done](#how-this-was-done).*
 
 A *looped* (recurrent-depth) language model applies the same block of layers many times to a hidden state before it
 writes a token. Whatever it works out in those repeated passes is never written down, so it cannot be caught by

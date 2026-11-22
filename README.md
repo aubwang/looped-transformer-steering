@@ -16,6 +16,12 @@ Figures you can use (paste a line to show one):
   ![](docs/monitor_results_gen/figs/fig_table.png)   error-probe scores, looped against ordinary
 -->
 
+# Looped language models as dynamical systems
+
+**Preliminary.** This repository currently holds an AI-drafted write-up of the project:
+[RESEARCH_NOTE.md](RESEARCH_NOTE.md). It was drafted by AI agents under the author's direction and has not been
+peer reviewed. The author's own write-up will follow and will replace this page.
+
 ## Where things are
 
 - [RESEARCH_NOTE.md](RESEARCH_NOTE.md): the full research note, drafted by AI agents
