@@ -1,4 +1,4 @@
-Regenerate: `/home/owner/work/.t3/projects/analysis/.venv/bin/python -I huginn_addition/tables_mon.py --inputs results/mon_analysis-20261110/seed{0,1,2} --out docs/monitor_results_gen`
+Regenerate: `.venv/bin/python -I huginn_addition/tables_mon.py --inputs results/mon_analysis-20261110/seed{0,1,2} --out docs/monitor_results_gen`
 
 Generated with tables_mon.py. All means are unweighted family means within seed, then medians across seeds.
 

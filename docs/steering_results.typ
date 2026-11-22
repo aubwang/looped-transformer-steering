@@ -51,7 +51,7 @@
   #text(12pt)[Local score levers on two models, a self-gain diagnostic on three, and an error-detection
   comparison on one matched pair]
   #v(0.2em)
-  #text(9.5pt)[Draft 5, 2026-11-11. How the experiments were registered, reviewed and computed: @provenance.]
+  #text(9.5pt)[Draft 7, 2026-11-21. How the experiments were registered, reviewed and computed: @provenance.]
 ]
 
 #v(0.4em)
@@ -59,11 +59,10 @@
 #plain[
 A _looped_ language model applies the same block of computations again and again to an internal state, and reads
 its answer off that state at the end. We asked how the scores it gives to candidate answers respond when a small
-fixed vector is added to the state at every loop, and which vector moves a chosen score most. "Steering" below
-means moving scores in this sense, not changing answers: on the second model, across the #N.flip_pairs pairs of a
+fixed vector is added to the state at every loop, and which vector moves a chosen score most. In the original addition experiment on the second model, across the #N.flip_pairs pairs of a
 held-out problem (#N.n_eval) and a candidate other than its answer (9 of 10), no push at any tested dose made
 the pushed candidate the answer, and at the largest lever dose #N.flip_other_09 of the #N.flip_pairs pushes, on
-three problems, changed the answer to something else.
+three problems, changed the answer to something else. A later experiment selected prompts with nearly tied leading tokens. At the same largest dose, pushing the runner-up made it win on 12 of 24 selected near ties (@winner).
 
 + *The effect of a sustained push follows the loop's own linear response, at the doses tested.* Differentiating
   one loop at the settled state gives a matrix $J$; to first order the change of the answer scores is
@@ -104,7 +103,7 @@ three problems, changed the answer to something else.
   registered comparison for one matched pair of models (@monitoring), and none of #N.n_fam further task families
   screened for late changes of the answer passed every criterion.
 
-The steering results are local statements about small pushes around a settled state, on two models of one
+The original two steering experiments give local statements about small pushes around a settled state, on two models of one
 design, one task family each. The pushes shift scores on problems the model already answers correctly, by a
 small fraction of the lead of the correct answer. They do not show that looping helps a model reason, and the
 two experiments differ in task, dose and numerical precision, so the columns of the comparison table are two
@@ -448,6 +447,30 @@ applications of the block, and its effect has settled by eight. This describes t
 directions tested; it is not a measurement of the eigenvalues of $J$, and no matching measurement was made on the
 first model, where the one-loop lever reached #H.cheap_onestep_share of the full lever's effect.
 
+== Predicting the winning token on near ties <winner>
+
+A large initial lead can hide a predictable score shift. The original 40 additions had a median lead of #N.margin_median logits. A later L32 pilot kept the directions fitted on those earlier training prompts and tested them on new arithmetic problems. Before applying any push, it selected problems by the gap between the two leading tokens and recorded forecasts over the entire vocabulary.
+
+*Selection.* Of 768 fresh prompts (192 each from addition, three-term addition, subtraction and multiply-add), 34 met the near-tie criteria and 215 met the clear-lead criteria. The winner had to be numeric and stable between loops 32 and 64, the last-position relative drift below $10^(-4)$, and the runner-up one of the ten supported target tokens. Near ties had a top-two logit gap at most 0.5, clear leads at least 2. A fixed randomized order supplied the first 24 eligible prompts in each group. All 48 retained their screened winner during an unforced continuation.
+
+*Forecast and test.* At every one of 48 loops the intervention added the frozen lever for the original runner-up before the block. The primary dose was 9% of the original reference state norm, with 1% and 3% secondary. The full forecast used all 48 terms of the response sum, the one-pass forecast used only $J$, and the unchanged baseline kept the original logits. Each predicted the next token and the change in the runner-up’s logit minus the original winner’s logit. Measured changes used the matched unforced continuation as baseline.
+
+#figure(
+  tb((auto, auto, auto, auto, auto, auto),
+    hd([Group], [Dose], [Target wins], [Third token wins], [Correct forecasts], [Margin error]),
+    [Near], [1%], [0], [0], [24 / 24 / 24], [0.001 / 0.019 / 0.058],
+    [Near], [3%], [5], [0], [23 / 22 / 19], [0.010 / 0.060 / 0.175],
+    [Near], [9%], [12], [1], [21 / 20 / 11], [0.086 / 0.197 / 0.514],
+    [Clear], [1%], [0], [0], [24 / 24 / 24], [0.001 / 0.016 / 0.067],
+    [Clear], [3%], [0], [0], [24 / 24 / 24], [0.013 / 0.051 / 0.200],
+    [Clear], [9%], [0], [0], [24 / 24 / 24], [0.121 / 0.204 / 0.604]),
+  caption: [Each row covers the same 24 prompts within its group. The target is the original runner-up. The last two columns give, in order, the full, one-pass and unchanged forecasts. Correct forecasts count exact whole-vocabulary winners. Margin error is mean absolute error in the predicted margin change, in logits.],
+)
+
+At the primary dose on near ties, the full forecast identified ten of the twelve targeted switches, ten of the eleven retained winners, and the one switch to a third token. Its absolute margin error was smaller than the one-pass error on 21 of 24 prompts. For the exact winner, two prompts favored the full forecast and one favored the one-pass forecast. The incremental advantage in exact-winner accuracy remains unresolved.
+
+The near group contained 22 multiply-add prompts and two three-term sums. The clear group contained 11 ordinary additions, six three-term sums, five subtractions and two multiply-adds. Both the task mix and starting margins differed. These selected samples establish that a push can change the winning token and that some switches can be forecast prospectively. They do not estimate the frequency of such switches in ordinary generation or any improvement in arithmetic accuracy.
+
 = Is the readout special? A diagnostic on three models <three>
 
 The two steered models have the same design: a few layers that run once, a block that is looped and receives the
@@ -611,7 +634,7 @@ self-gain in the two models (@three); the mechanism of neither steering experime
   @three gives three different pictures on three models; on the second model's sums no deficit of the read
   directions was detected, while small positive excesses occur for the task gradients and, on the true/false
   prompts, for the read directions.
-- Control of the answer. On the second model the pushed candidate never became the answer: 0 of #N.flip_pairs
+- Reliable control of arbitrary answers. In the original addition sample the pushed candidate never became the second model’s answer: 0 of #N.flip_pairs
   problem–candidate pairs for the lever at each of the three doses, and at the largest dose #N.flip_other_09 of
   #N.flip_pairs answers changed to something other than the pushed candidate (gradient and centroid pushes: no
   change at any dose). A
@@ -764,6 +787,23 @@ orthogonal to the readout gradient, with a gradient push losing its effect (@bot
 $alpha$ on read directions with $tau$ on three models (@three). These are measurements on particular models. No
 method in this document is new.
 
+*Released after the results above.* On 20 November 2026 Thinking Machines released Inkling 2 Mini, a looped model
+in which the middle 12 of 24 layers are applied three times for every token, together with a second model whose
+number of passes is chosen when it is run (`thinkingmachines.ai/news/inkling-2-mini`). The release reports how far
+the written reasoning of these models can be monitored (how legible it is, how far the model can control it, and
+how often a monitor detects a hidden side task) and finds no clear trend with the number of passes. A note by
+Goodfire published the same day (Lee and others, `goodfire.com/research/interpreting-inkling-2-mini`) describes
+which earlier layers and passes each layer of that model reads. As read here, the release, its two model cards and
+that note contain no sustained push on the state, no prediction of an effect from the derivative of a loop, and no
+reader of the state for errors. In that model each layer reads its own mixture of the outputs of earlier blocks,
+and a pass receives the previous pass through a gate, so the state $x$ and the map $F$ of @objects would have to be
+redefined before an experiment of this document could be repeated there. Separately, Meral and others (2026, arXiv
+2611.26627) report that one fixed set of vectors added to the outputs of the blocks of an image or video
+diffusion transformer, the same for every prompt, recovers most of the gain of fine-tuning it by reinforcement
+learning. A sampler applies the same network at every step, so that is a constant push on a repeatedly applied
+network of another kind; it is not a looped language model. These descriptions follow summaries of the cited pages
+made on 21 November 2026, and for the last paper its abstract only.
+
 = Limits
 
 In decreasing order of importance for the steering results:
@@ -771,11 +811,11 @@ In decreasing order of importance for the steering results:
 + *Two models of one design, one position, one addition task family each in the central comparison.* Both tasks
   have ten candidate answers. The comparison across three models in @three uses a cheaper diagnostic, not the
   steering experiment, and its protocols differ between models.
-+ *Scores, not answers.* The effects are shifts of centred scores on problems already answered correctly; the
++ *Dependence on the starting margin.* In the original comparison the effects are shifts of centred scores on problems already answered correctly; the
   tested doses did not make a different, pushed candidate become the second model's answer. #N.flip_other_09
   lever pushes at the largest dose, on three problems, changed the answer to something else. Answers are those
   read at the end of the forced run\; at the saved earlier loop counts the pushed candidate never led among the
-  ten candidates either.
+  ten candidates either. The selected near ties in @winner yielded targeted switches. Their task mix and margin thresholds limit inference about ordinary prompts.
 + *Local.* Everything is a first-order statement around a settled state. L32's doses are 1% to 9% of the length of
   its state, and the prediction error grows from #N.err_FULL_01 to #N.err_FULL_09 over that range; Huginn's digit
   dose is length 3. The separately quoted true/false experiment used length 12.5, about 16% of that state, with
@@ -831,3 +871,6 @@ machines; not a billing record): screen #N.gpu_screen_all minutes including its 
 steering replication #N.gpu_lever_main minutes including its test run, and #N.gpu_lever_e1 minutes for the follow-up
 on repetition. The diagnostic of @three on L32: run `lread-run-20261110-221504`, #RS.gpu_min minutes, and
 #RS.gpu_min_all minutes including its two test runs.
+
+Draft 6 adds the prospective winner pilot (@winner). The protocol in `docs/llever_winner_design.md` was fixed before screening. The saved screen, frozen forecasts, measured interventions, summary and report are in `results/llever_winner-20261117/`.
+Draft 7 adds to @related the paragraph on work released on 20 November 2026. Drafts 6 and 7 have not been reviewed either.

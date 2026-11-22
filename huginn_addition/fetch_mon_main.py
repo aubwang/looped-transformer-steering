@@ -7,7 +7,7 @@ import time
 
 import numpy as np
 
-MODAL = '/home/owner/work/.t3/projects/analysis/.venv/bin/modal'
+MODAL = str(Path(__file__).resolve().parents[1] / '.venv' / 'bin' / 'modal')
 started = time.monotonic()
 retries = 0
 

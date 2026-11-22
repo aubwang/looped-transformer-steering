@@ -63,7 +63,8 @@
   #text(9.5pt)[Draft 1, 2026-11-10. Design fixed before the data: `docs/oversight_monitor.md` (Draft 1.3). Three seeds.
   Results recomputed independently by GPT-6 Astra (xhigh): all 240 recomputed values matched; its required changes
   to the wording, and the second review's changes, are applied here (
-  `results/mon_report-20261110/astra_review.md`; `results/mon_report-20261110/astra_review_writeup.md`).]
+  `results/mon_report-20261110/astra_review.md`; `results/mon_report-20261110/astra_review_writeup.md`).
+  One paragraph was added on 2026-11-21, at the end of Section 8; nothing else was changed.]
 ]
 
 #v(0.4em)
@@ -715,6 +716,15 @@ and a second pair of models. (ii) Tasks where the answer does not settle within 
 problems the loop is nearly idle after loop 8. (iii) For the forecast, a bound specific to the last row and probe
 direction is worth investigating. The summaries do not identify how much conservatism comes from each inequality,
 the estimated ratio or storage rounding.
+
+*Added 2026-11-21.* A model that supplies part of (i) and (ii) was released on 20 November 2026. Thinking Machines'
+research model `TML-d24-varloop-research` runs one set of weights with a number of passes chosen when it is run,
+and its release reports a lookup task on which accuracy keeps improving up to ten passes
+(`thinkingmachines.ai/news/inkling-2-mini`). Running one set of weights at several numbers of passes removes the
+difference between two separately trained checkpoints, although a model trained mostly with three passes and run
+with one is not an ordinary model. The same release measures how far the written reasoning of looped models can be
+monitored and reports no clear trend with the number of passes; it does not read the state. This paragraph follows
+a summary of the release and its model cards made on 21 November 2026.
 
 = How the numbers were produced
 

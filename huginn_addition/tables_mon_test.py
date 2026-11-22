@@ -1,6 +1,7 @@
 """Integration checks, using raw JSON independently of summarize_mon."""
 import importlib.util
 import json
+import os
 from pathlib import Path
 import statistics
 import subprocess
@@ -8,8 +9,9 @@ import sys
 import tempfile
 
 ROOT = Path.cwd()
-PYTHON = '/home/owner/work/.t3/projects/analysis/.venv/bin/python'
-TYPST_PYTHON = '/tmp/claude-1000/-home-owner-work--t3-worktrees-analysis-t3-5b527f9a/d3850ad3-cf62-4473-a445-987ff1bdf740/scratchpad/typstenv/bin/python'
+PYTHON = sys.executable
+# An interpreter that has the `typst` package installed; set TYPST_PYTHON to use a separate environment.
+TYPST_PYTHON = os.environ.get('TYPST_PYTHON', sys.executable)
 INPUTS = [ROOT / f'results/mon_analysis-20261110/seed{i}' for i in range(3)]
 
 
