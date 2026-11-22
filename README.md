@@ -323,7 +323,8 @@ experiments followed a routine:
 
 - For the confirmatory experiments, the design, the analysis and the decision rule were written down before the
   run, and the strictest ones record hashes of the frozen files. The earliest studies were more iterative, and
-  exploratory or after-the-fact analyses are labelled as such in the write-ups.
+  exploratory or after-the-fact analyses are labelled as such in the write-ups. Designs and results were usually
+  committed together, so the commit history does not by itself show that order.
 - A different model (GPT-6 Astra, with Gemini 4 for independent reads) reviewed designs and code before the larger
   runs and recomputed results from the saved outputs afterwards. The reviews are in `results/`, including the
   overclaims they caught.
