@@ -2,7 +2,7 @@
 
 This is the chronological log of the study: one section per experiment, each with its design, prespecified rules,
 numerical gates, results, the reviewer-accepted wording (GPT-6 Astra), and caveats. For the synthesis of what was found,
-see **[`WRITEUP.md`](WRITEUP.md)**. The repository overview and setup are in the [root README](../README.md).
+see **[`WRITEUP.md`](WRITEUP.md)**. The repository overview and setup are in the [research note](../RESEARCH_NOTE.md).
 
 Conventions:
 - Sections appear in the order the experiments were run. Later sections can qualify or supersede earlier ones; where
